@@ -1,1 +1,586 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><link href="/static/css/chunk-libs.eebac533.css" rel="stylesheet"><link href="/static/css/app.0d31776f.css" rel="stylesheet"><!-- hexo injector head_end start --><script rel="prefetch" async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/components/prism-core.js" data-manual></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/themes/prism.min.css"/><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css"/><link rel="stylesheet" href="https://fonts.loli.net/css?family=Rubik" /><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.css"/><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body id="body-container"><noscript><strong>We're sorry but Aurora Blog doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script>(function(e){function t(t){for(var a,n,u=t[0],i=t[1],c=t[2],l=0,p=[];l<u.length;l++)n=u[l],Object.prototype.hasOwnProperty.call(o,n)&&o[n]&&p.push(o[n][0]),o[n]=0;for(a in i)Object.prototype.hasOwnProperty.call(i,a)&&(e[a]=i[a]);f&&f(t);while(p.length)p.shift()();return s.push.apply(s,c||[]),r()}function r(){for(var e,t=0;t<s.length;t++){for(var r=s[t],a=!0,n=1;n<r.length;n++){var u=r[n];0!==o[u]&&(a=!1)}a&&(s.splice(t--,1),e=i(i.s=r[0]))}return e}var a={},n={runtime:0},o={runtime:0},s=[];function u(e){return i.p+"static/js/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"00d640a8",about:"024aacd1",archives:"574ac664",categories:"90aa5475",page:"a02618ad",post:"cebfbaa4",result:"39470350",tags:"2ad613f5"}[e]+".js"}function i(t){if(a[t])return a[t].exports;var r=a[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[],r={404:1,about:1,archives:1,categories:1,page:1,post:1,result:1,tags:1};n[e]?t.push(n[e]):0!==n[e]&&r[e]&&t.push(n[e]=new Promise((function(t,r){for(var a="static/css/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"1a6cd5bd",about:"32dfa3b0",archives:"c0d49bd5",categories:"10e2be12",page:"749ad047",post:"9f951a60",result:"10e2be12",tags:"10e2be12"}[e]+".css",o=i.p+a,s=document.getElementsByTagName("link"),u=0;u<s.length;u++){var c=s[u],l=c.getAttribute("data-href")||c.getAttribute("href");if("stylesheet"===c.rel&&(l===a||l===o))return t()}var p=document.getElementsByTagName("style");for(u=0;u<p.length;u++){c=p[u],l=c.getAttribute("data-href");if(l===a||l===o)return t()}var f=document.createElement("link");f.rel="stylesheet",f.type="text/css",f.onload=t,f.onerror=function(t){var a=t&&t.target&&t.target.src||o,s=new Error("Loading CSS chunk "+e+" failed.\n("+a+")");s.code="CSS_CHUNK_LOAD_FAILED",s.request=a,delete n[e],f.parentNode.removeChild(f),r(s)},f.href=o;var d=document.getElementsByTagName("head")[0];d.appendChild(f)})).then((function(){n[e]=0})));var a=o[e];if(0!==a)if(a)t.push(a[2]);else{var s=new Promise((function(t,r){a=o[e]=[t,r]}));t.push(a[2]=s);var c,l=document.createElement("script");l.charset="utf-8",l.timeout=120,i.nc&&l.setAttribute("nonce",i.nc),l.src=u(e);var p=new Error;c=function(t){l.onerror=l.onload=null,clearTimeout(f);var r=o[e];if(0!==r){if(r){var a=t&&("load"===t.type?"missing":t.type),n=t&&t.target&&t.target.src;p.message="Loading chunk "+e+" failed.\n("+a+": "+n+")",p.name="ChunkLoadError",p.type=a,p.request=n,r[1](p)}o[e]=void 0}};var f=setTimeout((function(){c({type:"timeout",target:l})}),12e4);l.onerror=l.onload=c,document.head.appendChild(l)}return Promise.all(t)},i.m=e,i.c=a,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"===typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)i.d(r,a,function(t){return e[t]}.bind(null,a));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e["default"]}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="/",i.oe=function(e){throw console.error(e),e};var c=window["webpackJsonp"]=window["webpackJsonp"]||[],l=c.push.bind(c);c.push=t,c=c.slice();for(var p=0;p<c.length;p++)t(c[p]);var f=l;r()})([]);</script><script src="/static/js/chunk-libs.dc6146cd.js"></script><script src="/static/js/app.6d2c358d.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/第四章类与对象.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="4.1 编程语言的几个发展阶段面向机器语言-&gt;面向过程语言-&gt;面向对象语言. 面向对象语言编程主要体现在下列3个特性。  封装性 继承 多态  4.2 类类是Java程序的基本要素，一个Java应用程序就是由若干个类所构成的。类是Java语言中最重要的”数据类型“，类声明的变量被称为对象的变量，简称对象。 类的定义包括两部分，即类声明和类体。基本格式如下： class 类名 &amp;#123"><meta property="og:type" content="article"><meta property="og:title" content="第四章类与对象"><meta property="og:url" content="http://example.com/post/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="4.1 编程语言的几个发展阶段面向机器语言-&gt;面向过程语言-&gt;面向对象语言. 面向对象语言编程主要体现在下列3个特性。  封装性 继承 多态  4.2 类类是Java程序的基本要素，一个Java应用程序就是由若干个类所构成的。类是Java语言中最重要的”数据类型“，类声明的变量被称为对象的变量，简称对象。 类的定义包括两部分，即类声明和类体。基本格式如下： class 类名 &amp;#123"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/ac4d8ee03a9dcca3a30bcb2bba63e8e6.png"><meta property="og:image" content="http://example.com/images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/596ab40502c7b1e0ea3296d4acbed7d1.png"><meta property="og:image" content="http://example.com/images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/e8f4a7b4f46061ad81af22b95adb2a46.png"><meta property="og:image" content="http://example.com/images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/3e5ef7d0fd15574cf2dd9a117bf755ef.png"><meta property="article:published_time" content="2023-05-20T02:13:56.000Z"><meta property="article:modified_time" content="2023-06-18T09:09:15.027Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Java"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/ac4d8ee03a9dcca3a30bcb2bba63e8e6.png"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>第四章类与对象 - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"2450808861@qq.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.3.0",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io"}},Links:{icon:"fa-regular fa-link",submenus:{CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"20级信息与计算科学专业主修数学误打误撞来到了计算机的世界",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li></ul></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer"><ul class="drawer-navbar-list"><li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item flex-center"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item flex-center"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">ME</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><img src="/images/javalogo.jpg" alt="第四章类与对象"><h1 class="article-title-cover">第四章类与对象</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv4</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-05-20 10:13:56</span> <span class="mobile">2023-05-20 10:13:56</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-06-18 17:09:15</span> <span class="mobile">2023-06-18 17:09:15</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/Java/">Java</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Java/">Java</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>12.6k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>53 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h2 id="4-1-编程语言的几个发展阶段"><a href="#4-1-编程语言的几个发展阶段" class="headerlink" title="4.1 编程语言的几个发展阶段"></a>4.1 编程语言的几个发展阶段</h2><p>面向机器语言-&gt;面向过程语言-&gt;面向对象语言.</p><p>面向对象语言编程主要体现在下列3个特性。</p><ul><li>封装性</li><li>继承</li><li>多态</li></ul><h2 id="4-2-类"><a href="#4-2-类" class="headerlink" title="4.2 类"></a>4.2 类</h2><p>类是Java程序的基本要素，一个Java应用程序就是由若干个类所构成的。类是Java语言中最重要的”数据类型“，类声明的变量被称为对象的变量，简称对象。</p><p>类的定义包括两部分，即类声明和类体。基本格式如下：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class 类名 &#123;
+  类体的内容
+&#125;</code></pre><p>class是关键字，用来定义类。类名必须是合法的Java标识符。两个大括号及其之间的内容是类体。</p><h3 id="4-2-1-类的声明"><a href="#4-2-1-类的声明" class="headerlink" title="4.2.1 类的声明"></a>4.2.1 类的声明</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">class A &#123;
+  
+  ...
+&#125;
+class B &#123;
+  ...
+&#125;</code></pre><h3 id="4-2-2-类体"><a href="#4-2-2-类体" class="headerlink" title="4.2.2 类体"></a>4.2.2 类体</h3><p>定义类的目的是抽象出一类事物共有的属性和行为，并用一定的语法格式来描述所抽象出的属性和行为。也就是说，类是一种用于创建具体实例的数据类型。类使用类体来描述所抽象出的属性和行为，类声明之后的一对大括号以及它们之间的内容称作类体，大括号之间的内容称作类体的内容。</p><p>抽象的关键是抓住事物的两个方面——属性和行为，即数据以及在数据上所及进行的操作，因此类体的内容有如下所述的两部分构成。</p><h3 id="4-2-3-成员变量"><a href="#4-2-3-成员变量" class="headerlink" title="4.2.3 成员变量"></a>4.2.3 成员变量</h3><p>类体中的内容可分为两部分：</p><ul><li>一部分是变量的声明</li><li>另一部分是方法的定义。</li></ul><p>声明变量部分所声明的变量被称为成员变量或域变量。</p><ol><li>成员变量的类型</li></ol><p>成员变量的类型可以是Java中的任何一种数据类型，包括基本类型、引用类型。</p><ol start="2"><li>成员变量的默认值和有效范围</li></ol><p>在声明成员变量时如果没有指定初始值，Java编译器会为其指定默认值。</p><ul><li>对于boolean变量，默认值是false</li><li>对于整数，默认值是0</li><li>对于char，默认值是’&#x2F;&#x2F;0’</li><li>对于浮点数，默认值是0.0</li><li>对于引用类型，默认值是null</li></ul><p><strong>成员变量在整个类的所有方法里都有效，其有效性与它在类体中出现的位置无关。</strong>这一点和C语言中的函数声明不一样，但和C++的类中成员函数是一样的。</p><p>不提倡把成员变量的声明分散地写在方法之间，人们习惯先介绍属性再介绍行为。但是在C++中往往是把成员变量放到最后面。</p><p>注意：声明变量，例如bottom，如果为bottom指定的初始值和其他成员变量（比如above）的值有关，即”float bottom &#x3D; above + 10;“，那么声明成员变量above的位置要在声明成员变量bottom的前面。</p><ol start="3"><li>编程风格</li></ol><p>一行只声明一个变量。</p><p>变量名除了要符合标识符规定外，名字的首单词的首字母使用小写，驼峰命名。</p><p>变量名见名知意。</p><h3 id="4-2-4-方法"><a href="#4-2-4-方法" class="headerlink" title="4.2.4 方法"></a>4.2.4 方法</h3><p>和C++的类成员函数一样。</p><p>局部变量没有默认值。</p><h3 id="4-2-5-需要注意的问题"><a href="#4-2-5-需要注意的问题" class="headerlink" title="4.2.5 需要注意的问题"></a>4.2.5 需要注意的问题</h3><p>类体的内容有两部分构成：</p><ul><li>一部分是变量的声明</li><li>另一部分是方法的定义</li></ul><p><strong>对成员变量的操作只能放在方法中</strong>，方法使用各种语句对成员变量和方法体中声明的局部变量进行操作。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class A &#123;
+  int a &#x3D; 1; &#x2F;&#x2F; 可以这样操作
+&#125;
+class B &#123;
+  int a;
+  a &#x3D; 1; &#x2F;&#x2F; 不可以这样操作
+&#125;</code></pre><h2 id="4-3-构造方法与对象的创建"><a href="#4-3-构造方法与对象的创建" class="headerlink" title="4.3 构造方法与对象的创建"></a>4.3 构造方法与对象的创建</h2><p>类是面向对象语言中最重要的一种数据类型，可以用类来声明变量。在面向对象语言中，用类声明的变量被称为对象。和基本数据类型不同，在用类声明对象后还必须创建对象，即为声明的对象分配所拥有的变量，当使用一个类创建一个对象时也称给出了这个类的一个实例。通俗地讲，类是创建对象的模板，没有类就没有对象。</p><p>构造方法和对象的创建密切相关。</p><h3 id="4-3-1-构造方法"><a href="#4-3-1-构造方法" class="headerlink" title="4.3.1 构造方法"></a>4.3.1 构造方法</h3><p>构造方法是类中的一个特殊方法，当程序用类创建对象时需使用它的构造方法。类中的构造方法的名字必须与它所在的类的名字完全相同，而且没有类型。允许在一个类中编写若干个构造方法，但必须保证它们的参数不同。</p><p>和C++的构造函数一样。有默认的构造函数。Java没有析构函数，因为Java的垃圾回收机制是自动回收而C++是调用析构函数来回收内存。</p><h3 id="4-3-2-创建对象"><a href="#4-3-2-创建对象" class="headerlink" title="4.3.2 创建对象"></a>4.3.2 创建对象</h3><p>创建一个对象包括对象的声明和为声明的对象分配变量两个步骤：</p><ul><li>对象的声明</li><li>为声明的对象分配变量</li></ul><p>使用new运算符和类的构造方法为声明的对象分配变量，即创建对象。如果类中没有构造方法，系统会调用默认的构造方法，默认的构造方法是无参的，且方法体没有语句。</p><p>和C++的一样。</p><p>注意：对象的引用存放在栈中，对象的实体存放在堆中。</p><p>栈：</p><ul><li>优势：存取速度比堆快</li><li>缺点：存放在栈中的数据大小与生存期必须是确定的，缺乏灵活性</li></ul><p>堆：</p><ul><li>优势可以动态地分配内存大小，生存期也不必事先告诉编译器，Java的垃圾收集器会自动收走这些不再使用的数据</li><li>缺点是由于要在运行时动态分配内存，存取速度较慢。</li></ul><h3 id="4-3-3-使用对象"><a href="#4-3-3-使用对象" class="headerlink" title="4.3.3 使用对象"></a>4.3.3 使用对象</h3><p>抽象的目的是产生类，而定义类的目的是创建具有属性和行为的对象。对象不仅可以操作自己的变量改变状态，而且能调用类中的方法产生一定的行为。</p><p>通过<code>.</code>来访问。</p><p>和C++一样。</p><h3 id="4-3-4-对象的引用和实体"><a href="#4-3-4-对象的引用和实体" class="headerlink" title="4.3.4 对象的引用和实体"></a>4.3.4 对象的引用和实体</h3><p>类是体现封装的一种数据类型，类所声明的变量称为对象。Java中new运算符的原理类似于C语言中的内存分配函数calloc，作用就是为对象分配变量，即分配内存。因此不要把分配给对象的变量和对象混淆，分配给对象的变量仅是对象的一部分。对象本身负责存放引用，以确保对象可以操作分配给该对象的变量以及调用类中的方法。分配给对象的变量被习惯地称作对象的实体。</p><ul><li><p>避免使用空对象</p></li><li><p>一个类声明的两个对象如果具有相同的引用，两者就是有完全相同的变量。当程序用一个类创建两个对象object1和object2后，两者的引用是不同的。</p></li><li><p>垃圾收集</p></li></ul><p>一个类声明的两个对象如果具有相同的引用，那么二者就是具有完全相同的实体，而且Java所谓的”垃圾收集“机制，这种机制周期地检测某个实体是否已不再被任何对象所拥有，如果发现这样的实体，就释放实体占有的内存。</p><p>例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Point p1 &#x3D; new Point(5, 13);
+Point p2 &#x3D; new Point(6, 18);</code></pre><p>那么模型如下：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/ac4d8ee03a9dcca3a30bcb2bba63e8e6.png" alt="截图"></p><p>执行赋值语句：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">p1 &#x3D; p2;</code></pre><p><img lazyload src="/images/loading.svg" data-src="/../images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/596ab40502c7b1e0ea3296d4acbed7d1.png" alt="截图"></p><p>然后5和13的内存就没有引用指向它们，所以5和13的内存会自动被释放。</p><p>可以通过下面的Java语句来验证：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">int address &#x3D; System.identyHashCode(object);</code></pre><p><strong>注意：如果希望Java虚拟机立刻进行”垃圾收集“操作，可以让System类调用gc()方法。</strong></p><h2 id="4-4-类与程序的基本结构"><a href="#4-4-类与程序的基本结构" class="headerlink" title="4.4 类与程序的基本结构"></a>4.4 类与程序的基本结构</h2><p>一个Java应用程序（也称为一个工程）由若干个类构成，这些类可以在一个源文件中，也可以分布在若干个源文件中。</p><p>Java应用程序有一个主类，即含有main方法的类，java应用程序从主类的main方法开始执行。在编写一个Java应用程序时，可以编写若干个Java源文件，每个源文件在编译后产生若干个类的字节码文件，因此经常进行如下操作：</p><ol><li>将应用程序涉及的Java源文件保存在相同的目录中，分别编译通过，得到Java应用程序所需要的字节码文件</li><li>运行主类</li></ol><p>当使用解释器运行一个Java应用程序时，Java虚拟机见Java应用程序需要的字节码文案金加载到内存，然后由Java的虚拟机解释执行。因此可以事先单独编译一个Java应用程序所需要的其他源文件，并将得到的字节码文件和主类的字节码文件存放在同一个目录中。如果应用程序的主类的源文件和其他的源文件在同一个目录中，也可以只编译主类的源文件，Java系统会自动地线编译主类需要的其他源文件。</p><p>Java程序以类为”基本单位“，即一个Java程序由若干个类存放在一个源文件中。一个源文件中的类可以被多个不同的源文件中，也可以将它使用的类存放在一个源文件中，一个源文件中的类可以被多个Java程序使用，从编译角度看，每个源文件都是一个独立的编译单位，当程序需要修改某个类时，只需要重新编译该类所在的源文件即可，不必重新编译其他类所在的源文件，这非常有利于系统的维护；从软件设计角度看，Java语言的类是可复用代码，编写具有一定功能的可复用代码是软件设计中非常重要的工作。</p><p>例子：</p><p>Rect.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Rect &#123;
+    double width;
+    double height;
+
+    public Rect(double width, double height) &#123;
+        this.width &#x3D; width;
+        this.height &#x3D; height;
+    &#125;
+
+    double getArea() &#123;
+        return width * height;
+    &#125;
+&#125;</code></pre><p>Ladder.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Ladder &#123;
+    double above;
+    double bottom;
+    double height;
+
+    double getArea() &#123;
+        return (above + bottom) * height &#x2F; 2;
+    &#125;
+&#125;</code></pre><p>Main.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        Rect rectangle &#x3D; new Rect(109.87, 25.18);
+        double area &#x3D; rectangle.getArea();
+        System.out.println(&quot;矩形的面积为&quot; + area);
+        Ladder ladder &#x3D; new Ladder();
+        ladder.above &#x3D; 10.198;
+        ladder.bottom &#x3D; 156.65;
+        ladder.height &#x3D; 18.12;
+        area &#x3D; ladder.getArea();
+        System.out.println(&quot;梯形的面积为&quot; + area);
+    &#125;
+&#125;</code></pre><p>在编译Main.java的过程中，Java系统会自动地编译Rect.java和Ladder.java，这是因为应用程序要使用Rect.java和Ladder.java源文件产生的字节码文件。编译通过后，在项目目录下中将出现Rect.class、Ladder.class和Main.class几个字节码文件。运行主类，程序的输出结果如下：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">矩形的面积为2766.5266
+梯形的面积为1511.64288</code></pre><p><strong>注意：Ladder和Rect就是可复用的代码，应用程序的朱磊只需让Ladder和Rect对象分别计算面积即可，主类不必知道计算矩阵面积和梯形面积的算法。</strong></p><p>如果需要编译某个目录下的全部Java源文件，可以使用通配符来完成。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">javac *.java</code></pre><p>尽管一个Java源文件中可以有多个类，但仍然提倡在一个Java源文件中只编写一个类。</p><h2 id="4-5-参数的传值"><a href="#4-5-参数的传值" class="headerlink" title="4.5 参数的传值"></a>4.5 参数的传值</h2><p>方法中最重要的一个部分就是方法的参数，参数属于局部变量，当对象调用方法时，参数被分配内存空间，并要求调用者向参数传递值，即方法被调用时参数变量必须有具体的值。</p><h3 id="4-5-1-传值机制"><a href="#4-5-1-传值机制" class="headerlink" title="4.5.1 传值机制"></a>4.5.1 传值机制</h3><p>在Java中，方法的所有参数都是”传值“的，也就是说方法中，参数变量的值是调用者指定的值的副本。</p><h3 id="4-5-2-基本数据类型参数的传值"><a href="#4-5-2-基本数据类型参数的传值" class="headerlink" title="4.5.2 基本数据类型参数的传值"></a>4.5.2 基本数据类型参数的传值</h3><p>对于基本数据类型的参数，向该参数传递的值的级别不可以高于该参数的级别。例如，不可以向int型参数传递一个float值，但可以向double型参数传递一个float值。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class Computer &#123;
+  int add(int x, int y) &#123;
+    return x + y;
+  &#125;
+&#125;
+public class Main &#123;
+  public static void main(String[] args) &#123;
+    Computer com &#x3D; new Computer();
+    int m &#x3D; 100;
+    int n &#x3D; 200;
+    int result &#x3D; com.add(m, n);
+    System.out.println(result);
+    result &#x3D; com.add(120+m, n*10+8);
+  &#125;
+&#125;</code></pre><h3 id="4-5-3-引用类型参数的传值"><a href="#4-5-3-引用类型参数的传值" class="headerlink" title="4.5.3 引用类型参数的传值"></a>4.5.3 引用类型参数的传值</h3><p>Java的引用型数据包括前面学习的数组、刚刚学习的对象以及后面要学习的接口。当参数是引用类型时，<strong>”传值“传递的是变量中存放的”引用“，而不是变量所引用的实体</strong>。</p><p>需要注意的是，对于两个相同类型的引用型变量，如果具有同样的引用，就会用同样的实体。因此，如果改变参数变量所引用的实体，就会导致原变量的实体发生了同样的变化；但是，改变参数中存放的”引用“不会影响向其传值的变量中存放的”引用“，反之亦然，</p><p><strong>一个类声明的两个对象如果具有相同的引用，两者就具有完全相同的变量。</strong></p><p>Battery.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Battery &#123;
+  int electricityAmount;
+  Battery(int amount) &#123;
+    electricityAmount &#x3D; amount;
+  &#125;
+&#125;</code></pre><p>Radio.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Radio &#123;
+  void openRadio(Battery battery) &#123;
+    battery.electricityAmount &#x3D; battery.electricityAmount - 10;
+  &#125;
+&#125;</code></pre><p>Main.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+  public static void main(String[] args) &#123;
+    Battery nanfu &#x3D; new Battery(100);
+    System.out.println(&quot;南孚电池的储电量是：&quot; + nanfu.electricityAmount);
+    Radio radio &#x3D; new Radio();
+    System.out.println(&quot;收音机开始使用南孚电池：&quot;);
+    radio.openRadio(nanfu);
+    System.out.println(&quot;目前南孚电池的储电量是：&quot; + nanfu.electricityAmount);
+  &#125;
+&#125;</code></pre><h3 id="4-5-4-可变参数"><a href="#4-5-4-可变参数" class="headerlink" title="4.5.4 可变参数"></a>4.5.4 可变参数</h3><p>可变参数是指在声明方法时不给出参数列表中从某项开始直至最后一项参数的名字和个数，但这些参数的类型必须相同。可变惨数使用<code>...</code>表示若干个参数，这些参数的类型必须相同。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public void f(int ... x)</code></pre><p>那么方法f()的参数列表中，从第1个至最后一个参数都是int型，但连续出现的int型参数的个数不确定，称x是方法f()的参数列表中的可变参数的“参数代表”。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public void g(double a, int ... x)</code></pre><p>那么在方法g()的参数列表中，第一个参数是double型，第2个至最后一个参数是int型，但连续出现的int型参数的个数不确定（可变），称x是方法g()的参数列表中的可变参数的“参数代表”。“参数代表”必须是参数列表中的最后一个。特别需要注意的是，在下列方法定义中</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public void method(int... x, int y)</code></pre><p>错误地使用可变参数x，因为可变参数x代表的最后一个参数不是method()方法的最后一个参数，method()方法的最后一个参数y不是可变参数x所代表的参数之一。</p><p>参数代表可以通过下标运算来表示参数列表中的具体参数，即x[0]、x[1]、…x[m-1]分别表示x代表的第1~m个参数。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public int getSum(int ... x) &#123;
+  int sum &#x3D; 0;
+  for (int i &#x3D; 0; i &lt; x.length; i++) &#123;
+    sum +&#x3D; x[i];
+  &#125;
+  return sum;
+&#125;</code></pre><p>对于可变参数，Java提供了增强的for语句，允许用户按如下方式使用for语句遍历参数代表所代表的参数：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">for (声明循环变量: 参数代表) &#123;
+  ...
+&#125;</code></pre><p>例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">for (int v : x) &#123;
+  sum +&#x3D; v;
+&#125;</code></pre><h2 id="4-6-对象的组合"><a href="#4-6-对象的组合" class="headerlink" title="4.6 对象的组合"></a>4.6 对象的组合</h2><p>一个类的成员变量可以是Java允许的任何数据类型，因此一个类可以把某个对象作为自己的一个成员变量，如果用这样的类创建对象。那么该对象中就会有其他对象，也就是说，该类的对象将其他对象作为自己的组成部分。</p><h3 id="4-6-1-组合与复用"><a href="#4-6-1-组合与复用" class="headerlink" title="4.6.1 组合与复用"></a>4.6.1 组合与复用</h3><p>那么一个对象a组合了对象b，那么对象a就可以委托对象b调用其方法，即对象a以组合的方式复用对象b的方法。</p><p>通过组合对象来复用方法有以下特点：</p><ol><li>通过组合对象来复用方法也称“黑盒”复用，因为当前对象只能委托所包含的对象调用其方法，这样当前对象对所包含对象的方法的细节是一无所知的。</li><li>当前对象随时可以更换所包含的对象，即对象与所包含的对象属于弱耦合关系。</li></ol><blockquote><p>注意：在学习对象的组合时一定要记住，一个类声明的两个对象如果具有相同的引用，二者就具有完全相同的变量</p></blockquote><p>例如：</p><p>Circle.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Circle &#123;
+  double radius, area;
+  void setRadius(double r) &#123;
+    radius &#x3D; r;
+  &#125;
+  double getRadius() &#123;
+    return radius;
+  &#125;
+  double getArea() &#123;
+    area &#x3D; radius * radius * 3.14;
+    return area;
+  &#125;
+&#125;</code></pre><p>Circular.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Circular &#123;
+  Circle bottom;
+  double height;
+  void setBottom(Circle c) &#123;
+    bottom &#x3D; c;
+  &#125;
+  void setHeight(double h) &#123;
+    height &#x3D; h;
+  &#125;
+  double getVolume() &#123;
+    if (bottom &#x3D;&#x3D; null) &#123;
+      return -1;
+    &#125; else &#123;
+      return bottom.getArea()*height&#x2F;3.0;
+    &#125;
+  &#125;
+  double getBottomRadius() &#123;
+    return bottom.getRadius();
+  &#125;
+  public void setBottomRadius(double r) &#123;
+    bottom.setRadius(r);
+  &#125;
+&#125;</code></pre><p>Main.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        Circle circle &#x3D; new Circle();
+        circle.setRadius(10);
+        Circular circular &#x3D; new Circular();
+        System.out.println(&quot;circle的引用: &quot; + circle);
+        System.out.println(&quot;圆锥的bottom的引用: &quot; + circular.bottom);
+        circular.setHeight(5);
+        circular.setBottom(circle);
+        System.out.println(&quot;circle的引用: &quot; + circle);
+        System.out.println(&quot;圆锥的bottom的引用: &quot; + circular.bottom);
+        System.out.println(&quot;圆锥的体积: &quot; + circular.getVolume());
+        System.out.println(&quot;修改circle的半径，bottom的半径同样变化&quot;);
+        circle.setRadius(20);
+        System.out.println(&quot;bottom的半径: &quot; + circular.getBottomRadius());
+        System.out.println(&quot;重新创建circle, circle的引用将发生变化&quot;);
+        circle &#x3D; new Circle();
+        System.out.println(&quot;circle的引用: &quot; + circle);
+        System.out.println(&quot;但是不影响circular的bottom的引用&quot;);
+        System.out.println(&quot;圆锥的bottom的引用: &quot; + circular.bottom);
+    &#125;
+&#125;</code></pre><p>终端输出：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">circle的引用: Circle@4f3f5b24
+圆锥的bottom的引用: null
+circle的引用: Circle@4f3f5b24
+圆锥的bottom的引用: Circle@4f3f5b24
+圆锥的体积: 523.3333333333334
+修改circle的半径，bottom的半径同样变化
+bottom的半径: 20.0
+重新创建circle, circle的引用将发生变化
+circle的引用: Circle@7291c18f
+但是不影响circular的bottom的引用
+圆锥的bottom的引用: Circle@4f3f5b24</code></pre><h2 id="4-7-实例成员与类成员"><a href="#4-7-实例成员与类成员" class="headerlink" title="4.7 实例成员与类成员"></a>4.7 实例成员与类成员</h2><h3 id="4-7-1-实例变量和类变量的声明"><a href="#4-7-1-实例变量和类变量的声明" class="headerlink" title="4.7.1 实例变量和类变量的声明"></a>4.7.1 实例变量和类变量的声明</h3><p>正常创建类的变量就是在创建类的对象，普通的成员属性是在声明了对象之后才可以使用。而使用static修饰的成员属性是属于整个类而不是某个对象所特有。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java"> class Dog &#123;
+  float x;      &#x2F;&#x2F; 实例变量，在声明Dog类的对象后才可以访问
+  static int y; &#x2F;&#x2F; 类变量，属于整个Dog类的属性，不用声明Dog类的对象也可以使用
+&#125;</code></pre><h3 id="4-7-2-实例变量和类变量的区别"><a href="#4-7-2-实例变量和类变量的区别" class="headerlink" title="4.7.2 实例变量和类变量的区别"></a>4.7.2 实例变量和类变量的区别</h3><ul><li>不同对象的实例变量互不相同</li><li>所有对象共享类变量</li><li>通过类名直接访问类变量</li></ul><p>例子：</p><p>Person.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Person &#123;
+    public static String parent;
+    public String name;
+    public int age;
+
+    public Person(String name, int age) &#123;
+        this.name &#x3D; name;
+        this.age &#x3D; age;
+    &#125;
+
+    public void printInfo() &#123;
+        System.out.println(name + &quot;&#x2F;t&quot; + age + &quot;&#x2F;t&quot; + parent);
+    &#125;
+&#125;
+</code></pre><p>Main.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        Person Cukor &#x3D; new Person(&quot;Cukor&quot;, 22);
+        Person Jack &#x3D; new Person(&quot;Jack&quot;, 21);
+        Person Alice &#x3D; new Person(&quot;Alice&quot;, 18);
+        Cukor.printInfo();
+        Jack.printInfo();
+        Alice.printInfo();
+        Person.parent &#x3D; &quot;Parent&quot;;
+        System.out.println(&quot;----------------------------------&quot;);
+        Cukor.printInfo();
+        Jack.printInfo();
+        Alice.printInfo();
+        Cukor.parent &#x3D; &quot;Parent of Cukor&quot;;
+        Cukor.age &#x3D; 19;
+        System.out.println(&quot;----------------------------------&quot;);
+        Cukor.printInfo();
+        Jack.printInfo();
+        Alice.printInfo();
+    &#125;
+&#125;
+</code></pre><p>终端输出：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Cukor	22	null
+Jack	21	null
+Alice	18	null
+----------------------------------
+Cukor	22	Parent
+Jack	21	Parent
+Alice	18	Parent
+----------------------------------
+Cukor	19	Parent of Cukor
+Jack	21	Parent of Cukor
+Alice	18	Parent of Cukor</code></pre><h3 id="4-7-3-实例方法和类方法"><a href="#4-7-3-实例方法和类方法" class="headerlink" title="4.7.3 实例方法和类方法"></a>4.7.3 实例方法和类方法</h3><p>类中的方法也可以分为实例方法和类方法。也是通过static修饰。和上面一样，类方法属于整个类而不是某个对象所特有。</p><h3 id="4-7-4-实例方法和类方法的区别"><a href="#4-7-4-实例方法和类方法的区别" class="headerlink" title="4.7.4 实例方法和类方法的区别"></a>4.7.4 实例方法和类方法的区别</h3><p>和实例变量和类变量一样的区别。</p><h2 id="4-8-方法重载"><a href="#4-8-方法重载" class="headerlink" title="4.8 方法重载"></a>4.8 方法重载</h2><p>Java中存在重载和重写方法两种多态，重写是与继承有关的多态。方法重载是两种多态中的一种。所谓多态性，是指可以向功能传递不同的消息，以便让对象根据相应的消息产生相应的行为。对象的行为通过类中的方法来体现，那么行为的多态性就是方法的重载。</p><h3 id="4-8-1-方法的重载的语法规则"><a href="#4-8-1-方法的重载的语法规则" class="headerlink" title="4.8.1 方法的重载的语法规则"></a>4.8.1 方法的重载的语法规则</h3><p>方法重载的意思是：在一个类中可以有多个方法具有相同名字，但这些方法的参数不同，两个方法的参数不同是指下列条件之一：</p><ol><li>参数个数不同</li><li>参数类型不同</li><li>参数顺序不同</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Test &#123;
+    public void print() &#123; &#x2F;&#x2F; i
+        System.out.println(&quot;无参函数&quot;);
+    &#125;
+
+    public void print(String str) &#123; &#x2F;&#x2F; ii
+        System.out.println(str);
+    &#125;
+
+    public void print(String str, int a) &#123; &#x2F;&#x2F; iii
+        System.out.println(str + &quot;&#x2F;t&quot; + a);
+    &#125;
+
+    public void print(String str, String a) &#123; &#x2F;&#x2F; iiii
+        System.out.println(str + &quot;&#x2F;t&quot; + a);
+    &#125;
+    
+    public void print(int a, String str) &#123; &#x2F;&#x2F;&#x2F; iiiii
+        System.out.println(a + &quot;&#x2F;t&quot; + str);
+    &#125;
+&#125;
+</code></pre><p>上面的代码中，i和ii之间就是就是一种参数个数不同的重载，iii和iiii之间就是一种参数类型不同的重载，iii和iiiii之间就是一种参数顺序不同的重载。</p><h3 id="4-8-2-避免重载出现歧义"><a href="#4-8-2-避免重载出现歧义" class="headerlink" title="4.8.2 避免重载出现歧义"></a>4.8.2 避免重载出现歧义</h3><p>重载方法之间必须保证相互的参数不同，需要小心的是，重载方法在被调用时可能出现歧义调用。</p><p>例如</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class Dog &#123;
+  static void cry(double m, int n) &#123;
+    System.out.println(&quot;小狗&quot;);
+  &#125;
+  static void cry(int m, double n) &#123;
+    System.out.println(&quot;small dog&quot;);
+  &#125;
+&#125;</code></pre><p>无法通过编译，因为Dog.cry(10, 10)不清楚应当执行重载方法中的哪一个。</p><h2 id="4-9-this关键字"><a href="#4-9-this关键字" class="headerlink" title="4.9 this关键字"></a>4.9 this关键字</h2><p>指向当前对象的引用，在类中使用。和C++的this指针一样的作用。</p><p><strong>注意：this不能出现在类方法中，这是因为类方法可以通过类名直接调用，这时可能还没有任何对象产生。</strong></p><h2 id="4-10-包"><a href="#4-10-包" class="headerlink" title="4.10 包"></a>4.10 包</h2><p>包是Java语言有效地管理类的一个机制。在不同Java源文件中可能出现名字相同的类，如果用户想区分这些类，就需要使用包名，使用包名可以有效地区分名字相同的类，当不同Java源文件中的两个类的名字相同时，它们可以通过隶属于不同的包来相互区分。</p><h3 id="4-10-1-package关键字"><a href="#4-10-1-package关键字" class="headerlink" title="4.10.1 package关键字"></a>4.10.1 package关键字</h3><p>通过关键字package声明包语句。package语句作为Java源文件中的第一个语句，指明该源文件定义的类所在的包，即为该源文件中声明的类指明包名。package语句的一般格式如下：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package 包名;</code></pre><p>在源程序中最多有一个包语句，如果源程序中省略了package语句，源文件中所定义、命名的类将被隐含地认为是无名包的一部分，只要这些类的字节码被存放在相同的目录中，那么它们就属于同一个包，但没有包名。</p><p>包名可以是一个合法的标识符，也可以是若干个标识符加<code>.</code>分隔而成。例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package sumrise;
+package sum.com.cn;</code></pre><h3 id="4-10-2-有包名的类的存储目录"><a href="#4-10-2-有包名的类的存储目录" class="headerlink" title="4.10.2 有包名的类的存储目录"></a>4.10.2 有包名的类的存储目录</h3><p>如果一个类有包名，那么就不能在任意位置存放，否则虚拟机将无法加载到这样的类。</p><p>如果程序使用了包语句，例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package tom.jiafei</code></pre><p>那么在存储文件的目录中必须包含结构”..&#x2F;tom&#x2F;jiafei”，并且要将源文件编译得到的类的字节码文件保存在目录”..&#x2F;tom&#x2F;jiafei”中。</p><p>当然，可以将源文件保持在”..&#x2F;tom&#x2F;jiafei”中，然后进入”tom&#x2F;jiafei”的上一层目录中编译源文件。</p><h3 id="4-10-3-运行有包名的主类"><a href="#4-10-3-运行有包名的主类" class="headerlink" title="4.10.3 运行有包名的主类"></a>4.10.3 运行有包名的主类</h3><p>如果主类的包名是tom.jiafei，那么主类的字节码文件一定存放在”…&#x2F;tom&#x2F;jiafei”目录中，则必须到它的上一层目录中去运行主类。</p><p>Student.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package tom.jiafei;
+public class Student &#123;
+        int number;
+        Student(int n) &#123;
+                number &#x3D; n;
+        &#125;
+        void speak() &#123;
+                System.out.println(&quot;Student类的包名为tom.jiafei，我的学号为&quot;+number);
+        &#125;
+&#125;</code></pre><p>Main.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package tom.jiafei;
+public class Main &#123;
+        public static void main(String[] args) &#123;
+                Student stu &#x3D; new Student(10201);
+                stu.speak();
+                System.out.println(&quot;主类的包名也是tom.jiafei&quot;);
+        &#125;
+&#125;</code></pre><p>编译命令：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;Test&gt; javac .&#x2F;tom&#x2F;jiafei&#x2F;Student.java
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;Test&gt; javac .&#x2F;tom&#x2F;jiafei&#x2F;Main.java</code></pre><p>运行命令：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;Test&gt; java tom.jiafei.Main</code></pre><p>输出结果：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">Student类的包名为tom.jiafei，我的学号为10201
+主类的包名也是tom.jiafei</code></pre><p><strong>注意：Java不允许用户程序使用java作为包名的第一部分，例如java.bird是非法的包名。</strong></p><h2 id="4-11-import语句"><a href="#4-11-import语句" class="headerlink" title="4.11 import语句"></a>4.11 import语句</h2><p>一个类可能需要另一类声明的对象作为自己的成员或方法中的局部变量，如果这两个类在同一个包中，当然没有问题。</p><h3 id="4-11-1-引入类库中的类"><a href="#4-11-1-引入类库中的类" class="headerlink" title="4.11.1 引入类库中的类"></a>4.11.1 引入类库中的类</h3><p>用户编写的类和类库中的类肯定不在一个包中。如果用户需要类库中的类，就必须使用import语句。使用import语句可以引入包中的类和接口。在编写源文件时，出来自己编写类以外，经常需要使用Java提供的许多类，这些类可能在不同的包中。在学习Java时，使用已经存在的类，避免一切从头做起，这是面向对象编程的一个重要方面。</p><p>为了能使用Java提供的类，可以使用import语句引入包中的类和接口。在一个Java源程序中可以有多个import语句，它们必须写在package语句和源文件中类的定义之间。Java提供了130多个包。例如：</p><ul><li>java.lang</li><li>javax.swing</li><li>java.io</li><li>java.util</li><li>java.sql</li><li>java.net</li></ul><p>如果要引入一个包中的所有类，则可以用通配符”*”来代替。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.*;</code></pre><p>表示引入java.util包中的所有类，而</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Date;</code></pre><p>只是引入了java.util包中的Date类。</p><p>如果用户编写一个程序，并想使用java.util中的Date类创建对象来显示本地的时间，那么就可以使用import语句引入java.util中的Date类。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Date;
+import java.util.Arrays;
+public class Main &#123;
+        public static void main(String[] args) &#123;
+                Date date &#x3D; new Date();
+                System.out.println(&quot;本地机器时间:&quot;);
+                System.out.println(date.toString());
+                int[] a &#x3D; &#123;12, 34, -34, 2, 100&#125;;
+                Arrays.sort(a);
+                System.out.println(Arrays.toString(a));
+        &#125;
+&#125;</code></pre><p>终端输出</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">本地机器时间:
+Tue Mar 21 21:36:59 CST 2023
+[-34, 2, 12, 34, 100]</code></pre><p>注意：</p><ul><li>java.lang包是java的核心类库，它包含了运行java程序必不可少的系统类，系统自动为程序引入java.lang包中的类，因此不需要再使用import引入该包中的类。</li><li>如果使用import引入整个包中的类，那么可能会增加编译时间，但绝对不会影响程序运行的性能，因为当程序执行时只是将程序真正使用的类的字节码文件加载到内存。</li><li>如果没有import引入包中的类，那么也可以直接带着包名使用该类。</li></ul><h3 id="4-11-2-引入自定义包中的类"><a href="#4-11-2-引入自定义包中的类" class="headerlink" title="4.11.2 引入自定义包中的类"></a>4.11.2 引入自定义包中的类</h3><p>用户程序也可以使用import引入非类库中有包名的类。</p><p>在当前工作路径下创建sohu&#x2F;com文件夹。</p><p>在sohu文件夹下的com文件夹下创建一个Triangle.java文件，内容如下：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package sohu.com;
+public class Triangle &#123;
+        double sideA, sideB, sideC;
+        public double getArea() &#123;
+                double p &#x3D; (sideA + sideB + sideC)&#x2F;2.0;
+                double area &#x3D; Math.sqrt(p * (p - sideA) * (p - sideB) * (p - sideC));
+                return area;
+        &#125;
+        public void setSides(double a, double b, double c) &#123;
+                sideA &#x3D; a;
+                sideB &#x3D; b;
+                sideC &#x3D; c;
+        &#125;
+&#125;</code></pre><p>当前工作路径下创建一个Main.java文件，内容如下：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import sohu.com.Triangle;
+public class Main &#123;
+        public static void main(String[] args) &#123;
+                Triangle triangle &#x3D; new Triangle();
+                triangle.setSides(30, 40, 50);
+                System.out.println(triangle.getArea());
+        &#125;
+&#125;</code></pre><p>终端输出结果如下：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">600.0</code></pre><h2 id="4-12-访问权限"><a href="#4-12-访问权限" class="headerlink" title="4.12 访问权限"></a>4.12 访问权限</h2><h3 id="4-12-1-什么是访问权限"><a href="#4-12-1-什么是访问权限" class="headerlink" title="4.12.1 什么是访问权限"></a>4.12.1 什么是访问权限</h3><p>所谓访问权限，是指对象是否可以通过<code>.</code>运算符操作自己的变量或调用类中的方法。访问限制修饰符有：</p><ul><li>public</li><li>protected</li><li>private</li></ul><p>它们都是Java的关键字，用来修饰成员变量或方法的。</p><p><strong>需要特别注意的是，在编写类的时候，类中的实例方法总是可以操作该类中的实例变量和类变量；类方法总是可以操作该类中的类变量，与访问权限限制符没有关系。</strong></p><h3 id="4-12-2-私有变量和私有方法"><a href="#4-12-2-私有变量和私有方法" class="headerlink" title="4.12.2 私有变量和私有方法"></a>4.12.2 私有变量和私有方法</h3><p>用关键字private修饰的成员变量和方法称为私有变量和私有方法。</p><p>和C++一样。</p><h3 id="4-12-3-公有变量和公有方法"><a href="#4-12-3-公有变量和公有方法" class="headerlink" title="4.12.3 公有变量和公有方法"></a>4.12.3 公有变量和公有方法</h3><p>和C++一样。</p><h3 id="4-12-4-友好变量和友好方法"><a href="#4-12-4-友好变量和友好方法" class="headerlink" title="4.12.4 友好变量和友好方法"></a>4.12.4 友好变量和友好方法</h3><p>default权限，默认权限，类似C++的友元。就是在类中不使用private、proteced、public修饰的就是default权限，这种权限的特点是同一个包中的类可以随意访问，不同包就不可以访问。</p><p>例子：Tom类和Jerry类在同一个包中。</p><p>Tom.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class Tom &#123;
+  float weight;
+  float f(float a, float b) &#123;
+    return a + b;
+  &#125;
+&#125;</code></pre><p>Jerry.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class Jerry &#123;
+  void g() &#123;
+    Tom cat &#x3D; new Tom();
+    cat.weight &#x3D; 2.3f;              &#x2F;&#x2F; 合法
+    float sum &#x3D; cat.f(3.2f, 4.3f);  &#x2F;&#x2F; 合法
+  &#125;
+&#125;</code></pre><p><strong>注意：在一个源文件中编写命名的类总是在同一个包中的。如果源文件使用import引入了另外一个包的类，并用该类创建了一个对象，那么该类的这个对象将不能访问自己的友好变量和友好方法。因为不是同一个包。</strong></p><h3 id="4-12-5-受保护的成员变量和方法"><a href="#4-12-5-受保护的成员变量和方法" class="headerlink" title="4.12.5 受保护的成员变量和方法"></a>4.12.5 受保护的成员变量和方法</h3><p>和C++一样。</p><h3 id="4-12-6-public类和友好类"><a href="#4-12-6-public类和友好类" class="headerlink" title="4.12.6 public类和友好类"></a>4.12.6 public类和友好类</h3><p>和前面的权限一样。在class关键字之前加上public就说明该类是公有的权限，外界可以访问得到。在class关键字之前没有加任何权限修饰符就说明该类是默认权限即友好类，同一个包中才能访问得到，否则访问不到。</p><h2 id="4-13-基本类型的类封装"><a href="#4-13-基本类型的类封装" class="headerlink" title="4.13 基本类型的类封装"></a>4.13 基本类型的类封装</h2><p>Java提供了与基本数据类型相关的类，实现了对基本数据类型的封装。这些类在java.lang包中，分别是:</p><ul><li>Byte</li><li>Integer</li><li>Short</li><li>Long</li><li>Float</li><li>Double</li><li>Character</li></ul><p>从JDK11之后，建议不用构造方法创建基本类型类的对象，即不建议如下编写代码：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Integer num &#x3D; new Integer(100);</code></pre><p>而是直接将一个基本类型数据赋值给所创建的对象，例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Integer num1 &#x3D; 100;
+Double num2 &#x3D; 3.14;
+Float num3 &#x3D; 2.7f;</code></pre><p>需要特别注意的是，当创建对象时，赋值给对象的基本类型数据必须和此对象要封装的基本类型数据一致。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Double num1 &#x3D; 6.18f;  &#x2F;&#x2F; 非法
+Double num2 &#x3D; 200;    &#x2F;&#x2F; 非法</code></pre><p>可以对基本类型的对象进行四则运算。</p><p>Integet通过intValue()返回该对象含有的基本数据类型，其他的如Double也是类似的方法doubleValue()，依此类推。</p><p>Character类还包括一些类方法，用来进行字符的分类。例如判断一个字符是否为数字字符或改变一个字符的大小写等。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+        public static void main(String[] args) &#123;
+                char[] a &#x3D; &#123;&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;D&#39;, &#39;E&#39;, &#39;F&#39;&#125;;
+                for (int i &#x3D; 0; i &lt; a.length; i++) &#123;
+                        if (Character.isLowerCase(a[i])) &#123;
+                                a[i] &#x3D; Character.toUpperCase(a[i]);
+                        &#125; else if (Character.isUpperCase(a[i])) &#123;
+                                a[i] &#x3D; Character.toLowerCase(a[i]);
+                        &#125;
+                &#125;
+                for (int i &#x3D; 0; i &lt; a.length; i++) &#123;
+                        System.out.print(&quot; &quot; + a[i]);
+                &#125;
+        &#125;
+&#125;</code></pre><p>终端输出：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">A B C d e f</code></pre><h2 id="4-14-var-局部变量"><a href="#4-14-var-局部变量" class="headerlink" title="4.14 var 局部变量"></a>4.14 var 局部变量</h2><p>JDK10版本开始增加了”局部变量类型推断“这一新功能，即可以使用var声明局部变量。类似于C++中的auto关键字。var的特点如下：</p><ul><li>编译期就能推断数据的类型</li><li>方法参数不可以使用var</li><li>var是保留类型，不是Java的关键字</li><li>JDK10开始，var可以作为变量名或方法名，但不可以用作类名和接口名</li></ul><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Date;
+public class Main &#123;
+        public static void main(String[] args) &#123;
+                var tom &#x3D; new Tom();
+                tom.f(6.18);
+        &#125;
+&#125;
+
+class Tom &#123;
+        void f(double m) &#123;
+                var width &#x3D; 108;
+                var height &#x3D; m;
+                var date &#x3D; new Date();
+                System.out.printf(&quot;%d, %f, %s&#x2F;n&quot;, width, height, date);
+        &#125;
+&#125;</code></pre><p>终端输出：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">108, 6.180000, Wed Mar 22 08:16:35 CST 2023</code></pre><p><strong>注意：从上下文推断局部变量类型可减少所需的代码量，但不能提高运行效率。不要过多地使用var声明局部变量，给别人阅读起来麻烦。</strong></p><h2 id="4-15-对象数组"><a href="#4-15-对象数组" class="headerlink" title="4.15 对象数组"></a>4.15 对象数组</h2><p>如果程序需要某个类的若干对象，就需要创建创建对象数组。即创建一个数组，里面的内容存放的是类。这样就可以创建对象数组。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class Student &#123;
+  int number;
+&#125;
+public class Main &#123;
+  public static void main(String[] args) &#123;
+    Student stu[] &#x3D; new Student[10];
+    for (int i &#x3D; 0; i &lt; stu.length; i++) &#123;
+      stu[i] &#x3D; new Student();
+      stu[i].number &#x3D; 101 + i;
+    &#125;
+    for (int i &#x3D; 0; i &lt; stu.length; i++) &#123;
+      System.out.println(stu[i].number);
+    &#125;
+  &#125;
+&#125;</code></pre><h2 id="4-16-jar文件"><a href="#4-16-jar文件" class="headerlink" title="4.16 jar文件"></a>4.16 jar文件</h2><p>类似于C++的动态库和静态库。</p><h3 id="4-16-1-文档性质的jar文件"><a href="#4-16-1-文档性质的jar文件" class="headerlink" title="4.16.1 文档性质的jar文件"></a>4.16.1 文档性质的jar文件</h3><p>可以将有包名的类的字节码文件压缩成一个jar文件，供其他源文件用import导入jar文件中的类。、</p><p>例子：</p><p>TestOne.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package sohu.com;
+public class TestOne &#123;
+  public void fTestOne() &#123;
+    System.out.println(&quot;TestOne&quot;);
+  &#125;
+&#125;</code></pre><p>TestTwo.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package sun.hello.moon;
+public class TestTwo &#123;
+  public void fTestTwo() &#123;
+    System.out.println(&quot;TestTwo&quot;);
+  &#125;
+&#125;</code></pre><p>Main.java</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package TestMain;
+import sohu.com.TestOne;
+import sun.hello.moon.TestTwo;
+public class Main &#123;
+        public static void main(String[] args) &#123;
+                TestOne a &#x3D; new TestOne();
+                a.fun();
+                TestTwo b &#x3D; new TestTwo();
+                b.fun();
+        &#125;
+&#125;</code></pre><p>当前路径下的文件如下所示：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---    2023&#x2F;3&#x2F;23 星期四    18:21            232 Main.java
+-a---    2023&#x2F;3&#x2F;23 星期四    17:35            106 TestOne.java
+-a---    2023&#x2F;3&#x2F;23 星期四    17:37            112 TestTwo.java</code></pre><p>使用javac编译这些java源文件：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; javac -d . *.java</code></pre><p>其中：</p><ul><li><code>-d .</code>：表示编译后的目录在当前目录下，然后会出现下面的几个文件夹：<ul><li>TestMain</li><li>sohu</li><li>sun</li></ul></li><li><code>*.java</code>：通配符匹配当前路径下的所有java源文件，省事</li></ul><p>如果不用<code>-d</code>选项的话就会把所有的class文件都生成在当前路径下，这样不利于生成jar包。所以记得加上<code>-d</code>选项。<code>-d</code>选项也可以放到<code>*.java</code>后面，例如：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; javac *.java -d .</code></pre><p>然后现在有了这些class文件，就可以使用jar命令对它们进行打包。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; jar -cfv TestOne.jar sohu
+已添加清单
+正在添加: sohu&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: sohu&#x2F;com&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: sohu&#x2F;com&#x2F;TestOne.class(输入 &#x3D; 398) (输出 &#x3D; 279)(压缩了 29%)
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; jar -cfv TestTwo.jar sun
+已添加清单
+正在添加: sun&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: sun&#x2F;hello&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: sun&#x2F;hello&#x2F;moon&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: sun&#x2F;hello&#x2F;moon&#x2F;TestTwo.class(输入 &#x3D; 404) (输出 &#x3D; 284)(压缩了 29%)
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----    2023&#x2F;3&#x2F;23 星期四    19:31                sohu
+d----    2023&#x2F;3&#x2F;23 星期四    19:31                sun
+d----    2023&#x2F;3&#x2F;23 星期四    19:31                TestMain
+-a---    2023&#x2F;3&#x2F;23 星期四    18:21            232 Main.java
+-a---    2023&#x2F;3&#x2F;23 星期四    19:32            935 TestOne.jar
+-a---    2023&#x2F;3&#x2F;23 星期四    17:35            106 TestOne.java
+-a---    2023&#x2F;3&#x2F;23 星期四    19:33           1058 TestTwo.jar
+-a---    2023&#x2F;3&#x2F;23 星期四    17:37            112 TestTwo.java</code></pre><p>然后就在当前目录下生成了两个jar包：</p><ul><li>TestOne.jar</li><li>TestTwo.jar</li></ul><p>其中关于jar命令的选项参数如下说明：</p><ul><li>-cfv：其实是-c -f -v三个选项的简写，合起来写和分开写是一样的</li><li>-c表示的是创建jar包的前提参数</li><li>-f表示的是要生成jar包的名字的前提参数</li><li>-v表示打印生成jar包的信息过程</li><li>后面的xxx.jar就是说生成的jar包的文件</li><li>最后面的说的是需要包含的路径，一般用最外层的文件夹名就可以了，不会错还省事</li></ul><p>然后现在有了jar包其实就可以把原来编译出来的TestOne.class和TestTwo.class都可以删除，包括它们对应的整个文件夹和对应的java源文件，因为它们只是用来生成jar包而已。</p><p>现在当前的工作目录中的文件如下所示：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---    2023&#x2F;3&#x2F;23 星期四    18:21            232 Main.java
+-a---    2023&#x2F;3&#x2F;23 星期四    19:32            935 TestOne.jar
+-a---    2023&#x2F;3&#x2F;23 星期四    19:33           1058 TestTwo.jar</code></pre><p>然后如果刚刚没有编译Main.java的话现在也可以编译，但是使用的命令可不是<code>javac Main.java</code>，因为它需要依赖的TestOne.class和TestTwo.class已经被删除了。而应该是使用下面的命令来编译：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; javac -d . -cp &quot;.;TestOne.jar;TestTwo.jar&quot; Main.java</code></pre><p>在PowerShell中<code>-cp</code>后面的参数最后带双引号，避免一些不必要的错误。</p><p>其实不管是PowerShell还是cmd，核心其实都是让JDK能够找到所所依赖的jar包，这个就需要通过classpath这个环境变量来获得，而TestOne.jar和TestTwo.jar都是刚刚生成的jar包或者是从其他计算机上获取到的，所以对于本机来说是不认识它们两个的，所以就需要把它们配置到classpath中，JDK提供了<code>-cp</code>参数可以让用户在编译或运行时指定classpath的路径，或者直接修改系统的环境变量classpath的路径，反正让JDK能够找到TestOne.jar和TestTwo.jar就可以对Main.java进行编译对Main.class可以运行。</p><p>现在Main.java已经被重新编译了，当前项目目录如下所示：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----    2023&#x2F;3&#x2F;23 星期四    20:25                TestMain
+-a---    2023&#x2F;3&#x2F;23 星期四    18:21            232 Main.java
+-a---    2023&#x2F;3&#x2F;23 星期四    19:32            935 TestOne.jar
+-a---    2023&#x2F;3&#x2F;23 星期四    19:33           1058 TestTwo.jar</code></pre><p>运行的时候要带上<code>-cp</code>选项和Main.class的包名。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; java -cp &quot;.;TestOne.jar;TestTwo.jar&quot; TestMain.Main
+TestOne
+TestTwo</code></pre><p>上面的列子是将每个class文件及其文件夹路径单独放到一个jar包中，下面就是把多个class文件及它们的文件路径放到一个jar包中，然后发布给其他主类使用这个这个jar包中的所有类。</p><ul><li>TestOne.java</li></ul><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.testone.www;
+public class TestOne &#123;
+        public void print() &#123;
+                System.out.println(&quot;TestOne&quot;);
+        &#125;
+&#125;</code></pre><ul><li>TestTwo.java</li></ul><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.testtwo.www;
+public class TestTwo &#123;
+        public void print() &#123;
+                System.out.println(&quot;TestTwo&quot;);
+        &#125;
+&#125;</code></pre><ul><li>Main.java</li></ul><pre class="line-numbers language-java" data-language="java"><code class="language-java">package pro;
+import com.testone.www.*;
+import cn.testtwo.www.*;
+public class Main &#123;
+        public static void main(String[] args) &#123;
+                TestOne one &#x3D; new TestOne();
+                one.print();
+                TestTwo two &#x3D; new TestTwo();
+                two.print();
+                System.out.println(&quot;程序结束&quot;);
+        &#125;
+&#125;</code></pre><p>编译TestOne.java和TestTwo.java，先不着急编译Main.java，因为我想模拟一下真实的场景。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; javac -d . Test*.java</code></pre><p>然后生成Test.jar文件，这个jar包中包含TestOne.class和TestTwo.class的内容。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; jar -cfv Test.jar cn com
+已添加清单
+正在添加: cn&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: cn&#x2F;testtwo&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: cn&#x2F;testtwo&#x2F;www&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: cn&#x2F;testtwo&#x2F;www&#x2F;TestTwo.class(输入 &#x3D; 406) (输出 &#x3D; 282)(压缩了 30%)
+正在添加: com&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: com&#x2F;testone&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: com&#x2F;testone&#x2F;www&#x2F;(输入 &#x3D; 0) (输出 &#x3D; 0)(存储了 0%)
+正在添加: com&#x2F;testone&#x2F;www&#x2F;TestOne.class(输入 &#x3D; 407) (输出 &#x3D; 281)(压缩了 30%)
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----    2023&#x2F;3&#x2F;24 星期五    17:10                cn
+d----    2023&#x2F;3&#x2F;24 星期五    17:10                com
+-a---    2023&#x2F;3&#x2F;24 星期五    17:00            273 Main.java
+-a---    2023&#x2F;3&#x2F;24 星期五    17:13           1779 Test.jar
+-a---    2023&#x2F;3&#x2F;24 星期五    16:54            115 TestOne.java
+-a---    2023&#x2F;3&#x2F;24 星期五    16:55            114 TestTwo.java</code></pre><p>然后把cn文件夹、com文件夹、TestOne.java、TestTwo.java删除或者移动到其他路径，以模拟现实场景。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; mv cn ..
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; mv com ..
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; mv Test*.java ..
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---    2023&#x2F;3&#x2F;24 星期五    17:00            273 Main.java
+-a---    2023&#x2F;3&#x2F;24 星期五    17:13           1779 Test.jar</code></pre><p>然后使用<code>-cp</code>选项指定jar包位置编译Main.java文件。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; javac -d . -cp &quot;.;Test.jar&quot; Main.java
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----    2023&#x2F;3&#x2F;24 星期五    17:18                pro
+-a---    2023&#x2F;3&#x2F;24 星期五    17:00            273 Main.java
+-a---    2023&#x2F;3&#x2F;24 星期五    17:13           1779 Test.jar</code></pre><p>然后运行这个程序。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestJar&gt; java -cp &quot;.;Test.jar&quot; pro.Main
+TestOne
+TestTwo
+程序结束</code></pre><p>注意：这里如果将Test.jar配置到classpath环境变量中就可以不用指定<code>-cp</code>选项，否则就必须编译和运行都要通过<code>-cp</code>指定所依赖的jar包的位置。</p><h3 id="4-16-2-可运行的jar文件"><a href="#4-16-2-可运行的jar文件" class="headerlink" title="4.16.2 可运行的jar文件"></a>4.16.2 可运行的jar文件</h3><p>可以将一个Java应用程序中的类全部打包到一个jar文件中，然后使用jar命令运行这个jar文件。然后使用jar命令运行这个jar文件。</p><ul><li>Circle.java</li></ul><pre class="line-numbers language-java" data-language="java"><code class="language-java">package data.one;
+public class Circle &#123;
+        double radius;
+        public Circle(double r) &#123;
+                radius &#x3D; r;
+        &#125;
+        public double getArea() &#123;
+                return 3.14*radius*radius;
+        &#125;
+&#125;</code></pre><ul><li>Circular.java</li></ul><pre class="line-numbers language-java" data-language="java"><code class="language-java">package data.two;
+import data.one.Circle;
+public class Circular &#123;
+        Circle bottom;
+        double height;
+        public Circular(Circle c, double h) &#123;
+                bottom &#x3D; c;
+                height &#x3D; h;
+        &#125;
+        public double getVolme() &#123;
+                return bottom.getArea() * height&#x2F;3.0;
+        &#125;
+&#125;</code></pre><ul><li>Main.java</li></ul><pre class="line-numbers language-java" data-language="java"><code class="language-java">package my.App;
+import data.one.Circle;
+import data.two.Circular;
+public class Main &#123;
+        public static void main(String[] args) &#123;
+                Circle circle &#x3D; new Circle(10);
+                Circular circular &#x3D; new Circular(circle, 20);
+                System.out.println(&quot;圆锥的体积: &quot; + circular.getVolme());
+        &#125;
+&#125;</code></pre><p>编译这些java源文件。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestCode&gt; javac -d . *.java
+PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestCode&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestCode
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----    2023&#x2F;3&#x2F;24 星期五    17:35                data
+d----    2023&#x2F;3&#x2F;24 星期五    17:35                my
+-a---    2023&#x2F;3&#x2F;24 星期五    17:26            171 Circle.java
+-a---    2023&#x2F;3&#x2F;24 星期五    17:28            254 Circular.java
+-a---    2023&#x2F;3&#x2F;24 星期五    17:35            290 Main.java</code></pre><p>然后编写Manifest.mf文件</p><pre class="line-numbers language-mf" data-language="mf"><code class="language-mf">Manifest-Version: 1.0
+Main-Class: my.App.Main
+Created-By: 19</code></pre><p>然后使用jar命令对这些字节码文件打包。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestCode&gt; jar -cfvm App.jar app.mf data&#x2F;one&#x2F;*.class data&#x2F;two&#x2F;*.class my&#x2F;App&#x2F;*.class
+已添加清单
+正在添加: data&#x2F;one&#x2F;Circle.class(输入 &#x3D; 323) (输出 &#x3D; 254)(压缩了 21%)
+正在添加: data&#x2F;two&#x2F;Circular.class(输入 &#x3D; 445) (输出 &#x3D; 309)(压缩了 30%)
+正在添加: my&#x2F;App&#x2F;Main.class(输入 &#x3D; 1028) (输出 &#x3D; 610)(压缩了 40%)</code></pre><p>其中<code>-m</code>选项表示不自动生成Manifest.mf文件，因为我们自己写了一个，直接传我们写好的就行，后面就是把所有依赖的class文件包含进来。</p><p>然后使用java命令加<code>-jar</code>选项去运行这个jar包。因为没有指定Main.class所以不必担心这个运行的是当前目录下的Main，如果担心的话也可以把无关紧要的文件删除或移走然后运行jar文件中的内容。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;TestCode&gt; java -jar App.jar
+圆锥的体积: 2093.3333333333335</code></pre><h2 id="4-17-文档生成器"><a href="#4-17-文档生成器" class="headerlink" title="4.17 文档生成器"></a>4.17 文档生成器</h2><p>使用JDK提供的javadoc.exe可以制作源文件中的类的组成结构的html格式文档。</p><p>现有一个源文件如下所示：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Hello &#123;
+        public static void main(String[] args) &#123;
+                System.out.println(&quot;HelloWorld&quot;);
+        &#125;
+&#125;</code></pre><p>然后使用javadoc命令生成它的html文档。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;Hello&gt; javadoc Hello.java
+正在加载源文件Hello.java...
+正在构造 Javadoc 信息...
+正在构建所有程序包和类的索引...
+标准 Doclet 版本 19.0.1+10-21
+正在构建所有程序包和类的树...
+正在生成.&#x2F;Hello.html...
+Hello.java:1: 警告: 没有注释
+public class Hello &#123;
+       ^
+Hello.java:1: 警告: 使用不提供注释的默认构造器
+public class Hello &#123;
+       ^
+Hello.java:2: 警告: 没有注释
+        public static void main(String[] args) &#123;
+                           ^
+正在生成.&#x2F;package-summary.html...
+正在生成.&#x2F;package-tree.html...
+正在生成.&#x2F;overview-tree.html...
+正在构建所有类的索引...
+正在生成.&#x2F;allclasses-index.html...
+正在生成.&#x2F;allpackages-index.html...
+正在生成.&#x2F;index-all.html...
+正在生成.&#x2F;search.html...
+正在生成.&#x2F;index.html...
+正在生成.&#x2F;help-doc.html...
+3 个警告</code></pre><p>因为没有注释，所以就有警告。知道怎么用就行了。</p><p>然后就会在当前文件夹中生成了若干个html文档，查看这些文档可以知道源文件中类的组成结构，如类的成员方法和成员变量。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">PS D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;Hello&gt; ls
+
+    Directory: D:&#x2F;myCoding&#x2F;Terminal&#x2F;Java&#x2F;Hello
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----    2023&#x2F;3&#x2F;24 星期五    18:00                legal
+d----    2023&#x2F;3&#x2F;24 星期五    18:00                resources
+d----    2023&#x2F;3&#x2F;24 星期五    18:00                script-dir
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           3041 allclasses-index.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           2922 allpackages-index.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00            791 copy.svg
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00             20 element-list
+-a---    2023&#x2F;3&#x2F;20 星期一     8:38            414 Hello.class
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00          10239 Hello.html
+-a---    2023&#x2F;3&#x2F;20 星期一     8:38            109 Hello.java
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           8167 help-doc.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           3568 index-all.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00            989 index.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00            536 jquery-ui.overrides.css
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00            189 member-search-index.js
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00             45 module-search-index.js
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           2915 overview-tree.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00             98 package-search-index.js
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           3491 package-summary.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           2989 package-tree.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           9323 script.js
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00          10895 search-page.js
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00           3648 search.html
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00          16309 search.js
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00          28039 stylesheet.css
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00             42 tag-search-index.js
+-a---    2023&#x2F;3&#x2F;24 星期五    18:00            127 type-search-index.js</code></pre><p>在当前目录下打开Hello.html就可以看到下面的效果。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/e8f4a7b4f46061ad81af22b95adb2a46.png" alt="截图"></p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E7%AC%AC%E5%9B%9B%E7%AB%A0%E7%B1%BB%E4%B8%8E%E5%AF%B9%E8%B1%A1/3e5ef7d0fd15574cf2dd9a117bf755ef.png" alt="截图"></p><p>在使用javadoc时可以使用参数<code>-d</code>指定生成文档所在的目录，例如：</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">javadoc -d &quot;路径&quot; Hello.java</code></pre><h2 id="4-18-应用实例"><a href="#4-18-应用实例" class="headerlink" title="4.18 应用实例"></a>4.18 应用实例</h2><p>自己看课本。</p><h2 id="4-19-小结"><a href="#4-19-小结" class="headerlink" title="4.19 小结"></a>4.19 小结</h2><ol><li>类是组成Java源文件的基本元素，一个源文件是若干个类组成的。</li><li>类体可以有两种重要的成员——成员变量和方法。</li><li>成员变量分为实力变量和类变量。类变量被该类的所有对象共享，不同对象的实例变量互不相同。</li><li>除构造方法外，其他方法分为实力方法和类方法。类方法不仅可以有该类的对象调用，也可以用类名调用；而实例方法必须有对象来调用。</li><li>实力方法既可以操作实例变量也可以操作类变量，当对象调用实例方法时，方法中的成员变量就是指分配给该对象的成员变量，其中实力变量和其他对象的不相同，即占有不同的内存空间；而类变量和其他对象的相同，即占有相同的内存空间。类方法只能操作类变量，当对象调用类方法时，方法中的成员变量一定都是类变量，也就是说，该对象和所有的对象共享类变量。</li><li>通过对象的组合可以实现方法复用。</li><li>在编写Java源文件时，可以使用import语句引入有包名的类。</li><li>对象访问自己的变量以及调用方法受访问权限的限制。</li></ol></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> 第四章类与对象</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at:</strong> 2023-05-20 10:13:56</li><li><strong>Updated at:</strong> 2023-06-18 17:09:15</li><li><strong>Link:</strong> https://cukor666.github.io//post/第四章类与对象.html</li><li><strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Java/">#Java</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/post/%E7%AC%AC%E4%BA%94%E7%AB%A0%E5%AD%90%E7%B1%BB%E4%B8%8E%E7%BB%A7%E6%89%BF.html"><span class="left arrow-icon flex-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">第五章子类与继承</span> <span class="post-nav-item">Prev posts</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/post/%E7%AC%AC%E4%B8%89%E7%AB%A0%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%92%8C%E8%AF%AD%E5%8F%A5.html"><span class="title flex-center"><span class="post-nav-title-item">第三章运算符、表达式和语句</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">第四章类与对象</div><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8F%91%E5%B1%95%E9%98%B6%E6%AE%B5"><span class="nav-number">1.</span> <span class="nav-text">4.1 编程语言的几个发展阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">4.2 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-1-%E7%B1%BB%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-number">2.1.</span> <span class="nav-text">4.2.1 类的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-2-%E7%B1%BB%E4%BD%93"><span class="nav-number">2.2.</span> <span class="nav-text">4.2.2 类体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-3-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="nav-number">2.3.</span> <span class="nav-text">4.2.3 成员变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-4-%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">4.2.4 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-5-%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.5.</span> <span class="nav-text">4.2.5 需要注意的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E4%B8%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">4.3 构造方法与对象的创建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-1-%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">4.3.1 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-2-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.2.</span> <span class="nav-text">4.3.2 创建对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-3-%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.3.</span> <span class="nav-text">4.3.3 使用对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-4-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BC%95%E7%94%A8%E5%92%8C%E5%AE%9E%E4%BD%93"><span class="nav-number">3.4.</span> <span class="nav-text">4.3.4 对象的引用和实体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-%E7%B1%BB%E4%B8%8E%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">4.4 类与程序的基本结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E5%80%BC"><span class="nav-number">5.</span> <span class="nav-text">4.5 参数的传值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-1-%E4%BC%A0%E5%80%BC%E6%9C%BA%E5%88%B6"><span class="nav-number">5.1.</span> <span class="nav-text">4.5.1 传值机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-2-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E5%80%BC"><span class="nav-number">5.2.</span> <span class="nav-text">4.5.2 基本数据类型参数的传值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-3-%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E5%80%BC"><span class="nav-number">5.3.</span> <span class="nav-text">4.5.3 引用类型参数的传值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-4-%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-number">5.4.</span> <span class="nav-text">4.5.4 可变参数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-%E5%AF%B9%E8%B1%A1%E7%9A%84%E7%BB%84%E5%90%88"><span class="nav-number">6.</span> <span class="nav-text">4.6 对象的组合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-1-%E7%BB%84%E5%90%88%E4%B8%8E%E5%A4%8D%E7%94%A8"><span class="nav-number">6.1.</span> <span class="nav-text">4.6.1 组合与复用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-%E5%AE%9E%E4%BE%8B%E6%88%90%E5%91%98%E4%B8%8E%E7%B1%BB%E6%88%90%E5%91%98"><span class="nav-number">7.</span> <span class="nav-text">4.7 实例成员与类成员</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-1-%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F%E5%92%8C%E7%B1%BB%E5%8F%98%E9%87%8F%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-number">7.1.</span> <span class="nav-text">4.7.1 实例变量和类变量的声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-2-%E5%AE%9E%E4%BE%8B%E5%8F%98%E9%87%8F%E5%92%8C%E7%B1%BB%E5%8F%98%E9%87%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.2.</span> <span class="nav-text">4.7.2 实例变量和类变量的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-3-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E5%92%8C%E7%B1%BB%E6%96%B9%E6%B3%95"><span class="nav-number">7.3.</span> <span class="nav-text">4.7.3 实例方法和类方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-7-4-%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95%E5%92%8C%E7%B1%BB%E6%96%B9%E6%B3%95%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">7.4.</span> <span class="nav-text">4.7.4 实例方法和类方法的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD"><span class="nav-number">8.</span> <span class="nav-text">4.8 方法重载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-1-%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E8%BD%BD%E7%9A%84%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-number">8.1.</span> <span class="nav-text">4.8.1 方法的重载的语法规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-8-2-%E9%81%BF%E5%85%8D%E9%87%8D%E8%BD%BD%E5%87%BA%E7%8E%B0%E6%AD%A7%E4%B9%89"><span class="nav-number">8.2.</span> <span class="nav-text">4.8.2 避免重载出现歧义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-9-this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">9.</span> <span class="nav-text">4.9 this关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-10-%E5%8C%85"><span class="nav-number">10.</span> <span class="nav-text">4.10 包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-10-1-package%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">10.1.</span> <span class="nav-text">4.10.1 package关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-10-2-%E6%9C%89%E5%8C%85%E5%90%8D%E7%9A%84%E7%B1%BB%E7%9A%84%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95"><span class="nav-number">10.2.</span> <span class="nav-text">4.10.2 有包名的类的存储目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-10-3-%E8%BF%90%E8%A1%8C%E6%9C%89%E5%8C%85%E5%90%8D%E7%9A%84%E4%B8%BB%E7%B1%BB"><span class="nav-number">10.3.</span> <span class="nav-text">4.10.3 运行有包名的主类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-11-import%E8%AF%AD%E5%8F%A5"><span class="nav-number">11.</span> <span class="nav-text">4.11 import语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-11-1-%E5%BC%95%E5%85%A5%E7%B1%BB%E5%BA%93%E4%B8%AD%E7%9A%84%E7%B1%BB"><span class="nav-number">11.1.</span> <span class="nav-text">4.11.1 引入类库中的类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-11-2-%E5%BC%95%E5%85%A5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E4%B8%AD%E7%9A%84%E7%B1%BB"><span class="nav-number">11.2.</span> <span class="nav-text">4.11.2 引入自定义包中的类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-12-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number">12.</span> <span class="nav-text">4.12 访问权限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-12-1-%E4%BB%80%E4%B9%88%E6%98%AF%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-number">12.1.</span> <span class="nav-text">4.12.1 什么是访问权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-12-2-%E7%A7%81%E6%9C%89%E5%8F%98%E9%87%8F%E5%92%8C%E7%A7%81%E6%9C%89%E6%96%B9%E6%B3%95"><span class="nav-number">12.2.</span> <span class="nav-text">4.12.2 私有变量和私有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-12-3-%E5%85%AC%E6%9C%89%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%AC%E6%9C%89%E6%96%B9%E6%B3%95"><span class="nav-number">12.3.</span> <span class="nav-text">4.12.3 公有变量和公有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-12-4-%E5%8F%8B%E5%A5%BD%E5%8F%98%E9%87%8F%E5%92%8C%E5%8F%8B%E5%A5%BD%E6%96%B9%E6%B3%95"><span class="nav-number">12.4.</span> <span class="nav-text">4.12.4 友好变量和友好方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-12-5-%E5%8F%97%E4%BF%9D%E6%8A%A4%E7%9A%84%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-number">12.5.</span> <span class="nav-text">4.12.5 受保护的成员变量和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-12-6-public%E7%B1%BB%E5%92%8C%E5%8F%8B%E5%A5%BD%E7%B1%BB"><span class="nav-number">12.6.</span> <span class="nav-text">4.12.6 public类和友好类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-13-%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%B1%BB%E5%B0%81%E8%A3%85"><span class="nav-number">13.</span> <span class="nav-text">4.13 基本类型的类封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-14-var-%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="nav-number">14.</span> <span class="nav-text">4.14 var 局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-15-%E5%AF%B9%E8%B1%A1%E6%95%B0%E7%BB%84"><span class="nav-number">15.</span> <span class="nav-text">4.15 对象数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-16-jar%E6%96%87%E4%BB%B6"><span class="nav-number">16.</span> <span class="nav-text">4.16 jar文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-16-1-%E6%96%87%E6%A1%A3%E6%80%A7%E8%B4%A8%E7%9A%84jar%E6%96%87%E4%BB%B6"><span class="nav-number">16.1.</span> <span class="nav-text">4.16.1 文档性质的jar文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-16-2-%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%9A%84jar%E6%96%87%E4%BB%B6"><span class="nav-number">16.2.</span> <span class="nav-text">4.16.2 可运行的jar文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-17-%E6%96%87%E6%A1%A3%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">17.</span> <span class="nav-text">4.17 文档生成器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-18-%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B"><span class="nav-number">18.</span> <span class="nav-text">4.18 应用实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-19-%E5%B0%8F%E7%BB%93"><span class="nav-number">19.</span> <span class="nav-text">4.19 小结</span></a></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer"><div class="info-container"><div class="copyright-info">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span></div><div class="theme-info info-item"><span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span><br><span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.on("pageView",()=>{Global.refresh()})</script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/layouts/navbarShrink.js"></script><script src="/js/tools/scrollTopBottom.js"></script><script src="/js/tools/lightDarkSwitch.js"></script><script src="/js/layouts/categoryList.js"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js"></script><div class="post-scripts" data-swup-reload-script><script src="/js/tools/tocToggle.js"></script><script src="/js/layouts/toc.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/plugins/tabs.js"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>

@@ -1,1 +1,734 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><link href="/static/css/chunk-libs.eebac533.css" rel="stylesheet"><link href="/static/css/app.0d31776f.css" rel="stylesheet"><!-- hexo injector head_end start --><script rel="prefetch" async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/components/prism-core.js" data-manual></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"></script><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/themes/prism.min.css"/><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/prism/1.23.0/plugins/toolbar/prism-toolbar.min.css"/><link rel="stylesheet" href="https://fonts.loli.net/css?family=Rubik" /><script rel="preload" src="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.js"></script><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.min.css"/><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body id="body-container"><noscript><strong>We're sorry but Aurora Blog doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script>(function(e){function t(t){for(var a,n,u=t[0],i=t[1],c=t[2],l=0,p=[];l<u.length;l++)n=u[l],Object.prototype.hasOwnProperty.call(o,n)&&o[n]&&p.push(o[n][0]),o[n]=0;for(a in i)Object.prototype.hasOwnProperty.call(i,a)&&(e[a]=i[a]);f&&f(t);while(p.length)p.shift()();return s.push.apply(s,c||[]),r()}function r(){for(var e,t=0;t<s.length;t++){for(var r=s[t],a=!0,n=1;n<r.length;n++){var u=r[n];0!==o[u]&&(a=!1)}a&&(s.splice(t--,1),e=i(i.s=r[0]))}return e}var a={},n={runtime:0},o={runtime:0},s=[];function u(e){return i.p+"static/js/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"00d640a8",about:"024aacd1",archives:"574ac664",categories:"90aa5475",page:"a02618ad",post:"cebfbaa4",result:"39470350",tags:"2ad613f5"}[e]+".js"}function i(t){if(a[t])return a[t].exports;var r=a[t]={i:t,l:!1,exports:{}};return e[t].call(r.exports,r,r.exports,i),r.l=!0,r.exports}i.e=function(e){var t=[],r={404:1,about:1,archives:1,categories:1,page:1,post:1,result:1,tags:1};n[e]?t.push(n[e]):0!==n[e]&&r[e]&&t.push(n[e]=new Promise((function(t,r){for(var a="static/css/"+({404:"404",about:"about",archives:"archives",categories:"categories",page:"page",post:"post",result:"result",tags:"tags"}[e]||e)+"."+{404:"1a6cd5bd",about:"32dfa3b0",archives:"c0d49bd5",categories:"10e2be12",page:"749ad047",post:"9f951a60",result:"10e2be12",tags:"10e2be12"}[e]+".css",o=i.p+a,s=document.getElementsByTagName("link"),u=0;u<s.length;u++){var c=s[u],l=c.getAttribute("data-href")||c.getAttribute("href");if("stylesheet"===c.rel&&(l===a||l===o))return t()}var p=document.getElementsByTagName("style");for(u=0;u<p.length;u++){c=p[u],l=c.getAttribute("data-href");if(l===a||l===o)return t()}var f=document.createElement("link");f.rel="stylesheet",f.type="text/css",f.onload=t,f.onerror=function(t){var a=t&&t.target&&t.target.src||o,s=new Error("Loading CSS chunk "+e+" failed.\n("+a+")");s.code="CSS_CHUNK_LOAD_FAILED",s.request=a,delete n[e],f.parentNode.removeChild(f),r(s)},f.href=o;var d=document.getElementsByTagName("head")[0];d.appendChild(f)})).then((function(){n[e]=0})));var a=o[e];if(0!==a)if(a)t.push(a[2]);else{var s=new Promise((function(t,r){a=o[e]=[t,r]}));t.push(a[2]=s);var c,l=document.createElement("script");l.charset="utf-8",l.timeout=120,i.nc&&l.setAttribute("nonce",i.nc),l.src=u(e);var p=new Error;c=function(t){l.onerror=l.onload=null,clearTimeout(f);var r=o[e];if(0!==r){if(r){var a=t&&("load"===t.type?"missing":t.type),n=t&&t.target&&t.target.src;p.message="Loading chunk "+e+" failed.\n("+a+": "+n+")",p.name="ChunkLoadError",p.type=a,p.request=n,r[1](p)}o[e]=void 0}};var f=setTimeout((function(){c({type:"timeout",target:l})}),12e4);l.onerror=l.onload=c,document.head.appendChild(l)}return Promise.all(t)},i.m=e,i.c=a,i.d=function(e,t,r){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},i.r=function(e){"undefined"!==typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"===typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(i.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)i.d(r,a,function(t){return e[t]}.bind(null,a));return r},i.n=function(e){var t=e&&e.__esModule?function(){return e["default"]}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="/",i.oe=function(e){throw console.error(e),e};var c=window["webpackJsonp"]=window["webpackJsonp"]||[],l=c.push.bind(c);c.push=t,c=c.slice();for(var p=0;p<c.length;p++)t(c[p]);var f=l;r()})([]);</script><script src="/static/js/chunk-libs.dc6146cd.js"></script><script src="/static/js/app.6d2c358d.js"></script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/第八章常用使用类.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="8.1 String类用于管理字符串的类。类似C++的string类 8.1.1 构造String对象String常量String常量也是对象，是用双引号括起来的字符序列。Java把用户程序中的String常量放入常量池。因为String常量是对象，所以也有自己的引用和实体。 注意：可以这样简单地理解常量池，常量池中的数据在程序运行期间再也不允许改变。 String对象可以使用String类声明对"><meta property="og:type" content="article"><meta property="og:title" content="第八章常用使用类"><meta property="og:url" content="http://example.com/post/%E7%AC%AC%E5%85%AB%E7%AB%A0%E5%B8%B8%E7%94%A8%E4%BD%BF%E7%94%A8%E7%B1%BB.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="8.1 String类用于管理字符串的类。类似C++的string类 8.1.1 构造String对象String常量String常量也是对象，是用双引号括起来的字符序列。Java把用户程序中的String常量放入常量池。因为String常量是对象，所以也有自己的引用和实体。 注意：可以这样简单地理解常量池，常量池中的数据在程序运行期间再也不允许改变。 String对象可以使用String类声明对"><meta property="og:locale" content="en_US"><meta property="article:published_time" content="2023-05-20T02:23:10.000Z"><meta property="article:modified_time" content="2023-06-18T09:07:19.111Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Java"><meta name="twitter:card" content="summary"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>第八章常用使用类 - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"2450808861@qq.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.3.0",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io"}},Links:{icon:"fa-regular fa-link",submenus:{CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"20级信息与计算科学专业主修数学误打误撞来到了计算机的世界",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li></ul></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer"><ul class="drawer-navbar-list"><li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item flex-center"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item flex-center"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">ME</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><img src="/images/javalogo.jpg" alt="第八章常用使用类"><h1 class="article-title-cover">第八章常用使用类</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv4</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-05-20 10:23:10</span> <span class="mobile">2023-05-20 10:23:10</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-06-18 17:07:19</span> <span class="mobile">2023-06-18 17:07:19</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/Java/">Java</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Java/">Java</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>12k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>53 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h3 id="8-1-String类"><a href="#8-1-String类" class="headerlink" title="8.1 String类"></a>8.1 String类</h3><p>用于管理字符串的类。类似C++的string类</p><h3 id="8-1-1-构造String对象"><a href="#8-1-1-构造String对象" class="headerlink" title="8.1.1 构造String对象"></a>8.1.1 构造String对象</h3><h4 id="String常量"><a href="#String常量" class="headerlink" title="String常量"></a>String常量</h4><p>String常量也是对象，是用双引号括起来的字符序列。Java把用户程序中的String常量放入常量池。因为String常量是对象，所以也有自己的引用和实体。</p><p><strong>注意：可以这样简单地理解常量池，常量池中的数据在程序运行期间再也不允许改变。</strong></p><h4 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h4><p>可以使用String类声明对象并创建对象。例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String s &#x3D; new String(&quot;Hello&quot;);</code></pre><p>对象变量s中存放着引用，表明自己的实体的位置，即new运算符首先分配内存空间并在内存空间中存放字符序列。</p><p>可以查看引用地址确认String类的实际存储位置：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">int idetityHashCode(Object object);</code></pre><h4 id="String类常用的构造方法"><a href="#String类常用的构造方法" class="headerlink" title="String类常用的构造方法"></a>String类常用的构造方法</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 1
+char[] a &#x3D; &#123;&#39;H&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;&#125;;
+String s &#x3D; new String(a);
+&#x2F;&#x2F; 相当于 String s &#x3D; new String(&quot;Hello&quot;);
+
+&#x2F;&#x2F; 2
+char[] b &#x3D; &#123;&#39;W&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;&#125;;
+String s2 &#x3D; new String(b, 1, 3);  &#x2F;&#x2F; orl</code></pre><h4 id="引用String常量"><a href="#引用String常量" class="headerlink" title="引用String常量"></a>引用String常量</h4><p>常量实际地址是不变的，当使用两个String对象相互赋值，其实是将常量池的数据的地址赋值。</p><h4 id="不可变对象"><a href="#不可变对象" class="headerlink" title="不可变对象"></a>不可变对象</h4><p>所谓不可变对象是指<strong>对象的变量中存储的值不能再发生改变</strong>。String对象属于不可变变量，即String对象的实体无法再发生变化，其原因是String类是final类，String也没有给其对象提供修改实体的方法。</p><h3 id="8-1-2-String对象的并置"><a href="#8-1-2-String对象的并置" class="headerlink" title="8.1.2 String对象的并置"></a>8.1.2 String对象的并置</h3><p>就是字符串连接。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String hello &#x3D; &quot;Hello&quot;;
+String world &#x3D; &quot;World&quot;;
+String helloworld &#x3D; hello + world; &#x2F;&#x2F; helloworld获得的是一个新的地址，而不是由hello的地址上增加内容</code></pre><p><strong>注意：程序更关心两个String对象的实体，而不是二者的引用是否相同。</strong></p><h3 id="8-1-3-String的常用方法"><a href="#8-1-3-String的常用方法" class="headerlink" title="8.1.3 String的常用方法"></a>8.1.3 String的常用方法</h3><ol><li>length 获取字符串长度。</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String hello &#x3D; &quot;Hello你好&quot;;
+int len &#x3D; hello.length(); &#x2F;&#x2F; 7</code></pre><ol start="2"><li>equals 判断两个字符串</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String tom &#x3D; new String(&quot;天道酬勤&quot;);
+String boy &#x3D; new String(&quot;知心朋友&quot;);
+String jerry &#x3D; new String(&quot;天道酬勤&quot;);
+boolean b &#x3D; tom.equals(boy); &#x2F;&#x2F; false
+b &#x3D; tom.equals(jerry);  &#x2F;&#x2F; true</code></pre><p>注意：<code>tom==boy</code>这种方式是比较这两个引用是否相等，而不是比较字符串是否相等。</p><ol start="3"><li>startsWith 判断字符串是否以什么开头</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String hello &#x3D; &quot;Hello&quot;;
+boolean b &#x3D; hello.startsWith(&quot;Hel&quot;); &#x2F;&#x2F; true
+b &#x3D; hello.startsWith(&quot;he&quot;); &#x2F;&#x2F; false</code></pre><ol start="4"><li>endsWith 判断字符串是否以什么结尾</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String hello &#x3D; &quot;Hello&quot;;
+boolean b &#x3D; hello.endsWith(&quot;lo&quot;); &#x2F;&#x2F; true
+b &#x3D; hello.endsWith(&quot;ll&quot;); &#x2F;&#x2F; false</code></pre><ol start="5"><li>compareTo 比较两个字符串</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String s1 &#x3D; &quot;Hello&quot;;
+String s2 &#x3D; &quot;World&quot;;
+String s3 &#x3D; &quot;ABC&quot;;
+String s4 &#x3D; &quot;Hello&quot;;
+int i &#x3D; s1.compareTo(s2); &#x2F;&#x2F; 正数
+i &#x3D; s1.compareTo(s3); &#x2F;&#x2F; 负数
+i &#x3D; s1.compareTo(s4); &#x2F;&#x2F; 0</code></pre><ol start="6"><li>contains 判断字符串是否包含某个字符串</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String s1 &#x3D; &quot;Hello&quot;;
+String s2 &#x3D; &quot;World&quot;;
+String s3 &#x3D; &quot;ell&quot;;
+boolean b &#x3D; s1.contains(s2); &#x2F;&#x2F; false
+b &#x3D; s1.contains(s3);  &#x2F;&#x2F; true</code></pre><ol start="7"><li>indexOf 从头开始找，获取字符在字符串的位置</li><li>lastIndexOf 从尾开始找，获取字符在字符串的位置</li><li>substring 获取字符串的子串，新建内存</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String tom &#x3D; &quot;我喜欢音乐&quot;;
+String str &#x3D; tom.substring(2, 4); &#x2F;&#x2F; 欢音</code></pre><ol start="10"><li>trim 去掉字符串的前后空格，原字符串不变，返回新的String</li></ol><h3 id="8-1-4-String与基本数据的相互转换"><a href="#8-1-4-String与基本数据的相互转换" class="headerlink" title="8.1.4 String与基本数据的相互转换"></a>8.1.4 String与基本数据的相互转换</h3><h4 id="将String对象转换为基本型"><a href="#将String对象转换为基本型" class="headerlink" title="将String对象转换为基本型"></a>将String对象转换为基本型</h4><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>parseByte</td><td>转换为字节型</td></tr><tr><td>parseShort</td><td>转换为短整型</td></tr><tr><td>parseInt</td><td>转换为整型</td></tr><tr><td>parseLong</td><td>转换为长整型</td></tr><tr><td>parseFloat</td><td>转换为单精度浮点型</td></tr><tr><td>parseDouble</td><td>转换为双精度浮点型</td></tr></tbody></table><h4 id="将基本类型转换为String"><a href="#将基本类型转换为String" class="headerlink" title="将基本类型转换为String"></a>将基本类型转换为String</h4><p>使用<code>valueOf</code>方法。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String s &#x3D; String.valueOf(123.456);</code></pre><p>也可以使用空字符串连接数字来转换。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String s &#x3D; &quot;&quot; + 123.456;</code></pre><h4 id="基本型数据的进制表示"><a href="#基本型数据的进制表示" class="headerlink" title="基本型数据的进制表示"></a>基本型数据的进制表示</h4><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>toBinaryString</td><td>返回二进制的String对象</td></tr><tr><td>toOctalString</td><td>返回八进制的String对象</td></tr><tr><td>toHexString</td><td>返回十进制的String对象</td></tr></tbody></table><h3 id="8-1-5-对象的String对象表示"><a href="#8-1-5-对象的String对象表示" class="headerlink" title="8.1.5 对象的String对象表示"></a>8.1.5 对象的String对象表示</h3><p>Object类有一个toString方法，一个对象通过调用该方法可以获得该对象的String对象表示。</p><h3 id="8-1-6-String对象与字符数组、字节数组"><a href="#8-1-6-String对象与字符数组、字节数组" class="headerlink" title="8.1.6 String对象与字符数组、字节数组"></a>8.1.6 String对象与字符数组、字节数组</h3><h4 id="String对象与字符数组"><a href="#String对象与字符数组" class="headerlink" title="String对象与字符数组"></a>String对象与字符数组</h4><p>String类提供了将String对象的字符序列存放到数组中的方法。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public void getChars(int start, int end, char[] c, int offset);
+&#x2F;&#x2F; start: 字符串起始位置
+&#x2F;&#x2F; end: 字符串结束位置，指的是最后一个字符的下一个
+&#x2F;&#x2F; c：待赋值的数组
+&#x2F;&#x2F; offset: 数组的起始位置</code></pre><p>另外还有一个简单地将String对象的字符序列的全部字符存放到一个字符数组中的方法。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public char[] toCharArray();</code></pre><h4 id="String对象与字节数组"><a href="#String对象与字节数组" class="headerlink" title="String对象与字节数组"></a>String对象与字节数组</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">public byte[] getBytes();
+&#x2F;*
+使用平台默认的字符编码，将当前String对象的字符序列存放到字节数组中，并返回数组的引用
+*&#x2F;
+public byte[] getByte(String charsetName);
+&#x2F;*
+使用指定的字符编码（GBK，UTF-8等），将当前String对象的字符序列存放到字节数组中，并返回数组的引用
+*&#x2F;</code></pre><h2 id="8-2-正则表达式"><a href="#8-2-正则表达式" class="headerlink" title="8.2 正则表达式"></a>8.2 正则表达式</h2><h3 id="8-2-1-正则表达式与元字符"><a href="#8-2-1-正则表达式与元字符" class="headerlink" title="8.2.1 正则表达式与元字符"></a>8.2.1 正则表达式与元字符</h3><p>正则表达式是一个String对象的字符序列，该字符序列中<strong>含有具有特殊意义的字符</strong>，这些特殊字符称为正则表达式中的元字符。</p><p>String对象调用<code>public boolean matches(String regex)</code>方法可以判断当前String对象的字符序列是否和参数regex指定的正则表达式匹配。</p><table><thead><tr><th>元字符</th><th>意义</th></tr></thead><tbody><tr><td>.</td><td>代表任何字符</td></tr><tr><td>\.</td><td>.</td></tr><tr><td>\d</td><td>0~9的数字</td></tr><tr><td>\D</td><td>非数字字符</td></tr><tr><td>\s</td><td>空格类等，如’\t’、’\n’等</td></tr><tr><td>\S</td><td>非空格类</td></tr><tr><td>\w</td><td>标识符字符（字母、数字、下划线）</td></tr><tr><td>\W</td><td>非标识符字符</td></tr><tr><td>\p{Lower}</td><td>小写字母</td></tr><tr><td>\p{Upper}</td><td>大写字母</td></tr><tr><td>\p{ASCII}</td><td>ASCII字符</td></tr><tr><td>\p{Alpha}</td><td>字母（包括大写和小写）</td></tr><tr><td>\p{Digit}</td><td>数字字符</td></tr><tr><td>\p{Alnum}</td><td>字母或数字</td></tr><tr><td>\p{Punct}</td><td>标点符号</td></tr><tr><td>\p{Graph}</td><td>可视字符，包括\p{Alnum}、\p{Punct}</td></tr><tr><td>\p{Print}</td><td>可打印字符</td></tr><tr><td>\p{Blank}</td><td>空格或制表符</td></tr><tr><td>\p{Cntrl}</td><td>控制字符 [\x00-\x1F\x7F]</td></tr></tbody></table><p>在正则表达式中可以用方括号括起来若干个字符表示一个元字符，该元字符代表方括号中的任何一个字符。</p><ul><li>[abc]：代表a、b、c中的任何一个</li><li>[^abc]：代表除了a、b、c以外的任何字符</li><li>[a-zA-Z]：代表英文字母中的任何一个</li><li>[a-d]：代表a~d中的任何一个</li></ul><p>另外，方括号里允许嵌套方括号，可以进行并、交、差运算。</p><ul><li>[a-d[m-p]]：代表a<del>d或m</del>p中的任何字符</li><li>[a-z&amp;&amp;[def]]：代表d、e或f中的任何一个</li><li>[a-f&amp;&amp;[^bc]]：代表a、d、e、f</li></ul><p>注意由于<code>.</code>代表任何一个字符，所以在正则表达式中如果想要使用普通意义的<code>.</code>，必须使用[.]或\\.表示</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String regex &#x3D; &quot;hello[1234]&quot;;</code></pre><p>那么以下的字符串都可以成功匹配。</p><ul><li>hello1</li><li>hello2</li><li>hello3</li><li>hello4</li></ul><p>在正则表达式中可以使用限定修饰符。</p><table><thead><tr><th>带限定修饰符的模式</th><th>意义</th></tr></thead><tbody><tr><td>X?</td><td>X出现0次或1次</td></tr><tr><td>X*</td><td>X出现0次或多次</td></tr><tr><td>X+</td><td>X出现1次或多次</td></tr><tr><td>X{n}</td><td>X恰好出现n次</td></tr><tr><td>X{n, }</td><td>X至少出现n次</td></tr><tr><td>X{n, m}</td><td>X出现n次至m次</td></tr><tr><td>XY</td><td>X的后缀是Y</td></tr><tr><td>X|Y</td><td>X或Y</td></tr></tbody></table><p>例如：<code>regex = &quot;@\\w&#123;4&#125;&quot;</code>，那么”@abcd”、”@java”都可以匹配。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String regex &#x3D; &quot;@\\w&#123;4&#125;&quot;;
+        String str &#x3D; &quot;@天道酬勤&quot;;
+        boolean b &#x3D; str.matches(regex);
+        System.out.println(b);
+        b &#x3D; &quot;@java&quot;.matches(regex);
+        System.out.println(b);
+    &#125;
+&#125;
+&#x2F;*
+false
+true
+*&#x2F;</code></pre><p>注意：有关正则表达式的细节可以查阅java.util.regex包中的Pattern类。</p><h3 id="8-2-2-常用的正则表达式"><a href="#8-2-2-常用的正则表达式" class="headerlink" title="8.2.2 常用的正则表达式"></a>8.2.2 常用的正则表达式</h3><ol><li>匹配整数的正则表达式</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String regex &#x3D; &quot;(0)|(-?[1-9]\\d*)&quot;;</code></pre><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String regex &#x3D; &quot;(0)|(-?[1-9]\\d*)&quot;;
+        System.out.println(&quot;0&quot;.matches(regex));
+        System.out.println(&quot;26&quot;.matches(regex));
+        System.out.println(&quot;-1&quot;.matches(regex));
+        System.out.println(&quot;-0&quot;.matches(regex));
+    &#125;
+&#125;
+&#x2F;*
+true
+true
+true
+false
+*&#x2F;</code></pre><p>根据实际情况，如果<code>-0</code>也匹配为整数的话就采用以下的正则表达式：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String regex &#x3D; &quot;-?[0-9]\\d*&quot;;</code></pre><ol start="2"><li>匹配浮点数的正则表达式</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String regex &#x3D; &quot;-?[0-9]\\d*\\.[0-9]+&quot;;</code></pre><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String regex &#x3D; &quot;-?[0-9]\\d*\\.[0-9]+&quot;;
+        System.out.println(&quot;0.3&quot;.matches(regex));
+        System.out.println(&quot;-2.3&quot;.matches(regex));
+        System.out.println(&quot;-32.398&quot;.matches(regex));
+        System.out.println(&quot;0&quot;.matches(regex));
+        System.out.println(&quot;9&quot;.matches(regex));
+        System.out.println(&quot;-0.0&quot;.matches(regex));
+    &#125;
+&#125;
+&#x2F;*
+true
+true
+true
+false
+false
+true
+*&#x2F;</code></pre><ol start="3"><li>匹配E-mail的正则表达式</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String regex &#x3D; &quot;\\w+@\\w+\\.[a-z]+(\\.\\p&#123;Lower&#125;+)?&quot;;</code></pre><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String regex &#x3D; &quot;\\w+@\\w+\\.[a-z]+(\\.\\p&#123;Lower&#125;+)?&quot;;
+        System.out.println(&quot;123456@qq.com&quot;.matches(regex));
+        System.out.println(&quot;cukor@163.com&quot;.matches(regex));
+        System.out.println(&quot;abc@163&quot;.matches(regex));
+        System.out.println(&quot;abcag@666.Abc&quot;.matches(regex));
+        System.out.println(&quot;liu@qh.edu.cn&quot;.matches(regex));
+    &#125;
+&#125;
+&#x2F;*
+true
+true
+false
+false
+true
+*&#x2F;</code></pre><ol start="4"><li>身份证号码的正则表达式</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String regex &#x3D; &quot;([1-6][1-9]|50)\\d&#123;4&#125;(18|19|20)\\d&#123;2&#125;((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d&#123;3&#125;[0-9Xx]&quot;;</code></pre><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String regex &#x3D; &quot;([1-6][1-9]|50)\\d&#123;4&#125;(18|19|20)\\d&#123;2&#125;((0[1-9])|(1[0-2]))(([0-2][1-9])|10|20|30|31)\\d&#123;3&#125;[0-9Xx]&quot;;
+        System.out.println(&quot;22030719981030023X&quot;.matches(regex));
+        System.out.println(&quot;452126200012316666&quot;.matches(regex));
+        System.out.println(&quot;452612210012316666&quot;.matches(regex));
+        System.out.println(&quot;452622200013316666&quot;.matches(regex));
+        System.out.println(&quot;452616200006312507&quot;.matches(regex));
+        System.out.println(&quot;45060620000630250x&quot;.matches(regex));
+    &#125;
+&#125;
+&#x2F;*
+true
+true
+false
+false
+true
+true
+*&#x2F;
+匹配是匹配得了，但是不完全正确</code></pre><ol start="5"><li>匹配日期的正则表达式</li></ol><p>不考虑二月的特殊情况，匹配日期（年限制为4位）的正则表达式：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String year &#x3D; &quot;[1-9][0-9]&#123;3&#125;&quot;;
+String month &#x3D; &quot;((0?[1-9])|(1[0-2])&quot;;
+String day &#x3D; &quot;((0?[1-9])|([12][0-9])|(3[01]?))&quot;;
+String regex &#x3D; year + &quot;[-.&#x2F;]&quot; + month + &quot;[-.&#x2F;]&quot; + day;</code></pre><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String year &#x3D; &quot;[1-9][0-9]&#123;3&#125;&quot;;
+        String month &#x3D; &quot;((0?[1-9])|(1[0-2]))&quot;;
+        String day &#x3D; &quot;((0?[1-9])|([12][0-9])|(3[01]?))&quot;;
+        String regex &#x3D; year + &quot;[-.&#x2F;]&quot; + month + &quot;[-.&#x2F;]&quot; + day;
+        System.out.println(&quot;2020-12-31&quot;.matches(regex));
+        System.out.println(&quot;2023-4-3&quot;.matches(regex));
+        System.out.println(&quot;2022&#x2F;02&#x2F;28&quot;.matches(regex));
+        System.out.println(&quot;2020-2-31&quot;.matches(regex));
+    &#125;
+&#125;
+&#x2F;*
+true
+true
+true
+true
+*&#x2F;</code></pre><p>准确性还是很低，月份的日期上限没有得到控制。</p><h3 id="8-2-3-字符序列的替换"><a href="#8-2-3-字符序列的替换" class="headerlink" title="8.2.3 字符序列的替换"></a>8.2.3 字符序列的替换</h3><p>String对象调用public String replaceAll(String reex, String replacement)方法返回一个新的String对象，这个新的String对象是把当前String对象的字符序列中所有和参数regex匹配的子字符序列用参数replacement字符序列替换后得到的字符序列。例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String str &#x3D; &quot;12hello567bird&quot;.replaceAll(&quot;[a-zA-Z]+&quot;, &quot;你好&quot;);
+&#x2F;&#x2F; str &#x3D; &quot;12你好567你好&quot;</code></pre><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String str &#x3D; &quot;培训学校的E-mail：qinghua@sina.com.cn或zhang@163.com&quot;;
+        String regex &#x3D; &quot;\\w+@\\w+\\.[a-z]+(\\.[a-z]+)?&quot;;
+        System.out.println(&quot;清除\n&quot;+str+&quot;\n中的E-mail地址&quot;);
+        str &#x3D; str.replaceAll(regex, &quot;&quot;);
+        System.out.println(str);
+        String money &#x3D; &quot;89,235,678￥&quot;;
+        System.out.print(money+&quot;转换成数字: &quot;);
+        String s &#x3D; money.replaceAll(&quot;[,\\p&#123;Sc&#125;]&quot;, &quot;&quot;);
+        long number &#x3D; Long.parseLong(s);
+        System.out.println(number);
+    &#125;
+&#125;
+&#x2F;*
+清除
+培训学校的E-mail：qinghua@sina.com.cn或zhang@163.com
+中的E-mail地址
+培训学校的E-mail：或
+89,235,678￥转换成数字: 89235678
+*&#x2F;</code></pre><h3 id="8-2-4-字符序列的分解"><a href="#8-2-4-字符序列的分解" class="headerlink" title="8.2.4 字符序列的分解"></a>8.2.4 字符序列的分解</h3><p>String类提供了一个实用的方法public String[] split(String regex)，String对象调用该方法时使用参数指定的正则表达式regex作为分隔标记分解出当前String对象的字符序列中的单词，并将分解出的单词存放在String数组中。例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String str &#x3D; &quot;1949年10月1日是中华人民共和国成立的日子&quot;;
+        String regex &#x3D; &quot;\\D+&quot;;
+        String[] digiWord &#x3D; str.split(regex);
+        for (var v : digiWord) &#123;
+            System.out.println(v);
+        &#125;
+    &#125;
+&#125;
+&#x2F;*
+1949
+10
+1
+*&#x2F;</code></pre><p>需要特别注意的是，split方法认为分隔标记的左右是单词，额外规则是如果左面是不含任何字符的字符序列（长度为0的字符序列，即””），这个字符序列仍然算是一个单词，但右边的单词必须是含有字符的字符序列。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String str &#x3D; &quot;公元1949年10月1日是中华人民共和国成立的日子&quot;;
+        String regex &#x3D; &quot;\\D+&quot;;
+        String[] digiWord &#x3D; str.split(regex);
+        for (var v : digiWord) &#123;
+            System.out.println(v);
+        &#125;
+        System.out.println(digiWord.length);
+    &#125;
+&#125;
+&#x2F;*
+
+1949
+10
+1
+4
+*&#x2F;</code></pre><h2 id="8-3-StringTokenizer类"><a href="#8-3-StringTokenizer类" class="headerlink" title="8.3 StringTokenizer类"></a>8.3 StringTokenizer类</h2><p>当分析一个String对象的字符序列并将字符序列分解成被独立使用的单词时，可以使用java.util包中的StringTokenizer类，该类有两个常用的构造方法。</p><ul><li>StringTokenizer(String s)：为String对象s构造一个分析器。使用默认的分隔标记，即空格符、换行、回车符、制表符、进纸符做分隔标记。</li><li>StringTokenizer(String s, String delim)：为String对象s构造一个分析器。参数delim的字符序列中的字符的任意排列被作为分隔标记。</li></ul><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">StringTokenizer fenxi &#x3D; new StringTokenizer(&quot;you are welcome&quot;);
+StringTokenizer fenxi &#x3D; new StringTokenizer(&quot;you#*are*##welcome&quot;, &quot;#*&quot;);</code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.StringTokenizer;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        StringTokenizer fenxi &#x3D; new StringTokenizer(&quot;you are welcome&quot;);
+        while (fenxi.hasMoreTokens()) &#123;
+            System.out.println(fenxi.nextToken());
+        &#125;
+        fenxi &#x3D; new StringTokenizer(&quot;you#*are*##welcome&quot;, &quot;#*&quot;);
+        System.out.println(&quot;-------------------------------&quot;);
+        while (fenxi.hasMoreTokens()) &#123;
+            System.out.println(fenxi.nextToken());
+        &#125;
+        fenxi &#x3D; new StringTokenizer(&quot;you are welcome(thank you), nice to meet you&quot;, &quot;(),&quot;);
+        System.out.println(&quot;-------------------------------&quot;);
+        while (fenxi.hasMoreTokens()) &#123;
+            System.out.println(fenxi.nextToken());
+        &#125;
+    &#125;
+&#125;
+&#x2F;*
+you
+are
+welcome
+-------------------------------
+you
+are
+welcome
+-------------------------------
+you are welcome
+thank you
+ nice to meet you
+*&#x2F;</code></pre><p>一个分析器可以使用nextToken方法逐个获取分析器中的单词。分析器调用nextToken方法逐个获取分析器中的单词，每当nextToken返回一个单词，分析器就自动从分析器中删除该单词。类似队列。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.StringTokenizer;
+
+class PriceToken &#123;
+    public double getPriceSum(String shoppingReceipt) &#123;
+        &#x2F;&#x2F; 匹配非数字字符序列, 并用#代替, 然后再通过#拆分，这样就可以把数字提取出来
+        StringTokenizer fenxi &#x3D; new StringTokenizer(shoppingReceipt.replaceAll(&quot;[^0-9.]+&quot;, &quot;#&quot;), &quot;#&quot;);
+        double sum &#x3D; 0;
+        while (fenxi.hasMoreTokens()) &#123;
+            sum +&#x3D; Double.parseDouble(fenxi.nextToken());
+        &#125;
+        return sum;
+    &#125;
+
+    public int getGoodsAmount(String shoppintReceipt) &#123;
+        shoppintReceipt &#x3D; shoppintReceipt.replaceAll(&quot;[^0-9.]+&quot;, &quot;#&quot;);
+        StringTokenizer fenxi &#x3D; new StringTokenizer(shoppintReceipt, &quot;#&quot;);
+        return fenxi.countTokens();
+    &#125;
+
+    public double getAverPrice(String shoppingReceipt) &#123;
+        return getPriceSum(shoppingReceipt) &#x2F; getGoodsAmount(shoppingReceipt);
+    &#125;
+&#125;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        String shoppingReceipt &#x3D; &quot;牛奶：8.5元，香蕉：3.6元，酱油：2.8元。&quot;;
+        PriceToken lookPriceMess &#x3D; new PriceToken();
+        System.out.println(shoppingReceipt);
+        double sum &#x3D; lookPriceMess.getPriceSum(shoppingReceipt);
+        System.out.printf(&quot;购物总价格为：%-7.2f&quot;, sum);
+        int amount &#x3D; lookPriceMess.getGoodsAmount(shoppingReceipt);
+        double aver &#x3D; lookPriceMess.getAverPrice(shoppingReceipt);
+        System.out.printf(&quot;\n商品数目为：%d, 平均价格为：%-7.2f&quot;, amount, aver);
+    &#125;
+&#125;
+&#x2F;*
+牛奶：8.5元，香蕉：3.6元，酱油：2.8元。
+购物总价格为：14.90  
+商品数目为：3, 平均价格为：4.97 
+*&#x2F;</code></pre><p>上面的代码很长，但其实内容很简单，就是把非数字字符和非小数点的用一个临时符号代替（上面用的#），然后再通过#拆分，最后就剩下了数字，然后按正常程序打印。</p><h2 id="8-2-Scanner类"><a href="#8-2-Scanner类" class="headerlink" title="8.2 Scanner类"></a>8.2 Scanner类</h2><p>本节学习怎样使用Scanner类的对象从字符序列中解析出程序需要的数据。</p><ol><li>Scanner对象</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String Musice &#x3D; &quot;I love this art&quot;;</code></pre><p>为了解析出Musice的字符序列中的单词，可以如下构造一个Scanner对象：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Scanner scanner &#x3D; new Scanner(Musice);</code></pre><p>Scanner对象调用方法：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">useDelimiter(正则表达式); &#x2F;&#x2F; 使用分隔符</code></pre><p>将正则表达式作为分隔标记。如果不指定分隔标记，那么Scanner对象默认用空白字符作为分隔标记来解析String对象的字符序列中的单词。</p><ul><li>Scanner对象调用next方法依次返回被解析的单词，如果最后一个单词已被next方法返回，Scanner对象调用hasNext将返回false，否则返回true。</li><li>对于被解析的字符序列中的数字型单词，Scanner对象可以使用nextInt、nextDouble等方法。</li><li>如果单词不是数字型单词，Scanner对象调用nextInt或nextDouble方法将发生InputMismatchException异常，在处理异常时可以调用next方法返回非数字化单词。</li></ul><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class GetPrice &#123;
+    public static double givePriceSum(String cost) &#123;
+        Scanner scanner &#x3D; new Scanner(cost);
+        scanner.useDelimiter(&quot;[^0-9.]+&quot;);
+        double sum &#x3D; 0;
+        int count &#x3D; 0;
+        while (scanner.hasNext()) &#123;
+            try &#123;
+                sum +&#x3D; scanner.nextDouble();
+            &#125; catch (InputMismatchException e) &#123;
+                System.out.printf(&quot;发生了%d次异常\n&quot;, ++count);
+                String t &#x3D; scanner.next();
+            &#125;
+        &#125;
+        return sum;
+    &#125;
+&#125;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        String cost &#x3D; &quot;市话76.8元，长途167.38元，短信12.68元&quot;;
+        double priceSum &#x3D; GetPrice.givePriceSum(cost);
+        System.out.printf(&quot;%s\n总价：%.2f\n&quot;, cost, priceSum);
+        cost &#x3D; &quot;牛奶8.5元，香蕉3.6元，酱油2.8元&quot;;
+        priceSum &#x3D; GetPrice.givePriceSum(cost);
+        System.out.printf(&quot;%s\n总价：%.2f\n&quot;, cost, priceSum);
+    &#125;
+&#125;
+&#x2F;*
+市话76.8元，长途167.38元，短信12.68元
+总价：256.86
+牛奶8.5元，香蕉3.6元，酱油2.8元
+总价：14.90
+*&#x2F;</code></pre><ol start="2"><li>StringTokenizer和Scanner的区别</li></ol><p>StringToKenizer类和Scanner类都可用于分解字符序列中的单词，但二者在思想上有所不同。</p><table><thead><tr><th>类名</th><th>说明</th></tr></thead><tbody><tr><td>StringTokenizer</td><td>把分解出的全部单词都放到StringTokenizer对象实体中，因此StringTokenizer对象能以较快速度获得单词（空间换时间）</td></tr><tr><td>Scanner</td><td>不把单词存放到Sanner对象的实体中，而是仅存放怎样获取单词的分隔标记，因此Scanner对象获得单词的速度相对较慢，但Scanner对象节省内存空间（时间换空间）</td></tr></tbody></table><h2 id="8-5-Pattern类与Matcher类"><a href="#8-5-Pattern类与Matcher类" class="headerlink" title="8.5 Pattern类与Matcher类"></a>8.5 Pattern类与Matcher类</h2><p>模式匹配就是检索和指定模式匹配的字符序列。Java提供了专门用来进行模式匹配的Pattern类和Matcher类，这些类在java.util.regex包中。</p><p>使用Pattern类和Matcher类的步骤。</p><ol><li>数据源</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String str &#x3D; &quot;hello,good morning,this is a good idea&quot;;</code></pre><ol start="2"><li>建立Pattern类的对象</li></ol><p>假设str中从哪个位置开始至那个位置结束曾出现了字符序列good，那么首先将用于检索数据的正则表达式封装在一个Pattern对象中，需要按下列方式使用正则表达式regex做参数得到一个称为模式的Pattern类的实例。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Pattern pattern &#x3D; Pattern.compile(regex);</code></pre><ol start="3"><li>得到Matcher对象</li></ol><p>得到用于检索数据源的Matcher类的实例。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Matcher matcher &#x3D; pattern.matcher(str);</code></pre><ol start="4"><li>检索数据</li></ol><p>匹配对象matcher就可以调用各种方法检索数据源，即str中的数据，例如，matcher依次调用boolean find()方法可以检索str的字符序列中和regex匹配的子字符序列。</p><ol start="5"><li>Matcher类提供的常用方法</li></ol><p>Matcher类的对象matcher可以使用下列方法寻找String对象str和regex匹配的子序列。</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>find</td><td>寻找str和regex匹配的下一子序列，如果匹配成功则返回true，否则返回false。</td></tr><tr><td>matches</td><td>判断str是否完全和regex匹配</td></tr><tr><td>lookingAt</td><td>判断从str的开始位置是否和regex匹配的子序列。</td></tr><tr><td>replaceAll</td><td>可以返回一个String对象，该String对象的字符序列是通过把str的字符序列中与模式regex匹配的子序列全部替换为参数replacement指定的字符序列得到的</td></tr><tr><td>replaceFist</td><td>可以返回一个String对象，该String对象的字符序列是通过把str的字符序列中第一个与模式regex匹配的子序列替换为参数replacement指定的字符系列得到的</td></tr></tbody></table><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        String str &#x3D; &quot;市话76.8元，长途167.38元，短信12.68元，其他20元&quot;;
+        String regex &#x3D; &quot;-?[1-9][0-9]*[.]?[0-9]*&quot;;   &#x2F;&#x2F; 匹配整数或浮点数
+        Pattern pattern &#x3D; Pattern.compile(regex);   &#x2F;&#x2F; 模式对象
+        Matcher matcher &#x3D; pattern.matcher(str);     &#x2F;&#x2F; 匹配对象
+        double sum &#x3D; 0;
+        while (matcher.find()) &#123;
+            String item &#x3D; matcher.group(); &#x2F;&#x2F; 返回与前一个匹配项匹配的输入子序列。
+            System.out.println(item);
+            sum +&#x3D; Double.parseDouble(item);
+        &#125;
+        System.out.println(&quot;账单总价格：&quot; + sum);
+    &#125;
+&#125;
+&#x2F;*
+76.8
+167.38
+12.68
+20
+账单总价格：276.86
+*&#x2F;</code></pre><h2 id="8-6-StringBuffer类"><a href="#8-6-StringBuffer类" class="headerlink" title="8.6 StringBuffer类"></a>8.6 StringBuffer类</h2><p>String对象的字符序列是不可修改的，也就是说，String对象的字符序列的字符不能被修改、删除，即String对象的实体是不可以再发生变化。例如，对于</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String s &#x3D; new String(&quot;我喜欢散步&quot;);</code></pre><p>引用s可以改变指向，但实体String(“我喜欢散步”)是不可以再发生变化。</p><p>与String类不同，StringBuffer类的对象的实体的内存空间可以自动改变大小，便于存放一个可变的字符序列。尽管StringBuffer类是java.lang包中的final类，但该类提供了修改字符序列的方法。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">StringBuffer strBuffer &#x3D; new StringBuffer(&quot;我喜欢&quot;);</code></pre><p>对象stringBuffer可调用append()方法追加一个字符序列，</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">strBuffer.append(&quot;玩篮球&quot;); &#x2F;&#x2F; 在原来的基础上增加了&quot;玩篮球&quot;,地址不变</code></pre><p>StringBuffer类有3个构造方法，即</p><ul><li>StringBuffer() 创建一个StringBuffer对象，初始容量可以容纳16个字符，当该对象的实体存放的字符序列的长度大于16时，实体的容量自动增长，以便存放所增加的字符</li><li>StringBuffer(int size) 可以指定分配给该对象的实体的初始容量</li><li>StringBuffer(String s) 可以指定分配该对象的实体的初始容量为参数s的字符序列的长度再加16</li></ul><p>StringBuffer对象可以通过调用length()方法获取实体中存放的字符序列的长度，通过capacity()方法获取当前实体的实际容量。</p><h3 id="8-6-2-StringBuffer类常用的方法"><a href="#8-6-2-StringBuffer类常用的方法" class="headerlink" title="8.6.2 StringBuffer类常用的方法"></a>8.6.2 StringBuffer类常用的方法</h3><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>StringBuffer append(String s)</td><td>把String对象追加到当前StringBuffer对象的字符序列中，并返回当前StringBuffer对象的引用</td></tr><tr><td>StringBuffer append(int n)</td><td>将n转换为String对象，再把该String对象的字符序列追加到当前StringBuffer对象的字符序列中，并返回当前StringBuffer对象的引用</td></tr><tr><td>StringBuffer append(Object obj)</td><td>将obj对象的字符序列追加到当前StringBuffer对象的字符序列中，并返回当前StringBuffer对象的引用</td></tr><tr><td>char charAt(int n)</td><td>得到StringBuffer对象的字符序列位置n上的字符</td></tr><tr><td>void setCharAt(int n, char ch)</td><td>将StringBuffer对象的字符序列位置n上的字符替换为ch指定的字符</td></tr><tr><td>StringBuffer insert(int index, String str)</td><td>将参数str指定的字符序列插入到当前StringBuffer对象的第index位置，并返回当前StringBuffer对象的引用</td></tr><tr><td>StringBuffer reverse()</td><td>字符串反转，并返回当前StringBuffer对象的引用</td></tr><tr><td>StringBuffer delete(int start, int end)</td><td>从当前StringBuffer对象的字符序列中删除一个子字符序列，并返回当前StringBuffer对象的引用</td></tr><tr><td>StringBuffer replace(int start, int end, String str)</td><td>从当前StringBuffer对象的字符序列中替换一个子字符序列str，并返回当前StringBuffer对象的引用</td></tr></tbody></table><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        StringBuffer str &#x3D; new StringBuffer();
+        System.out.println(&quot;capacity: &quot; + str.capacity());
+        str.append(&quot;大家好&quot;);
+        System.out.println(&quot;str: &quot; + str);
+        System.out.println(&quot;length: &quot;+str.length());
+        System.out.println(&quot;capacity: &quot; + str.capacity());
+        str.setCharAt(0, &#39;w&#39;);
+        str.setCharAt(1, &#39;e&#39;);
+        System.out.println(str);
+        str.insert(2, &quot; are all&quot;);
+        System.out.println(str);
+        int index &#x3D; str.indexOf(&quot;好&quot;);
+        str.replace(index, str.length(), &quot;right&quot;);
+        System.out.println(str);
+        str.append(&quot;我们大家都很好.&quot;);
+        System.out.println(str);
+        System.out.println(&quot;capacity: &quot; + str.capacity());
+        str.delete(0, str.length());
+        System.out.println(str);
+        System.out.println(&quot;capacity: &quot; + str.capacity());
+    &#125;
+&#125;
+&#x2F;*
+capacity: 16
+str: 大家好
+length: 3
+capacity: 16
+we好
+we are all好
+we are allright
+we are allright我们大家都很好.
+capacity: 34
+
+capacity: 34
+*&#x2F;</code></pre><p><strong>注意：可以使用String类的构造方法String(StringBuffer bufferstring)创建一个String对象。</strong></p><h2 id="8-7-日期与时间"><a href="#8-7-日期与时间" class="headerlink" title="8.7 日期与时间"></a>8.7 日期与时间</h2><h3 id="8-7-1-日期与时间类"><a href="#8-7-1-日期与时间类" class="headerlink" title="8.7.1 日期与时间类"></a>8.7.1 日期与时间类</h3><p>从Java SE8开始提供了java.time包，该包中有专门处理日期和时间的类，而早期的java.util包中的Date类成为过期的API.</p><p>LocalDate、LocalDateTime、和LocalTime类的对象封装和日期、时间有关的数据，**这三个类都是final类，而且不提供修改数据的方法，即这些类的对象的实体不可以再发生改变，属于不可变对象（和String类似)**。</p><h4 id="LocalDate"><a href="#LocalDate" class="headerlink" title="LocalDate"></a>LocalDate</h4><p>LocalDate调用LocalDate now()方法可以返回一个LoaclDate对象，该对象封装和本地当前日期有关的数据。LocalDate调用LocalDate of(int year, int month, int day)方法可以返回一个LocalDate对象，该对象封装和参数指定日期有关的数据。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">LocalDate dateNow &#x3D; LocalDate.now();
+LocalDate dateOther &#x3D; LocalDate.of(1988, 12, 16);</code></pre><p>假设本地当前日期是2022-2-16，那么dateNow中封装的年是2022，月是2，日是16.</p><p>date对象可以调用下列方法返回其中的有关数据。</p><table><thead><tr><th>方法</th><th>说明</th></tr></thead><tbody><tr><td>int getDayOfMonth()</td><td>返回月中的号码。</td></tr><tr><td>int getMonthValue()</td><td>返回月中的整数值（1~12）</td></tr><tr><td>Month getMonth()</td><td>返回月的枚举值</td></tr><tr><td>int getDayOfYear()</td><td>返回当前年的第几天</td></tr><tr><td>DayOfWeek getDayOfWeek()</td><td>返回星期的枚举值</td></tr><tr><td>int getYear()</td><td>返回年值</td></tr><tr><td>int lengthOfYear()</td><td>返回年所含有的天数</td></tr><tr><td>int lengthOfMonth()</td><td>返回月所含有的天数</td></tr><tr><td>boolean isLeapYear()</td><td>判断年是否是闰年</td></tr><tr><td>LocalDate plusMonths(long monthsToAdd)</td><td>调用该方法返回一个新的LocalDate对象，该对象中的日期是date对象的日期增加monthsToAdd月之后得到的日期</td></tr><tr><td>int compareTo(LocalDatedataTwo)</td><td>一个LocalDate对象调用此方法与dateTwo比较大小，规则是按年、月、日3项的顺序进行比较，当出现某项不同时，该方法返回二者的此项目的差。</td></tr></tbody></table><h4 id="LocalDateTime"><a href="#LocalDateTime" class="headerlink" title="LocalDateTime"></a>LocalDateTime</h4><p>相对于LocalDate类，在LocalDateTime类的对象中还可以封装时、分、秒和纳秒等时间数据。</p><p>例如：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">LocalDateTime date &#x3D; LocalDateTime.now();</code></pre><p>LocalDateTime类的对象date可以调用下列方法获得时、分、秒、纳秒</p><ul><li>getHour</li><li>getMinute</li><li>getSecond</li><li>getNano</li></ul><p>LocalDateTime调用LocalDateTime of(int year, int month, int day, int hour, int minute, int second, int nano)方法可以返回一个LocalDateTime对象，该对象封装和参数指定日期有关的数据。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">LocalDateTime date &#x3D; LocalDate.of(1988, 12, 16, 22, 35, 55, 0);</code></pre><h4 id="LocalTime"><a href="#LocalTime" class="headerlink" title="LocalTime"></a>LocalTime</h4><p>相对于LocalDateTime类的对象，LocalTime只封装时、分、秒和纳秒等时间数据。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">LocalTime time &#x3D; LocalTime.now();</code></pre><p>API大体相同。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        LocalDate dateOne &#x3D; LocalDate.now();
+        System.out.println(&quot;本地日期：&quot; + dateOne);
+        LocalDate dateTwo &#x3D; LocalDate.of(2023, 4, 1);
+        System.out.println(&quot;自定日期：&quot; + dateTwo);
+        System.out.println(dateOne + &quot;在&quot; + dateTwo + &quot;之前：&quot; + dateOne.isBefore(dateTwo));
+        System.out.println(dateOne + &quot;和&quot; + dateTwo + &quot;相同：&quot; + dateOne.isEqual(dateTwo));
+        int year &#x3D; 18, month &#x3D; 23, day &#x3D; 8976;
+        LocalDate dataAgo &#x3D; dateOne.plusYears(-year);
+        System.out.println(dateOne + &quot; &quot; + year + &quot;年前是：&quot; + dataAgo);
+        System.out.println(&quot;那天是&quot; + dataAgo.getDayOfWeek());
+        LocalDate dataAfter &#x3D; dateTwo.plusYears(year).plusMonths(month).plusDays(day);
+        System.out.println(dateTwo + &quot;再过&quot; + year + &quot;年&quot; + month + &quot;个月&quot; + day + &quot;天之后是：&quot; + dataAfter);
+        System.out.println(&quot;那天是&quot; + dataAfter.getDayOfWeek());
+        int second &#x3D; 1897;
+        LocalTime time &#x3D; LocalTime.of(23, 30, 1);
+        LocalTime nextTime &#x3D; time.plusSeconds(second);
+        System.out.println(time + &quot;再过&quot; + second + &quot;秒是：&quot; + nextTime);
+    &#125;
+&#125;
+&#x2F;*
+本地日期：2023-04-05
+自定日期：2023-04-01
+2023-04-05在2023-04-01之前：false
+2023-04-05和2023-04-01相同：false
+2023-04-05 18年前是：2005-04-05
+那天是TUESDAY
+2023-04-01再过18年23个月8976天之后是：2067-09-27
+那天是TUESDAY
+23:30:01再过1897秒是：00:01:38
+*&#x2F;</code></pre><h3 id="8-7-2-日期、时间差和日历类"><a href="#8-7-2-日期、时间差和日历类" class="headerlink" title="8.7.2 日期、时间差和日历类"></a>8.7.2 日期、时间差和日历类</h3><p>在许多应用中可能经常需要计算两个日期或时间的差。知道有这么一回事就可以。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">long until(Temporal endExclusive, TemporaUnit unit);</code></pre><p>例如：</p><p>dataStart的日期是2021-2-4，dataEnd的日期是2022-7-9，那么</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">long n;
+n &#x3D; dataStart.until(dataEnd, ChroundUnit.DAYS);   &#x2F;&#x2F; n &#x3D;&#x3D; 520
+n &#x3D; dataStart.until(dataEnd, ChroundUnit.MONTHS); &#x2F;&#x2F; n &#x3D;&#x3D; 17
+n &#x3D; dataStart.until(dataEnd, ChroundUnit.YEARS);  &#x2F;&#x2F; n &#x3D;&#x3D; 1</code></pre><p>LocalDate、LocalDateTime、LocalTime类都是实现了Temporal接口的类。枚举类型ChronoUnit实现了TemporalUnit接口，提供了许多枚举常量。</p><p><strong>注意：如果dateEnd小于startDate，until方法返回的是负数。在计算日期差时不足一个单位的零头按0计算。</strong></p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        LocalDateTime dateStart &#x3D; LocalDateTime.of(1931, 9, 18, 0, 0, 0);
+        LocalDateTime dateEnd &#x3D; LocalDateTime.of(1945, 8, 15, 0, 0, 0);
+        long years &#x3D; dateStart.until(dateEnd, ChronoUnit.YEARS);
+        long months &#x3D; dateStart.until(dateEnd, ChronoUnit.MONTHS);
+        long days &#x3D; dateStart.until(dateEnd, ChronoUnit.DAYS);
+        long hours &#x3D; dateStart.until(dateEnd, ChronoUnit.HOURS);
+        long weeks &#x3D; dateStart.until(dateEnd, ChronoUnit.WEEKS);
+        System.out.println(dateStart + &quot;和&quot; + dateEnd + &quot;相差：&quot;);
+        System.out.println(years + &quot;年&quot;);
+        System.out.println(months + &quot;个月&quot;);
+        System.out.println(days + &quot;日&quot;);
+        System.out.println(hours + &quot;个小时&quot;);
+        System.out.println(weeks + &quot;个星期&quot;);
+        LocalDateTime nextDateStart &#x3D; dateStart.plusYears(years);
+        months &#x3D; nextDateStart.until(dateEnd, ChronoUnit.MONTHS);
+        nextDateStart &#x3D; nextDateStart.plusMonths(months);
+        days &#x3D; nextDateStart.until(dateEnd, ChronoUnit.DAYS);
+        System.out.println(dateStart + &quot;和&quot; + dateEnd + &quot;相差：&quot;);
+        System.out.println(years + &quot;年&quot; + months + &quot;个月&quot; + days + &quot;天&quot;);
+
+    &#125;
+&#125;
+&#x2F;*
+1931-09-18T00:00和1945-08-15T00:00相差：
+13年
+166个月
+5080日
+121920个小时
+725个星期
+1931-09-18T00:00和1945-08-15T00:00相差：
+13年10个月28天
+*&#x2F;</code></pre><h3 id="8-7-3-日期格式化"><a href="#8-7-3-日期格式化" class="headerlink" title="8.7.3 日期格式化"></a>8.7.3 日期格式化</h3><p>有时候可能希望按照某种习惯来输出时间。</p><pre class="line-numbers language-powershell" data-language="powershell"><code class="language-powershell">年 月 星期 日
+------------
+年 月 星期 日 小时 分 秒</code></pre><ol><li>format方法</li></ol><pre class="line-numbers language-java" data-language="java"><code class="language-java">String format(格式化模式, 日期列表)</code></pre><p>返回一个String对象，该对象的字符序列是把“格式化模式”的格式符号替换成“日期列表”中对应数据（年、月、日、小时等数据）后的字符序列。</p><p>format方法中的“格式化模式”是一个用双引号括起来的字符序列，该字符序列中的字符由时间格式符和普通字符所构成。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">&quot;日期：%ty-%tm-%td&quot;</code></pre><p>其中的<code>%ty</code>、<code>%tm</code>、<code>%td</code>等都是时间格式符，等于的都是普通字符。</p><p>format方法返回的String对象的字符序列就是把“格式化模式”中的时间格式符替换为相应的时间后的字符序列。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">LocalDate date &#x3D; LocalDate.now();
+String s &#x3D; String.format(&quot;%ty年%tm月%td日&quot;, date, date, date);</code></pre><p>那么s就是被格式化成<code>xx年xx月xx日</code>.</p><p>以下是常用的日期格式符表：</p><table><thead><tr><th>格式符</th><th>作用</th></tr></thead><tbody><tr><td>%tY</td><td>将日期中的“年”格式化为4位形式</td></tr><tr><td>%ty</td><td>将日期中的“年”格式化为2位形式</td></tr><tr><td>%tm</td><td>将日期中的“月”格式化为2位形式(带前缀0)</td></tr><tr><td>%td</td><td>将日期中的“日”格式化为当前月中的天（带前缀0）</td></tr><tr><td>%tB</td><td>将日期中的“月”格式化为当前环境下的月份全称</td></tr><tr><td>%tb</td><td>将日期中的“月”格式化为当前环境下的月份简称</td></tr><tr><td>%tA</td><td>将日期中的“星期”格式化为当前环境下的星期全称</td></tr><tr><td>%ta</td><td>将日期中的“星期”格式化为当前环境下的星期简称</td></tr><tr><td>%tH</td><td>将日期中的“时”格式化为2位形式(带前缀0，24小时制)</td></tr><tr><td>%tI</td><td>将日期中的“时”格式化为2位形式(带前缀0，12小时制)</td></tr><tr><td>%tM</td><td>将日期中的“分”格式化为2位形式(带前缀0)</td></tr><tr><td>%tS</td><td>将日期中的“秒”格式化为2位形式(带前缀0)</td></tr><tr><td>%tN</td><td>将日期中的“纳秒”格式化为2位形式(带前缀0)</td></tr><tr><td>%tR</td><td>等价%tH:%tM</td></tr><tr><td>%tT</td><td>等价%tH:%tM:%tS</td></tr><tr><td>%tr</td><td>等价%tI:%tM:%tS%tp（上午或下午）</td></tr><tr><td>%tD</td><td>等价于%tm&#x2F;%td&#x2F;%ty</td></tr><tr><td>%tF</td><td>等价于%tY-%tm-%td</td></tr><tr><td>%tc</td><td>等价于%ta %tb %td %tT %tZ %tY</td></tr></tbody></table><ol start="2"><li>不同区域的星期格式</li></ol><p>不同国家的星期的简称或全称有很大的不同。如果想用特定地区的星期格式来表示日期中的星期，可以用format的重载方法。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">format(Local local, 格式化模式, 日期列表)</code></pre><p>其中参数local是一个Local类的实例，用于表示地域。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.time.LocalDateTime;
+import java.util.Locale;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        LocalDateTime nowTime &#x3D; LocalDateTime.now();
+        String pattern &#x3D; &quot;%tY-%&lt;tm-%&lt;td, %&lt;tA, %&lt;tT&quot;;
+        String s &#x3D; String.format(pattern, nowTime);
+        System.out.println(s);
+        s &#x3D; String.format(Locale.US, pattern, nowTime);
+        System.out.println(s);
+        s &#x3D; String.format(Locale.JAPAN, pattern, nowTime);
+        System.out.println(s);
+    &#125;
+&#125;
+&#x2F;*
+2023-04-05, 星期三, 17:44:27
+2023-04-05, Wednesday, 17:44:27
+2023-04-05, 水曜日, 17:44:27
+*&#x2F;</code></pre><h2 id="8-8-Math类、BigInteger类和Random类"><a href="#8-8-Math类、BigInteger类和Random类" class="headerlink" title="8.8 Math类、BigInteger类和Random类"></a>8.8 Math类、BigInteger类和Random类</h2><h3 id="8-8-1-Math类"><a href="#8-8-1-Math类" class="headerlink" title="8.8.1 Math类"></a>8.8.1 Math类</h3><p>java.lang包中的Math类包含许多用来进行科学计算的static方法，这些方法可以直接通过类名调用。另外，Math类还有两个static常量——E和PI.</p><p>以下是Math类常用方法。</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>abs</td><td>绝对值</td></tr><tr><td>max</td><td>最大值</td></tr><tr><td>min</td><td>最小值</td></tr><tr><td>random</td><td>0~1随机数</td></tr><tr><td>pow</td><td>a的b次方</td></tr><tr><td>sqrt</td><td>开根</td></tr><tr><td>log</td><td>对数</td></tr><tr><td>sin</td><td>正弦</td></tr><tr><td>cos</td><td>余弦</td></tr><tr><td>asin</td><td>反正弦</td></tr><tr><td>ceil</td><td>向上取整</td></tr><tr><td>floor</td><td>向下取整</td></tr><tr><td>round</td><td>四舍五入</td></tr></tbody></table><h3 id="8-8-2-BigInteger类"><a href="#8-8-2-BigInteger类" class="headerlink" title="8.8.2 BigInteger类"></a>8.8.2 BigInteger类</h3><p>如果程序需要处理特别大的整数，可以用java.math包中的BigInteger类的对象。用户可以使用构造方法<code>public BigInteger(String val)</code>构造一个十进制的BigInteger对象。该构造方法可以发生NumberFormatException异常。</p><p>以下是BitInteger类的常用方法。</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>add</td><td>求和</td></tr><tr><td>subtract</td><td>求差</td></tr><tr><td>multiply</td><td>求积</td></tr><tr><td>divide</td><td>求商</td></tr><tr><td>remainder</td><td>求余</td></tr><tr><td>compareTo</td><td>比较（大于返回1，小于返回-1，等于返回0）</td></tr><tr><td>abs</td><td>绝对值</td></tr><tr><td>pow</td><td>次方</td></tr><tr><td>toString</td><td>十进制字符串（可以传参数p，p表示p进制数）</td></tr></tbody></table><p>NaN是java.lang包中Double类的static常量，NaN表示非数字常量。NaN+2仍然是NaN。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.math.BigInteger;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        double a &#x3D; 5.0;
+        double st &#x3D; Math.sqrt(a);
+        System.out.println(a + &quot;的平方根为：&quot; + st);
+        a &#x3D; -a;
+        st &#x3D; Math.sqrt(a);
+        System.out.println(a + &quot;的平方根为：&quot; + st);
+        System.out.printf(&quot;大于等于%f的最小整数%d\n&quot;, 5.2, (int) Math.ceil(5.2));
+        System.out.printf(&quot;小于等于%f的最大整数%d\n&quot;, -5.2, (int) Math.floor(-5.2));
+        System.out.printf(&quot;%f四舍五入的整数：%d\n&quot;, 12.9, Math.round(12.9));
+        System.out.printf(&quot;%f四舍五入的整数：%d\n&quot;, -12.6, Math.round(-12.6));
+        BigInteger result &#x3D; new BigInteger(&quot;0&quot;);
+        BigInteger one &#x3D; new BigInteger(&quot;123456789&quot;);
+        BigInteger two &#x3D; new BigInteger(&quot;987654321&quot;);
+        result &#x3D; one.add(two);
+        System.out.println(&quot;和：&quot; + result);
+        result &#x3D; one.multiply(two);
+        System.out.println(&quot;积：&quot; + result);
+    &#125;
+&#125;
+&#x2F;*
+5.0的平方根为：2.23606797749979
+-5.0的平方根为：NaN
+大于等于5.200000的最小整数6
+小于等于-5.200000的最大整数-6
+12.900000四舍五入的整数：13
+-12.600000四舍五入的整数：-13
+和：1111111110
+积：121932631112635269
+*&#x2F;</code></pre><h3 id="8-8-3-Random类"><a href="#8-8-3-Random类" class="headerlink" title="8.8.3 Random类"></a>8.8.3 Random类</h3><p>尽管可以调用Math类中的static方法random返回一个0~1的随机数（包括0.0但不包括1.0），即随机数的取值范围是[0.0, 1.0).</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">(int)(Math.random()*100)+1; &#x2F;&#x2F; [1, 100]</code></pre><p>因为<code>random</code>不会随机到1.0，所以上述的<code>(Math.random()*100)</code>不可能得到100.0，最多只能达到99.9999…，然后通过强制类型转换为整型就会变成99，然后再加后面的1就可以达到100，所以上面的代码的结果就是<code>[1, 100]</code>之间的整数。</p><p>但是，Java提供了更为灵活的用于获取随机数的Random类（该类在java.util包中）。</p><p>使用Random类的如下构造方法：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public Random();    &#x2F;&#x2F; 使用当前机器时间作为种子创建一个Random对象
+public Random(long seed); &#x2F;&#x2F; 使用参数seed指定的种子创建一个Random对象</code></pre><p>人们习惯将Random对象称为随机数生成器。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Random random &#x3D; new Random();
+random.nextInt(); &#x2F;&#x2F; 返回一个随机整数</code></pre><p>如果想让随机数生成器random返回一个0~n（包括0不包括n）的随机数，可以让random调用参数的nextInt(int m)方法（参数m必须取正整数）。</p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">random.nextInt(100); &#x2F;&#x2F; 返回[0, 99]的某个整数</code></pre><p>random调用public double nextDouble()返回一个0.0~1.0（包括0.0不包括1.0）的随机数。</p><p>如果程序需要随机得到true和false两个表示真和假的boolean值，可以用random调用nextBoolean方法。</p><p><strong>注意：对于具有相同种子的两个Random对象，二者依次调用nextInt()方法获取的随机数序列是相同的。</strong></p><p>例子：</p><p>随机获得6个1~100的不同的整数。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Random;
+
+class GetRandomNumber &#123;
+    public static int[] getRandomNumber(int max, int amount) &#123;
+        &#x2F;&#x2F; 1~max随机整数
+        int[] randNumber &#x3D; new int[amount];
+        int index &#x3D; 0;
+        randNumber[0] &#x3D; -1;
+        Random random &#x3D; new Random();
+        while (index &lt; amount) &#123;
+            int number &#x3D; random.nextInt(max) + 1;   &#x2F;&#x2F; [1, max]
+            boolean isInArrays &#x3D; false;
+            for (int m : randNumber) &#123;
+                if (m &#x3D;&#x3D; number) &#123;
+                    isInArrays &#x3D; true;
+                    break;
+                &#125;
+            &#125;
+            if (!isInArrays) &#123;
+                randNumber[index++] &#x3D; number;
+            &#125;
+        &#125;
+        return randNumber;
+    &#125;
+&#125;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        int[] a &#x3D; GetRandomNumber.getRandomNumber(100, 6);
+        System.out.println(java.util.Arrays.toString(a));
+    &#125;
+&#125;
+&#x2F;*
+[79, 96, 92, 15, 73, 81]
+*&#x2F;</code></pre><p>下面的例子中，在循环10000次的循环语句的循环体中每次使用Random对象得到1至7之间的一个数字，循环结束后输出1至7之间的各个数字出现的次数。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Arrays;
+import java.util.Random;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        int number &#x3D; 7;
+        int[] saveNumber &#x3D; new int[number];
+        for (int i &#x3D; 0; i &lt; saveNumber.length; i++) &#123;
+            saveNumber[i] &#x3D; i + 1;
+        &#125;
+        int[] frequency &#x3D; new int[number];
+        Random random &#x3D; new Random();
+        int counts &#x3D; 10000;
+        int i &#x3D; 1;
+        while (i &lt; counts) &#123;
+            int m &#x3D; random.nextInt(number) + 1;
+            int index &#x3D; Arrays.binarySearch(saveNumber, m);
+            if (index &gt;&#x3D; 0) &#123;
+                frequency[index]++;
+            &#125;
+            i++;
+        &#125;
+        System.out.println(&quot;循环&quot; + counts + &quot;次&quot;);
+        System.out.println(Arrays.toString(saveNumber));
+        System.out.println(&quot;各个数字出现的次数：&quot;);
+        System.out.println(Arrays.toString(frequency));
+        int sum &#x3D; 0;
+        for (int item : frequency) &#123;
+            sum +&#x3D; item;
+        &#125;
+        System.out.println(&quot;次数之和sum &#x3D; &quot; + sum);
+    &#125;
+&#125;
+&#x2F;*
+循环10000次
+[1, 2, 3, 4, 5, 6, 7]
+各个数字出现的次数：
+[1419, 1395, 1486, 1476, 1367, 1395, 1461]
+次数之和sum &#x3D; 9999
+*&#x2F;</code></pre><h3 id="8-8-4-数字格式化"><a href="#8-8-4-数字格式化" class="headerlink" title="8.8.4 数字格式化"></a>8.8.4 数字格式化</h3><p>程序有时候需要对数字进行格式化。所谓数字格式化，就是按照指定格式得到一个字符序列。</p><ol><li>格式化模式</li></ol><p>format(格式化模式, 值列表)方法中的”格式化模式“是一个用双引号括起来的字符序列，该字符序列中的字符由格式符合普通字符构成。</p><ul><li>%d：将值格式化为十进制整数</li><li>%o：将值格式化为八进制整数</li><li>%x：将值格式化为小写的十六进制整数</li><li>%X：将值格式化为大写的十六进制整数</li><li>%f：将值格式化为十进制浮点数，小数保留6位</li><li>%e（%E）：将值格式化为科学记数法的十进制的浮点数</li></ul><p>规定宽度的一般格式为：%mf或%md（在数字的前面增加空格）</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class Main &#123;
+    public static void main(String[] args) &#123;
+        String s &#x3D; String.format(&quot;%11f&quot;, 59.88);
+        System.out.println(&quot;输出一句话&quot;);
+        System.out.println(s);
+    &#125;
+&#125;
+&#x2F;*
+输出一句话
+  59.880000
+*&#x2F;
+&#x2F;&#x2F; 11 &#x3D; 2 + 2 + 1 + 6
+&#x2F;&#x2F; m  &#x3D; (空格) + (整数部分) + (小数点) + (小数部分)</code></pre><p>如果m是负数则，从右边填充空格。</p><p>在指定宽度的同时也可以限制小数位数（%m.nf），表示这个数字总共占m位，小数部分占n位。</p><ol start="2"><li>值列表</li></ol><p>format方法的”值列表“是用都好分隔的变量、常量或表达式，要保证format方法的”格式化模式“中的格式符的个数与”值列表“中的值的个数相同。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">String s &#x3D; String.format(&quot;%d元%0.3f公斤%d台&quot;, 888, 999.777666, 123);
+&#x2F;&#x2F; s &#x3D;&#x3D; &quot;888元999.778公斤123台&quot;</code></pre><p><strong>注意：如果准备在”格式化模式“中包含普通的%，在编写代码时需要连续输入两个%.</strong></p><h2 id="8-9-Class类与反射"><a href="#8-9-Class类与反射" class="headerlink" title="8.9 Class类与反射"></a>8.9 Class类与反射</h2><h3 id="8-9-1-Java反射"><a href="#8-9-1-Java反射" class="headerlink" title="8.9.1 Java反射"></a>8.9.1 Java反射</h3><p>Class是java.lang包中的类，Class的实例封装和类有关的信息。任何类都默认有一个public的静态的Class对象，该对象的名字是class（用关键字做了名字，属于Java系统特权），该对象封装当前类的有关信息。用户可以通过类的对象调用getClass()方法（从java.lang.Object类继承的方法）返回这个Class对象——class。</p><p>Class对象调用如下方法可以获取当前类的有关信息，例如类的名字、类中的方法名称、成员变量的名称等，这一机制也称为Java反射。</p><ul><li>String getName()：返回类的名字</li><li>Constructor[] getDeclaredConstructors()：返回类的全部构造方法</li><li>Field[] getDeclaredFields()：返回类的全部成员变量</li><li>Method[] getDeclaredMethods()：返回类的全部方法。</li></ul><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+
+class Rect &#123;
+    double width;
+    double height;
+    double area;
+
+    public Rect() &#123;
+    &#125;
+
+    public Rect(double width, double height) &#123;
+        this.width &#x3D; width;
+        this.height &#x3D; height;
+    &#125;
+
+    public double getArea() &#123;
+        area &#x3D; height * width;
+        return area;
+    &#125;
+&#125;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        Rect rect &#x3D; new Rect();
+        Class cs &#x3D; rect.getClass();
+        System.out.println(cs &#x3D;&#x3D; Rect.class);
+        String className &#x3D; cs.getName();
+        Constructor[] constructors &#x3D; cs.getDeclaredConstructors();   &#x2F;&#x2F; 返回类中的构造方法
+        Field[] fields &#x3D; cs.getDeclaredFields();                     &#x2F;&#x2F; 返回类中的成员变量
+        Method[] methods &#x3D; cs.getDeclaredMethods();                  &#x2F;&#x2F; 返回类的方法
+        System.out.println(&quot;类的名字: &quot;+className);
+        System.out.println(&quot;类中有如下的构造方法: &quot;);
+        for (Constructor constructor : constructors) &#123;
+            System.out.println(constructor.toString());
+        &#125;
+        System.out.println(&quot;类中有如下的成员变量:&quot;);
+        for (Field field : fields) &#123;
+            System.out.println(field.toString());
+        &#125;
+        System.out.println(&quot;类中有如下方法&quot;);
+        for (Method method : methods) &#123;
+            System.out.println(method.toString());
+        &#125;
+    &#125;
+&#125;
+&#x2F;*
+true
+类的名字: Rect
+类中有如下的构造方法: 
+public Rect()
+public Rect(double,double)
+类中有如下的成员变量:
+double Rect.width
+double Rect.height
+double Rect.area
+类中有如下方法
+public double Rect.getArea()
+*&#x2F;</code></pre><h3 id="8-9-2-使用Class实例化一个对象"><a href="#8-9-2-使用Class实例化一个对象" class="headerlink" title="8.9.2 使用Class实例化一个对象"></a>8.9.2 使用Class实例化一个对象</h3><p>得到一个类的实例的常用方式就是使用new，在Java中也可以使用和类相关的Class对象(class)得到一个类的实例。</p><p>为了使用Class得到一个类的实例，可以先得到一个和该类相关的Class对象，做到这一点并不困难。但下面的方式更加灵活。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public static Class&lt;?&gt; forName(String className) throws ClassNotFoundException</code></pre><p>就可以返回一个和参数className指定的类相关的Class对象。再让这个Class对象调用方法得到className的无参构造方法（因此className类必须保证有无参构造方法）。</p><p>然后，Constructor&lt;?&gt;对象调用newInstance()返回一个className类的对象。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public Constructor&lt;?&gt; getDeclaredConstructor() throws SecurityExcepthon</code></pre><p><strong>注意：JDK9版本开始，Class类的newInstance()方法被宣布过时。</strong></p><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">编译器只检查Circle是否是一个String类型的数据，并不检查是否是Circle类import java.lang.reflect.Constructor;
+
+class Circle &#123;
+    public double radius;
+
+    public void setRadius(double radius) &#123;
+        this.radius &#x3D; radius;
+    &#125;
+
+    public double getArea() &#123;
+        return Math.PI * radius * radius;
+    &#125;
+&#125;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        try &#123;
+            Class&lt;?&gt; cs &#x3D; Class.forName(&quot;Circle&quot;);  &#x2F;&#x2F; 
+            Constructor&lt;?&gt; constructor &#x3D; cs.getDeclaredConstructor();   &#x2F;&#x2F; 获得构造器（构造方法）
+            Circle circle &#x3D; (Circle) constructor.newInstance();         &#x2F;&#x2F; 通过刚刚的构造器new一个实例
+            circle.setRadius(100);
+            double area &#x3D; circle.getArea();
+            String formatStr &#x3D; String.format(&quot;%10.2f&quot;, area);
+            System.out.println(&quot;circle的半径: &quot; + circle.radius);
+            System.out.println(&quot;circle的面积: &quot; + area);
+        &#125; catch (Exception e) &#123;
+            System.out.println(e.getMessage());
+        &#125;
+    &#125;
+&#125;
+&#x2F;*
+circle的半径: 100.0
+circle的面积: 31415.926535897932
+*&#x2F;</code></pre><p>在<code>forName</code>那行，编译器只检查Circle是否是一个String类型的数据，并不检查是否是Circle类。在运行阶段，如果发现没有Circle类，将触发ClassNotFoundException.而对于”Circle.class”在编译阶段就要检查是否有Circle类（缺乏灵活性）。</p><p><strong>注意：在后面学习数据库时，经常需要使用Class类加载和数据库驱动相关的类，纯Java数据库驱动都是一个Java类。</strong></p><h2 id="8-10-Arrays类、System类和Console类"><a href="#8-10-Arrays类、System类和Console类" class="headerlink" title="8.10 Arrays类、System类和Console类"></a>8.10 Arrays类、System类和Console类</h2><h3 id="8-10-1-Arrays类"><a href="#8-10-1-Arrays类" class="headerlink" title="8.10.1 Arrays类"></a>8.10.1 Arrays类</h3><p>Arrays在java.util包中，提供了操作数组的各种static方法。</p><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>public staic void sort(double[] a)</td><td>对参数指定的double型数组a按数字升序进行排序</td></tr><tr><td>public static int binarySearch(double[] a, double key)</td><td>使用二分查找判断key给出的值是否在参数a指定的数组中，在则返回其下标，否则返回-1</td></tr><tr><td>public static boolean equals(double[] a, double[] b)</td><td>判断两个数组是否相等，是则返回true，否则返回false</td></tr><tr><td>public static String toString(double[] a)</td><td>将数组a的数据转为字符串用逗号分隔，再用一个[]包裹</td></tr><tr><td>public static double[] copyOf(double[] original, int newLength)</td><td>复制数组原始，新数组的长度为max(newLength, original.length)，默认用0.0填充</td></tr></tbody></table><p>上面的方法是Arrays类的重载方法，当然还有其它类型的版本，这里不一一列出。</p><h3 id="8-10-2-System类"><a href="#8-10-2-System类" class="headerlink" title="8.10.2 System类"></a>8.10.2 System类</h3><p>System类在java.lang包中，下列static方法属于常用方法。</p><table><thead><tr><th>方法</th><th>作用</th></tr></thead><tbody><tr><td>public static long nanoTime()</td><td>以纳秒为单位返回最准确的可用系统计时器的当前值。此方法只能用于测量已过的时间，与系统或钟表时间的其他任何时间概念无关</td></tr><tr><td>public static void exit(int status)</td><td>终止当前正在运行的Java虚拟机，即退出当前Java虚拟机正在运行的全部程序</td></tr><tr><td>public static void gc()</td><td>运行垃圾回收器</td></tr></tbody></table><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.util.Arrays;
+import java.util.Random;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        Random randomOne &#x3D; new Random(2023);
+        Random randomTwo &#x3D; new Random(2023);
+        int amount &#x3D; 10000;
+        int[] one &#x3D; new int[amount];
+        int[] two &#x3D; new int[amount];
+        for (int i &#x3D; 0; i &lt; amount; i++) &#123;
+            one[i] &#x3D; randomOne.nextInt(amount);
+            two[i] &#x3D; randomOne.nextInt(amount);
+        &#125;
+        if (Arrays.equals(one, two)) &#123;
+            System.out.println(&quot;两个数组相等，前8个元素分别是：&quot;);
+            int[] a &#x3D; Arrays.copyOf(one, 8);
+            int[] b &#x3D; Arrays.copyOf(two, 8);
+            System.out.println(Arrays.toString(a));
+            System.out.println(Arrays.toString(b));
+        &#125; else &#123;
+            System.out.println(&quot;两个数组不相等&quot;);
+        &#125;
+        long startTime &#x3D; System.nanoTime();
+        Arrays.sort(one);
+        Arrays.sort(two);
+        long elapsedNanos &#x3D; System.nanoTime() - startTime;
+        System.out.println(&quot;排序两个数组的用时(纳秒)&quot; + elapsedNanos);
+    &#125;
+&#125;
+&#x2F;*
+两个数组不相等
+排序两个数组的用时(纳秒)6730500
+*&#x2F;</code></pre><h3 id="8-10-3-Console类"><a href="#8-10-3-Console类" class="headerlink" title="8.10.3 Console类"></a>8.10.3 Console类</h3><p>如果希望在键盘上输入一行文本，但不想让该文本回显，即不在命令行中显示，那么需要使用java.io包中的Console类的对象来完成。首先使用System类调用console()方法返回Console类的一个对象。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Console console &#x3D; System.console();</code></pre><p>然后console调用readPassword()方法读取用户在键盘输入的一行文本，并将文本以一个char型数组返回。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">char[] passwd &#x3D; console.readPassword();</code></pre><p>例子：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">import java.io.Console;
+
+public class Main &#123;
+    public static void main(String[] args) &#123;
+        boolean success &#x3D; false;
+        int count &#x3D; 0;
+        Console cons;
+        char[] passwd;
+        cons &#x3D; System.console();
+        while (true) &#123;
+            System.out.print(&quot;输入密码：&quot;);
+            passwd &#x3D; cons.readPassword();
+            count++;
+            String password &#x3D; new String(passwd);
+            if (password.equals(&quot;I Love You&quot;)) &#123;
+                success &#x3D; true;
+                System.out.println(&quot;第&quot; + count + &quot;次密码正确!&quot;);
+                break;
+            &#125; else &#123;
+                System.out.println(&quot;第&quot; + count + &quot;次密码&quot; + password + &quot;不正确&quot;);
+            &#125;
+            if (count &#x3D;&#x3D; 3) &#123;
+                System.out.println(&quot;您&quot; + count + &quot;次输入的密码都不正确&quot;);
+                System.exit(0);
+            &#125;
+        &#125;
+        System.out.println(&quot;您好，登入成功&quot;);
+    &#125;
+&#125;
+&#x2F;*
+程序出现异常。。。
+*&#x2F;</code></pre><h2 id="8-11-小结"><a href="#8-11-小结" class="headerlink" title="8.11 小结"></a>8.11 小结</h2><ol><li>熟练掌握String类的常用方法，这些方法对于有效处理字符序列信息是非常重要的</li><li>掌握String类和StringBuffer类的不同，以及两者之间的联系</li><li>使用StringTokenizer、Scanner、Pattern、Matcher类分析字符串，获取字符串中的单词</li><li>熟悉Class类的机制和用法</li><li>当程序需要处理时间时，使用java.time包中的LocalDate、LocalDateTime和LocalTime类</li><li>如果需要处理特别大的整数，使用BigInteger类</li><li>当需要格式化日期和数字时，使用String类的static方法format</li></ol></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> 第八章常用使用类</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at:</strong> 2023-05-20 10:23:10</li><li><strong>Updated at:</strong> 2023-06-18 17:07:19</li><li><strong>Link:</strong> https://cukor666.github.io//post/第八章常用使用类.html</li><li><strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Java/">#Java</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/post/%E7%BB%8F%E5%85%B8%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95.html"><span class="left arrow-icon flex-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">经典查找算法</span> <span class="post-nav-item">Prev posts</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/post/%E7%AC%AC%E4%B8%83%E7%AB%A0%E5%86%85%E9%83%A8%E7%B1%BB%E4%B8%8E%E5%BC%82%E5%B8%B8%E7%B1%BB.html"><span class="title flex-center"><span class="post-nav-title-item">第七章内部类与异常类</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">第八章常用使用类</div><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-String%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">8.1 String类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-1-%E6%9E%84%E9%80%A0String%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">8.1.1 构造String对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-2-String%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B9%B6%E7%BD%AE"><span class="nav-number">3.</span> <span class="nav-text">8.1.2 String对象的并置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-3-String%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">8.1.3 String的常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-4-String%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%9A%84%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="nav-number">5.</span> <span class="nav-text">8.1.4 String与基本数据的相互转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-5-%E5%AF%B9%E8%B1%A1%E7%9A%84String%E5%AF%B9%E8%B1%A1%E8%A1%A8%E7%A4%BA"><span class="nav-number">6.</span> <span class="nav-text">8.1.5 对象的String对象表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-6-String%E5%AF%B9%E8%B1%A1%E4%B8%8E%E5%AD%97%E7%AC%A6%E6%95%B0%E7%BB%84%E3%80%81%E5%AD%97%E8%8A%82%E6%95%B0%E7%BB%84"><span class="nav-number">7.</span> <span class="nav-text">8.1.6 String对象与字符数组、字节数组</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number"></span> <span class="nav-text">8.2 正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-1-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%8E%E5%85%83%E5%AD%97%E7%AC%A6"><span class="nav-number">1.</span> <span class="nav-text">8.2.1 正则表达式与元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-2-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">8.2.2 常用的正则表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-3-%E5%AD%97%E7%AC%A6%E5%BA%8F%E5%88%97%E7%9A%84%E6%9B%BF%E6%8D%A2"><span class="nav-number">3.</span> <span class="nav-text">8.2.3 字符序列的替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-4-%E5%AD%97%E7%AC%A6%E5%BA%8F%E5%88%97%E7%9A%84%E5%88%86%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">8.2.4 字符序列的分解</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-StringTokenizer%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">8.3 StringTokenizer类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-Scanner%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">8.2 Scanner类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-Pattern%E7%B1%BB%E4%B8%8EMatcher%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">8.5 Pattern类与Matcher类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-6-StringBuffer%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">8.6 StringBuffer类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-6-2-StringBuffer%E7%B1%BB%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">8.6.2 StringBuffer类常用的方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-7-%E6%97%A5%E6%9C%9F%E4%B8%8E%E6%97%B6%E9%97%B4"><span class="nav-number"></span> <span class="nav-text">8.7 日期与时间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-7-1-%E6%97%A5%E6%9C%9F%E4%B8%8E%E6%97%B6%E9%97%B4%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">8.7.1 日期与时间类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-7-2-%E6%97%A5%E6%9C%9F%E3%80%81%E6%97%B6%E9%97%B4%E5%B7%AE%E5%92%8C%E6%97%A5%E5%8E%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">8.7.2 日期、时间差和日历类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-7-3-%E6%97%A5%E6%9C%9F%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">3.</span> <span class="nav-text">8.7.3 日期格式化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-8-Math%E7%B1%BB%E3%80%81BigInteger%E7%B1%BB%E5%92%8CRandom%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">8.8 Math类、BigInteger类和Random类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-8-1-Math%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">8.8.1 Math类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-8-2-BigInteger%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">8.8.2 BigInteger类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-8-3-Random%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">8.8.3 Random类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-8-4-%E6%95%B0%E5%AD%97%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">8.8.4 数字格式化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-9-Class%E7%B1%BB%E4%B8%8E%E5%8F%8D%E5%B0%84"><span class="nav-number"></span> <span class="nav-text">8.9 Class类与反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-9-1-Java%E5%8F%8D%E5%B0%84"><span class="nav-number">1.</span> <span class="nav-text">8.9.1 Java反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-9-2-%E4%BD%BF%E7%94%A8Class%E5%AE%9E%E4%BE%8B%E5%8C%96%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">8.9.2 使用Class实例化一个对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-10-Arrays%E7%B1%BB%E3%80%81System%E7%B1%BB%E5%92%8CConsole%E7%B1%BB"><span class="nav-number"></span> <span class="nav-text">8.10 Arrays类、System类和Console类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-10-1-Arrays%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">8.10.1 Arrays类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-10-2-System%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">8.10.2 System类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-10-3-Console%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">8.10.3 Console类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-11-%E5%B0%8F%E7%BB%93"><span class="nav-number"></span> <span class="nav-text">8.11 小结</span></a></li></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer"><div class="info-container"><div class="copyright-info">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span></div><div class="theme-info info-item"><span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span><br><span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.on("pageView",()=>{Global.refresh()})</script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/layouts/navbarShrink.js"></script><script src="/js/tools/scrollTopBottom.js"></script><script src="/js/tools/lightDarkSwitch.js"></script><script src="/js/layouts/categoryList.js"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js"></script><div class="post-scripts" data-swup-reload-script><script src="/js/tools/tocToggle.js"></script><script src="/js/layouts/toc.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/plugins/tabs.js"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
