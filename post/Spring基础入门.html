@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/spring基础入门.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="Spring基础1. Spring框架的介绍1.1 传统的项目的架构  在传统的项目中，一般遵循MVC开发模型。 (1) view层与用户进行交互，显示数据或者将数据传输给view层。 (2) 在controller层创建service层对象，调用service层中业务方法。 (3) 在service层创建dao层对象，调用dao层中操作数据的方法。 (4) dao层进行具体的数据库操作 1.2"><meta property="og:type" content="article"><meta property="og:title" content="Spring基础入门"><meta property="og:url" content="http://example.com/post/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="Spring基础1. Spring框架的介绍1.1 传统的项目的架构  在传统的项目中，一般遵循MVC开发模型。 (1) view层与用户进行交互，显示数据或者将数据传输给view层。 (2) 在controller层创建service层对象，调用service层中业务方法。 (3) 在service层创建dao层对象，调用dao层中操作数据的方法。 (4) dao层进行具体的数据库操作 1.2"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps1.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps2.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps3.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps4.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps8.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps9.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230718090218060.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230718180235729.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816134705654.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151226608.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151545616.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151700609.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151828722.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816152009711.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816152037813.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230817220649014.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720145420850.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720163345926.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720163718038.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720164803477.png"><meta property="article:published_time" content="2023-07-20T08:50:41.000Z"><meta property="article:modified_time" content="2023-08-17T15:27:01.159Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Java"><meta property="article:tag" content="Spring"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps1.jpg"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>Spring基础入门 - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"2450808861@qq.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.3.0",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io"}},Links:{icon:"fa-regular fa-link",submenus:{CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"20级信息与计算科学专业主修数学误打误撞来到了计算机的世界",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li></ul></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer"><ul class="drawer-navbar-list"><li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item flex-center"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item flex-center"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">ME</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><img src="/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/spring%E5%9B%BE%E6%A0%87.png" alt="Spring基础入门"><h1 class="article-title-cover">Spring基础入门</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv4</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-07-20 16:50:41</span> <span class="mobile">2023-07-20 16:50:41</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-08-17 23:27:01</span> <span class="mobile">2023-08-17 23:27:01</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/Spring/">Spring</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Java/">Java</a>&nbsp;</li><li>| <a href="/tags/Spring/">Spring</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>19.1k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>94 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h1 id="Spring基础"><a href="#Spring基础" class="headerlink" title="Spring基础"></a>Spring基础</h1><h2 id="1-Spring框架的介绍"><a href="#1-Spring框架的介绍" class="headerlink" title="1. Spring框架的介绍"></a>1. Spring框架的介绍</h2><h3 id="1-1-传统的项目的架构"><a href="#1-1-传统的项目的架构" class="headerlink" title="1.1 传统的项目的架构"></a>1.1 传统的项目的架构</h3><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps1.jpg" alt="img"></p><p>在传统的项目中，一般遵循MVC开发模型。</p><p>(1) view层与用户进行交互，显示数据或者将数据传输给view层。</p><p>(2) 在controller层创建service层对象，调用service层中业务方法。</p><p>(3) 在service层创建dao层对象，调用dao层中操作数据的方法。</p><p>(4) dao层进行具体的数据库操作</p><h3 id="1-2-传统的项目架构缺陷"><a href="#1-2-传统的项目架构缺陷" class="headerlink" title="1.2 传统的项目架构缺陷"></a>1.2 传统的项目架构缺陷</h3><p>程序在一定程度上存在耦合性，不利于程序的扩展。在controller中直接创建了service层类的对象。如果service的业务发生了变更，那么就需要修改controller层的代码。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps2.jpg" alt="img"></p><p>在进行程序的扩展时，不建议在当前程序的基础上直接修改程序，为了保证之前程序的正常，一般遵循开闭原则进行维护性的修改，对扩展开放，对修改关闭。</p><p>例如：用户注册功能。用户注册，从账号、密码、手机号等信息即可。随着行业发展，目前要求进行实名认证。</p><p>1．已注册未认证用户登录时进行认证。</p><p>2．新用户注册后要求进行认证。</p><p>为避免对已有业务的改动，可以新建一个service类，重写注册方法。则在controller层需要创建新的service对象。每个相关的controller层的代码都需要改动，并且每个controller都需要创建对象，存在对象的浪费。</p><p>面向过程—&gt;面向对象—-&gt;面向接口—-&gt;面向切面(组件)</p><h3 id="1-3-解决方案"><a href="#1-3-解决方案" class="headerlink" title="1.3 解决方案"></a>1.3 解决方案</h3><p>基于每个controller都要修改service的创建问题，可以为service定义一个统一的创建方式，例如对象工厂模式，使用工厂创建对象，这样以后使用工厂创建对象的对象需要维护时，只需要修改对象工厂即可，且可以结合单例模式，对象工厂返回单例，这样优化了对象重复的浪费问题。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps3.jpg" alt="img"></p><p>虽然单例工厂能够解决对象的维护和重复问题。但是，随着service层的扩大，工厂也逐渐臃肿,基本每个service会对应一个factory。基于这种情况，则又需要解决工厂臃肿的问题，为此可以利用反射技术，反射可以创建任意类的对象。但是，工厂为保证单例，只能存储的对象只有一个，而controller层需要使用不同的service层对象，为保证对象的有效，且反射性能相对较低，基于这样的情况，则可以定义一个需要创建的对象的清单和一个存储对象的容器，根据清单创建对象，然后将所有创建service对象进行存储，每个controller只需要去容器中获取对象即可，这样既解决了单例问题，也提高了性能。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps4.jpg" alt="img"></p><h2 id="2-Spring的介绍"><a href="#2-Spring的介绍" class="headerlink" title="2. Spring的介绍"></a>2. Spring的介绍</h2><h3 id="2-2-Spring的核心组件"><a href="#2-2-Spring的核心组件" class="headerlink" title="2.2 Spring的核心组件"></a>2.2 Spring的核心组件</h3><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps8.jpg" alt="img"></p><h4 id="2-2-1-核心容器"><a href="#2-2-1-核心容器" class="headerlink" title="2.2.1 核心容器"></a>2.2.1 核心容器</h4><p>核心容器由 spring-core，spring-beans，spring-context，spring-context-support和spring-expression（SpEL，Spring 表达式语言，Spring Expression Language）等模块组成，它们的细节如下：</p><ul><li><p>spring-core 模块提供了框架的基本组成部分，包括 IoC 和依赖注入功能。</p></li><li><p>spring-beans 模块提供 BeanFactory，工厂模式的微妙实现，它移除了编码式单例的需要，并且可以把配置和依赖从实际编码逻辑中解耦。</p></li><li><p>context 模块建立在由 core和 beans 模块的基础上建立起来的，它以一种类似于 JNDI 注册的方式访问对象。Context 模块继承自 Bean 模块，并且添加了国际化（比如，使用资源束）、事件传播、资源加载和透明地创建上下文（比如，通过 Servelet 容器）等功能。Context 模块也支持 Java EE 的功能，比如 EJB、JMX 和远程调用等。ApplicationContext 接口是 Context 模块的焦点。spring-context-support 提供了对第三方库集成到 Spring 上下文的支持，比如缓存（EhCache, Guava, JCache）、邮件（JavaMail）、调度（CommonJ, Quartz）、模板引擎（FreeMarker, JasperReports, Velocity）等。</p></li><li><p>spring-expression 模块提供了强大的表达式语言，用于在运行时查询和操作对象图。它是 JSP2.1 规范中定义的统一表达式语言的扩展，支持 set 和 get 属性值、属性赋值、方法调用、访问数组集合及索引的内容、逻辑算术运算、命名变量、通过名字从 Spring IoC 容器检索对象，还支持列表的投影、选择以及聚合等。</p></li></ul><p>依赖关系图如下：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps9.jpg" alt="img"></p><h4 id="2-2-2-数据访问-x2F-集成"><a href="#2-2-2-数据访问-x2F-集成" class="headerlink" title="2.2.2 数据访问&#x2F;集成"></a>2.2.2 数据访问&#x2F;集成</h4><p>数据访问&#x2F;集成层包括 JDBC，ORM，OXM，JMS 和事务处理模块，它们的细节如下：</p><p>（注：JDBC&#x3D;Java Data Base Connectivity，ORM&#x3D;Object Relationa+ Mapping，OXM&#x3D;Object XM+ Mapping，JMS&#x3D;Java Message Service）</p><ul><li><p>JDBC 模块提供了 JDBC 抽象层，它消除了冗长的 JDBC 编码和对数据库供应商特定错误代码的解析。</p></li><li><p>ORM 模块提供了对流行的对象关系映射 API 的集成，包括 JPA、JDO 和 Hibernate 等。通过此模块可以让这些 ORM 框架和 spring的其它功能整合，比如前面提及的事务管理。</p></li><li><p>OXM 模块提供了对 OXM 实现的支持，比如 JAXB、Castor、XM+ Beans、JiBX、XStream 等。</p></li><li><p>JMS 模块包含生产（produce）和消费（consume）消息的功能。从 Spring 4.1 开始，集成了 spring-messaging 模块。</p></li><li><p>事务模块为实现特殊接口类及所有的 POJO 支持编程式和声明式事务管理。（注：编程式事务需要自己写 beginTransaction()、commit()、rollback() 等事务管理方法，声明式事务是通过注解或配置由 spring 自动处理，编程式事务粒度更细）</p></li></ul><h4 id="2-2-3-Web"><a href="#2-2-3-Web" class="headerlink" title="2.2.3 Web"></a>2.2.3 Web</h4><p>Web 层由 Web，Web-MVC，Web-Socket 和 Web-Portlet 组成，它们的细节如下：</p><ul><li><p>Web 模块提供面向 web 的基本功能和面向 web 的应用上下文，比如多部分（multipart）文件上传功能、使用 Servlet 监听器初始化 IoC 容器等。它还包括 HTTP 客户端以及 Spring 远程调用中与 web 相关的部分。</p></li><li><p>Web-MVC 模块为 web 应用提供了模型视图控制（MVC）和 REST Web服务的实现。Spring 的 MVC 框架可以使领域模型代码和 web 表单完全地分离，且可以与 Spring 框架的其它所有功能进行集成。</p></li><li><p>Web-Socket 模块为 WebSocket-based 提供了支持，而且在 web 应用程序中提供了客户端和服务器端之间通信的两种方式。</p></li><li><p>Web-Portlet 模块提供了用于 Portlet 环境的 MVC 实现，并反映了 spring-webmvc 模块的功能。</p></li></ul><h4 id="2-2-4-其他"><a href="#2-2-4-其他" class="headerlink" title="2.2.4 其他"></a>2.2.4 其他</h4><p>还有其他一些重要的模块，像 AOP，Aspects，Instrumentation，Web 和测试模块，它们的细节如下：</p><ul><li>AOP 模块提供了面向方面（切面）的编程实现，允许你定义方法拦截器和切入点对代码进行干净地解耦，从而使实现功能的代码彻底的解耦出来。使用源码级的元数据，可以用类似于.Net属性的方式合并行为信息到代码中。</li><li>Aspects 模块提供了与 AspectJ 的集成，这是一个功能强大且成熟的面向切面编程（AOP）框架。</li><li>Instrumentation 模块在一定的应用服务器中提供了类 instrumentation 的支持和类加载器的实现。</li><li>Messaging 模块为 STOMP 提供了支持作为在应用程序中 WebSocket 子协议的使用。它也支持一个注解编程模型，它是为了选路和处理来自 WebSocket 客户端的 STOMP 信息。</li><li>测试模块支持对具有 JUnit 或 TestNG 框架的 Spring 组件的测试。</li></ul><h2 id="3-第一个spring程序"><a href="#3-第一个spring程序" class="headerlink" title="3. 第一个spring程序"></a>3. 第一个spring程序</h2><h3 id="3-1-正常创建JavaMaven项目"><a href="#3-1-正常创建JavaMaven项目" class="headerlink" title="3.1 正常创建JavaMaven项目"></a>3.1 正常创建JavaMaven项目</h3><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230718090218060.png" alt="image-20230718090218060"></p><h3 id="3-2-导入相关依赖jar包"><a href="#3-2-导入相关依赖jar包" class="headerlink" title="3.2 导入相关依赖jar包"></a>3.2 导入相关依赖jar包</h3><p>pom.xml：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/spring基础入门.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="Spring基础1. Spring框架的介绍1.1 传统的项目的架构  在传统的项目中，一般遵循MVC开发模型。 (1) view层与用户进行交互，显示数据或者将数据传输给view层。 (2) 在controller层创建service层对象，调用service层中业务方法。 (3) 在service层创建dao层对象，调用dao层中操作数据的方法。 (4) dao层进行具体的数据库操作 1.2"><meta property="og:type" content="article"><meta property="og:title" content="Spring基础入门"><meta property="og:url" content="http://example.com/post/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="Spring基础1. Spring框架的介绍1.1 传统的项目的架构  在传统的项目中，一般遵循MVC开发模型。 (1) view层与用户进行交互，显示数据或者将数据传输给view层。 (2) 在controller层创建service层对象，调用service层中业务方法。 (3) 在service层创建dao层对象，调用dao层中操作数据的方法。 (4) dao层进行具体的数据库操作 1.2"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps1.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps2.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps3.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps4.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps8.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps9.jpg"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230718090218060.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230718180235729.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816134705654.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151226608.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151545616.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151700609.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816151828722.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816152009711.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230816152037813.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230817220649014.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230818001555907.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230818001719599.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720145420850.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230818181237651.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720163345926.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720163718038.png"><meta property="og:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720164803477.png"><meta property="article:published_time" content="2023-07-20T08:50:41.000Z"><meta property="article:modified_time" content="2023-08-18T10:16:38.863Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Java"><meta property="article:tag" content="Spring"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps1.jpg"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>Spring基础入门 - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"2450808861@qq.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.3.0",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io"}},Links:{icon:"fa-regular fa-link",submenus:{CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"20级信息与计算科学专业主修数学误打误撞来到了计算机的世界",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li></ul></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer"><ul class="drawer-navbar-list"><li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item flex-center"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item flex-center"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">ME</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><img src="/images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/spring%E5%9B%BE%E6%A0%87.png" alt="Spring基础入门"><h1 class="article-title-cover">Spring基础入门</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv4</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-07-20 16:50:41</span> <span class="mobile">2023-07-20 16:50:41</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-08-18 18:16:38</span> <span class="mobile">2023-08-18 18:16:38</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/Spring/">Spring</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Java/">Java</a>&nbsp;</li><li>| <a href="/tags/Spring/">Spring</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>19.2k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>94 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h1 id="Spring基础"><a href="#Spring基础" class="headerlink" title="Spring基础"></a>Spring基础</h1><h2 id="1-Spring框架的介绍"><a href="#1-Spring框架的介绍" class="headerlink" title="1. Spring框架的介绍"></a>1. Spring框架的介绍</h2><h3 id="1-1-传统的项目的架构"><a href="#1-1-传统的项目的架构" class="headerlink" title="1.1 传统的项目的架构"></a>1.1 传统的项目的架构</h3><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps1.jpg" alt="img"></p><p>在传统的项目中，一般遵循MVC开发模型。</p><p>(1) view层与用户进行交互，显示数据或者将数据传输给view层。</p><p>(2) 在controller层创建service层对象，调用service层中业务方法。</p><p>(3) 在service层创建dao层对象，调用dao层中操作数据的方法。</p><p>(4) dao层进行具体的数据库操作</p><h3 id="1-2-传统的项目架构缺陷"><a href="#1-2-传统的项目架构缺陷" class="headerlink" title="1.2 传统的项目架构缺陷"></a>1.2 传统的项目架构缺陷</h3><p>程序在一定程度上存在耦合性，不利于程序的扩展。在controller中直接创建了service层类的对象。如果service的业务发生了变更，那么就需要修改controller层的代码。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps2.jpg" alt="img"></p><p>在进行程序的扩展时，不建议在当前程序的基础上直接修改程序，为了保证之前程序的正常，一般遵循开闭原则进行维护性的修改，对扩展开放，对修改关闭。</p><p>例如：用户注册功能。用户注册，从账号、密码、手机号等信息即可。随着行业发展，目前要求进行实名认证。</p><p>1．已注册未认证用户登录时进行认证。</p><p>2．新用户注册后要求进行认证。</p><p>为避免对已有业务的改动，可以新建一个service类，重写注册方法。则在controller层需要创建新的service对象。每个相关的controller层的代码都需要改动，并且每个controller都需要创建对象，存在对象的浪费。</p><p>面向过程—&gt;面向对象—-&gt;面向接口—-&gt;面向切面(组件)</p><h3 id="1-3-解决方案"><a href="#1-3-解决方案" class="headerlink" title="1.3 解决方案"></a>1.3 解决方案</h3><p>基于每个controller都要修改service的创建问题，可以为service定义一个统一的创建方式，例如对象工厂模式，使用工厂创建对象，这样以后使用工厂创建对象的对象需要维护时，只需要修改对象工厂即可，且可以结合单例模式，对象工厂返回单例，这样优化了对象重复的浪费问题。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps3.jpg" alt="img"></p><p>虽然单例工厂能够解决对象的维护和重复问题。但是，随着service层的扩大，工厂也逐渐臃肿,基本每个service会对应一个factory。基于这种情况，则又需要解决工厂臃肿的问题，为此可以利用反射技术，反射可以创建任意类的对象。但是，工厂为保证单例，只能存储的对象只有一个，而controller层需要使用不同的service层对象，为保证对象的有效，且反射性能相对较低，基于这样的情况，则可以定义一个需要创建的对象的清单和一个存储对象的容器，根据清单创建对象，然后将所有创建service对象进行存储，每个controller只需要去容器中获取对象即可，这样既解决了单例问题，也提高了性能。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps4.jpg" alt="img"></p><h2 id="2-Spring的介绍"><a href="#2-Spring的介绍" class="headerlink" title="2. Spring的介绍"></a>2. Spring的介绍</h2><h3 id="2-2-Spring的核心组件"><a href="#2-2-Spring的核心组件" class="headerlink" title="2.2 Spring的核心组件"></a>2.2 Spring的核心组件</h3><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps8.jpg" alt="img"></p><h4 id="2-2-1-核心容器"><a href="#2-2-1-核心容器" class="headerlink" title="2.2.1 核心容器"></a>2.2.1 核心容器</h4><p>核心容器由 spring-core，spring-beans，spring-context，spring-context-support和spring-expression（SpEL，Spring 表达式语言，Spring Expression Language）等模块组成，它们的细节如下：</p><ul><li><p>spring-core 模块提供了框架的基本组成部分，包括 IoC 和依赖注入功能。</p></li><li><p>spring-beans 模块提供 BeanFactory，工厂模式的微妙实现，它移除了编码式单例的需要，并且可以把配置和依赖从实际编码逻辑中解耦。</p></li><li><p>context 模块建立在由 core和 beans 模块的基础上建立起来的，它以一种类似于 JNDI 注册的方式访问对象。Context 模块继承自 Bean 模块，并且添加了国际化（比如，使用资源束）、事件传播、资源加载和透明地创建上下文（比如，通过 Servelet 容器）等功能。Context 模块也支持 Java EE 的功能，比如 EJB、JMX 和远程调用等。ApplicationContext 接口是 Context 模块的焦点。spring-context-support 提供了对第三方库集成到 Spring 上下文的支持，比如缓存（EhCache, Guava, JCache）、邮件（JavaMail）、调度（CommonJ, Quartz）、模板引擎（FreeMarker, JasperReports, Velocity）等。</p></li><li><p>spring-expression 模块提供了强大的表达式语言，用于在运行时查询和操作对象图。它是 JSP2.1 规范中定义的统一表达式语言的扩展，支持 set 和 get 属性值、属性赋值、方法调用、访问数组集合及索引的内容、逻辑算术运算、命名变量、通过名字从 Spring IoC 容器检索对象，还支持列表的投影、选择以及聚合等。</p></li></ul><p>依赖关系图如下：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/wps9.jpg" alt="img"></p><h4 id="2-2-2-数据访问-x2F-集成"><a href="#2-2-2-数据访问-x2F-集成" class="headerlink" title="2.2.2 数据访问&#x2F;集成"></a>2.2.2 数据访问&#x2F;集成</h4><p>数据访问&#x2F;集成层包括 JDBC，ORM，OXM，JMS 和事务处理模块，它们的细节如下：</p><p>（注：JDBC&#x3D;Java Data Base Connectivity，ORM&#x3D;Object Relationa+ Mapping，OXM&#x3D;Object XM+ Mapping，JMS&#x3D;Java Message Service）</p><ul><li><p>JDBC 模块提供了 JDBC 抽象层，它消除了冗长的 JDBC 编码和对数据库供应商特定错误代码的解析。</p></li><li><p>ORM 模块提供了对流行的对象关系映射 API 的集成，包括 JPA、JDO 和 Hibernate 等。通过此模块可以让这些 ORM 框架和 spring的其它功能整合，比如前面提及的事务管理。</p></li><li><p>OXM 模块提供了对 OXM 实现的支持，比如 JAXB、Castor、XM+ Beans、JiBX、XStream 等。</p></li><li><p>JMS 模块包含生产（produce）和消费（consume）消息的功能。从 Spring 4.1 开始，集成了 spring-messaging 模块。</p></li><li><p>事务模块为实现特殊接口类及所有的 POJO 支持编程式和声明式事务管理。（注：编程式事务需要自己写 beginTransaction()、commit()、rollback() 等事务管理方法，声明式事务是通过注解或配置由 spring 自动处理，编程式事务粒度更细）</p></li></ul><h4 id="2-2-3-Web"><a href="#2-2-3-Web" class="headerlink" title="2.2.3 Web"></a>2.2.3 Web</h4><p>Web 层由 Web，Web-MVC，Web-Socket 和 Web-Portlet 组成，它们的细节如下：</p><ul><li><p>Web 模块提供面向 web 的基本功能和面向 web 的应用上下文，比如多部分（multipart）文件上传功能、使用 Servlet 监听器初始化 IoC 容器等。它还包括 HTTP 客户端以及 Spring 远程调用中与 web 相关的部分。</p></li><li><p>Web-MVC 模块为 web 应用提供了模型视图控制（MVC）和 REST Web服务的实现。Spring 的 MVC 框架可以使领域模型代码和 web 表单完全地分离，且可以与 Spring 框架的其它所有功能进行集成。</p></li><li><p>Web-Socket 模块为 WebSocket-based 提供了支持，而且在 web 应用程序中提供了客户端和服务器端之间通信的两种方式。</p></li><li><p>Web-Portlet 模块提供了用于 Portlet 环境的 MVC 实现，并反映了 spring-webmvc 模块的功能。</p></li></ul><h4 id="2-2-4-其他"><a href="#2-2-4-其他" class="headerlink" title="2.2.4 其他"></a>2.2.4 其他</h4><p>还有其他一些重要的模块，像 AOP，Aspects，Instrumentation，Web 和测试模块，它们的细节如下：</p><ul><li>AOP 模块提供了面向方面（切面）的编程实现，允许你定义方法拦截器和切入点对代码进行干净地解耦，从而使实现功能的代码彻底的解耦出来。使用源码级的元数据，可以用类似于.Net属性的方式合并行为信息到代码中。</li><li>Aspects 模块提供了与 AspectJ 的集成，这是一个功能强大且成熟的面向切面编程（AOP）框架。</li><li>Instrumentation 模块在一定的应用服务器中提供了类 instrumentation 的支持和类加载器的实现。</li><li>Messaging 模块为 STOMP 提供了支持作为在应用程序中 WebSocket 子协议的使用。它也支持一个注解编程模型，它是为了选路和处理来自 WebSocket 客户端的 STOMP 信息。</li><li>测试模块支持对具有 JUnit 或 TestNG 框架的 Spring 组件的测试。</li></ul><h2 id="3-第一个spring程序"><a href="#3-第一个spring程序" class="headerlink" title="3. 第一个spring程序"></a>3. 第一个spring程序</h2><h3 id="3-1-正常创建JavaMaven项目"><a href="#3-1-正常创建JavaMaven项目" class="headerlink" title="3.1 正常创建JavaMaven项目"></a>3.1 正常创建JavaMaven项目</h3><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230718090218060.png" alt="image-20230718090218060"></p><h3 id="3-2-导入相关依赖jar包"><a href="#3-2-导入相关依赖jar包" class="headerlink" title="3.2 导入相关依赖jar包"></a>3.2 导入相关依赖jar包</h3><p>pom.xml：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
 &lt;project xmlns&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0&quot;
          xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;
          xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;maven.apache.org&#x2F;POM&#x2F;4.0.0 http:&#x2F;&#x2F;maven.apache.org&#x2F;xsd&#x2F;maven-4.0.0.xsd&quot;&gt;
@@ -1103,88 +1103,91 @@ public class UserServiceImpl implements UserService &#123;
                            http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context
                            http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context.xsd
                            http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop
-                           https:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&#x2F;spring-aop.xsd&quot;&gt;
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&#x2F;spring-aop.xsd&quot;&gt;
 
-    &lt;context:component-scan base-package&#x3D;&quot;cn.cukor.*&quot;&#x2F;&gt;
+    &lt;!--组件扫描--&gt;
+    &lt;context:component-scan base-package&#x3D;&quot;cn.cukor&quot;&#x2F;&gt;
 
-    &lt;!--SpringAOP相关的XML配置都放在aop:config中--&gt;
+    &lt;!--aop的配置--&gt;
     &lt;aop:config&gt;
         &lt;!--切点--&gt;
         &lt;!--前置通知切点--&gt;
         &lt;aop:pointcut id&#x3D;&quot;beforePoint&quot;
-                      expression&#x3D;&quot;execution(* cn.cukor.service.impl.UserServiceImpl.*(..))&quot;&#x2F;&gt;
+                      expression&#x3D;&quot;execution(* cn.cukor.service.UserService.*(..))&quot;&#x2F;&gt;
+
         &lt;!--后置通知切点--&gt;
         &lt;aop:pointcut id&#x3D;&quot;afterReturningPoint&quot;
-                      expression&#x3D;&quot;execution(* cn.cukor.service.impl.UserServiceImpl.*(..))&quot;&#x2F;&gt;
+                      expression&#x3D;&quot;execution(* cn.cukor.service.UserService.*(..))&quot;&#x2F;&gt;
+
         &lt;!--环绕通知切点--&gt;
         &lt;aop:pointcut id&#x3D;&quot;aroundPoint&quot;
-                      expression&#x3D;&quot;execution(* cn.cukor.service.impl.UserServiceImpl.*(..))&quot;&#x2F;&gt;
+                      expression&#x3D;&quot;execution(* cn.cukor.service.UserService.*(..))&quot;&#x2F;&gt;
+
         &lt;!--异常通知切点--&gt;
         &lt;aop:pointcut id&#x3D;&quot;exceptionPoint&quot;
-                      expression&#x3D;&quot;execution(* cn.cukor.service.impl.UserServiceImpl.selectUser(..))&quot;&#x2F;&gt;
+                      expression&#x3D;&quot;execution(* cn.cukor.service.UserService.selectUser(..))&quot;&#x2F;&gt;
 
-        &lt;!--通知器--&gt;
+        &lt;!--通知--&gt;
         &lt;!--前置通知--&gt;
         &lt;aop:advisor advice-ref&#x3D;&quot;myBeforeAdvice&quot; pointcut-ref&#x3D;&quot;beforePoint&quot;&#x2F;&gt;
+
         &lt;!--后置通知--&gt;
         &lt;aop:advisor advice-ref&#x3D;&quot;myAfterReturningAdvice&quot; pointcut-ref&#x3D;&quot;afterReturningPoint&quot;&#x2F;&gt;
+
         &lt;!--环绕通知--&gt;
         &lt;aop:advisor advice-ref&#x3D;&quot;myAroundAdvice&quot; pointcut-ref&#x3D;&quot;aroundPoint&quot;&#x2F;&gt;
+
         &lt;!--异常通知--&gt;
         &lt;aop:advisor advice-ref&#x3D;&quot;myExceptionAdvice&quot; pointcut-ref&#x3D;&quot;exceptionPoint&quot;&#x2F;&gt;
-
     &lt;&#x2F;aop:config&gt;
-
 &lt;&#x2F;beans&gt;
-</code></pre><h5 id="5-4-2-5-测试类"><a href="#5-4-2-5-测试类" class="headerlink" title="5.4.2.5 测试类"></a>5.4.2.5 测试类</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor;
+</code></pre><h5 id="5-4-2-5-测试类"><a href="#5-4-2-5-测试类" class="headerlink" title="5.4.2.5 测试类"></a>5.4.2.5 测试类</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.test;
 
 import cn.cukor.service.UserService;
-import cn.cukor.service.impl.UserServiceImpl;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MyTest &#123;
+
+    private ApplicationContext ioc;
+
+    @Before
+    public void before() &#123;
+        ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
+    &#125;
+
+    @After
+    public void after() &#123;
+        ((ClassPathXmlApplicationContext) ioc).close();
+    &#125;
+
     @Test
     public void test1() &#123;
-        ApplicationContext ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
         UserService userService &#x3D; ioc.getBean(UserService.class);
-
         Integer integer &#x3D; userService.insertUser();
         System.out.println(&quot;integer &#x3D; &quot; + integer);
-
-        ((ClassPathXmlApplicationContext)ioc).close();
     &#125;
 
     @Test
     public void test2() &#123;
-        ApplicationContext ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
         UserService userService &#x3D; ioc.getBean(UserService.class);
-
         Integer integer &#x3D; userService.deleteUser();
         System.out.println(&quot;integer &#x3D; &quot; + integer);
-
-        ((ClassPathXmlApplicationContext)ioc).close();
     &#125;
 
     @Test
     public void test3() &#123;
-        ApplicationContext ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
         UserService userService &#x3D; ioc.getBean(UserService.class);
-
         userService.selectUser(true);
-
-        ((ClassPathXmlApplicationContext)ioc).close();
     &#125;
 
     @Test
     public void test4() &#123;
-        ApplicationContext ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
         UserService userService &#x3D; ioc.getBean(UserService.class);
-
         userService.selectUser(false);
-
-        ((ClassPathXmlApplicationContext)ioc).close();
     &#125;
 &#125;
 </code></pre><p>运行结果：</p><p>test1：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">前置增强
@@ -1209,7 +1212,7 @@ java.lang.RuntimeException
 ###################################
 # 		下面均是报错的内容			#
 ###################################
-</code></pre><h4 id="5-4-3-AspectJ的AOP注解方式"><a href="#5-4-3-AspectJ的AOP注解方式" class="headerlink" title="5.4.3 AspectJ的AOP注解方式"></a>5.4.3 AspectJ的AOP注解方式</h4><h5 id="5-4-3-1-引入相关jar包"><a href="#5-4-3-1-引入相关jar包" class="headerlink" title="5.4.3.1 引入相关jar包"></a>5.4.3.1 引入相关jar包</h5><p>同上</p><h5 id="5-4-3-2-定义增强类"><a href="#5-4-3-2-定义增强类" class="headerlink" title="5.4.3.2 定义增强类"></a>5.4.3.2 定义增强类</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.aspect;
+</code></pre><h4 id="5-4-3-SpringAOP的注解版配置"><a href="#5-4-3-SpringAOP的注解版配置" class="headerlink" title="5.4.3 SpringAOP的注解版配置"></a>5.4.3 SpringAOP的注解版配置</h4><h5 id="5-4-3-1-引入相关jar包"><a href="#5-4-3-1-引入相关jar包" class="headerlink" title="5.4.3.1 引入相关jar包"></a>5.4.3.1 引入相关jar包</h5><p>同上</p><h5 id="5-4-3-2-定义增强类"><a href="#5-4-3-2-定义增强类" class="headerlink" title="5.4.3.2 定义增强类"></a>5.4.3.2 定义增强类</h5><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.aspect;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
@@ -1278,7 +1281,7 @@ public class UserServiceImpl implements UserService &#123;
         &#125;
     &#125;
 &#125;
-</code></pre><h5 id="5-4-3-4-开启相关注解"><a href="#5-4-3-4-开启相关注解" class="headerlink" title="5.4.3.4 开启相关注解"></a>5.4.3.4 开启相关注解</h5><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
+</code></pre><h5 id="5-4-3-4-开启相关注解"><a href="#5-4-3-4-开启相关注解" class="headerlink" title="5.4.3.4 开启相关注解"></a>5.4.3.4 开启相关注解</h5><p>applicationContext.xml：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
 &lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;
        xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;
        xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot;
@@ -1423,82 +1426,52 @@ integer &#x3D; 777</code></pre><p>test3：</p><pre class="line-numbers language-
     &lt;artifactId&gt;pagehelper&lt;&#x2F;artifactId&gt;
     &lt;version&gt;5.2.0&lt;&#x2F;version&gt;
 &lt;&#x2F;dependency&gt;
-&lt;!-- mybatis分页插件包   结束--&gt;</code></pre><h3 id="6-2-相关类"><a href="#6-2-相关类" class="headerlink" title="6.2 相关类"></a>6.2 相关类</h3><h4 id="6-2-1-domain"><a href="#6-2-1-domain" class="headerlink" title="6.2.1 domain"></a>6.2.1 domain</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.domain;
+&lt;!-- mybatis分页插件包   结束--&gt;</code></pre><ol start="7"><li>junit测试包</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;!--测试junit包   开始--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;junit&lt;&#x2F;groupId&gt;
+    &lt;artifactId&gt;junit&lt;&#x2F;artifactId&gt;
+    &lt;version&gt;4.12&lt;&#x2F;version&gt;
+    &lt;scope&gt;compile&lt;&#x2F;scope&gt;
+&lt;&#x2F;dependency&gt;
+&lt;!--测试junit包   结束--&gt;</code></pre><ol start="8"><li>lombok包</li></ol><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;!--lombok包    开始--&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.projectlombok&lt;&#x2F;groupId&gt;
+    &lt;artifactId&gt;lombok&lt;&#x2F;artifactId&gt;
+    &lt;version&gt;1.18.24&lt;&#x2F;version&gt;
+&lt;&#x2F;dependency&gt;
+&lt;!--lombok包    结束--&gt;</code></pre><h3 id="6-2-项目准备"><a href="#6-2-项目准备" class="headerlink" title="6.2 项目准备"></a>6.2 项目准备</h3><p>项目结构：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230818001555907.png" alt="image-20230818001555907"></p><p>数据表：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230818001719599.png" alt="image-20230818001719599"></p><h4 id="6-2-1-domain"><a href="#6-2-1-domain" class="headerlink" title="6.2.1 domain"></a>6.2.1 domain</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Component
 public class User &#123;
     private Integer id;
     private String name;
     private Integer age;
+    private String sex;
     private String address;
     private Date birth;
-
-    @Override
-    public String toString() &#123;
-        return &quot;User&#123;&quot; +
-                &quot;id&#x3D;&quot; + id +
-                &quot;, name&#x3D;&#39;&quot; + name + &#39;\&#39;&#39; +
-                &quot;, age&#x3D;&quot; + age +
-                &quot;, address&#x3D;&#39;&quot; + address + &#39;\&#39;&#39; +
-                &quot;, birth&#x3D;&quot; + birth +
-                &#39;&#125;&#39;;
-    &#125;
-
-    public Integer getId() &#123;
-        return id;
-    &#125;
-
-    public void setId(Integer id) &#123;
-        this.id &#x3D; id;
-    &#125;
-
-    public String getName() &#123;
-        return name;
-    &#125;
-
-    public void setName(String name) &#123;
-        this.name &#x3D; name;
-    &#125;
-
-    public Integer getAge() &#123;
-        return age;
-    &#125;
-
-    public void setAge(Integer age) &#123;
-        this.age &#x3D; age;
-    &#125;
-
-    public String getAddress() &#123;
-        return address;
-    &#125;
-
-    public void setAddress(String address) &#123;
-        this.address &#x3D; address;
-    &#125;
-
-    public Date getBirth() &#123;
-        return birth;
-    &#125;
-
-    public void setBirth(Date birth) &#123;
-        this.birth &#x3D; birth;
-    &#125;
 &#125;
-</code></pre><h4 id="6-2-2-mapper"><a href="#6-2-2-mapper" class="headerlink" title="6.2.2 mapper"></a>6.2.2 mapper</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.mapper;
+</code></pre><h4 id="6-2-2-mapper"><a href="#6-2-2-mapper" class="headerlink" title="6.2.2 mapper"></a>6.2.2 mapper</h4><p>接口：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.mapper;
 
-import com.tipdm.domain.User;
+import cn.cukor.domain.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
+@Mapper
 public interface UserMapper &#123;
     &#x2F;**
      * 根据ID 查询用户
-     *
      * @param id
      * @return
      *&#x2F;
@@ -1506,34 +1479,48 @@ public interface UserMapper &#123;
 
     &#x2F;**
      * 查询所有
-     *
      * @return
      *&#x2F;
     List&lt;User&gt; selectAll();
 &#125;
-</code></pre><h4 id="6-2-3-service"><a href="#6-2-3-service" class="headerlink" title="6.2.3 service"></a>6.2.3 service</h4><p>接口：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.service;
+</code></pre><p>XML：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot;
+        &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace&#x3D;&quot;cn.cukor.mapper.UserMapper&quot;&gt;
 
+    &lt;select id&#x3D;&quot;selectById&quot; resultType&#x3D;&quot;User&quot;&gt;
+        select *
+        from test.user
+        where id &#x3D; #&#123;id&#125;
+    &lt;&#x2F;select&gt;
+    &lt;select id&#x3D;&quot;selectAll&quot; resultType&#x3D;&quot;User&quot;&gt;
+        select * from test.user
+    &lt;&#x2F;select&gt;
+&lt;&#x2F;mapper&gt;</code></pre><h4 id="6-2-3-service"><a href="#6-2-3-service" class="headerlink" title="6.2.3 service"></a>6.2.3 service</h4><p>接口：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.service;
+
+import cn.cukor.domain.User;
 import com.github.pagehelper.PageInfo;
-import com.tipdm.domain.User;
 
 public interface UserService &#123;
     User queryUser(Integer id);
 
     PageInfo&lt;User&gt; queryPage(Integer page, Integer limit);
 &#125;
-</code></pre><p>实现类：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.service.impl;
+</code></pre><p>实现类：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.service.impl;
 
+import cn.cukor.domain.User;
+import cn.cukor.mapper.UserMapper;
+import cn.cukor.service.UserService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.tipdm.domain.User;
-import com.tipdm.mapper.UserMapper;
-import com.tipdm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserServiceImpl implements UserService &#123;
+
     @Autowired
     private UserMapper userMapper;
 
@@ -1549,20 +1536,15 @@ public class UserServiceImpl implements UserService &#123;
         return users.toPageInfo();
     &#125;
 
-    &#x2F;**
-     * 使用xml形式注入 mapper
-     *
-     * @param userMapper
-     *&#x2F;
     public void setUserMapper(UserMapper userMapper) &#123;
         this.userMapper &#x3D; userMapper;
     &#125;
 &#125;
-</code></pre><h4 id="6-2-4-测试类"><a href="#6-2-4-测试类" class="headerlink" title="6.2.4 测试类"></a>6.2.4 测试类</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.test;
+</code></pre><h4 id="6-2-4-测试类"><a href="#6-2-4-测试类" class="headerlink" title="6.2.4 测试类"></a>6.2.4 测试类</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.test;
 
+import cn.cukor.domain.User;
+import cn.cukor.service.UserService;
 import com.github.pagehelper.PageInfo;
-import com.tipdm.domain.User;
-import com.tipdm.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -1574,14 +1556,14 @@ public class MyTest &#123;
     public void test1() &#123;
         ApplicationContext context &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
         UserService bean &#x3D; context.getBean(UserService.class);
-        PageInfo&lt;User&gt; pageInfo &#x3D; bean.queryPage(1, 3);
+        PageInfo&lt;User&gt; pageInfo &#x3D; bean.queryPage(2, 3);
         List&lt;User&gt; list &#x3D; pageInfo.getList();
         for (User user : list) &#123;
             System.out.println(user);
         &#125;
     &#125;
 &#125;
-</code></pre><h3 id="6-3-相关配置"><a href="#6-3-相关配置" class="headerlink" title="6.3 相关配置"></a>6.3 相关配置</h3><p>整合到spring之后就不需要mybatis,xml配置文件了，统统写到applicationContext.xml中。</p><p>db.properties：</p><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties">jdbc.driver&#x3D;com.mysql.cj.jdbc.Driver
+</code></pre><h3 id="6-3-相关配置"><a href="#6-3-相关配置" class="headerlink" title="6.3 相关配置"></a>6.3 相关配置</h3><p>整合到spring之后就不需要mybatis.xml配置文件了，统统写到applicationContext.xml中。</p><p>db.properties：</p><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties">jdbc.driver&#x3D;com.mysql.cj.jdbc.Driver
 jdbc.url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;test?useUnicode&#x3D;true&amp;useSSL&#x3D;false&amp;characterEncoding&#x3D;UTF8&amp;serverTimezone&#x3D;UTC
 jdbc.username&#x3D;root
 jdbc.password&#x3D;cukor</code></pre><p>log4j.properties：必须是这个名字</p><pre class="line-numbers language-properties" data-language="properties"><code class="language-properties">log4j.rootLogger&#x3D;DEBUG, stdout
@@ -1592,16 +1574,20 @@ log4j.appender.stdout.layout.ConversionPattern&#x3D;%5p [%t] - %m%n</code></pre>
 &lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;
        xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;
        xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot;
-       xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans.xsd http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context https:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context.xsd&quot;&gt;
+       xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans.xsd
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context.xsd&quot;&gt;
 
     &lt;!--1. 加载数据库信息配置文件--&gt;
     &lt;context:property-placeholder location&#x3D;&quot;db.properties&quot; system-properties-mode&#x3D;&quot;FALLBACK&quot;&#x2F;&gt;
-    &lt;context:component-scan base-package&#x3D;&quot;com.*&quot;&#x2F;&gt;
+    &lt;context:component-scan base-package&#x3D;&quot;cn.cukor&quot;&#x2F;&gt;
     &lt;!--配置日志--&gt;
     &lt;bean id&#x3D;&quot;configuration&quot; class&#x3D;&quot;org.apache.ibatis.session.Configuration&quot;&gt;
         &lt;property name&#x3D;&quot;logImpl&quot; value&#x3D;&quot;org.apache.ibatis.logging.log4j.Log4jImpl&quot;&#x2F;&gt;
         &lt;property name&#x3D;&quot;cacheEnabled&quot; value&#x3D;&quot;true&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
+
     &lt;!--2. 配置数据源 --&gt;
     &lt;bean id&#x3D;&quot;dataSource&quot; class&#x3D;&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
         &lt;property name&#x3D;&quot;driverClassName&quot; value&#x3D;&quot;$&#123;jdbc.driver&#125;&quot;&#x2F;&gt;
@@ -1609,12 +1595,13 @@ log4j.appender.stdout.layout.ConversionPattern&#x3D;%5p [%t] - %m%n</code></pre>
         &lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;$&#123;jdbc.username&#125;&quot;&#x2F;&gt;
         &lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;$&#123;jdbc.password&#125;&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
+
     &lt;!--3. 配置SqlSessionFactoryBean 对象--&gt;
     &lt;bean id&#x3D;&quot;sqlSessionFactoryBean&quot; class&#x3D;&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
         &lt;!--  配置数据源 --&gt;
         &lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSource&quot;&#x2F;&gt;
         &lt;!-- 配置包下类别名 多个包之间使用 逗号分隔 --&gt;
-        &lt;property name&#x3D;&quot;typeAliasesPackage&quot; value&#x3D;&quot;com.tipdm.domain&quot;&#x2F;&gt;
+        &lt;property name&#x3D;&quot;typeAliasesPackage&quot; value&#x3D;&quot;cn.cukor.domain&quot;&#x2F;&gt;
         &lt;!-- 配置插件 --&gt;
         &lt;property name&#x3D;&quot;plugins&quot;&gt;
             &lt;array&gt;
@@ -1626,65 +1613,43 @@ log4j.appender.stdout.layout.ConversionPattern&#x3D;%5p [%t] - %m%n</code></pre>
         &lt;!-- 配置映射文件 --&gt;
         &lt;property name&#x3D;&quot;mapperLocations&quot; value&#x3D;&quot;mapper&#x2F;**&#x2F;*Mapper.xml&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
+
     &lt;!-- 4.扫描所有的Mapper接口 自动创建Mapper的代理对象  --&gt;
     &lt;bean id&#x3D;&quot;mapperScannerConfigurer&quot; class&#x3D;&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
         &lt;!-- 待扫描的mapper 接口的包名 多个之间使用逗号分隔 --&gt;
-        &lt;property name&#x3D;&quot;basePackage&quot; value&#x3D;&quot;com.tipdm.mapper&quot;&#x2F;&gt;
+        &lt;property name&#x3D;&quot;basePackage&quot; value&#x3D;&quot;cn.cukor.mapper&quot;&#x2F;&gt;
         &lt;!--注入SqlSessionFactoryBean 用于创建SqlSession --&gt;
         &lt;property name&#x3D;&quot;sqlSessionFactoryBeanName&quot; value&#x3D;&quot;sqlSessionFactoryBean&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
-&lt;&#x2F;beans&gt;</code></pre><h3 id="6-4-运行测试文件"><a href="#6-4-运行测试文件" class="headerlink" title="6.4 运行测试文件"></a>6.4 运行测试文件</h3><p>运行结果如下：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">User&#123;id&#x3D;1, name&#x3D;&#39;张三&#39;, age&#x3D;23, address&#x3D;&#39;广州&#39;, birth&#x3D;Fri Jul 21 18:18:42 CST 2000&#125;
-User&#123;id&#x3D;2, name&#x3D;&#39;李四&#39;, age&#x3D;20, address&#x3D;&#39;深圳&#39;, birth&#x3D;Wed Feb 05 22:05:02 CST 2003&#125;
-User&#123;id&#x3D;3, name&#x3D;&#39;王五&#39;, age&#x3D;21, address&#x3D;&#39;佛山&#39;, birth&#x3D;Sun May 12 17:02:03 CST 2002&#125;</code></pre><p>特别注意的是，如果日志配置的文件名不是<code>log4j</code>的话，spring就找不到日志文件的配置信息，所以就会导致出现下面的警告：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">log4j:WARN No appenders could be found for logger (org.apache.ibatis.logging.LogFactory).
-log4j:WARN Please initialize the log4j system properly.
-log4j:WARN See http:&#x2F;&#x2F;logging.apache.org&#x2F;log4j&#x2F;1.2&#x2F;faq.html#noconfig for more info.</code></pre><p>虽然不影响程序的正常运行，但是它不能开启日志，所以之前导进来的日志包就用不了。</p><h2 id="7-声明式事务"><a href="#7-声明式事务" class="headerlink" title="7. 声明式事务"></a>7. 声明式事务</h2><p>Spring 的声明式事务管理在底层是建立在 AOP 的基础之上的。其本质是对方法前后进行拦截，然后在目标方法开始之前创建或者加入一个事务，在执行完目标方法之后根据执行情况提交或者回滚事务。</p><p>声明式事务最大的优点就是<strong>不需要通过编程的方式管理事务</strong>，这样就不需要在业务逻辑代码中掺杂事务管理的代码，只需在配置文件中做相关的事务规则声明（或通过等价的基于标注的方式），便可以将事务规则应用到业务逻辑中。因为事务管理本身就是一个典型的横切逻辑，正是 AOP 的用武之地。Spring 开发团队也意识到了这一点，为声明式事务提供了简单而强大的支持。</p><p>在开发中使用声明式事务，不仅因为其简单，更主要是因为这样使得纯业务代码不被污染，极大方便后期的代码维护。</p><p>声明式事务管理也有两种常用的方式：</p><ul><li>基于<code>&lt;tx&gt;</code>和<code>&lt;aop&gt;</code>命名空间的xml配置文件；</li><li>基于<code>@Transactional</code>注解。</li></ul><h3 id="7-1-注解版声明事务"><a href="#7-1-注解版声明事务" class="headerlink" title="7.1 注解版声明事务"></a>7.1 注解版声明事务</h3><p>在Spring中，为简化事务开发，提供了注解：@Transactional，该注解可以指定在类上，在类上，该类中的所有方法都会使用事务，该注解也可以指定方法上，该方法会使用事务。使用非常简单，只需：</p><ol><li><p>配置事务管理器</p></li><li><p>开启注解事务</p></li><li><p>在需要使用事务的地方使用@Transactional</p></li></ol><h4 id="7-1-1-数据库表准备"><a href="#7-1-1-数据库表准备" class="headerlink" title="7.1.1 数据库表准备"></a>7.1.1 数据库表准备</h4><p>Account表</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720145420850.png" alt="image-20230720145420850"></p><h4 id="7-1-2-实体类"><a href="#7-1-2-实体类" class="headerlink" title="7.1.2 实体类"></a>7.1.2 实体类</h4><p>Account.java：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.domain;
 
+&lt;&#x2F;beans&gt;
+</code></pre><h3 id="6-4-运行测试文件"><a href="#6-4-运行测试文件" class="headerlink" title="6.4 运行测试文件"></a>6.4 运行测试文件</h3><p>运行结果如下：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">User(id&#x3D;9, name&#x3D;Jay, age&#x3D;44, sex&#x3D;男, address&#x3D;台湾, birth&#x3D;Wed Dec 26 02:24:20 CST 1979)
+User(id&#x3D;11, name&#x3D;Khalil, age&#x3D;40, sex&#x3D;男, address&#x3D;云南, birth&#x3D;Sat Aug 12 22:31:22 CST 2023)
+User(id&#x3D;12, name&#x3D;赵云, age&#x3D;40, sex&#x3D;男, address&#x3D;四川, birth&#x3D;Sun Aug 13 00:44:43 CST 2023)</code></pre><p>特别注意的是，如果日志配置的文件名不是<code>log4j</code>的话，spring就找不到日志文件的配置信息，所以就会导致出现下面的警告：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">log4j:WARN No appenders could be found for logger (org.apache.ibatis.logging.LogFactory).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http:&#x2F;&#x2F;logging.apache.org&#x2F;log4j&#x2F;1.2&#x2F;faq.html#noconfig for more info.</code></pre><p>虽然不影响程序的正常运行，但是它不能开启日志，所以之前导进来的日志包就相当于没有使用。</p><h2 id="7-声明式事务"><a href="#7-声明式事务" class="headerlink" title="7. 声明式事务"></a>7. 声明式事务</h2><p>Spring 的声明式事务管理在底层是建立在 AOP 的基础之上的。其本质是对方法前后进行拦截，然后在目标方法开始之前创建或者加入一个事务，在执行完目标方法之后根据执行情况提交或者回滚事务。</p><p>声明式事务最大的优点就是<strong>不需要通过编程的方式管理事务</strong>，这样就不需要在业务逻辑代码中掺杂事务管理的代码，只需在配置文件中做相关的事务规则声明（或通过等价的基于标注的方式），便可以将事务规则应用到业务逻辑中。因为事务管理本身就是一个典型的横切逻辑，正是 AOP 的用武之地。Spring 开发团队也意识到了这一点，为声明式事务提供了简单而强大的支持。</p><p>在开发中使用声明式事务，不仅因为其简单，更主要是因为这样使得纯业务代码不被污染，极大方便后期的代码维护。</p><p>声明式事务管理也有两种常用的方式：</p><ul><li>基于<code>&lt;tx&gt;</code>和<code>&lt;aop&gt;</code>命名空间的xml配置文件；</li><li>基于<code>@Transactional</code>注解。</li></ul><h3 id="7-1-注解版声明事务"><a href="#7-1-注解版声明事务" class="headerlink" title="7.1 注解版声明事务"></a>7.1 注解版声明事务</h3><p>在Spring中，为简化事务开发，提供了注解：@Transactional，该注解可以指定在类上，在类上，该类中的所有方法都会使用事务，该注解也可以指定方法上，该方法会使用事务。使用非常简单，只需：</p><ol><li><p>配置事务管理器</p></li><li><p>开启注解事务</p></li><li><p>在需要使用事务的地方使用@Transactional</p></li></ol><h4 id="7-1-1-项目准备"><a href="#7-1-1-项目准备" class="headerlink" title="7.1.1 项目准备"></a>7.1.1 项目准备</h4><p>Account表：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720145420850.png" alt="image-20230720145420850"></p><p>项目结构：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230818181237651.png" alt="image-20230818181237651"></p><p>需要引进的jar同上，Spring整合Mybatis。</p><h4 id="7-1-2-实体类"><a href="#7-1-2-实体类" class="headerlink" title="7.1.2 实体类"></a>7.1.2 实体类</h4><p>Account.java：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
+
+@Component
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Account &#123;
     private Integer id;
     private String name;
     private Double money;
-
-    @Override
-    public String toString() &#123;
-        return &quot;Account&#123;&quot; +
-                &quot;id&#x3D;&quot; + id +
-                &quot;, name&#x3D;&#39;&quot; + name + &#39;\&#39;&#39; +
-                &quot;, money&#x3D;&quot; + money +
-                &#39;&#125;&#39;;
-    &#125;
-
-    public Integer getId() &#123;
-        return id;
-    &#125;
-
-    public void setId(Integer id) &#123;
-        this.id &#x3D; id;
-    &#125;
-
-    public String getName() &#123;
-        return name;
-    &#125;
-
-    public void setName(String name) &#123;
-        this.name &#x3D; name;
-    &#125;
-
-    public Double getMoney() &#123;
-        return money;
-    &#125;
-
-    public void setMoney(Double money) &#123;
-        this.money &#x3D; money;
-    &#125;
 &#125;
-</code></pre><h4 id="7-1-3-Mapper映射接口"><a href="#7-1-3-Mapper映射接口" class="headerlink" title="7.1.3 Mapper映射接口"></a>7.1.3 Mapper映射接口</h4><p>AccountMapper.java：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.mapper;
+</code></pre><h4 id="7-1-3-Mapper映射接口"><a href="#7-1-3-Mapper映射接口" class="headerlink" title="7.1.3 Mapper映射接口"></a>7.1.3 Mapper映射接口</h4><p>AccountMapper.java：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.mapper;
 
 import org.apache.ibatis.annotations.Param;
 
 public interface AccountMapper &#123;
     &#x2F;**
      * 钱转出
-     *
      * @param id
      * @return
      *&#x2F;
@@ -1692,74 +1657,79 @@ public interface AccountMapper &#123;
 
     &#x2F;**
      * 钱传入
-     *
      * @param id
      * @param money
      * @return
      *&#x2F;
     int updateMoneyIn(@Param(&quot;id&quot;) Integer id, @Param(&quot;money&quot;) Double money);
 &#125;
-</code></pre><h4 id="7-1-4-Mapper映射XML"><a href="#7-1-4-Mapper映射XML" class="headerlink" title="7.1.4 Mapper映射XML"></a>7.1.4 Mapper映射XML</h4><p>AccountMapper.xml：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; ?&gt;
-&lt;!DOCTYPE mapper PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot; &gt;
-&lt;mapper namespace&#x3D;&quot;com.tipdm.mapper.AccountMapper&quot;&gt;
-
-    &lt;resultMap id&#x3D;&quot;BaseResultMap&quot; type&#x3D;&quot;com.tipdm.domain.Account&quot;&gt;
-        &lt;id property&#x3D;&quot;id&quot; column&#x3D;&quot;id&quot;&#x2F;&gt;
-        &lt;result property&#x3D;&quot;name&quot; column&#x3D;&quot;name&quot;&#x2F;&gt;
-        &lt;result property&#x3D;&quot;money&quot; column&#x3D;&quot;money&quot;&#x2F;&gt;
-    &lt;&#x2F;resultMap&gt;
+</code></pre><h4 id="7-1-4-Mapper映射XML"><a href="#7-1-4-Mapper映射XML" class="headerlink" title="7.1.4 Mapper映射XML"></a>7.1.4 Mapper映射XML</h4><p>AccountMapper.xml：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot; ?&gt;
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-&#x2F;&#x2F;mybatis.org&#x2F;&#x2F;DTD Mapper 3.0&#x2F;&#x2F;EN&quot;
+        &quot;http:&#x2F;&#x2F;mybatis.org&#x2F;dtd&#x2F;mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace&#x3D;&quot;cn.cukor.mapper.AccountMapper&quot;&gt;
 
     &lt;update id&#x3D;&quot;updateMoneyOut&quot;&gt;
-        update test.account set
-            money &#x3D; money - #&#123;money&#125;
+        update test.account
+        set money &#x3D; money - #&#123;money&#125;
         where id &#x3D; #&#123;id&#125;
     &lt;&#x2F;update&gt;
     &lt;update id&#x3D;&quot;updateMoneyIn&quot;&gt;
-        update test.account set
-            money &#x3D; money + #&#123;money&#125;
+        update test.account
+        set money &#x3D; money + #&#123;money&#125;
         where id &#x3D; #&#123;id&#125;
     &lt;&#x2F;update&gt;
-&lt;&#x2F;mapper&gt;</code></pre><h4 id="7-1-5-service层"><a href="#7-1-5-service层" class="headerlink" title="7.1.5 service层"></a>7.1.5 service层</h4><p>AccountService接口：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.service;
+&lt;&#x2F;mapper&gt;
+</code></pre><h4 id="7-1-5-service层"><a href="#7-1-5-service层" class="headerlink" title="7.1.5 service层"></a>7.1.5 service层</h4><p>AccountService接口：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.service;
 
-public interface AccountSerive &#123;
+public interface AccountService &#123;
 
     int transferAccounts(Integer outId, Integer inId, Double money);
 &#125;
-</code></pre><p>AccountServiceImpl实现类：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.tipdm.service.impl;
+</code></pre><p>AccountServiceImpl实现类：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.service.impl;
 
-import com.tipdm.mapper.AccountMapper;
-import com.tipdm.service.AccountSerive;
+
+import cn.cukor.mapper.AccountMapper;
+import cn.cukor.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Transactional
 @Service
-public class AccountSeriveImpl implements AccountSerive &#123;
+public class AccountServiceImpl implements AccountService &#123;
     @Autowired
     private AccountMapper accountMapper;
 
     @Override
     public int transferAccounts(Integer outId, Integer inId, Double money) &#123;
         int i &#x3D; accountMapper.updateMoneyOut(outId, money);
+        int x &#x3D; 10 &#x2F; 0; &#x2F;&#x2F; 在这个地方肯定会报错
         int j &#x3D; accountMapper.updateMoneyIn(inId, money);
         return i + j;
     &#125;
 &#125;
-</code></pre><h4 id="7-1-6-spring核心配置文件"><a href="#7-1-6-spring核心配置文件" class="headerlink" title="7.1.6 spring核心配置文件"></a>7.1.6 spring核心配置文件</h4><p>applicationContext.xml：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
+</code></pre><h4 id="7-1-6-spring核心配置文件"><a href="#7-1-6-spring核心配置文件" class="headerlink" title="7.1.6 spring核心配置文件"></a>7.1.6 spring核心配置文件</h4><p>db.properties、log4j.properties同上。</p><p>applicationContext.xml：</p><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;
 &lt;beans xmlns&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&quot;
        xmlns:xsi&#x3D;&quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance&quot;
-       xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot; xmlns:tx&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&quot;
-       xmlns:aop&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&quot;
-       xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans.xsd http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context https:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context.xsd http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&#x2F;spring-tx.xsd http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop https:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;aop&#x2F;spring-aop.xsd&quot;&gt;
+       xmlns:context&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&quot;
+       xmlns:tx&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&quot;
+       xsi:schemaLocation&#x3D;&quot;http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;beans&#x2F;spring-beans.xsd
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;context&#x2F;spring-context.xsd
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx
+                           http:&#x2F;&#x2F;www.springframework.org&#x2F;schema&#x2F;tx&#x2F;spring-tx.xsd&quot;&gt;
 
     &lt;!--1. 加载数据库信息配置文件--&gt;
     &lt;context:property-placeholder location&#x3D;&quot;db.properties&quot; system-properties-mode&#x3D;&quot;FALLBACK&quot;&#x2F;&gt;
-    &lt;context:component-scan base-package&#x3D;&quot;com.*&quot;&#x2F;&gt;
-
+    &lt;context:component-scan base-package&#x3D;&quot;cn.cukor&quot;&#x2F;&gt;
     &lt;!--配置日志--&gt;
     &lt;bean id&#x3D;&quot;configuration&quot; class&#x3D;&quot;org.apache.ibatis.session.Configuration&quot;&gt;
         &lt;property name&#x3D;&quot;logImpl&quot; value&#x3D;&quot;org.apache.ibatis.logging.log4j.Log4jImpl&quot;&#x2F;&gt;
         &lt;property name&#x3D;&quot;cacheEnabled&quot; value&#x3D;&quot;true&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
+
     &lt;!--2. 配置数据源 --&gt;
     &lt;bean id&#x3D;&quot;dataSource&quot; class&#x3D;&quot;org.springframework.jdbc.datasource.DriverManagerDataSource&quot;&gt;
         &lt;property name&#x3D;&quot;driverClassName&quot; value&#x3D;&quot;$&#123;jdbc.driver&#125;&quot;&#x2F;&gt;
@@ -1767,12 +1737,13 @@ public class AccountSeriveImpl implements AccountSerive &#123;
         &lt;property name&#x3D;&quot;username&quot; value&#x3D;&quot;$&#123;jdbc.username&#125;&quot;&#x2F;&gt;
         &lt;property name&#x3D;&quot;password&quot; value&#x3D;&quot;$&#123;jdbc.password&#125;&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
+
     &lt;!--3. 配置SqlSessionFactoryBean 对象--&gt;
     &lt;bean id&#x3D;&quot;sqlSessionFactoryBean&quot; class&#x3D;&quot;org.mybatis.spring.SqlSessionFactoryBean&quot;&gt;
         &lt;!--  配置数据源 --&gt;
         &lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSource&quot;&#x2F;&gt;
         &lt;!-- 配置包下类别名 多个包之间使用 逗号分隔 --&gt;
-        &lt;property name&#x3D;&quot;typeAliasesPackage&quot; value&#x3D;&quot;com.tipdm.domain&quot;&#x2F;&gt;
+        &lt;property name&#x3D;&quot;typeAliasesPackage&quot; value&#x3D;&quot;cn.cukor.domain&quot;&#x2F;&gt;
         &lt;!-- 配置插件 --&gt;
         &lt;property name&#x3D;&quot;plugins&quot;&gt;
             &lt;array&gt;
@@ -1784,21 +1755,55 @@ public class AccountSeriveImpl implements AccountSerive &#123;
         &lt;!-- 配置映射文件 --&gt;
         &lt;property name&#x3D;&quot;mapperLocations&quot; value&#x3D;&quot;mapper&#x2F;**&#x2F;*Mapper.xml&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
+
     &lt;!-- 4.扫描所有的Mapper接口 自动创建Mapper的代理对象  --&gt;
     &lt;bean id&#x3D;&quot;mapperScannerConfigurer&quot; class&#x3D;&quot;org.mybatis.spring.mapper.MapperScannerConfigurer&quot;&gt;
         &lt;!-- 待扫描的mapper 接口的包名 多个之间使用逗号分隔 --&gt;
-        &lt;property name&#x3D;&quot;basePackage&quot; value&#x3D;&quot;com.tipdm.mapper&quot;&#x2F;&gt;
+        &lt;property name&#x3D;&quot;basePackage&quot; value&#x3D;&quot;cn.cukor.mapper&quot;&#x2F;&gt;
         &lt;!--注入SqlSessionFactoryBean 用于创建SqlSession --&gt;
         &lt;property name&#x3D;&quot;sqlSessionFactoryBeanName&quot; value&#x3D;&quot;sqlSessionFactoryBean&quot;&#x2F;&gt;
     &lt;&#x2F;bean&gt;
-&lt;&#x2F;beans&gt;</code></pre><h4 id="7-1-7-测试"><a href="#7-1-7-测试" class="headerlink" title="7.1.7 测试"></a>7.1.7 测试</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Test
-public void test2() &#123;
-    ApplicationContext ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
-    AccountSerive bean &#x3D; ioc.getBean(AccountSerive.class);
-    int i &#x3D; bean.transferAccounts(1, 2, 100.0);
-    System.out.println(&quot;i &#x3D; &quot; + i);
-    ((ClassPathXmlApplicationContext)ioc).close();
-&#125;</code></pre><h4 id="7-1-8-运行结果与分析"><a href="#7-1-8-运行结果与分析" class="headerlink" title="7.1.8 运行结果与分析"></a>7.1.8 运行结果与分析</h4><p>终端打印结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">i &#x3D; 2</code></pre><p>数据表变化：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720163345926.png" alt="image-20230720163345926"></p><p>可以看到成功转账了。</p><p>但是如果说，在下面的代码中间插入一条错误的语句。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Override
+
+    &lt;!-- 事务管理器 --&gt;
+    &lt;bean id&#x3D;&quot;transactionManager&quot; class&#x3D;&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;&gt;
+        &lt;!-- 配置数据源  指定要管理那个数据源的事务 --&gt;
+        &lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSource&quot;&#x2F;&gt;
+    &lt;&#x2F;bean&gt;
+    &lt;!-- 开启事务注解 --&gt;
+    &lt;tx:annotation-driven transaction-manager&#x3D;&quot;transactionManager&quot;&#x2F;&gt;
+
+&lt;&#x2F;beans&gt;
+</code></pre><h4 id="7-1-7-测试"><a href="#7-1-7-测试" class="headerlink" title="7.1.7 测试"></a>7.1.7 测试</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor.test;
+
+import cn.cukor.service.AccountService;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MyTest &#123;
+
+    ApplicationContext ioc;
+
+    @Before
+    public void before() &#123;
+        ioc &#x3D; new ClassPathXmlApplicationContext(&quot;applicationContext.xml&quot;);
+    &#125;
+
+    @After
+    public void after() &#123;
+        ((ClassPathXmlApplicationContext)ioc).close();
+    &#125;
+
+    @Test
+    public void test() &#123;
+        AccountService bean &#x3D; ioc.getBean(AccountService.class);
+        int i &#x3D; bean.transferAccounts(1, 2, 100.0);
+        System.out.println(&quot;i &#x3D; &quot; + i);
+    &#125;
+&#125;
+</code></pre><h4 id="7-1-8-运行结果与分析"><a href="#7-1-8-运行结果与分析" class="headerlink" title="7.1.8 运行结果与分析"></a>7.1.8 运行结果与分析</h4><p>终端打印结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">i &#x3D; 2</code></pre><p>数据表变化：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720163345926.png" alt="image-20230720163345926"></p><p>可以看到成功转账了。</p><p>但是如果说，在下面的代码中间插入一条错误的语句。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Override
 public int transferAccounts(Integer outId, Integer inId, Double money) &#123;
     int i &#x3D; accountMapper.updateMoneyOut(outId, money);
     int x &#x3D; 10 &#x2F; 0;     &#x2F;&#x2F; 插入这条错误的语句
@@ -1810,4 +1815,4 @@ public int transferAccounts(Integer outId, Integer inId, Double money) &#123;
     &lt;property name&#x3D;&quot;dataSource&quot; ref&#x3D;&quot;dataSource&quot;&#x2F;&gt;
 &lt;&#x2F;bean&gt;
 &lt;!-- 开启事务注解 --&gt;
-&lt;tx:annotation-driven transaction-manager&#x3D;&quot;transactionManager&quot;&#x2F;&gt;</code></pre><p>然后在service层的实现类的方法上加上<code>@Transactional</code>注解，这样就成功开始事务管理了。</p><p>这些配置都做好了之后再去执行一遍测试程序，当然那个错误的语句是故意留在那里的。</p><p>运行结果如下：</p><p>终端打印：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">java.lang.ArithmeticException: &#x2F; by zero</code></pre><p>数据表查询：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720164803477.png" alt="image-20230720164803477"></p><p>可以看到这次David向LeeHom转的100元没有成功，但David这边的账户也没有减少那100元。</p></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> Spring基础入门</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at:</strong> 2023-07-20 16:50:41</li><li><strong>Updated at:</strong> 2023-08-17 23:27:01</li><li><strong>Link:</strong> https://cukor666.github.io//post/Spring基础入门.html</li><li><strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Java/">#Java</a>&nbsp;</li><li class="tag-item"><a href="/tags/Spring/">#Spring</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/post/SSM%E6%95%B4%E5%90%88.html"><span class="left arrow-icon flex-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">SSM整合</span> <span class="post-nav-item">Prev posts</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/post/Mybatis%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html"><span class="title flex-center"><span class="post-nav-title-item">Mybatis基础入门</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">Spring基础入门</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">Spring基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spring%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">1. Spring框架的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 传统的项目的架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E7%BC%BA%E9%99%B7"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 传统的项目架构缺陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text">2. Spring的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Spring%E7%9A%84%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.2 Spring的核心组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%AC%AC%E4%B8%80%E4%B8%AAspring%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.3.</span> <span class="nav-text">3. 第一个spring程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%AD%A3%E5%B8%B8%E5%88%9B%E5%BB%BAJavaMaven%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 正常创建JavaMaven项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E4%BE%9D%E8%B5%96jar%E5%8C%85"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 导入相关依赖jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E7%BC%96%E5%86%99spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 编写spring配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E7%BC%96%E5%86%99%E5%AE%9E%E4%BD%93%E7%B1%BB"><span class="nav-number">1.3.4.</span> <span class="nav-text">3.4 编写实体类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E7%B1%BB"><span class="nav-number">1.3.5.</span> <span class="nav-text">3.5 编写测试类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.3.6.</span> <span class="nav-text">3.6 运行结果与分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-IoC%E5%AE%B9%E5%99%A8"><span class="nav-number">1.4.</span> <span class="nav-text">4. IoC容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 依赖注入概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-bean%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 bean标签的介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Bean%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9A%844%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.3 Bean对象创建的4种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-IOC%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5%E7%9A%843%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.4 IOC属性注入的3种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5"><span class="nav-number">1.4.5.</span> <span class="nav-text">4.5 常见类型的属性注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-%E4%BD%BF%E7%94%A8IOC%E5%AE%B9%E5%99%A8%EF%BC%8C%E6%94%B9%E9%80%A0%E4%BC%A0%E7%BB%9F%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.4.6.</span> <span class="nav-text">4.6 使用IOC容器，改造传统项目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-AOP"><span class="nav-number">1.5.</span> <span class="nav-text">5. AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-AOP%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 AOP的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-AOP%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 AOP的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-AOP%E4%BB%A3%E7%90%86"><span class="nav-number">1.5.3.</span> <span class="nav-text">5.3 AOP代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-Spring%E7%9A%84AOP%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.4.</span> <span class="nav-text">5.4 Spring的AOP配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Spring%E6%95%B4%E5%90%88Mybatis"><span class="nav-number">1.6.</span> <span class="nav-text">6. Spring整合Mybatis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E5%BC%95%E5%85%A5%E7%9B%B8%E5%85%B3%E7%9A%84jar%E5%8C%85"><span class="nav-number">1.6.1.</span> <span class="nav-text">6.1 引入相关的jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E7%9B%B8%E5%85%B3%E7%B1%BB"><span class="nav-number">1.6.2.</span> <span class="nav-text">6.2 相关类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="nav-number">1.6.3.</span> <span class="nav-text">6.3 相关配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.4.</span> <span class="nav-text">6.4 运行测试文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.7.</span> <span class="nav-text">7. 声明式事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E6%B3%A8%E8%A7%A3%E7%89%88%E5%A3%B0%E6%98%8E%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.7.1.</span> <span class="nav-text">7.1 注解版声明事务</span></a></li></ol></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer"><div class="info-container"><div class="copyright-info">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span></div><div class="theme-info info-item"><span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span><br><span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.on("pageView",()=>{Global.refresh()})</script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/layouts/navbarShrink.js"></script><script src="/js/tools/scrollTopBottom.js"></script><script src="/js/tools/lightDarkSwitch.js"></script><script src="/js/layouts/categoryList.js"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js"></script><div class="post-scripts" data-swup-reload-script><script src="/js/tools/tocToggle.js"></script><script src="/js/layouts/toc.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/plugins/tabs.js"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
+&lt;tx:annotation-driven transaction-manager&#x3D;&quot;transactionManager&quot;&#x2F;&gt;</code></pre><p>然后在service层的实现类的方法上加上<code>@Transactional</code>注解，这样就成功开始事务管理了。</p><p>这些配置都做好了之后再去执行一遍测试程序，当然那个错误的语句是故意留在那里的。</p><p>运行结果如下：</p><p>终端打印：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">java.lang.ArithmeticException: &#x2F; by zero</code></pre><p>数据表查询：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Spring%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8/image-20230720164803477.png" alt="image-20230720164803477"></p><p>可以看到这次David向LeeHom转的100元没有成功，但David这边的账户也没有减少那100元。</p></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> Spring基础入门</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at:</strong> 2023-07-20 16:50:41</li><li><strong>Updated at:</strong> 2023-08-18 18:16:38</li><li><strong>Link:</strong> https://cukor666.github.io//post/Spring基础入门.html</li><li><strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Java/">#Java</a>&nbsp;</li><li class="tag-item"><a href="/tags/Spring/">#Spring</a>&nbsp;</li></ul><div class="article-nav"><div class="article-prev"><a class="prev" rel="prev" href="/post/SSM%E6%95%B4%E5%90%88.html"><span class="left arrow-icon flex-center"><i class="fa-solid fa-chevron-left"></i> </span><span class="title flex-center"><span class="post-nav-title-item">SSM整合</span> <span class="post-nav-item">Prev posts</span></span></a></div><div class="article-next"><a class="next" rel="next" href="/post/Mybatis%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8.html"><span class="title flex-center"><span class="post-nav-title-item">Mybatis基础入门</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">Spring基础入门</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">Spring基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Spring%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.1.</span> <span class="nav-text">1. Spring框架的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 传统的项目的架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E4%BC%A0%E7%BB%9F%E7%9A%84%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E7%BC%BA%E9%99%B7"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 传统的项目架构缺陷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 解决方案</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Spring%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text">2. Spring的介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Spring%E7%9A%84%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.2 Spring的核心组件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%AC%AC%E4%B8%80%E4%B8%AAspring%E7%A8%8B%E5%BA%8F"><span class="nav-number">1.3.</span> <span class="nav-text">3. 第一个spring程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-%E6%AD%A3%E5%B8%B8%E5%88%9B%E5%BB%BAJavaMaven%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 正常创建JavaMaven项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-%E5%AF%BC%E5%85%A5%E7%9B%B8%E5%85%B3%E4%BE%9D%E8%B5%96jar%E5%8C%85"><span class="nav-number">1.3.2.</span> <span class="nav-text">3.2 导入相关依赖jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-%E7%BC%96%E5%86%99spring%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.3 编写spring配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-%E7%BC%96%E5%86%99%E5%AE%9E%E4%BD%93%E7%B1%BB"><span class="nav-number">1.3.4.</span> <span class="nav-text">3.4 编写实体类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-%E7%BC%96%E5%86%99%E6%B5%8B%E8%AF%95%E7%B1%BB"><span class="nav-number">1.3.5.</span> <span class="nav-text">3.5 编写测试类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E4%B8%8E%E5%88%86%E6%9E%90"><span class="nav-number">1.3.6.</span> <span class="nav-text">3.6 运行结果与分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-IoC%E5%AE%B9%E5%99%A8"><span class="nav-number">1.4.</span> <span class="nav-text">4. IoC容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E6%A6%82%E5%BF%B5"><span class="nav-number">1.4.1.</span> <span class="nav-text">4.1 依赖注入概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-bean%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.4.2.</span> <span class="nav-text">4.2 bean标签的介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-Bean%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA%E7%9A%844%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.3.</span> <span class="nav-text">4.3 Bean对象创建的4种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-IOC%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5%E7%9A%843%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="nav-number">1.4.4.</span> <span class="nav-text">4.4 IOC属性注入的3种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%B1%9E%E6%80%A7%E6%B3%A8%E5%85%A5"><span class="nav-number">1.4.5.</span> <span class="nav-text">4.5 常见类型的属性注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-6-%E4%BD%BF%E7%94%A8IOC%E5%AE%B9%E5%99%A8%EF%BC%8C%E6%94%B9%E9%80%A0%E4%BC%A0%E7%BB%9F%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.4.6.</span> <span class="nav-text">4.6 使用IOC容器，改造传统项目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-AOP"><span class="nav-number">1.5.</span> <span class="nav-text">5. AOP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-AOP%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.5.1.</span> <span class="nav-text">5.1 AOP的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-AOP%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">1.5.2.</span> <span class="nav-text">5.2 AOP的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-AOP%E4%BB%A3%E7%90%86"><span class="nav-number">1.5.3.</span> <span class="nav-text">5.3 AOP代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-Spring%E7%9A%84AOP%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.4.</span> <span class="nav-text">5.4 Spring的AOP配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Spring%E6%95%B4%E5%90%88Mybatis"><span class="nav-number">1.6.</span> <span class="nav-text">6. Spring整合Mybatis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-%E5%BC%95%E5%85%A5%E7%9B%B8%E5%85%B3%E7%9A%84jar%E5%8C%85"><span class="nav-number">1.6.1.</span> <span class="nav-text">6.1 引入相关的jar包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87"><span class="nav-number">1.6.2.</span> <span class="nav-text">6.2 项目准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE"><span class="nav-number">1.6.3.</span> <span class="nav-text">6.3 相关配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-4-%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.4.</span> <span class="nav-text">6.4 运行测试文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.7.</span> <span class="nav-text">7. 声明式事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-%E6%B3%A8%E8%A7%A3%E7%89%88%E5%A3%B0%E6%98%8E%E4%BA%8B%E5%8A%A1"><span class="nav-number">1.7.1.</span> <span class="nav-text">7.1 注解版声明事务</span></a></li></ol></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer"><div class="info-container"><div class="copyright-info">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span></div><div class="theme-info info-item"><span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span><br><span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.on("pageView",()=>{Global.refresh()})</script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/layouts/navbarShrink.js"></script><script src="/js/tools/scrollTopBottom.js"></script><script src="/js/tools/lightDarkSwitch.js"></script><script src="/js/layouts/categoryList.js"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js"></script><div class="post-scripts" data-swup-reload-script><script src="/js/tools/tocToggle.js"></script><script src="/js/layouts/toc.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/plugins/tabs.js"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
