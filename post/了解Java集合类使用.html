@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/了解java集合类使用.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="了解Java集合类使用分类Java有很多集合，但是可以整体把它们分为两大类：  Collection（单列集合）：存数据一般就只有一个。 Map（双列集合）：存数据一般有两个，键值对。  Collection接口，单列集合的祖宗。 主要也分为两大类：  List：添加的元素是有序的、可重复、有索引。 Set：添加的元素是无序的、不重复、无索引。  提供的方法接口：    方法名称 说明    pu"><meta property="og:type" content="article"><meta property="og:title" content="了解Java集合类使用"><meta property="og:url" content="http://example.com/post/%E4%BA%86%E8%A7%A3Java%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%BF%E7%94%A8.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="了解Java集合类使用分类Java有很多集合，但是可以整体把它们分为两大类：  Collection（单列集合）：存数据一般就只有一个。 Map（双列集合）：存数据一般有两个，键值对。  Collection接口，单列集合的祖宗。 主要也分为两大类：  List：添加的元素是有序的、可重复、有索引。 Set：添加的元素是无序的、不重复、无索引。  提供的方法接口：    方法名称 说明    pu"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/images/%E4%BA%86%E8%A7%A3Java%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%BF%E7%94%A8/image-20230921200356217.png"><meta property="article:published_time" content="2023-09-19T06:31:08.000Z"><meta property="article:modified_time" content="2023-09-24T04:32:06.732Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Java"><meta property="article:tag" content="算法"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/%E4%BA%86%E8%A7%A3Java%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%BF%E7%94%A8/image-20230921200356217.png"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>了解Java集合类使用 - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"2450808861@qq.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.3.0",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io"}},Links:{icon:"fa-regular fa-link",submenus:{CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"20级信息与计算科学专业主修数学误打误撞来到了计算机的世界",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li></ul></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer"><ul class="drawer-navbar-list"><li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item flex-center"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item flex-center"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">ME</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><h1 class="article-title-regular">了解Java集合类使用</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv4</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-09-19 14:31:08</span> <span class="mobile">2023-09-19 14:31:08</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-09-24 12:32:06</span> <span class="mobile">2023-09-24 12:32:06</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Java/">Java</a>&nbsp;</li><li>| <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.3k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>23 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h1 id="了解Java集合类使用"><a href="#了解Java集合类使用" class="headerlink" title="了解Java集合类使用"></a>了解Java集合类使用</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h2><p>Java有很多集合，但是可以整体把它们分为两大类：</p><ul><li>Collection（单列集合）：存数据一般就只有一个。</li><li>Map（双列集合）：存数据一般有两个，键值对。</li></ul><h2 id="Collection"><a href="#Collection" class="headerlink" title="Collection"></a>Collection</h2><p>接口，单列集合的祖宗。</p><p>主要也分为两大类：</p><ul><li>List：添加的元素是有序的、可重复、有索引。</li><li>Set：添加的元素是无序的、不重复、无索引。</li></ul><p>提供的方法接口：</p><table><thead><tr><th>方法名称</th><th>说明</th></tr></thead><tbody><tr><td>public boolean add(E e)</td><td>把给定的对象添加到当前集合中</td></tr><tr><td>public void clear()</td><td>清空集合中所有的元素</td></tr><tr><td>public boolean remove(E e)</td><td>把给定的对象在当前集合中删除</td></tr><tr><td>public boolean contains(Object obj)</td><td>判断当前集合中是否包含给定的对象</td></tr><tr><td>public boolean isEmpty()</td><td>判断当前集合是否为空</td></tr><tr><td>public int size()</td><td>返回集合中元素的个数&#x2F;集合的长度</td></tr></tbody></table><p>细节部分：</p><p><code>add</code>方法：</p><ul><li>实现类是List的子类：返回的永远是true，因为List允许重复。</li><li>实现类是Set的子类：当集合中没有存在该元素则返回true，表示添加成功；当集合中已经存在该元素则返回false，表示添加失败。</li></ul><p><code>remove</code>方法：</p><ul><li>只能通过元素删除，不能通过索引删除。</li><li>删除成功时返回true，删除失败时返回false，当集合中没有和形参相同的元素时就会出现删除失败的情况。</li></ul><p><code>contains</code>方法：</p><ul><li>通过<code>equals</code>比较两个对象，从而判断集合中是否存在该元素。</li><li>所以需要使用<code>contains</code>判断自定义类型的集合中是否存在该元素，就必须在自定义类中重写<code>equals</code>方法。</li></ul><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><p>这里的遍历指的是Collection集合的遍历，而普通的for循环遍历很依赖索引，而Collection的Set子类是没有索引的，所以就不能用于Set集合的遍历，这种普通的for遍历只能用于List，所以为了通用一点的遍历就必须使用迭代器遍历。其实增强for和Lambda遍历都是基于迭代器遍历的，有过C++STL基础的都知道，没学过也没关系，今天知道了就行。</p><h4 id="迭代器遍历"><a href="#迭代器遍历" class="headerlink" title="迭代器遍历"></a>迭代器遍历</h4><p>步骤：</p><ol><li>创建迭代器</li><li>调用<code>hasNext</code>方法，判断迭代器当前指向的内存是否有内容。</li><li>调用<code>next</code>方法，获取迭代器当前指向的内存中的元素，然后自动向后移动。</li><li>循环，回到第二步，直到当前迭代器指向容器之外。</li></ol><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Collection&lt;Integer&gt; collection &#x3D; new ArrayList&lt;&gt;();
+collection.add(1);
+collection.add(2);
+collection.add(3);
+
+Iterator&lt;Integer&gt; it &#x3D; collection.iterator();
+
+while (it.hasNext()) &#123;
+    Integer integer &#x3D; it.next();
+    System.out.println(&quot;integer &#x3D; &quot; + integer);
+&#125;</code></pre><p>细节部分：</p><p>Java给迭代器的方法取名字针对容易误导人。<code>hasNext</code>是判断当前节点是否有东西，不是它的下一个有。看源码就知道了。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">private final Object array;
+private int currentIndex &#x3D; 0;
+
+public ArrayIterator(Object array) &#123;
+    if (!array.getClass().isArray()) &#123;
+        throw new IllegalArgumentException(&quot;not an array&quot;);
+    &#125; else &#123;
+        this.array &#x3D; array;
+    &#125;
+&#125;
+
+public boolean hasNext() &#123;
+    return this.currentIndex &lt; Array.getLength(this.array);
+&#125;
+
+public Object next() &#123;
+    return Array.get(this.array, this.currentIndex++);
+&#125;</code></pre><p>可以看到，<code>hasNext</code>的内容就是判断当前索引是否在当前数组（内存）内，所以它判断的就是当前节点（指针指向），而不是直译的“有下一个”。然后<code>next</code>方法实际上是调用了<code>get</code>方法，拿到了当前的数据之后，当前的索引就自动往后增一了。</p><h4 id="增强for循环遍历"><a href="#增强for循环遍历" class="headerlink" title="增强for循环遍历"></a>增强for循环遍历</h4><p>简化迭代器代码书写。</p><p>JDK5之后出现，其内部原理就是一个迭代器。</p><p>所有单列集合和数组才可以使用增强for循环来遍历。</p><p>格式：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">for (Object item : list) &#123;
+    
+&#125;</code></pre><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Collection&lt;Integer&gt; collection &#x3D; new ArrayList&lt;&gt;();
+collection.add(1);
+collection.add(2);
+collection.add(3);
+
+for (Integer item : collection) &#123;
+    System.out.println(&quot;item &#x3D; &quot; + item);
+&#125;</code></pre><p>细节部分：</p><p>如果在增强for循环中修改item的值，原集合并不会改变。因为item只是拿到了遍历集合中的副本。</p><h4 id="Lambda遍历"><a href="#Lambda遍历" class="headerlink" title="Lambda遍历"></a>Lambda遍历</h4><p>这种方式遍历更加简单，利用的是foreach的方式进行遍历。</p><p>底层其实使用了普通for循环加一些约束，最终是调用了<code>accept</code>方法。</p><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Collection&lt;Integer&gt; collection &#x3D; new ArrayList&lt;&gt;();
+collection.add(1);
+collection.add(2);
+collection.add(3);
+
+collection.forEach((item) -&gt; &#123;
+    System.out.println(&quot;item &#x3D; &quot; + item);	&#x2F;&#x2F; 这里面的内容就是对accept方法重写的内容
+&#125;);</code></pre><p>因为参数只有一个，所以<code>(item)</code>可以写成<code>item</code>，因为当前方法体只是已经打印，所以也可以去掉<code>&#123;&#125;</code>，<code>println</code>后面的分号也不要了，下面是简写之后的写法：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">collection.forEach(item -&gt; System.out.println(&quot;item &#x3D; &quot; + item));</code></pre><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>接口。</p><p>List是Collection的子接口，所以Collection的方法List都有。下面就介绍List特有的。</p><table><thead><tr><th>方法名</th><th>说明</th></tr></thead><tbody><tr><td>void add(int index, E e)</td><td>在此集合中的指定位置插入指定的元素</td></tr><tr><td>E remove(int index)</td><td>删除指定索引处的元素，返回被删除的元素</td></tr><tr><td>E set(int index, E e)</td><td>修改指定索引处的元素，返回被修改的元素</td></tr><tr><td>E get(int index)</td><td>返回指定索引处的元素</td></tr></tbody></table><p>细节部分：<br>List中的<code>remove</code>方法有两个，一个是自己的，另一个是父类继承下来的。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">boolean remove(Object obj);
+E remove(index);</code></pre><p>当数据存放的是<code>Integer</code>类型的时候就会出现下面的问题。</p><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">List&lt;Integer&gt; list &#x3D; new ArrayList&lt;&gt;();
+list.add(2);
+list.add(9);
+list.add(0);
+list.add(4);
+
+list.remove(2);
+System.out.println(list);</code></pre><p>结果：</p><p>[2, 9, 4]</p><p>原因是2默认被解析成int类型，所以<code>list.remove(2)</code>调用的是<code>E remove(index)</code>。所以就把索引为2的0删除掉了。如果想要删除的直接是和形参相同的，那就必须套一层<code>Integer</code>才能做到这一点，这样它调用的就是父类的<code>remove(Object obj)</code>方法。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">List&lt;Integer&gt; list &#x3D; new ArrayList&lt;&gt;();
+list.add(2);
+list.add(9);
+list.add(0);
+list.add(4);
+
+Integer i &#x3D; 2;
+list.remove(i);
+System.out.println(list);</code></pre><p>结果：</p><p>[9, 0, 4]</p><p>将普通数组放到List中：</p><p>方法一：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Integer[] arr &#x3D; &#123;8, 1, 2, 3, 4, 7, 6, 5, 0, 9&#125;;
+List&lt;Integer&gt; list &#x3D; Arrays.asList(arr);</code></pre><p>错误写法：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 不能将int代替Integer
+int[] arr &#x3D; &#123;8, 1, 2, 3, 4, 7, 6, 5, 0, 9&#125;;
+List&lt;Integer&gt; list &#x3D; Arrays.asList(arr);</code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java">int[] arr &#x3D; &#123;8, 1, 2, 3, 4, 7, 6, 5, 0, 9&#125;;
+&#x2F;&#x2F; 泛型只能放包装类，不能直接放基本数据类型
+List&lt;int&gt; list &#x3D; Arrays.asList(arr);</code></pre><p>方法二：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; JDK1.9 开始有的特性
+List&lt;Integer&gt; list &#x3D; List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);</code></pre><h4 id="ArrayList（数组）"><a href="#ArrayList（数组）" class="headerlink" title="ArrayList（数组）"></a>ArrayList（数组）</h4><p>实现类</p><p>ArrayList子类是在使用List接口时最常用的一个子类，该类利用数组实现List集合操作。</p><p>ArrayList在刚开始创建对象的时候，是得到了一个长度为零的数组，然后当集合添加了第一个数据之后，才默认被分配到10个长度的数组，后续一直增加元素，当元素超出数组的长度之后就会自动扩容原来的1.5倍，若1.5倍还放不下，则新创建数组的长度以实际长度为准。可以自己看源码，这里就不过多阐述。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E4%BA%86%E8%A7%A3Java%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%BF%E7%94%A8/image-20230921200356217.png" alt="image-20230921200356217"></p><p>使用示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">ArrayList&lt;Integer&gt; list &#x3D; new ArrayList&lt;&gt;();
+list.add(1);
+list.add(2);
+list.add(3);
+list.add(4);
+list.add(5);
+list.add(6);</code></pre><p>打印：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">for (Integer integer : list) &#123;
+    System.out.println(integer);
+&#125;
+&#x2F;*88888888888888888888888888888888888888888*&#x2F;
+list.forEach((item) -&gt; &#123;
+    System.out.println(&quot;item &#x3D; &quot; + item);
+&#125;);</code></pre><h4 id="LinkedList（链表）"><a href="#LinkedList（链表）" class="headerlink" title="LinkedList（链表）"></a>LinkedList（链表）</h4><p>实现类</p><p>LinkedList子类是基于双向链表形式实现的List接口标准。</p><p>由于LinkedList和ArrayList都遵从List实现标准，所以代码形式与ArrayList相同。</p><h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><p>实现类</p><p>已经被淘汰，知道有他的存在即可。</p><h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><p>JDK5引入的特性，可以在编译期约束操作的数据类型，并进行检查。</p><p>泛型用于类型尚未确定时的情况。Java的泛型是伪泛型，其实底层是使用了Object，这就是泛型擦除。</p><p>泛型只能支持引用类型，因为底层使用的Object多态的方式实现，所以普通的数据类型是不可以放到泛型中的，这就是为什么当我们需要把整型数据放到集合中时必须放的是<code>Integer</code>类型而不是<code>int</code>类型的原因。</p><h4 id="泛型类"><a href="#泛型类" class="headerlink" title="泛型类"></a>泛型类</h4><p>格式：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; T表示的就是泛型，表示的是未知的类型，现在使用T来代替
+public ClassName&lt;T&gt; &#123;
+    
+&#125;
+
+&#x2F;&#x2F; 使用时
+ClassName&lt;Integer&gt; obj &#x3D; new ClassName&lt;&gt;();
+ClassName&lt;String&gt; obj1 &#x3D; new ClassName&lt;&gt;();
+ClassName&lt;Student&gt; obj2 &#x3D; new ClassName&lt;&gt;();
+
+&#x2F;&#x2F; 不填明确的类型时，默认是Object类型
+ClassName obj &#x3D; new ClassName();
+&#x2F;&#x2F; 等价于
+ClassName&lt;Object&gt; obj &#x3D; new ClassName&lt;&gt;();</code></pre><p>当声明了泛型类之后，泛型类写的未知类型在整个类都可以使用这个未知类型。</p><h4 id="泛型方法"><a href="#泛型方法" class="headerlink" title="泛型方法"></a>泛型方法</h4><p>格式：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public ClassName &#123;
+    &#x2F;&#x2F; 泛型方法，此未知类型E只在该方法中生效，其他地方不生效
+    public&lt;E&gt; void method(E e) &#123;
+        &#x2F;&#x2F; &lt;E&gt;放在修饰符后面，返回值类型前
+    &#125;
+    public static &lt;E&gt; void fun(E e) &#123;
+        
+    &#125;
+&#125;</code></pre><h4 id="泛型接口"><a href="#泛型接口" class="headerlink" title="泛型接口"></a>泛型接口</h4><p>格式：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">&#x2F;&#x2F; 接口
+public interface InterfaceName&lt;E&gt; &#123;
+    
+&#125;
+&#x2F;&#x2F; 实现类
+public class InterfaceNameImpl&lt;E&gt; implements InterfaceName&lt;E&gt; &#123;
+    
+&#125;</code></pre><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">public interface Cat&lt;E&gt; &#123;
+    void eat(E food);
+&#125;</code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java">public class LiHuaCat&lt;E&gt; implements Cat&lt;E&gt; &#123;
+    @Override
+    public void eat(E food) &#123;
+        System.out.println(&quot;狸花猫爱吃&quot; + food);
+    &#125;
+&#125;</code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java">Cat&lt;String&gt; liHuaCat &#x3D; new LiHuaCat&lt;&gt;();
+liHuaCat.eat(&quot;鱼&quot;);
+
+Cat&lt;Integer&gt; cat &#x3D; new LiHuaCat&lt;&gt;();
+cat.eat(3);</code></pre><h4 id="泛型不具备继承性"><a href="#泛型不具备继承性" class="headerlink" title="泛型不具备继承性"></a>泛型不具备继承性</h4><p>泛型不具备继承性，但是数据具备继承性。</p><p>因为泛型会在Java源文件编译成class文件后会被擦除，所以到了class文件之后泛型都是会被确定，所以泛型不具备继承性。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">class Person &#123;
+&#125;
+class Student extends Person&#123;
+&#125;
+class GoodStudent extends Student&#123;
+&#125;</code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Test
+public void test3() &#123;
+    List&lt;Person&gt; personList &#x3D; new ArrayList&lt;&gt;();
+    List&lt;Student&gt; studentList &#x3D; new ArrayList&lt;&gt;();
+    List&lt;GoodStudent&gt; goodStudentList &#x3D; new ArrayList&lt;&gt;();
+
+    List&lt;Person&gt; list;
+    list &#x3D; personList;
+&#x2F;&#x2F;不兼容的类型。实际为 java.util.List&lt;cn.cukor.Student&gt;&#39;，需要 &#39;java.util.List&lt;cn.cukor.Person&gt;&#39;
+    list &#x3D; studentList;	
+&#x2F;&#x2F;不兼容的类型。实际为 java.util.List&lt;cn.cukor.GoodStudent&gt;&#39;，需要 &#39;java.util.List&lt;cn.cukor.Person&gt;&#39;
+    list &#x3D; goodStudentList; 
+&#125;</code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Test
+public void test3() &#123;
+    List&lt;Person&gt; personList &#x3D; new ArrayList&lt;&gt;();
+    List&lt;Student&gt; studentList &#x3D; new ArrayList&lt;&gt;();
+    List&lt;GoodStudent&gt; goodStudentList &#x3D; new ArrayList&lt;&gt;();
+
+    List&lt;Student&gt; list;
+&#x2F;&#x2F;不兼容的类型。实际为 java.util.List&lt;cn.cukor.Person&gt;&#39;，需要 &#39;java.util.List&lt;cn.cukor.Student&gt;&#39;
+    list &#x3D; personList;
+    list &#x3D; studentList;	
+&#x2F;&#x2F;不兼容的类型。实际为 java.util.List&lt;cn.cukor.GoodStudent&gt;&#39;，需要 &#39;java.util.List&lt;cn.cukor.Student&gt;&#39;
+    list &#x3D; goodStudentList; 
+&#125;</code></pre><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Test
+public void test3() &#123;
+    List&lt;Person&gt; personList &#x3D; new ArrayList&lt;&gt;();
+    List&lt;Student&gt; studentList &#x3D; new ArrayList&lt;&gt;();
+    List&lt;GoodStudent&gt; goodStudentList &#x3D; new ArrayList&lt;&gt;();
+
+    List&lt;GoodStudent&gt; list;
+&#x2F;&#x2F;不兼容的类型。实际为 java.util.List&lt;cn.cukor.Person&gt;&#39;，需要 &#39;java.util.List&lt;cn.cukor.GoodStudent&gt;&#39;
+    list &#x3D; personList;
+&#x2F;&#x2F;不兼容的类型。实际为 java.util.List&lt;cn.cukor.Student&gt;&#39;，需要 &#39;java.util.List&lt;cn.cukor.GoodStudent&gt;&#39;
+    list &#x3D; studentList;
+    list &#x3D; goodStudentList;
+&#125;</code></pre><p>但是泛型中的数据是可以有继承性的。下面的代码就是没有问题的。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">List&lt;Person&gt; personList &#x3D; new ArrayList&lt;&gt;();
+
+personList.add(new Person());
+personList.add(new Student());
+personList.add(new GoodStudent());</code></pre><h4 id="泛型的通配符"><a href="#泛型的通配符" class="headerlink" title="泛型的通配符"></a>泛型的通配符</h4><p>泛型的通配符是<code>?</code>，如果单单使用<code>?</code>那么和之前的用法是一样的，只是不需要在修饰符后面再增加类似<code>&lt;E&gt;</code>的东西。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Test
+public void test3() &#123;
+    List&lt;Person&gt; list &#x3D; new ArrayList&lt;&gt;();
+    method(list);
+&#125;
+
+private &lt;E&gt; void method(List&lt;E&gt; list) &#123;
+    
+&#125;</code></pre><p>等价于</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">@Test
+public void test3() &#123;
+    List&lt;Person&gt; list &#x3D; new ArrayList&lt;&gt;();
+    method(list);
+&#125;
+
+private void method(List&lt;?&gt; list) &#123;
+
+&#125;</code></pre><p>一般<code>?</code>是结合<code>extends</code>和<code>super</code>来使用的，它们分别表示接收泛型的上限和下限。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">private void method(List&lt;? extends Person&gt; list) &#123;
+
+&#125;</code></pre><p>上面这段代码表示的是，<code>method</code>方法只接受元素是继承于<code>Person</code>的<code>list</code>集合。</p><p>此时下面的代码是没有问题的。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">List&lt;Person&gt; list1 &#x3D; new ArrayList&lt;&gt;();
+List&lt;Student&gt; list2 &#x3D; new ArrayList&lt;&gt;();
+List&lt;GoodStudent&gt; list3 &#x3D; new ArrayList&lt;&gt;();
+
+method(list1);
+method(list2);
+method(list3);</code></pre><p>如果把<code>List&lt;? extends Person&gt; list</code>换成<code>List&lt;? extends Student&gt; list</code>，那么<code>method(list1);</code>这行代码就会报错。</p><p>因为这样写之后就表示的是<code>method</code>方法只能接收元素是继承于<code>Student</code>的<code>list</code>集合，而<code>list1</code>是元素为<code>Person</code>的集合，<code>Person</code>不是<code>Studnet</code>的子类，所以报错。</p><p>可以这么理解，<code>&lt;? extends Student&gt;</code>表示家族关系上限是<code>Student</code>，只要是<code>Student</code>以上的都不行，只有<code>Student</code>以下的才可以。</p><p>同理<code>super</code>就表示的下限。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">private void method(List&lt;? super Student&gt; list) &#123;
+
+&#125;</code></pre><p>那么下面的代码就会报错</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">List&lt;Person&gt; list1 &#x3D; new ArrayList&lt;&gt;();
+List&lt;Student&gt; list2 &#x3D; new ArrayList&lt;&gt;();
+List&lt;GoodStudent&gt; list3 &#x3D; new ArrayList&lt;&gt;();
+
+method(list1);
+method(list2);
+method(list3);	&#x2F;&#x2F; 在这行报错</code></pre><p>因为<code>&lt;? super Student&gt;</code>规定了能传进来的必须是<code>Student</code>的父类，只要是<code>Student</code>以下的都不行，只有<code>Student</code>以上的才可以。</p><h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>接口。</p><ul><li>无序</li><li>不重复</li><li>无索引：不能通过索引来获取元素</li></ul><p>Set集合的实现类</p><ul><li>HashSet：无序、不重复、无索引</li><li>LinkedSet：有序、不重复、无索引</li><li>Tree：可排序、不重复、无索引</li></ul><p>Set是Collection的子接口，所以Collection有的方法接口，Set都有。</p><p>值得注意的地方就是<code>add</code>方法，在Set中，元素是不能重复的，所以当Set集合中已经存在了某个元素，再通过<code>add</code>方法添加该元素时就会添加失败，但是并不会停止程序的运行。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Set&lt;Integer&gt; set &#x3D; new HashSet&lt;&gt;();
+boolean b1 &#x3D; set.add(3);
+boolean b2 &#x3D; set.add(3);
+System.out.println(&quot;b1 &#x3D; &quot; + b1);
+System.out.println(&quot;b2 &#x3D; &quot; + b2);
+System.out.println(&quot;set &#x3D; &quot; + set);</code></pre><p>结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">b1 &#x3D; true
+b2 &#x3D; false
+set &#x3D; [3]</code></pre><p>无序性表示的是，Set集合中一开始按ABC的方式将数据放入到Set中，但是遍历出来的时候不一定按ABC的方式遍历出来。</p><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Set&lt;Integer&gt; set &#x3D; new HashSet&lt;&gt;();
+set.add(3);
+set.add(2);
+set.add(1);
+set.add(8);
+set.add(7);
+
+Iterator&lt;Integer&gt; it &#x3D; set.iterator();
+while (it.hasNext()) &#123;
+    Integer integer &#x3D; it.next();
+    System.out.println(&quot;integer &#x3D; &quot; + integer);
+&#125;</code></pre><p>结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">integer &#x3D; 1
+integer &#x3D; 2
+integer &#x3D; 3
+integer &#x3D; 7
+integer &#x3D; 8</code></pre><h4 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h4><p>实现类。</p><ul><li>HashSet底层使用哈希表存储数据</li><li>哈希表是一种对于增删数据性能都比较好的数据结构</li></ul><p>哈希表组成</p><ul><li>JDK8之前：数据+链表</li><li>JDK8之后：数据+链表+红黑树</li></ul><p>HashSet的底层原理：</p><ol><li>创建一个默认长度为16的数组，默认加载因子为0.75（HashSet会自动扩容），数组名为table。</li><li>根据元素的哈希值和数组长度进行计算出应存入的位置。</li><li>判断当前位置是否为null，如果是null直接存入。</li><li>如果不是null，则表示已经存在该元素，则调用equals方法比较属性值。</li><li>如果属性值一样，则不存；如果属性值不一样，则存入数组，形成链表。<ol><li>JDK8之前：新元素存入数组，老元素挂在新元素下面。</li><li>JDK8之后：新元素直接挂在老元素下面。</li></ol></li></ol><p>JDK8以后，当前链表长度超过8，而且数组长度大于等于64时，自动转换为红黑树。</p><p>如果集合中存储的自定义对象，必须要重写<code>hasCode</code>和<code>equals</code>方法。</p><h5 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h5><p>实现类。</p><p>此类是HashSet的子类，底层数据结构依旧是哈希表，只是每个元素又额外多了一个双链表的机制记录存储的顺序。</p><h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><p>实现类。</p><p>特点：</p><ul><li>不重复，无索引，可排序。</li><li>默认情况下，按存储元素从小到大进行排序，如果是自定义类型，则该自定义类型必须实现<code>Comparable</code>接口中的<code>compareTo</code>方法。</li><li>底层基于红黑树的数据结构实现，增删改查的性能都比较良好。</li></ul><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">TreeSet&lt;Integer&gt; set &#x3D; new TreeSet&lt;&gt;();
+set.add(3);
+set.add(5);
+set.add(2);
+set.add(1);
+set.add(9);
+set.add(6);
+
+set.forEach(i -&gt; System.out.println(&quot;i &#x3D; &quot; + i));</code></pre><p>结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">i &#x3D; 1
+i &#x3D; 2
+i &#x3D; 3
+i &#x3D; 5
+i &#x3D; 6
+i &#x3D; 9</code></pre><h5 id="Comparable"><a href="#Comparable" class="headerlink" title="Comparable"></a>Comparable</h5><p>如果是自定义类型，则该自定义类型必须实现<code>Comparable</code>接口中的<code>compareTo</code>方法。</p><p>Person.java：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">package cn.cukor;
+
+public class Person implements Comparable&lt;Person&gt;&#123;
+    private String name;
+    private Integer age;
+
+    public Person(String name, Integer age) &#123;
+        this.name &#x3D; name;
+        this.age &#x3D; age;
+    &#125;
+
+    public String getName() &#123;
+        return name;
+    &#125;
+
+    public void setName(String name) &#123;
+        this.name &#x3D; name;
+    &#125;
+
+    public Integer getAge() &#123;
+        return age;
+    &#125;
+
+    public void setAge(Integer age) &#123;
+        this.age &#x3D; age;
+    &#125;
+
+    @Override
+    public int compareTo(Person o) &#123;
+        return this.age - o.getAge();
+    &#125;
+&#125;</code></pre><p>Test：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">TreeSet&lt;Person&gt; set &#x3D; new TreeSet&lt;&gt;();
+set.add(new Person(&quot;张三&quot;, 28));
+set.add(new Person(&quot;李四&quot;, 24));
+set.add(new Person(&quot;王五&quot;, 25));
+set.add(new Person(&quot;赵六&quot;, 36));
+
+set.forEach(person -&gt; System.out.println(person.getName() + &quot;---&quot; + person.getAge()));</code></pre><p>结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">李四---24
+王五---25
+张三---28
+赵六---36</code></pre><h5 id="比较器排序"><a href="#比较器排序" class="headerlink" title="比较器排序"></a>比较器排序</h5><p>前面的<code>Comparable</code>接口的比较方式适合可以修改源代码的，但是如果不能修改源代码，那就必须使用比较器的方式进行排序。使用起来也很简单，直接使用Lambda表达式即可。</p><p>示例：</p><p>比较字符串：先按长度排序，如果长度一样再按字符串比较。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">TreeSet&lt;String&gt; set &#x3D; new TreeSet&lt;&gt;((o1, o2)-&gt;&#123;
+   int i &#x3D; o1.length() - o2.length();
+   return i &#x3D;&#x3D; 0 ? o1.compareTo(o2) : i;
+&#125;);
+
+set.add(&quot;c&quot;);
+set.add(&quot;cukor&quot;);
+set.add(&quot;zhong&quot;);
+set.add(&quot;david&quot;);
+set.add(&quot;tao&quot;);
+set.add(&quot;khalil fang&quot;);
+
+set.forEach(System.out::println);  </code></pre><p>结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">c
+tao
+cukor
+david
+zhong
+khalil fang</code></pre><h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>接口。</p><p>双列集合的特点：</p><ol><li>双列集合一次需要存一对数据，分别为键和值。</li><li>键不能重复，值可以重复。</li><li>键和值是一一对应的，每一个键只能找到自己的对应的值。</li><li>键+值这个整体就是“键值对”。</li></ol><p>Map是双列集合的顶层接口，它的功能是全部双列集合都可以继承使用的。下面是Map提供的API接口。</p><table><thead><tr><th>方法名称</th><th>说明</th></tr></thead><tbody><tr><td>V put(K key, V value)</td><td>添加元素</td></tr><tr><td>V remove(Object key)</td><td>根据键删除键值对元素</td></tr><tr><td>void clear()</td><td>清空所有键值对元素</td></tr><tr><td>boolean containsKey(Object key)</td><td>判断集合是否包含指定的键</td></tr><tr><td>boolean containsValue(Object value)</td><td>判断集合是否包含指定的值</td></tr><tr><td>boolean isEmpty()</td><td>判断集合是否为空</td></tr><tr><td>int size()</td><td>集合的长度，也就是集合中键值对的个数</td></tr></tbody></table><p>细节部分：</p><p>put方法：第一次调用put时，集合中没有对应的键，此时叫添加；第二次调用put，如果集合中已经存在该键，那么后来的值会覆盖原来的值，并把原来的值返回出来。</p><p>示例：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Map&lt;String, String&gt; map &#x3D; new HashMap&lt;&gt;();
+String s &#x3D; map.put(&quot;David Tao&quot;, &quot;陶喆&quot;);
+System.out.println(&quot;s &#x3D; &quot; + s);
+System.out.println(&quot;map &#x3D; &quot; + map);
+s &#x3D; map.put(&quot;David Tao&quot;, &quot;陶吉吉&quot;);
+System.out.println(&quot;s &#x3D; &quot; + s);
+System.out.println(&quot;map &#x3D; &quot; + map);</code></pre><p>结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">s &#x3D; null
+map &#x3D; &#123;David Tao&#x3D;陶喆&#125;
+s &#x3D; 陶喆
+map &#x3D; &#123;David Tao&#x3D;陶吉吉&#125;</code></pre><h4 id="遍历-1"><a href="#遍历-1" class="headerlink" title="遍历"></a>遍历</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java">Map&lt;String, String&gt; map &#x3D; new HashMap&lt;&gt;();
+map.put(&quot;David Tao&quot;, &quot;陶喆&quot;);
+map.put(&quot;Khalil Fang&quot;, &quot;方大同&quot;);
+map.put(&quot;Leehom Wang&quot;, &quot;王力宏&quot;);
+map.put(&quot;Jay Chou&quot;, &quot;周杰伦&quot;);</code></pre><p>键找值：</p><p>通过<code>keySet</code>方法获得map的键的集合，然后再通过键的集合<code>keys</code>遍历找到对应键的值。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Set&lt;String&gt; keys &#x3D; map.keySet();
+for (String key : keys) &#123;
+    System.out.println(key + &quot;---&quot; + map.get(key));
+&#125;</code></pre><p>键值对：</p><p>通过<code>entrySet</code>方法获得map的键值对集合，然后通过<code>entrySet</code>遍历获取。</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">Set&lt;Map.Entry&lt;String, String&gt;&gt; entrySet &#x3D; map.entrySet();
+for (Map.Entry&lt;String, String&gt; entry : entrySet) &#123;
+    System.out.println(entry.getKey() + &quot;---&quot; + entry.getValue());
+&#125;</code></pre><p>Lambda表达式：</p><pre class="line-numbers language-java" data-language="java"><code class="language-java">map.forEach((k, v) -&gt; &#123;
+    System.out.println(k + &quot;-&gt;&quot; + v);
+&#125;);</code></pre><h4 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h4><p>实现类。</p><p>特点：</p><ul><li>无序、不重复、无索引。</li><li>HashMap和HashSet的底层原理都是一样的，都是哈希表结构。</li><li>依赖<code>hasCode</code>方法和<code>equals</code>方法保证键的唯一。</li><li>如果键存储的自定义对象，需要重写<code>hasCode</code>和<code>equals</code>方法。</li><li>如果值存储自定义对象，不需要重写<code>hasCode</code>和<code>equals</code>方法。</li></ul><h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><p>实现类，HashMap的子类。</p><p>特点：</p><ul><li>有序、不重复、无索引。</li><li>底层数据结构依然是哈希表，只是每个键值对元素又额外的多了一个双链表的机制记录存储的顺序。</li></ul><h4 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h4><p>实现类。</p><p>特点：</p><ul><li>TreeMap跟TreeSet底层原理一样，都是红黑树结构。</li><li>由键决定特性，不重复、无索引、可排序。</li><li>可排序：对键进行排序。</li><li>默认按照键的从小到大进行排序，也可以自己规定键的排序规则。</li></ul><p>和TreeSet一样，这里就不过多赘述。</p></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> 了解Java集合类使用</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at:</strong> 2023-09-19 14:31:08</li><li><strong>Updated at:</strong> 2023-09-24 12:32:06</li><li><strong>Link:</strong> https://cukor666.github.io//post/了解Java集合类使用.html</li><li><strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Java/">#Java</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>&nbsp;</li></ul><div class="article-nav"><div class="article-next"><a class="next" rel="next" href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%EF%BC%88Java%E7%89%88%EF%BC%89.html"><span class="title flex-center"><span class="post-nav-title-item">数据结构与算法环境搭建（Java版）</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">了解Java集合类使用</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3Java%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">了解Java集合类使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection"><span class="nav-number">1.2.</span> <span class="nav-text">Collection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%8D%E5%8E%86"><span class="nav-number">1.2.1.</span> <span class="nav-text">遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">1.2.2.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B"><span class="nav-number">1.2.3.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">1.2.4.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">1.2.5.</span> <span class="nav-text">Map</span></a></li></ol></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer"><div class="info-container"><div class="copyright-info">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span></div><div class="theme-info info-item"><span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span><br><span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.3.0</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.on("pageView",()=>{Global.refresh()})</script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/layouts/navbarShrink.js"></script><script src="/js/tools/scrollTopBottom.js"></script><script src="/js/tools/lightDarkSwitch.js"></script><script src="/js/layouts/categoryList.js"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js"></script><div class="post-scripts" data-swup-reload-script><script src="/js/tools/tocToggle.js"></script><script src="/js/layouts/toc.js"></script><script src="/js/libs/anime.min.js"></script><script src="/js/plugins/tabs.js"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
