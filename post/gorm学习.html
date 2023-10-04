@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/gorm学习.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="GORM学习GORM是Go Object Relational Mapping的简写，是Go语言的ORM框架，用来连接数据库的。 官网：https:&#x2F;&#x2F;gorm.io&#x2F;zh_CN&#x2F;  下载依赖go get -u gorm.io&#x2F;driver&#x2F;mysql	 # MySQL驱动 go get -u gorm.io&#x2F;gorm			# GORM框架  使用&#x2F;&amp;#x2"><meta property="og:type" content="article"><meta property="og:title" content="gorm学习"><meta property="og:url" content="http://example.com/post/gorm%E5%AD%A6%E4%B9%A0.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="GORM学习GORM是Go Object Relational Mapping的简写，是Go语言的ORM框架，用来连接数据库的。 官网：https:&#x2F;&#x2F;gorm.io&#x2F;zh_CN&#x2F;  下载依赖go get -u gorm.io&#x2F;driver&#x2F;mysql	 # MySQL驱动 go get -u gorm.io&#x2F;gorm			# GORM框架  使用&#x2F;&amp;#x2"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/images/gorm%E5%AD%A6%E4%B9%A0/image-20231004163424477.png"><meta property="article:published_time" content="2023-10-04T08:20:32.000Z"><meta property="article:modified_time" content="2023-10-04T15:54:33.546Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Go"><meta property="article:tag" content="Gorm"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/gorm%E5%AD%A6%E4%B9%A0/image-20231004163424477.png"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>gorm学习 - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/build/styles.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"2450808861@qq.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.4.4",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io"}},Links:{icon:"fa-regular fa-link",submenus:{CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"20级信息与计算科学专业主修数学误打误撞来到了计算机的世界",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="http://example.com/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="http://example.com/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li></ul></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color"><ul class="drawer-navbar-list flex flex-col justify-start items-center"><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i></a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" href="/about">ME</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i></a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><h1 class="article-title-regular">gorm学习</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv4</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-10-04 16:20:32</span> <span class="mobile">2023-10-04 16:20:32</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-10-04 23:54:33</span> <span class="mobile">2023-10-04 23:54:33</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/Go/">Go</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Go/">Go</a>&nbsp;</li><li>| <a href="/tags/Gorm/">Gorm</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.6k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>22 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h1 id="GORM学习"><a href="#GORM学习" class="headerlink" title="GORM学习"></a>GORM学习</h1><p>GORM是Go Object Relational Mapping的简写，是Go语言的ORM框架，用来连接数据库的。</p><p>官网：<a class="link" target="_blank" rel="noopener" href="https://gorm.io/zh_CN/">https://gorm.io/zh_CN/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h2 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">go get -u gorm.io&#x2F;driver&#x2F;mysql	 # MySQL驱动
+go get -u gorm.io&#x2F;gorm			# GORM框架</code></pre><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; 数据源
+dsn :&#x3D; &quot;username:password@tcp(127.0.0.1:3306)&#x2F;databasename?charset&#x3D;utf8mb4&amp;parseTime&#x3D;True&amp;loc&#x3D;Local&quot;
+&#x2F;&#x2F; 连接数据库
+db, err :&#x3D; gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)
+if err !&#x3D; nil &#123;
+    fmt.Println(&quot;无法连接数据库。。。&quot;)
+    panic(err)
+&#125;</code></pre><ul><li>username：MySQL用户名</li><li>password：密码</li><li>databasename：数据库名</li></ul><p>使用之前提前在MySQL中创建数据库。</p><h2 id="建立模型"><a href="#建立模型" class="headerlink" title="建立模型"></a>建立模型</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go">type User struct &#123;
+    gorm.Model
+    Name   string &#96;gorm:&quot;size:30&quot;&#96;
+    Age    uint   &#96;gorm:&quot;size:128&quot;&#96;
+    Gender string &#96;gorm:&quot;size:4;default:男&quot;&#96;
+&#125;</code></pre><p>gorm.Model是GORM框架自带的，使用它就可以遵守GORM的规则，也可以不使用。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">type Model struct &#123;
+    ID        uint &#96;gorm:&quot;primarykey&quot;&#96;
+    CreatedAt time.Time
+    UpdatedAt time.Time
+    DeletedAt DeletedAt &#96;gorm:&quot;index&quot;&#96;
+&#125;</code></pre><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">&#96;gorm:&quot;size:30&quot;&#96;
+&#96;gorm:&quot;size:128&quot;&#96;
+&#96;gorm:&quot;size:4;default:男&quot;&#96;</code></pre><p>这些是GORM框架的字段标签。上面的意思主要就算设置类型的大小和默认值。详细可以参考<a class="link" target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/models.html">官方文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>来做。</p><h2 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h2><p>GORM可以使用<code>AutoMigrate</code>方法来自动把Go语言层面的对象（结构体）迁移到MySQL中的数据表，相当于使用了<code>AutoMigrate</code>就可以自动创建表的意思。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; 创建User变量
+var user User
+
+&#x2F;&#x2F; 调用AutoMigrate并传入User变量的地址，以自动迁移到MySQL中
+err &#x3D; db.AutoMigrate(&amp;user)
+if err !&#x3D; nil &#123;	&#x2F;&#x2F; 如果自动迁移失败就直接退出
+  fmt.Println(&quot;自动迁移错误&quot;)
+  panic(err)
+&#125;</code></pre><p>把上面的代码整理运行即可得到数据表。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/gorm%E5%AD%A6%E4%B9%A0/image-20231004163424477.png" alt="image-20231004163424477"></p><h2 id="配置日志"><a href="#配置日志" class="headerlink" title="配置日志"></a>配置日志</h2><p>方便查看GORM给我们生成的SQL。</p><p>方式一：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var mysqlLogger &#x3D; logger.Default.LogMode(logger.Info)
+db, err :&#x3D; gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;
+    Logger: mysqlLogger,
+&#125;)</code></pre><p>方式二：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var mysqlLogger &#x3D; logger.Default.LogMode(logger.Info)
+db, err :&#x3D; gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)
+db &#x3D; db.Session(&amp;gorm.Session&#123;Logger: mysqlLogger&#125;)</code></pre><h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><h3 id="插入单个数据"><a href="#插入单个数据" class="headerlink" title="插入单个数据"></a>插入单个数据</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go">user &#x3D; User&#123;
+  Name: &quot;方大同&quot;,
+  Age:  40,
+&#125;
+
+&#x2F;&#x2F; 插入数据
+result :&#x3D; db.Create(&amp;user)
+
+if result.Error !&#x3D; nil &#123;
+  fmt.Println(&quot;查询失败&quot;)
+&#125; else &#123;
+  fmt.Println(&quot;插入的新ID: &quot;, user.ID)
+&#125;</code></pre><h3 id="插入多个数据"><a href="#插入多个数据" class="headerlink" title="插入多个数据"></a>插入多个数据</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go">users :&#x3D; []*User&#123;
+  &#123;Name: &quot;陶喆&quot;, Age: 54&#125;,
+  &#123;Name: &quot;王力宏&quot;, Age: 50&#125;,
+  &#123;Name: &quot;张惠妹&quot;, Age: 47&#125;,
+&#125;
+tx :&#x3D; db.Create(users)
+if tx.Error !&#x3D; nil &#123;
+  fmt.Println(&quot;插入失败&quot;)
+&#125;</code></pre><h3 id="指定字段插入数据"><a href="#指定字段插入数据" class="headerlink" title="指定字段插入数据"></a>指定字段插入数据</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go">users :&#x3D; []*User&#123;
+  &#123;Name: &quot;周杰伦&quot;, Age: 44&#125;,
+  &#123;Name: &quot;邓紫棋&quot;, Age: 34, Gender: &quot;女&quot;&#125;,
+&#125;
+tx :&#x3D; db.Select(&quot;Name&quot;, &quot;Age&quot;, &quot;Gender&quot;).Create(users)
+fmt.Println(&quot;插入了&quot;, tx.RowsAffected, &quot;条数据&quot;)</code></pre><p>和<code>Select</code>方法起相反功能的方法<code>Omit</code>也可以。只不过<code>Omit</code>是忽略字段插入数据。</p><h3 id="批量插入数据并指定批量大小"><a href="#批量插入数据并指定批量大小" class="headerlink" title="批量插入数据并指定批量大小"></a>批量插入数据并指定批量大小</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go">users :&#x3D; []*User&#123;
+    &#123;Name: &quot;李荣浩&quot;, Age: 38&#125;,
+    &#123;Name: &quot;薛之谦&quot;, Age: 39&#125;,
+    &#123;Name: &quot;于文文&quot;, Age: 35, Gender: &quot;女&quot;&#125;,
+&#125;
+tx :&#x3D; db.CreateInBatches(users, 5)
+fmt.Println(&quot;插入了&quot;, tx.RowsAffected, &quot;条数据&quot;)</code></pre><p>要求实际插入的量必须小于等于指定的批量插入大小。</p><h2 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h2><h3 id="单表查询"><a href="#单表查询" class="headerlink" title="单表查询"></a>单表查询</h3><p>GORM提供了三个方法来做单表查询，它们之间的区别就在于<code>order by</code>：</p><ul><li>First：升序查找</li><li>Take：无序查找</li><li>Last：降序查找</li></ul><p>当查询数据库时它添加了 <code>LIMIT 1</code> 条件，且没有找到记录时，它会返回 <code>ErrRecordNotFound</code> 错误。</p><p>First 和 Last 方法将分别查找按主键排序的第一条和最后一条记录。只有将目标结构的指针作为参数传递给这两个方法或使用 db.Model() 指定模型时，这两个方法才会起作用。此外，如果没有为相关模型定义主键，那么模型将按第一个字段排序。</p><p>官方示例：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; 获取第一条记录（主键升序）
+db.First(&amp;user)
+&#x2F;&#x2F; SELECT * FROM users ORDER BY id LIMIT 1;
+
+&#x2F;&#x2F; 获取一条记录，没有指定排序字段
+db.Take(&amp;user)
+&#x2F;&#x2F; SELECT * FROM users LIMIT 1;
+
+&#x2F;&#x2F; 获取最后一条记录（主键降序）
+db.Last(&amp;user)
+&#x2F;&#x2F; SELECT * FROM users ORDER BY id DESC LIMIT 1;</code></pre><p>这里一定要传指针，因为查询只会结果会存放到<code>user</code>变量中，所以只有通过传地址才能写入。</p><p>本地示例：</p><p>打印方法：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">func (u *User) show() &#123;
+    fmt.Println(&quot;---------【User】---------&quot;)
+    fmt.Printf(&quot;ID：%d\n姓名：%s\n年龄：%d\n性别：%s\n&quot;, u.ID, u.Name, u.Age, u.Gender)
+    fmt.Println(&quot;-------------------------&quot;)
+&#125;</code></pre><p>First：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User
+tx :&#x3D; db.First(&amp;user)
+if errors.Is(tx.Error, gorm.ErrRecordNotFound) &#123;
+	fmt.Println(&quot;查询不到数据, 表中没有数据&quot;)
+&#125;
+user.show()</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：1
+姓名：Cukor
+年龄：18
+性别：男
+-------------------------</code></pre><p>Take：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User
+tx :&#x3D; db.Take(&amp;user)
+if errors.Is(tx.Error, gorm.ErrRecordNotFound) &#123;
+	fmt.Println(&quot;查询不到数据, 表中没有数据&quot;)
+&#125;
+user.show()</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：1
+姓名：Cukor
+年龄：18
+性别：男
+-------------------------</code></pre><p>Last：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User
+tx :&#x3D; db.Last(&amp;user)
+if errors.Is(tx.Error, gorm.ErrRecordNotFound) &#123;
+    fmt.Println(&quot;查询不到数据, 表中没有数据&quot;)
+&#125;
+user.show()</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：11
+姓名：于文文
+年龄：35
+性别：女
+-------------------------</code></pre><h3 id="避免ErrRecordNotFound错误"><a href="#避免ErrRecordNotFound错误" class="headerlink" title="避免ErrRecordNotFound错误"></a>避免ErrRecordNotFound错误</h3><blockquote><p>如果你想避免<code>ErrRecordNotFound</code>错误，你可以使用<code>Find</code>，比如<code>db.Limit(1).Find(&amp;user)</code>，<code>Find</code>方法可以接受struct和slice的数据。</p></blockquote><blockquote><p>对单个对象使用<code>Find</code>而不带limit，<code>db.Find(&amp;user)</code>将会查询整个表并且只返回第一个对象，这是性能不高并且不确定的。</p></blockquote><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User
+db.Limit(1).Find(&amp;user)
+user.show()</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：1
+姓名：Cukor
+年龄：18
+性别：男
+-------------------------</code></pre><h3 id="主键检索"><a href="#主键检索" class="headerlink" title="主键检索"></a>主键检索</h3><p>如果主键是数字，则可以通过使用内联条件使用主键检索对象。在处理字符串时，需要格外小心，以避免 SQL 注入；详情请查看<a class="link" target="_blank" rel="noopener" href="https://gorm.io/zh_CN/docs/security.html">安全 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>部分。</p><p>官方示例：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">db.First(&amp;user, 10)
+&#x2F;&#x2F; SELECT * FROM users WHERE id &#x3D; 10;
+
+db.First(&amp;user, &quot;10&quot;)
+&#x2F;&#x2F; SELECT * FROM users WHERE id &#x3D; 10;
+
+db.Find(&amp;users, []int&#123;1,2,3&#125;)
+&#x2F;&#x2F; SELECT * FROM users WHERE id IN (1,2,3);</code></pre><p>本地示例：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+db.First(&amp;users, []int&#123;3, 5, 7&#125;)
+for _, user :&#x3D; range users &#123;
+	user.show()
+&#125;</code></pre><p>尽管这里参数是一个切片，<code>First</code>方法只会查询到第一个数据，这是因为它底层生成的SQL导致的。</p><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：3
+姓名：方大同
+年龄：40
+性别：男
+-------------------------</code></pre><p>如果主键是字符串应该使用下面的方式传递：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">db.First(&amp;user, &quot;id &#x3D; ?&quot;, &quot;1b74413f-f3b8-409f-ac47-e8c062e3472a&quot;)
+&#x2F;&#x2F; SELECT * FROM users WHERE id &#x3D; &quot;1b74413f-f3b8-409f-ac47-e8c062e3472a&quot;;</code></pre><p>当目标对象有一个主键值时，将使用主键构建查询条件，例如：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user &#x3D; User&#123;ID: 10&#125;
+db.First(&amp;user)
+&#x2F;&#x2F; SELECT * FROM users WHERE id &#x3D; 10;
+
+var result Userdb.Model(User&#123;ID: 10&#125;).First(&amp;result)
+&#x2F;&#x2F; SELECT * FROM users WHERE id &#x3D; 10;</code></pre><p>注意：如果使用 gorm 的特定字段类型（如 gorm.DeletedAt），它将运行不同的查询来检索对象。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">type User struct &#123;
+  ID           string &#96;gorm:&quot;primarykey;size:16&quot;&#96;
+  Name         string &#96;gorm:&quot;size:24&quot;&#96;
+  DeletedAt    gorm.DeletedAt &#96;gorm:&quot;index&quot;&#96;
+&#125;
+
+var user &#x3D; User&#123;ID: 15&#125;
+db.First(&amp;user)
+&#x2F;*  
+    SELECT * 
+    FROM &#96;users&#96; 
+    WHERE &#96;users&#96;.&#96;id&#96; &#x3D; &#39;15&#39; AND &#96;users&#96;.&#96;deleted_at&#96; IS NULL 
+    ORDER BY &#96;users&#96;.&#96;id&#96; 
+    LIMIT 1
+*&#x2F;</code></pre><p>因为GORM的<code>Delete</code>方法实际上是一个伪删除操作。就算在Go程序中执行了<code>db.Delete(&amp;user)</code>，那逻辑上是删除了，但是实际上MySQL这边的数据表并没有真正删除，而是把<code>deleted_at</code>字段做了删除的标记，但是该数据仍然存在。</p><p>通过以下的SQL语句依旧是可以查询出来的：</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">select * from users</code></pre><h3 id="查询所有"><a href="#查询所有" class="headerlink" title="查询所有"></a>查询所有</h3><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Find(&amp;users)
+for _, user :&#x3D; range users &#123;
+	user.show()
+&#125;
+fmt.Printf(&quot;查询到了%d条数据\n&quot;, tx.RowsAffected)</code></pre><pre class="line-numbers language-none"><code class="language-none">....省略10条记录
+---------【User】---------
+ID：11
+姓名：于文文
+年龄：35
+性别：女
+-------------------------
+查询到了11条数据</code></pre><h3 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h3><h4 id="String"><a href="#String" class="headerlink" title="String"></a>String</h4><p>查询一个：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Get first matched record
+db.Where(&quot;name &#x3D; ?&quot;, &quot;jinzhu&quot;).First(&amp;user)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &#x3D; &#39;jinzhu&#39; ORDER BY id LIMIT 1;</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User
+db.Where(&quot;Name &#x3D; ?&quot;, &quot;李荣浩&quot;).First(&amp;user)
+&#x2F;&#x2F; select * from users where name &#x3D; &#39;李荣浩&#39; order by id limit 1;
+user.show()</code></pre><p>查询所有：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Get all matched records
+db.Where(&quot;name &lt;&gt; ?&quot;, &quot;jinzhu&quot;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &lt;&gt; &#39;jinzhu&#39;;</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&quot;Gender !&#x3D; ?&quot;, &quot;男&quot;).Find(&amp;users)
+&#x2F;&#x2F; select * from users where gender !&#x3D; &#39;男&#39;;
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Printf(&quot;女用户有%d人\n&quot;, tx.RowsAffected)</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：8
+姓名：邓紫棋
+年龄：34
+性别：女
+-------------------------
+---------【User】---------
+ID：11
+姓名：于文文
+年龄：35
+性别：女
+-------------------------
+女用户有2人</code></pre><p>In：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; IN
+db.Where(&quot;name IN ?&quot;, []string&#123;&quot;jinzhu&quot;, &quot;jinzhu 2&quot;&#125;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name IN (&#39;jinzhu&#39;,&#39;jinzhu 2&#39;);</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&quot;Name in ?&quot;, []string&#123;&quot;陶喆&quot;, &quot;王力宏&quot;, &quot;方大同&quot;&#125;).Find(&amp;users)
+&#x2F;&#x2F; select * from users where name in (&#39;陶喆&#39;, &#39;王力宏&#39;, &#39;方大同&#39;);
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Printf(&quot;返回了%d条数据\n&quot;, tx.RowsAffected)</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：3
+姓名：方大同
+年龄：40
+性别：男
+-------------------------
+---------【User】---------
+ID：4
+姓名：陶喆
+年龄：54
+性别：男
+-------------------------
+---------【User】---------
+ID：5
+姓名：王力宏
+年龄：50
+性别：男
+-------------------------
+返回了3条数据</code></pre><p>模糊查询like：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; LIKE
+db.Where(&quot;name LIKE ?&quot;, &quot;%jin%&quot;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name LIKE &#39;%jin%&#39;;</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&quot;Name like ?&quot;, &quot;%o%&quot;).Find(&amp;users)
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Printf(&quot;返回了%d条数据\n&quot;, tx.RowsAffected)</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：1
+姓名：Cukor
+年龄：18
+性别：男
+-------------------------
+---------【User】---------
+ID：2
+姓名：David Tao
+年龄：54
+性别：男
+-------------------------
+返回了2条数据</code></pre><p>多条件查询and：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; AND
+db.Where(&quot;name &#x3D; ? AND age &gt;&#x3D; ?&quot;, &quot;jinzhu&quot;, &quot;22&quot;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &#x3D; &#39;jinzhu&#39; AND age &gt;&#x3D; 22;</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&quot;Age &lt; ? and gender &#x3D; ?&quot;, &quot;40&quot;, &quot;男&quot;).Find(&amp;users)
+&#x2F;&#x2F; select * from users where age &lt; 40 and gender &#x3D; 男;
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Printf(&quot;返回了%d条数据\n&quot;, tx.RowsAffected)</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：1
+姓名：Cukor
+年龄：18
+性别：男
+-------------------------
+---------【User】---------
+ID：9
+姓名：李荣浩
+年龄：38
+性别：男
+-------------------------
+---------【User】---------
+ID：10
+姓名：薛之谦
+年龄：39
+性别：男
+-------------------------
+返回了3条数据</code></pre><p>Time：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Time
+db.Where(&quot;updated_at &gt; ?&quot;, lastWeek).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE updated_at &gt; &#39;2000-01-01 00:00:00&#39;;</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&quot;Updated_at &gt; ?&quot;, &quot;2023-10-04 16:00:00&quot;).Find(&amp;users)
+&#x2F;&#x2F; select * from users where updated_at &gt; &#39;2023-10-04 16:00:00&#39;;
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Printf(&quot;返回了%d条数据\n&quot;, tx.RowsAffected)</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：9
+姓名：李荣浩
+年龄：38
+性别：男
+-------------------------
+---------【User】---------
+ID：10
+姓名：薛之谦
+年龄：39
+性别：男
+-------------------------
+---------【User】---------
+ID：11
+姓名：于文文
+年龄：35
+性别：女
+-------------------------
+返回了3条数据</code></pre><p>Between：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; BETWEEN
+db.Where(&quot;created_at BETWEEN ? AND ?&quot;, lastWeek, today).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE created_at BETWEEN &#39;2000-01-01 00:00:00&#39; AND &#39;2000-01-08 00:00:00&#39;;</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&quot;age between ? and ?&quot;, &quot;40&quot;, &quot;50&quot;).Find(&amp;users)
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Printf(&quot;返回了%d条数据\n&quot;, tx.RowsAffected)</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：3
+姓名：方大同
+年龄：40
+性别：男
+-------------------------
+---------【User】---------
+ID：5
+姓名：王力宏
+年龄：50
+性别：男
+-------------------------
+---------【User】---------
+ID：6
+姓名：张惠妹
+年龄：47
+性别：男
+-------------------------
+---------【User】---------
+ID：7
+姓名：周杰伦
+年龄：44
+性别：男
+-------------------------
+返回了4条数据</code></pre><p>注意：如果对象的主键ID已经设置，那么不能再在<code>Where</code>方法里写<code>id = ?</code>这类操作。</p><p>例如：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User&#123;ID: 10&#125;
+db.Where(&quot;id &#x3D; ?&quot;, 20).First(&amp;user)</code></pre><p>这样它会把SQL生成下面的样子：</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">select * from users id &#x3D; 10 and id &#x3D; 20;</code></pre><p>很明显这个SQL是查询不出东西的，因为id是主键不可能重复，自然就不可能有既等于10又等于20的情况。</p><h4 id="Struct-amp-Map"><a href="#Struct-amp-Map" class="headerlink" title="Struct &amp; Map"></a>Struct &amp; Map</h4><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Struct
+db.Where(&amp;User&#123;Name: &quot;jinzhu&quot;, Age: 20&#125;).First(&amp;user)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &#x3D; &quot;jinzhu&quot; AND age &#x3D; 20 ORDER BY id LIMIT 1;
+
+&#x2F;&#x2F; Map
+db.Where(map[string]interface&#123;&#125;&#123;&quot;name&quot;: &quot;jinzhu&quot;, &quot;age&quot;: 20&#125;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &#x3D; &quot;jinzhu&quot; AND age &#x3D; 20;
+
+&#x2F;&#x2F; Slice of primary keys
+db.Where([]int64&#123;20, 21, 22&#125;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE id IN (20, 21, 22);</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User
+db.Where(&amp;User&#123;Name: &quot;薛之谦&quot;, Age: 39&#125;).First(&amp;user)
+&#x2F;&#x2F; select * from users where name &#x3D; &#39;薛之谦&#39; and age &#x3D; 39 order by id limit 1;
+user.show()</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：10
+姓名：薛之谦
+年龄：39
+性别：男
+-------------------------</code></pre><pre class="line-numbers language-go" data-language="go"><code class="language-go">var user User
+db.Where(map[string]interface&#123;&#125;&#123;&quot;name&quot;: &quot;李荣浩&quot;, &quot;age&quot;: 38&#125;).First(&amp;user)
+&#x2F;&#x2F; select * from users where name &#x3D; &#39;李荣浩&#39; and age &#x3D; 38 ORDER BY id LIMIT 1;
+user.show()</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：9
+姓名：李荣浩
+年龄：38
+性别：男
+-------------------------</code></pre><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+db.Where([]int&#123;6, 8, 10&#125;).Find(&amp;users)
+&#x2F;&#x2F; select * from users where id in (6, 8, 10);
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：6
+姓名：张惠妹
+年龄：47
+性别：男
+-------------------------
+---------【User】---------
+ID：8
+姓名：邓紫棋
+年龄：34
+性别：女
+-------------------------
+---------【User】---------
+ID：10
+姓名：薛之谦
+年龄：39
+性别：男
+-------------------------</code></pre><p>注意 在使用 struct 查询时，GORM 只对非零字段进行查询，这意味着如果字段的值为 0、”‘“、false 或其他零值，则不会用于构建查询条件。例如：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">db.Where(&amp;User&#123;Name: &quot;jinzhu&quot;, Age: 0&#125;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &#x3D; &quot;jinzhu&quot;;</code></pre><p>本地测试：</p><p>先往数据表添加两条记录：</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">insert into users(name, age, gender) values (&#39;王菲&#39;, 55, &#39;女&#39;);
+insert into users(name, age, gender) values (&#39;王菲&#39;, 0, &#39;女&#39;);</code></pre><p>主键id是自增的，所以这两个并不是同一条记录。</p><p>然后现在使用gorm去查询：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&amp;User&#123;Name: &quot;王菲&quot;, Age: 0&#125;).Find(&amp;users)
+for _, user :&#x3D; range users &#123;
+	user.show()
+&#125;
+fmt.Println(&quot;返回&quot;, tx.RowsAffected, &quot;条数据&quot;)</code></pre><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：12
+姓名：王菲
+年龄：0
+性别：女
+-------------------------
+---------【User】---------
+ID：13
+姓名：王菲
+年龄：55
+性别：女
+-------------------------
+返回 2 条数据</code></pre><p>这个时候可以看到<code>age = 0</code>这个条件没有被生成，所以查询出来的是两条记录，而我们需要的只是<code>age = 0</code>的这条记录。</p><p>这种情况下就可以使用String的方法查询：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(&quot;name &#x3D; ? and age &#x3D; ?&quot;, &quot;王菲&quot;, 0).Find(&amp;users)
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Println(&quot;返回&quot;, tx.RowsAffected, &quot;条数据&quot;)</code></pre><p>也可以使用Map的方式查询：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">var users []User
+tx :&#x3D; db.Where(map[string]interface&#123;&#125;&#123;&quot;name&quot;: &quot;王菲&quot;, &quot;age&quot;: 0&#125;).Find(&amp;users)
+for _, user :&#x3D; range users &#123;
+    user.show()
+&#125;
+fmt.Println(&quot;返回&quot;, tx.RowsAffected, &quot;条数据&quot;)</code></pre><p>它们的结果都是下面的结果：</p><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：12
+姓名：王菲
+年龄：0
+性别：女
+-------------------------
+返回 1 条数据</code></pre><p>这是因为它们生成的SQL都是一样的：</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">select * from users where name &#x3D; &#39;王菲&#39; and age &#x3D; 0;</code></pre><p>当然，如果非要使用Struct的方式写也可以，但是这样写就感觉比较丑了：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">db.Where(&amp;User&#123;Name: &quot;王菲&quot;&#125;, &quot;age&quot;).Find(&amp;users)</code></pre><p>就是把<code>age</code>单独拿出来，然后根据默认值是零值，然后生成对应的SQL，和上面的一样。但是还是不要这样写了，明明都包到<code>User</code>里面了还要单独拿出来就让人觉得很迷。</p><h4 id="内联条件"><a href="#内联条件" class="headerlink" title="内联条件"></a>内联条件</h4><p>可以把<code>Where</code>方法中的条件内联到<code>First</code>和<code>Find</code>方法。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">db.First(&amp;user, &quot;name &#x3D; ? and age &#x3D; ?&quot;, &quot;cukor&quot;, 18)</code></pre><p>就是相当于之前写在<code>Where</code>方法里的可以直接写到<code>First</code>和<code>Find</code>方法的参数列表中。</p><p>Struct和Map的条件也可以直接放，这里不再赘述。</p><h4 id="Not"><a href="#Not" class="headerlink" title="Not"></a>Not</h4><p>类似<code>Where</code>方法。它就是<code>Where</code>的取反操作。</p><p>示例：</p><p>要求使用Not，查询性别<strong>女</strong>并且年龄<strong>在</strong>30到35岁之间的记录。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">tx :&#x3D; db.Not(&quot;gender &#x3D; ?&quot;, &quot;男&quot;).Where(&quot;age between ? and ?&quot;, 30, 35).Find(&amp;users)
+&#x2F;*
+select id, name, age, gender
+from users
+where not gender &#x3D; &#39;男&#39; and age between 30 and 35;
+*&#x2F;</code></pre><p>结果：</p><pre class="line-numbers language-none"><code class="language-none">---------【User】---------
+ID：8
+姓名：邓紫棋
+年龄：34
+性别：女
+-------------------------
+---------【User】---------
+ID：11
+姓名：于文文
+年龄：35
+性别：女
+-------------------------
+返回 2 条数据</code></pre><p>要求使用Not，查询性别<strong>女</strong>并且年龄<strong>不在</strong>30到35岁之间的记录。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">tx :&#x3D; db.Not(&quot;gender &#x3D; ?&quot;, &quot;男&quot;).Not(&quot;age between ? and ?&quot;, 30, 35).Find(&amp;users)
+&#x2F;*
+select id, name, age, gender
+from users
+where not gender &#x3D; &#39;男&#39; and not age between 30 and 35;
+*&#x2F;</code></pre><p>这两个<code>Not</code>方法不能合到一个<code>Not</code>中，否则查询不到我们想要的效果。分出来写，它才会在中间生成<code>and</code>。</p><p>Not in：</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Not In
+db.Not(map[string]interface&#123;&#125;&#123;&quot;name&quot;: []string&#123;&quot;jinzhu&quot;, &quot;jinzhu 2&quot;&#125;&#125;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name NOT IN (&quot;jinzhu&quot;, &quot;jinzhu 2&quot;);</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">tx :&#x3D; db.Not(map[string]interface&#123;&#125;&#123;&quot;name&quot;: []string&#123;&quot;王菲&quot;, &quot;周杰伦&quot;, &quot;于文文&quot;&#125;&#125;).Find(&amp;users)
+&#x2F;*
+    SELECT * 
+    FROM &#96;users&#96; 
+    WHERE &#96;name&#96; NOT IN (&#39;王菲&#39;,&#39;周杰伦&#39;,&#39;于文文&#39;) AND &#96;users&#96;.&#96;deleted_at&#96; IS NULL
+*&#x2F; </code></pre><h4 id="Or"><a href="#Or" class="headerlink" title="Or"></a>Or</h4><p><code>and</code>写在<code>Where</code>里，但是<code>or</code>就得单独拿出来。</p><p>官方：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">db.Where(&quot;role &#x3D; ?&quot;, &quot;admin&quot;).Or(&quot;role &#x3D; ?&quot;, &quot;super_admin&quot;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE role &#x3D; &#39;admin&#39; OR role &#x3D; &#39;super_admin&#39;;
+&#x2F;&#x2F; Struct
+db.Where(&quot;name &#x3D; &#39;jinzhu&#39;&quot;).Or(User&#123;Name: &quot;jinzhu 2&quot;, Age: 18&#125;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &#x3D; &#39;jinzhu&#39; OR (name &#x3D; &#39;jinzhu 2&#39; AND age &#x3D; 18);
+&#x2F;&#x2F; Map
+db.Where(&quot;name &#x3D; &#39;jinzhu&#39;&quot;).Or(map[string]interface&#123;&#125;&#123;&quot;name&quot;: &quot;jinzhu 2&quot;, &quot;age&quot;: 18&#125;).Find(&amp;users)
+&#x2F;&#x2F; SELECT * FROM users WHERE name &#x3D; &#39;jinzhu&#39; OR (name &#x3D; &#39;jinzhu 2&#39; AND age &#x3D; 18);</code></pre><p>本地：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">tx :&#x3D; db.Where(&quot;name &#x3D; ?&quot;, &quot;陶喆&quot;).Or(&quot;name &#x3D; ?&quot;, &quot;David Tao&quot;).Find(&amp;users)
+&#x2F;*
+SELECT * 
+FROM &#96;users&#96; 
+WHERE (name &#x3D; &#39;陶喆&#39; OR name &#x3D; &#39;David Tao&#39;) AND &#96;users&#96;.&#96;deleted_at&#96; IS NULL
+*&#x2F;</code></pre></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> gorm学习</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at :</strong> 2023-10-04 16:20:32</li><li><strong>Updated at :</strong> 2023-10-04 23:54:33</li><li><strong>Link:</strong> https://cukor666.github.io//post/gorm学习.html</li><li><strong>License: </strong>This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Go/">#Go</a>&nbsp;</li><li class="tag-item"><a href="/tags/Gorm/">#Gorm</a>&nbsp;</li></ul><div class="article-nav"><div class="article-next"><a class="next" rel="next" href="/post/Go%E5%9F%BA%E7%A1%80%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B.html"><span class="title flex justify-center items-center"><span class="post-nav-title-item">Go基础之数据类型</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">gorm学习</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GORM%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">GORM学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.</span> <span class="nav-text">下载依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.3.</span> <span class="nav-text">建立模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="nav-number">1.4.</span> <span class="nav-text">创建表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%97%A5%E5%BF%97"><span class="nav-number">1.5.</span> <span class="nav-text">配置日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.6.</span> <span class="nav-text">插入数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%8D%95%E4%B8%AA%E6%95%B0%E6%8D%AE"><span class="nav-number">1.6.1.</span> <span class="nav-text">插入单个数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E5%A4%9A%E4%B8%AA%E6%95%B0%E6%8D%AE"><span class="nav-number">1.6.2.</span> <span class="nav-text">插入多个数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%AD%97%E6%AE%B5%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">1.6.3.</span> <span class="nav-text">指定字段插入数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E5%B9%B6%E6%8C%87%E5%AE%9A%E6%89%B9%E9%87%8F%E5%A4%A7%E5%B0%8F"><span class="nav-number">1.6.4.</span> <span class="nav-text">批量插入数据并指定批量大小</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE"><span class="nav-number">1.7.</span> <span class="nav-text">查询数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.7.1.</span> <span class="nav-text">单表查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%BF%E5%85%8DErrRecordNotFound%E9%94%99%E8%AF%AF"><span class="nav-number">1.7.2.</span> <span class="nav-text">避免ErrRecordNotFound错误</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%94%AE%E6%A3%80%E7%B4%A2"><span class="nav-number">1.7.3.</span> <span class="nav-text">主键检索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%89%80%E6%9C%89"><span class="nav-number">1.7.4.</span> <span class="nav-text">查询所有</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="nav-number">1.7.5.</span> <span class="nav-text">条件查询</span></a></li></ol></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color"><div class="info-container py-3 text-center"><div class="text-center">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right"><span id="busuanzi_container_site_uv" class="lg:!block"><span class="text-sm">VISITOR COUNT</span> <span id="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="lg:!block"><span class="text-sm">TOTAL PAGE VIEWS</span> <span id="busuanzi_value_site_pv"></span></span></div><div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left"><span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span> <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.4.4</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex justify-center items-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex justify-center items-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.hooks.on("page:view",()=>{Global.refresh()})</script><script src="/js/utils.js" type="module"></script><script src="/js/main.js" type="module"></script><script src="/js/layouts/navbarShrink.js" type="module"></script><script src="/js/tools/scrollTopBottom.js" type="module"></script><script src="/js/tools/lightDarkSwitch.js" type="module"></script><script src="/js/layouts/categoryList.js" type="module"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js" type="module"></script><div class="post-scripts" data-swup-reload-script><script src="/js/libs/anime.min.js"></script><script src="/js/tools/tocToggle.js" type="module"></script><script src="/js/layouts/toc.js" type="module"></script><script src="/js/plugins/tabs.js" type="module"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
