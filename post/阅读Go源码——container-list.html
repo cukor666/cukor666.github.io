@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/阅读go源码——container-list.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="阅读Go源码——container&#x2F;listGo语言提供了一个容器——list。 list的底层是实现的双向链表。这个双向链表是带有头节点的，并且Go官方给它设置的属性名叫root. 并且告诉我们list的遍历可以使用下面的方式遍历： for e :&#x3D; l.Front(); e !&#x3D; nil; e &#x3D; e.Next() &amp;#123; 	&#x2F;&amp;#x2F"><meta property="og:type" content="article"><meta property="og:title" content="阅读Go源码——container&#x2F;list"><meta property="og:url" content="http://example.com/post/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="阅读Go源码——container&#x2F;listGo语言提供了一个容器——list。 list的底层是实现的双向链表。这个双向链表是带有头节点的，并且Go官方给它设置的属性名叫root. 并且告诉我们list的遍历可以使用下面的方式遍历： for e :&#x3D; l.Front(); e !&#x3D; nil; e &#x3D; e.Next() &amp;#123; 	&#x2F;&amp;#x2F"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010174712790.png"><meta property="og:image" content="http://example.com/images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010180008501.png"><meta property="og:image" content="http://example.com/images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010182521662.png"><meta property="og:image" content="http://example.com/images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010184633310.png"><meta property="article:published_time" content="2023-10-10T08:56:28.000Z"><meta property="article:modified_time" content="2023-10-10T10:58:57.485Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Go"><meta property="article:tag" content="阅读源码"><meta property="article:tag" content="list"><meta property="article:tag" content="数据结构与算法"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010174712790.png"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>阅读Go源码——container/list - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/build/styles.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"2450808861@qq.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.4.4",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io"}},Links:{icon:"fa-regular fa-link",submenus:{CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"20级信息与计算科学专业主修数学误打误撞来到了计算机的世界",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="http://example.com/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="http://example.com/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li></ul></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color"><ul class="drawer-navbar-list flex flex-col justify-start items-center"><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i></a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" href="/about">ME</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-link"></i> LINKS&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i></a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><h1 class="article-title-regular">阅读Go源码——container/list</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv5</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-10-10 16:56:28</span> <span class="mobile">2023-10-10 16:56:28</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-10-10 18:58:57</span> <span class="mobile">2023-10-10 18:58:57</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/Go/">Go</a>&nbsp;</li><li>></li><li><a href="/categories/Go/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>&nbsp;</li><li>></li><li><a href="/categories/Go/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E9%98%85%E8%AF%BB%E6%BA%90%E7%A0%81/">阅读源码</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Go/">Go</a>&nbsp;</li><li>| <a href="/tags/%E9%98%85%E8%AF%BB%E6%BA%90%E7%A0%81/">阅读源码</a>&nbsp;</li><li>| <a href="/tags/list/">list</a>&nbsp;</li><li>| <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.2k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>15 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h1 id="阅读Go源码——container-x2F-list"><a href="#阅读Go源码——container-x2F-list" class="headerlink" title="阅读Go源码——container&#x2F;list"></a>阅读Go源码——container&#x2F;list</h1><p>Go语言提供了一个容器——list。</p><p>list的底层是实现的双向链表。这个双向链表是带有头节点的，并且Go官方给它设置的属性名叫<code>root</code>.</p><p>并且告诉我们list的遍历可以使用下面的方式遍历：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">for e :&#x3D; l.Front(); e !&#x3D; nil; e &#x3D; e.Next() &#123;
+	&#x2F;&#x2F; do something with e.Value
+&#125;</code></pre><p>它没有像C++或Java中的迭代器的方式遍历，但其实C++或Java的迭代器遍历底层也是通过指针或者引用来遍历的。Go语言这里的设计就比较简洁了。</p><h2 id="链表节点的结构"><a href="#链表节点的结构" class="headerlink" title="链表节点的结构"></a>链表节点的结构</h2><p>下面这个是官方的源码。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Element is an element of a linked list.
+type Element struct &#123;
+	&#x2F;&#x2F; Next and previous pointers in the doubly-linked list of elements.
+	&#x2F;&#x2F; To simplify the implementation, internally a list l is implemented
+	&#x2F;&#x2F; as a ring, such that &amp;l.root is both the next element of the last
+	&#x2F;&#x2F; list element (l.Back()) and the previous element of the first list
+	&#x2F;&#x2F; element (l.Front()).
+	next, prev *Element
+
+	&#x2F;&#x2F; The list to which this element belongs.
+	list *List
+
+	&#x2F;&#x2F; The value stored with this element.
+	Value any
+&#125;</code></pre><p>那么可以通过官方的注释知道，<code>Element</code>其实就是我们在数据结构课堂上学习到的节点的结构体描述。</p><p><code>Element</code>属性介绍：</p><ul><li><code>next</code>：当前节点的下一个节点的指针</li><li><code>prev</code>：当前节点的上一个节点的指针</li><li><code>list</code>：当前节点归属的链表，如果当前节点没有归属的链表则为<code>nil</code></li><li><code>Value</code>：当前节点存储的实际数据，这里是<code>any</code>类型，就是<code>interface&#123;&#125;</code>，表示可以存放任意数据类型</li></ul><h2 id="链表节点的方法"><a href="#链表节点的方法" class="headerlink" title="链表节点的方法"></a>链表节点的方法</h2><p>只有两个方法，分别是：</p><ul><li><code>Next() *Element</code>：获取当前节点的下一个节点的指针</li><li><code>Prev() *Element</code>：获取当前节点的上一个节点的指针</li></ul><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Next returns the next list element or nil.
+func (e *Element) Next() *Element &#123;
+	if p :&#x3D; e.next; e.list !&#x3D; nil &amp;&amp; p !&#x3D; &amp;e.list.root &#123;
+		return p
+	&#125;
+	return nil
+&#125;
+
+&#x2F;&#x2F; Prev returns the previous list element or nil.
+func (e *Element) Prev() *Element &#123;
+	if p :&#x3D; e.prev; e.list !&#x3D; nil &amp;&amp; p !&#x3D; &amp;e.list.root &#123;
+		return p
+	&#125;
+	return nil
+&#125;</code></pre><p>其中<code>e.list != nil</code>就表示了当前节点一定要是某个链表的节点，否则就没有下一个节点和上一个节点之说了，直接返回<code>nil</code>.</p><p>并且<code>p</code>不应该是当前链表的<code>root</code>，因为<code>root</code>不存放节点的数据，<code>root</code>是整个链表的控制中心。</p><h2 id="链表的结构"><a href="#链表的结构" class="headerlink" title="链表的结构"></a>链表的结构</h2><p>Go语言对节点再次封装，把节点和链表分开来将，并且在链表中添加了一个<code>Element</code>类型的控制中心节点<code>root</code>，它只负责控制整个链表，而不存放数据。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; List represents a doubly linked list.
+&#x2F;&#x2F; The zero value for List is an empty list ready to use.
+type List struct &#123;
+	root Element &#x2F;&#x2F; sentinel list element, only &amp;root, root.prev, and root.next are used
+	len  int     &#x2F;&#x2F; current list length excluding (this) sentinel element
+&#125;</code></pre><p>Go语言还为<code>list</code>封装了一个<code>len</code>的属性，这样可以直接在内部快速拿到整个链表的大小，这样就不需要每次需要获取链表的大小的时候还要去遍历整个链表。并且<code>root</code>和<code>len</code>都是当前包可以见，其他包不可以，这样做请确保了安全性，不允许其他地方擅自修改。</p><h2 id="链表的方法"><a href="#链表的方法" class="headerlink" title="链表的方法"></a>链表的方法</h2><h3 id="简单方法"><a href="#简单方法" class="headerlink" title="简单方法"></a>简单方法</h3><h4 id="获取链表大小"><a href="#获取链表大小" class="headerlink" title="获取链表大小"></a>获取链表大小</h4><p>当然其他包有可能也会需要获取链表的大小，那么Go也提供了方法获取，但是只能获取读的权力，不能修改：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Len returns the number of elements of list l.
+&#x2F;&#x2F; The complexity is O(1).
+func (l *List) Len() int &#123; return l.len &#125;</code></pre><h4 id="获取头部（第一个带有数据的节点）"><a href="#获取头部（第一个带有数据的节点）" class="headerlink" title="获取头部（第一个带有数据的节点）"></a>获取头部（第一个带有数据的节点）</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Front returns the first element of list l or nil if the list is empty.
+func (l *List) Front() *Element &#123;
+    if l.len &#x3D;&#x3D; 0 &#123;
+       return nil
+    &#125;
+    return l.root.next
+&#125;</code></pre><h4 id="获取尾部（最后一个带有数据的节点）"><a href="#获取尾部（最后一个带有数据的节点）" class="headerlink" title="获取尾部（最后一个带有数据的节点）"></a>获取尾部（最后一个带有数据的节点）</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Back returns the last element of list l or nil if the list is empty.
+func (l *List) Back() *Element &#123;
+    if l.len &#x3D;&#x3D; 0 &#123;
+       return nil
+    &#125;
+    return l.root.prev
+&#125;</code></pre><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><h4 id="Init"><a href="#Init" class="headerlink" title="Init"></a>Init</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Init initializes or clears list l.
+func (l *List) Init() *List &#123;
+	l.root.next &#x3D; &amp;l.root
+	l.root.prev &#x3D; &amp;l.root
+	l.len &#x3D; 0
+	return l
+&#125;</code></pre><p>最本质的方法，其他变种都是内部调用了它。</p><p>一开始<code>next</code>和<code>prev</code>都指向了<code>root</code>本身，因为<code>root</code>不存放数据，所以这样操作还OK。</p><ul><li><code>root.next</code>：表示了链表中的第一个存放数据的节点。</li><li><code>root.prev</code>：表示了链表中的最后一个存放数据的节点。</li></ul><p><img lazyload src="/images/loading.svg" data-src="/../images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010174712790.png" alt="image-20231010174712790"></p><h4 id="New"><a href="#New" class="headerlink" title="New"></a>New</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; New returns an initialized list.
+func New() *List &#123; return new(List).Init() &#125;</code></pre><p><code>Init</code>的封装。区别在于<code>Init</code>是通过对象调用，而<code>New</code>是函数，不需要通过对象来调用，直接调用即可。</p><h4 id="lazyInit"><a href="#lazyInit" class="headerlink" title="lazyInit"></a>lazyInit</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; lazyInit lazily initializes a zero List value.
+func (l *List) lazyInit() &#123;
+	if l.root.next &#x3D;&#x3D; nil &#123;
+		l.Init()
+	&#125;
+&#125;</code></pre><p>小写开头，说明外界（其他包）是访问不到的。它的功能就是如果对象如果还没有初始化就会自动初始化，如果已经初始化了，就不需要再次初始化了，这个方法在添加的功能里就有调用，例如，当我们的list对象只是声明了，但是并没有做初始化操作，也可以直接调用插入添加的方法，因为这些添加插入的方法里面就调用了这个<code>lazyInit</code>方法。</p><h3 id="添加-x2F-插入"><a href="#添加-x2F-插入" class="headerlink" title="添加&#x2F;插入"></a>添加&#x2F;插入</h3><h4 id="insert：本质"><a href="#insert：本质" class="headerlink" title="insert：本质"></a>insert：本质</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; insert inserts e after at, increments l.len, and returns e.
+func (l *List) insert(e, at *Element) *Element &#123;
+    e.prev &#x3D; at
+    e.next &#x3D; at.next
+    e.prev.next &#x3D; e
+    e.next.prev &#x3D; e
+    e.list &#x3D; l
+    l.len++
+    return e
+&#125;</code></pre><p>这个方法直接通过已知的节点的地址<code>at</code>直接添加，就类似数组直接通过索引取值一样那么快。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010180008501.png" alt="image-20231010180008501"></p><h4 id="insertValue"><a href="#insertValue" class="headerlink" title="insertValue"></a>insertValue</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; insertValue is a convenience wrapper for insert(&amp;Element&#123;Value: v&#125;, at).
+func (l *List) insertValue(v any, at *Element) *Element &#123;
+    return l.insert(&amp;Element&#123;Value: v&#125;, at)
+&#125;</code></pre><p><code>insert</code>方法的封装。</p><h4 id="PushFront"><a href="#PushFront" class="headerlink" title="PushFront"></a>PushFront</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; PushFront inserts a new element e with value v at the front of list l and returns e.
+func (l *List) PushFront(v any) *Element &#123;
+    l.lazyInit()
+    return l.insertValue(v, &amp;l.root)
+&#125;</code></pre><p>插入数据到链表的头部（第一个带有数据的节点）。</p><p>这里就调用了<code>lazyInit</code>，就是防止程序员还没有对链表进行初始化就插入数据的错误，所以这里调用了它就解决了这个问题，如果没有初始化它会帮我们初始化。</p><p>因为前面的插入方法已经写好了，这里直接调用已经写好的方法即可。既然是插入到头部，那就放到<code>root</code>的后面，那传参的时候直接传入<code>&amp;l.root</code>即可。</p><h4 id="PushBack"><a href="#PushBack" class="headerlink" title="PushBack"></a>PushBack</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; PushBack inserts a new element e with value v at the back of list l and returns e.
+func (l *List) PushBack(v any) *Element &#123;
+    l.lazyInit()
+    return l.insertValue(v, l.root.prev)
+&#125;</code></pre><p>和<code>PushFront</code>类似，既然要插入到链表的尾部（最后一个带有数据的节点），那参数就传<code>l.root.prev</code>，因为它就表示链表的最后一个节点的地址。</p><h4 id="InsertBefore"><a href="#InsertBefore" class="headerlink" title="InsertBefore"></a>InsertBefore</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; InsertBefore inserts a new element e with value v immediately before mark and returns e.
+&#x2F;&#x2F; If mark is not an element of l, the list is not modified.
+&#x2F;&#x2F; The mark must not be nil.
+func (l *List) InsertBefore(v any, mark *Element) *Element &#123;
+    if mark.list !&#x3D; l &#123;
+       return nil
+    &#125;
+    &#x2F;&#x2F; see comment in List.Remove about initialization of l
+    return l.insertValue(v, mark.prev)
+&#125;</code></pre><p>这个方法的本质也是调用了已经写好的方法：<code>insertValue</code>，只需要确认节点的地址即可。这里多了一个是判断标记的节点是否是当前链表中，如果是在当前链表中才做插入的操作，否则就返回<code>nil</code>不做插入的操作.</p><h4 id="InsertAfter"><a href="#InsertAfter" class="headerlink" title="InsertAfter"></a>InsertAfter</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; InsertAfter inserts a new element e with value v immediately after mark and returns e.
+&#x2F;&#x2F; If mark is not an element of l, the list is not modified.
+&#x2F;&#x2F; The mark must not be nil.
+func (l *List) InsertAfter(v any, mark *Element) *Element &#123;
+    if mark.list !&#x3D; l &#123;
+       return nil
+    &#125;
+    &#x2F;&#x2F; see comment in List.Remove about initialization of l
+    return l.insertValue(v, mark)
+&#125;</code></pre><p>和前面类似，只需要确定插入的位置。注意是在之前还是之后。</p><h4 id="添加其他链表"><a href="#添加其他链表" class="headerlink" title="添加其他链表"></a>添加其他链表</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; PushBackList inserts a copy of another list at the back of list l.
+&#x2F;&#x2F; The lists l and other may be the same. They must not be nil.
+func (l *List) PushBackList(other *List) &#123;
+    l.lazyInit()
+    for i, e :&#x3D; other.Len(), other.Front(); i &gt; 0; i, e &#x3D; i-1, e.Next() &#123;
+       l.insertValue(e.Value, l.root.prev)
+    &#125;
+&#125;
+
+&#x2F;&#x2F; PushFrontList inserts a copy of another list at the front of list l.
+&#x2F;&#x2F; The lists l and other may be the same. They must not be nil.
+func (l *List) PushFrontList(other *List) &#123;
+    l.lazyInit()
+    for i, e :&#x3D; other.Len(), other.Back(); i &gt; 0; i, e &#x3D; i-1, e.Prev() &#123;
+       l.insertValue(e.Value, &amp;l.root)
+    &#125;
+&#125;</code></pre><p>其实就是遍历其他链表<code>other</code>，把它的数据按头插入方式放到当前链表中，或者按尾插入方式放到当前链表中。</p><h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><h4 id="remove：本质"><a href="#remove：本质" class="headerlink" title="remove：本质"></a>remove：本质</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; remove removes e from its list, decrements l.len
+func (l *List) remove(e *Element) &#123;
+    e.prev.next &#x3D; e.next
+    e.next.prev &#x3D; e.prev
+    e.next &#x3D; nil &#x2F;&#x2F; avoid memory leaks
+    e.prev &#x3D; nil &#x2F;&#x2F; avoid memory leaks
+    e.list &#x3D; nil
+    l.len--
+&#125;</code></pre><p>和插入的操作一样直接获取节点的地址，这样不用遍历。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010182521662.png" alt="image-20231010182521662"></p><h4 id="Remove"><a href="#Remove" class="headerlink" title="Remove"></a>Remove</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; Remove removes e from l if e is an element of list l.
+&#x2F;&#x2F; It returns the element value e.Value.
+&#x2F;&#x2F; The element must not be nil.
+func (l *List) Remove(e *Element) any &#123;
+    if e.list &#x3D;&#x3D; l &#123;
+       &#x2F;&#x2F; if e.list &#x3D;&#x3D; l, l must have been initialized when e was inserted
+       &#x2F;&#x2F; in l or l &#x3D;&#x3D; nil (e is a zero Element) and l.remove will crash
+       l.remove(e)
+    &#125;
+    return e.Value
+&#125;</code></pre><p>对<code>remove</code>方法的封装，这个<code>Remove</code>是给外部调用的，所以需要判断当前要删除的节点<code>e</code>是否是当前链表中，如果是才做删除。</p><h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><h4 id="move：本质"><a href="#move：本质" class="headerlink" title="move：本质"></a>move：本质</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; move moves e to next to at.
+func (l *List) move(e, at *Element) &#123;
+    if e &#x3D;&#x3D; at &#123;
+       return
+    &#125;
+    e.prev.next &#x3D; e.next
+    e.next.prev &#x3D; e.prev
+
+    e.prev &#x3D; at
+    e.next &#x3D; at.next
+    e.prev.next &#x3D; e
+    e.next.prev &#x3D; e
+&#125;</code></pre><p>链表的移动就要比数组的移动要简单快捷很多了。</p><p>这个方法是将链表中的<code>e</code>节点移动到<code>at</code>节点后面，同样也是直接通过指针来操作。</p><p>如果<code>e</code>就是<code>at</code>本身，那就不需要进行移动的操作了。</p><p><img lazyload src="/images/loading.svg" data-src="/../images/%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-list/image-20231010184633310.png" alt="image-20231010184633310"></p><p>移动的操作其实就是先把<code>e</code>删除出来，然后再插入到<code>at</code>后面，这样就实现了移动的效果了。</p><h4 id="MoveToFront"><a href="#MoveToFront" class="headerlink" title="MoveToFront"></a>MoveToFront</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; MoveToFront moves element e to the front of list l.
+&#x2F;&#x2F; If e is not an element of l, the list is not modified.
+&#x2F;&#x2F; The element must not be nil.
+func (l *List) MoveToFront(e *Element) &#123;
+    if e.list !&#x3D; l || l.root.next &#x3D;&#x3D; e &#123;
+       return
+    &#125;
+    &#x2F;&#x2F; see comment in List.Remove about initialization of l
+    l.move(e, &amp;l.root)
+&#125;</code></pre><p>移动到头部（第一个带有数据的节点）。那就是<code>root</code>的后面。前面已经写好了<code>move</code>，这里就只需要调整一下参数即可。</p><h4 id="MoveToBack"><a href="#MoveToBack" class="headerlink" title="MoveToBack"></a>MoveToBack</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; MoveToBack moves element e to the back of list l.
+&#x2F;&#x2F; If e is not an element of l, the list is not modified.
+&#x2F;&#x2F; The element must not be nil.
+func (l *List) MoveToBack(e *Element) &#123;
+    if e.list !&#x3D; l || l.root.prev &#x3D;&#x3D; e &#123;
+       return
+    &#125;
+    &#x2F;&#x2F; see comment in List.Remove about initialization of l
+    l.move(e, l.root.prev)
+&#125;</code></pre><p>类似<code>MoveToFront</code>，只不过这个方法是移动到尾部。</p><h4 id="MoveBefore和MoveAfter"><a href="#MoveBefore和MoveAfter" class="headerlink" title="MoveBefore和MoveAfter"></a>MoveBefore和MoveAfter</h4><pre class="line-numbers language-go" data-language="go"><code class="language-go">&#x2F;&#x2F; MoveBefore moves element e to its new position before mark.
+&#x2F;&#x2F; If e or mark is not an element of l, or e &#x3D;&#x3D; mark, the list is not modified.
+&#x2F;&#x2F; The element and mark must not be nil.
+func (l *List) MoveBefore(e, mark *Element) &#123;
+    if e.list !&#x3D; l || e &#x3D;&#x3D; mark || mark.list !&#x3D; l &#123;
+       return
+    &#125;
+    l.move(e, mark.prev)
+&#125;
+
+&#x2F;&#x2F; MoveAfter moves element e to its new position after mark.
+&#x2F;&#x2F; If e or mark is not an element of l, or e &#x3D;&#x3D; mark, the list is not modified.
+&#x2F;&#x2F; The element and mark must not be nil.
+func (l *List) MoveAfter(e, mark *Element) &#123;
+    if e.list !&#x3D; l || e &#x3D;&#x3D; mark || mark.list !&#x3D; l &#123;
+       return
+    &#125;
+    l.move(e, mark)
+&#125;</code></pre><p>这几个方法都是类似的，只不过是在<code>move</code>方法上做了参数的调整而已。这里就不在赘述了。</p><h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><pre class="line-numbers language-go" data-language="go"><code class="language-go">package main
+
+import (
+    &quot;container&#x2F;list&quot;
+    &quot;fmt&quot;
+)
+
+func main() &#123;
+    l :&#x3D; list.New()
+    l.PushBack(3)
+    p :&#x3D; l.PushBack(2)
+    l.PushBack(1)
+    for e :&#x3D; l.Front(); e !&#x3D; nil; e &#x3D; e.Next() &#123;
+       fmt.Print(e.Value, &quot; &quot;)
+    &#125;
+    l.InsertAfter(55, p)
+
+    fmt.Printf(&quot;\n-----------------------------------\n&quot;)
+
+    var p1 *list.Element &#x3D; nil
+    var p2 *list.Element &#x3D; nil
+    for e :&#x3D; l.Front(); e !&#x3D; nil; e &#x3D; e.Next() &#123;
+       fmt.Print(e.Value, &quot; &quot;)
+       if e.Value &#x3D;&#x3D; 1 &#123;
+          p1 &#x3D; e
+       &#125;
+       if e.Value &#x3D;&#x3D; 2 &#123;
+          p2 &#x3D; e
+       &#125;
+    &#125;
+
+    l.MoveBefore(p1, p2)
+
+    fmt.Printf(&quot;\n-----------------------------------\n&quot;)
+
+    for e :&#x3D; l.Front(); e !&#x3D; nil; e &#x3D; e.Next() &#123;
+       fmt.Print(e.Value, &quot; &quot;)
+    &#125;
+&#125;</code></pre><p>结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">3 2 1
+-----------------------------------
+3 2 55 1
+-----------------------------------
+3 1 2 55</code></pre></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> 阅读Go源码——container/list</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at :</strong> 2023-10-10 16:56:28</li><li><strong>Updated at :</strong> 2023-10-10 18:58:57</li><li><strong>Link:</strong> https://cukor666.github.io//post/阅读Go源码——container-list.html</li><li><strong>License: </strong>This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Go/">#Go</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E9%98%85%E8%AF%BB%E6%BA%90%E7%A0%81/">#阅读源码</a>&nbsp;</li><li class="tag-item"><a href="/tags/list/">#list</a>&nbsp;</li><li class="tag-item"><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">#数据结构与算法</a>&nbsp;</li></ul><div class="article-nav"><div class="article-next"><a class="next" rel="next" href="/post/Go%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95testing.html"><span class="title flex justify-center items-center"><span class="post-nav-title-item">Go单元测试testing</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">阅读Go源码——container/list</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%98%85%E8%AF%BBGo%E6%BA%90%E7%A0%81%E2%80%94%E2%80%94container-x2F-list"><span class="nav-number">1.</span> <span class="nav-text">阅读Go源码——container&#x2F;list</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.</span> <span class="nav-text">链表节点的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">链表节点的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">链表的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">链表的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.1.</span> <span class="nav-text">简单方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.4.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0-x2F-%E6%8F%92%E5%85%A5"><span class="nav-number">1.4.3.</span> <span class="nav-text">添加&#x2F;插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">1.4.4.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8"><span class="nav-number">1.4.5.</span> <span class="nav-text">移动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8"><span class="nav-number">1.5.</span> <span class="nav-text">简单使用</span></a></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color"><div class="info-container py-3 text-center"><div class="text-center">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right"><span id="busuanzi_container_site_uv" class="lg:!block"><span class="text-sm">VISITOR COUNT</span> <span id="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="lg:!block"><span class="text-sm">TOTAL PAGE VIEWS</span> <span id="busuanzi_value_site_pv"></span></span></div><div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left"><span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span> <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.4.4</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex justify-center items-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex justify-center items-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.hooks.on("page:view",()=>{Global.refresh()})</script><script src="/js/utils.js" type="module"></script><script src="/js/main.js" type="module"></script><script src="/js/layouts/navbarShrink.js" type="module"></script><script src="/js/tools/scrollTopBottom.js" type="module"></script><script src="/js/tools/lightDarkSwitch.js" type="module"></script><script src="/js/layouts/categoryList.js" type="module"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js" type="module"></script><div class="post-scripts" data-swup-reload-script><script src="/js/libs/anime.min.js"></script><script src="/js/tools/tocToggle.js" type="module"></script><script src="/js/layouts/toc.js" type="module"></script><script src="/js/plugins/tabs.js" type="module"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
