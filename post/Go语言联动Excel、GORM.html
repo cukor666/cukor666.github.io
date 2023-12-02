@@ -1,0 +1,313 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="keywords" content="Hexo Theme Redefine"><meta name="author" content="CukorZhong"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="canonical" href="http://example.com/post/go语言联动excel、gorm.html"><meta name="robots" content="index,follow"><meta name="googlebot" content="index,follow"><meta name="revisit-after" content="1 days"><meta name="description" content="线下单杀产品经理恶心需求之Excel联动GORM操作数据库背景前言产品经理：我需要把Excel表格中的数据存放到数据库中，如果使用JSON来修改存储，我很头疼。 我：没错，你原来也知道。什么时候可以不搞JSON？ 产品经理：这个工具需要多久完成？ 我：我没搞过，需要大概3天时间吧。 产品经理：好的，我找算法部Python来写。 爽！ It’s so comfortable One day pass"><meta property="og:type" content="article"><meta property="og:title" content="Go语言联动Excel、GORM"><meta property="og:url" content="http://example.com/post/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM.html"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="线下单杀产品经理恶心需求之Excel联动GORM操作数据库背景前言产品经理：我需要把Excel表格中的数据存放到数据库中，如果使用JSON来修改存储，我很头疼。 我：没错，你原来也知道。什么时候可以不搞JSON？ 产品经理：这个工具需要多久完成？ 我：我没搞过，需要大概3天时间吧。 产品经理：好的，我找算法部Python来写。 爽！ It’s so comfortable One day pass"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://example.com/images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/%E7%BB%98%E5%9B%BE1.jpg"><meta property="og:image" content="http://example.com/images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202123413420.png"><meta property="og:image" content="http://example.com/images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202123521767.png"><meta property="og:image" content="http://example.com/images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202123621411.png"><meta property="og:image" content="http://example.com/images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202131857878.png"><meta property="og:image" content="http://example.com/images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202135515902.png"><meta property="article:published_time" content="2023-12-02T09:18:37.000Z"><meta property="article:modified_time" content="2023-12-02T09:23:35.819Z"><meta property="article:author" content="John Doe"><meta property="article:tag" content="Go"><meta property="article:tag" content="Excel"><meta property="article:tag" content="GORM"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/%E7%BB%98%E5%9B%BE1.jpg"><link rel="icon" type="image/png" href="/images/logo.jpg" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg"><meta name="theme-color" content="#A31F34"><link rel="shortcut icon" href="/images/logo.jpg"><title>Go语言联动Excel、GORM - CukorZhong博客</title><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/build/styles.css"><link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/fonts/Satoshi/satoshi.css"><link rel="stylesheet" href="/fonts/Chillax/chillax.css"><link href="" rel="stylesheet"><script id="hexo-configurations">let Global=window.Global||{};Global.hexo_config={hostname:"example.com",root:"/",language:"en"},Global.theme_config={articles:{style:{font_size:"16px",line_height:1.5,image_border_radius:"14px",image_alignment:"center",image_caption:!1,link_icon:!0},word_count:{enable:!0,count:!0,min2read:!0},author_label:{enable:!0,auto:!1,list:[]},code_block:{copy:!0,style:"mac",font:{enable:!1,family:null,url:null}},toc:{enable:!0,max_depth:3,number:!0,expand:!0,init_open:!0},copyright:!0,lazyload:!0,recommendation:{enable:!1,title:"推荐阅读",limit:3,mobile_limit:2,placeholder:"/images/wallhaven-wqery6-light.webp",skip_dirs:[]}},colors:{primary:"#A31F34",secondary:null},global:{fonts:{chinese:{enable:!1,family:null,url:null},english:{enable:!1,family:null,url:null}},content_max_width:"1000px",sidebar_width:"210px",hover:{shadow:!0,scale:!1},scroll_progress:{bar:!1,percentage:!0},website_counter:{url:"https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js",enable:!0,site_pv:!0,site_uv:!0,post_pv:!0},single_page:!0,open_graph:!0,google_analytics:{enable:!1,id:null}},home_banner:{enable:!0,style:"fixed",image:{light:"/images/wallhaven-wqery6-light.webp",dark:"/images/wallhaven-wqery6-dark.webp"},title:"思念，常常思念不常见面",subtitle:{text:["Ta怀疑Cukor是虚拟的脸"],hitokoto:{enable:!1,api:"https://v1.hitokoto.cn"},typing_speed:100,backing_speed:80,starting_delay:500,backing_delay:1500,loop:!0,smart_backspace:!0},text_color:{light:"#fff",dark:"#d1d1b6"},text_style:{title_size:"2.8rem",subtitle_size:"1.5rem",line_height:1.2},custom_font:{enable:!0,family:"华文行楷",url:null},social_links:{enable:!0,links:{github:"https://github.com/cukor666",instagram:null,zhihu:null,twitter:null,email:"cukorzhong@gmail.com",bilibili:"https://space.bilibili.com/1117276308"},qrs:{weixin:null}}},plugins:{feed:{enable:!1},aplayer:{enable:!0,type:"fixed",audios:[{name:"飞机场的10:30",artist:"David Tao",url:"/music/陶喆 - 飞机场的1030(Live).mp3",cover:"https://p3fx.kgimg.com/stdmusic/240/20211026/20211026145103571342.jpg"},{name:"月亮代表谁的心",artist:"David Tao",url:"/music/陶喆 - 月亮代表谁的心.mp3",cover:"/images/黑色柳丁专辑.jpg"},{name:"Love Song",artist:"Khalil Fang",url:"/music/方大同 - Love Song.mp3",cover:"/images/未来专辑.jpg"},{name:"偷笑",artist:"Khalil Fang",url:"/music/方大同 - 偷笑.mp3",cover:"/images/方大同.jpg"}]},mermaid:{enable:!1,version:"9.3.0"}},version:"2.4.4",navbar:{auto_hide:!1,color:{left:"#f78736",right:"#367df7",transparency:35},links:{Home:{path:"/",icon:"fa-regular fa-house"},"相册":{icon:"fa-solid fa-image",path:"/masonry/"},Archives:{path:"/archives",icon:"fa-regular fa-archive"},About:{icon:"fa-regular fa-user",submenus:{Me:"/about",Github:"https://github.com/cukor666",Blog:"https://cukor666.github.io",CSDN:"https://blog.csdn.net/qq_53744721","博客园":"https://www.cnblogs.com/cukor-zhong-520","B站":"https://space.bilibili.com/1117276308"}}},search:{enable:!1,preload:!0},tags:{Tags:{icon:"fa-solid fa-tags",path:"/tags/"}},categories:{Categories:{icon:"fa-solid fa-folder",path:"/categories/"}}},page_templates:{friends_column:2,tags_style:"cloud"},home:{sidebar:{enable:!0,position:"left",first_item:"menu",announcement:"信计学长搞编程，Go GO Go!!!",links:null},article_date_format:"auto",categories:{enable:!0,limit:3},tags:{enable:!0,limit:3}},footerStart:"2022/8/17 11:45:14"},Global.language_ago={second:"%s seconds ago",minute:"%s minutes ago",hour:"%s hours ago",day:"%s days ago",week:"%s weeks ago",month:"%s months ago",year:"%s years ago"},Global.data_config={masonry:!0}</script><link rel="stylesheet" href="/fontawesome/fontawesome.min.css"><link rel="stylesheet" href="/fontawesome/brands.min.css"><link rel="stylesheet" href="/fontawesome/solid.min.css"><link rel="stylesheet" href="/fontawesome/regular.min.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div class="progress-bar-container"><span class="pjax-progress-bar"></span> <span class="swup-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div><main class="page-container" id="swup"><div class="main-content-container"><div class="main-content-header"><header class="navbar-container"><div class="navbar-content"><div class="left"><a class="logo-image" href="http://example.com/"><img src="/images/logo.jpg"> </a><a class="logo-title" href="http://example.com/">CukorZhong博客</a></div><div class="right"><div class="desktop"><ul class="navbar-list"><li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="navbar-item"><a href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="navbar-item"><a href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i></a><ul class="sub-menu"><li><a href="/about">ME</a></li><li><a target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li><a target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li><a target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></li></ul></div><div class="mobile"><div class="icon-item navbar-bar"><div class="navbar-bar-middle"></div></div></div></div></div><div class="navbar-drawer w-full absolute top-0 left-0 bg-background-color"><ul class="drawer-navbar-list flex flex-col justify-start items-center"><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/"><i class="fa-regular fa-house"></i> HOME</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/masonry/"><i class="fa-solid fa-image"></i> 相册</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group" href="/archives"><i class="fa-regular fa-archive"></i> ARCHIVES</a></li><li class="drawer-navbar-item text-base my-1.5 flex justify-center items-center"><a class="rounded-3xl py-1.5 px-5 hover:border hover:!text-primary active:!text-primary group has-dropdown" href="#" onclick="return!1"><i class="fa-regular fa-user"></i> ABOUT&nbsp;<i class="group-hover:rotate-180 transition-transform fa-solid fa-chevron-down"></i></a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" href="/about">ME</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://github.com/cukor666">GITHUB</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://cukor666.github.io">BLOG</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53744721">CSDN</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://www.cnblogs.com/cukor-zhong-520">博客园</a></li><li class="text-base flex justify-center items-center hover:underline active:underline hover:underline-offset-1 rounded-3xl"><a class="py-0.5" target="_blank" rel="noopener" href="https://space.bilibili.com/1117276308">B站</a></li></ul></div><div class="window-mask"></div></header></div><div class="main-content-body"><div class="main-content"><div class="post-page-container"><div class="article-content-container"><div class="article-title"><h1 class="article-title-regular">Go语言联动Excel、GORM</h1></div><div class="article-header"><div class="avatar"><img src="/images/logo.jpg"></div><div class="info"><div class="author"><span class="name">CukorZhong</span> <span class="author-label">Lv5</span></div><div class="meta-info"><div class="article-meta-info"><span class="article-date article-meta-item"><i class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-12-02 17:18:37</span> <span class="mobile">2023-12-02 17:18:37</span> <span class="hover-info">Created</span> </span><span class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span class="desktop">2023-12-02 17:23:35</span> <span class="mobile">2023-12-02 17:23:35</span> <span class="hover-info">Updated</span> </span><span class="article-categories article-meta-item"><i class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/Go/">Go</a>&nbsp;</li></ul></span><span class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a href="/tags/Go/">Go</a>&nbsp;</li><li>| <a href="/tags/Excel/">Excel</a>&nbsp;</li><li>| <a href="/tags/GORM/">GORM</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.5k Words</span> </span><span class="article-min2read article-meta-item"><i class="fa-regular fa-clock"></i>&nbsp;<span>12 Mins</span> </span><span class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span></span></div></div></div></div><div class="article-content markdown-body"><h1 id="线下单杀产品经理恶心需求之Excel联动GORM操作数据库"><a href="#线下单杀产品经理恶心需求之Excel联动GORM操作数据库" class="headerlink" title="线下单杀产品经理恶心需求之Excel联动GORM操作数据库"></a>线下单杀产品经理恶心需求之Excel联动GORM操作数据库</h1><h2 id="背景前言"><a href="#背景前言" class="headerlink" title="背景前言"></a>背景前言</h2><p>产品经理：我需要把Excel表格中的数据存放到数据库中，如果使用JSON来修改存储，我很头疼。</p><p>我：没错，你原来也知道。什么时候可以不搞JSON？</p><p>产品经理：这个工具需要多久完成？</p><p>我：我没搞过，需要大概3天时间吧。</p><p>产品经理：好的，我找算法部Python来写。</p><p>爽！</p><p><strong>It’s so comfortable</strong></p><p>One day passed….</p><p>产品经理：Python环境装不上，用不了。</p><p>这是什么？还是让我来。</p><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>关于Go语言操作Excel，在上一篇博客已经发布过。可以去看看。主要使用的包是excelize.</p><p>这次要对接数据库，所以要使用GORM。然后数据库里是的字段是JSON，所以还得再转换一下才能存。</p><p>那整体的流程就是：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/%E7%BB%98%E5%9B%BE1.jpg" alt="绘图1"></p><p>本地测试数据库DDL：</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;equipments&#96; (
+  &#96;ID&#96; bigint unsigned NOT NULL AUTO_INCREMENT COMMENT &#39;装备ID&#39;,
+  &#96;attributes&#96; varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT &#39;装备属性&#39;,
+  &#96;name&#96; varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL COMMENT &#39;装备名称&#39;,
+  PRIMARY KEY (&#96;ID&#96;)
+) ENGINE&#x3D;InnoDB AUTO_INCREMENT&#x3D;16 DEFAULT CHARSET&#x3D;utf8mb4 COLLATE&#x3D;utf8mb4_0900_ai_ci;</code></pre><p>自己执行该SQL脚本以生成表。然后里面还没有什么数据，等下就把Excel表中的数据存放到数据库中。</p><p>事先准备好的Excel表格数据：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202123413420.png" alt="image-20231202123413420"></p><p>demo项目结构：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202123521767.png" alt="image-20231202123521767"></p><p>需要导入的依赖：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202123621411.png" alt="image-20231202123621411"></p><p>看就好了，因为等下这些可以在写代码的时候执行go mod tidy导入进来。</p><p>看这个主要是要知道我们需要使用的依赖有哪些：</p><ol><li>mysql驱动</li><li>gorm</li><li>excelize</li></ol><p>准备好这些之后我们就开始写代码。</p><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p>我们这里要操作的是装备实体，所以需要准备一个结构体模型：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">package models
+
+type Equipment struct &#123;
+	ID         uint   &#96;json:&quot;ID&quot; form:&quot;ID&quot; gorm:&quot;primarykey;not null;&quot; xlsx:&quot;id&quot;&#96;
+	Attributes string &#96;json:&quot;attributes&quot; form:&quot;attributes&quot; gorm:&quot;not null;size:20&quot; xlsx:&quot;attributes&quot;&#96;
+	Name       string &#96;json:&quot;name&quot; form:&quot;name&quot; gorm:&quot;not null;size:20&quot; xlsx:&quot;name&quot;&#96;
+&#125;
+
+func (e Equipment) TableName() string &#123;
+	return &quot;equipments&quot;
+&#125;
+</code></pre><h3 id="DAO层"><a href="#DAO层" class="headerlink" title="DAO层"></a>DAO层</h3><p>全局DAO：其中dsn需要填写自己的数据库信息。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">package dao
+
+import (
+	&quot;log&quot;
+
+	&quot;gorm.io&#x2F;driver&#x2F;mysql&quot;
+	&quot;gorm.io&#x2F;gorm&quot;
+	&quot;gorm.io&#x2F;gorm&#x2F;logger&quot;
+)
+
+&#x2F;&#x2F; 全局数据库对象
+var db *gorm.DB
+
+&#x2F;&#x2F; 初始化数据源，以连接数据库
+func init() &#123;
+    &#x2F;&#x2F; dsn要自己修改
+	dsn :&#x3D; &quot;用户名:密码@tcp(localhost:3306)&#x2F;数据库名?charset&#x3D;utf8mb4&amp;parseTime&#x3D;True&amp;loc&#x3D;Local&quot;
+	var mysqlLogger &#x3D; logger.Default.LogMode(logger.Info)
+	open, err :&#x3D; gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;
+		Logger: mysqlLogger, &#x2F;&#x2F; 添加SQL日志
+	&#125;)
+	if err !&#x3D; nil &#123;
+		log.Printf(&quot;gorm.Open failed, err: %v\n&quot;, err)
+		return
+	&#125;
+	db &#x3D; open
+&#125;
+</code></pre><p>equipDao.go：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">package dao
+
+import (
+	&quot;fmt&quot;
+	&quot;go-excel-gorm-test&#x2F;models&quot;
+)
+
+type EquipmentDao struct&#123;&#125;
+
+&#x2F;&#x2F; 插入数据
+func (ed EquipmentDao) Insert(equipment models.Equipment) (newId uint, affect int64) &#123;
+
+	d :&#x3D; db.Create(&amp;equipment)
+	if d.Error !&#x3D; nil &#123;
+		fmt.Printf(&quot;insert failed&quot;)
+		return 0, 0
+	&#125;
+	return equipment.ID, d.RowsAffected
+&#125;
+
+&#x2F;&#x2F; 查询所有装备
+func (ed EquipmentDao) SelectAll() (eqs []models.Equipment, ok bool) &#123;
+	err :&#x3D; db.Table(models.Equipment&#123;&#125;.TableName()).Find(&amp;eqs).Error
+	if err !&#x3D; nil &#123;
+		fmt.Printf(&quot;select all equipment failed, err: %v\n&quot;, err)
+		ok &#x3D; false
+		return
+	&#125;
+	ok &#x3D; true
+	return
+&#125;
+</code></pre><h3 id="程序入口"><a href="#程序入口" class="headerlink" title="程序入口"></a>程序入口</h3><p>入口文件中：这里分开说。</p><p>引入依赖：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">import (
+	&quot;fmt&quot;
+	&quot;go-excel-gorm-test&#x2F;dao&quot;
+	&quot;go-excel-gorm-test&#x2F;models&quot;
+	&quot;strconv&quot;
+
+	&quot;github.com&#x2F;xuri&#x2F;excelize&#x2F;v2&quot;
+)</code></pre><p>为了方便我们读取Excel表格中的数据，我们给它定义一些常量，提高代码的可读性。</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">const TABLE_SPACE &#x3D; 2
+
+const (
+	EQUI_ID &#x3D; iota
+	EQUI_ATTR
+	EQUI_NAME
+	EQUI_ID2 &#x3D; iota + TABLE_SPACE
+	EQUI_ATTR2
+	EQUI_NAME2
+)</code></pre><p>走一个看一下它们的值：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">fmt.Println(EQUI_ID)
+fmt.Println(EQUI_ATTR)
+fmt.Println(EQUI_NAME)
+fmt.Println(&quot;-------------------------------------------------&quot;)
+fmt.Println(EQUI_ID2)
+fmt.Println(EQUI_ATTR2)
+fmt.Println(EQUI_NAME2)</code></pre><p>执行结果：</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">0
+1
+2
+-------------------------------------------------
+5
+6
+7</code></pre><p>刚好对应我前面给的Excel的图的列数。然后这里是给了两部分的，那三部分的，N部分的就依次类推了，当然可以存放到一个数组中。</p><p>封装插入数据的函数：</p><ul><li>函数功能：将Excel表中的数据插入到数据库中。</li><li>参数解释：<ul><li>xlsxFile：Excel文件的名字，一定要带后缀，这里使用的是xlsx</li><li>sheet：Excel中的表格，默认Sheet1，但是这里是封装函数，也要把名字传进来</li><li>startIndex：从什么地方开始读取插入到数据库中</li><li>endIndex：在什么地方结束读取插入到数据库中，截取的数据是[startIndex, endIndex)，左闭右开规则。</li></ul></li></ul><pre class="line-numbers language-go" data-language="go"><code class="language-go">func insertEquipments(xlsxFile, sheet string, startIndex, endIndex uint) &#123;
+	f, err :&#x3D; excelize.OpenFile(xlsxFile)
+	if err !&#x3D; nil &#123;
+		fmt.Println(err)
+		return
+	&#125;
+	defer func() &#123;
+		if err :&#x3D; f.Close(); err !&#x3D; nil &#123;
+			fmt.Println(err)
+		&#125;
+	&#125;()
+	&#x2F;&#x2F; 获取 sheet 上所有单元格
+	rows, err :&#x3D; f.GetRows(sheet)
+	if err !&#x3D; nil &#123;
+		fmt.Println(err)
+		return
+	&#125;
+    &#x2F;&#x2F; 截取数据，因为有些可能是插入过了，或者有些是不需要插入的
+	rows &#x3D; rows[startIndex:endIndex]
+	var equipment models.Equipment
+	var equipments []models.Equipment
+	for _, row :&#x3D; range rows &#123;
+		id, _ :&#x3D; strconv.Atoi(row[0])
+		equipment.ID &#x3D; uint(id)
+		equipment.Attributes &#x3D; row[1]
+		equipment.Name &#x3D; row[2]
+		equipments &#x3D; append(equipments, equipment)
+	&#125;
+	var equipmentDao dao.EquipmentDao
+	for _, v :&#x3D; range equipments &#123;
+		newId, affect :&#x3D; equipmentDao.Insert(v)
+		fmt.Printf(&quot;newId &#x3D; %d, affect &#x3D; %v\n&quot;, newId, affect)
+	&#125;
+&#125;</code></pre><p>然后在主函数执行一下：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">func main() &#123;
+	insertEquipments(&quot;装备表.xlsx&quot;, &quot;Sheet1&quot;, 13, 16)
+&#125;</code></pre><p>这里传入的是13到16，表示从Excel的14行开始到16行，对应这里的装备ID是13到15。因为Excel那里是从1开始计数，而go的层面是从0开始计数。</p><p>成功执行之后，数据库的结果：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202131857878.png" alt="image-20231202131857878"></p><p>如果要插入全部的数据，那就修改<code>startIndex</code>和<code>endIndex</code>即可。</p><p>如果要把Excel表格中的所有数据读取出来放到JSON中，然后再以字符串的形式存放到数据库中可以使用下面的操作：</p><p>首先我们先新建一个数据库表：</p><pre class="line-numbers language-sql" data-language="sql"><code class="language-sql">CREATE TABLE &#96;json_configs&#96; (
+  &#96;ID&#96; bigint unsigned NOT NULL AUTO_INCREMENT COMMENT &#39;配置ID&#39;,
+  &#96;config_name&#96; varchar(255) NOT NULL COMMENT &#39;配置名&#39;,
+  &#96;config_value&#96; json DEFAULT NULL COMMENT &#39;配置值&#39;,
+  PRIMARY KEY (&#96;ID&#96;)
+) ENGINE&#x3D;InnoDB DEFAULT CHARSET&#x3D;utf8mb4 COLLATE&#x3D;utf8mb4_0900_ai_ci;</code></pre><p>然后在models包下新建JsonConfig实体：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">package models
+
+type JsonConfig struct &#123;
+	ID          uint   &#96;json:&quot;ID&quot; form:&quot;ID&quot; gorm:&quot;primarykey;not null&quot;&#96;
+	ConfigName  string &#96;json:&quot;configName&quot; form:&quot;configName&quot; gorm:&quot;not null&quot;&#96;
+	ConfigValue string &#96;json:&quot;configValue&quot; form:&quot;configValue&quot; gorm:&quot;type:json&quot;&#96;
+&#125;
+
+func (jc JsonConfig) TableName() string &#123;
+	return &quot;json_configs&quot;
+&#125;</code></pre><p>dao层：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">package dao
+
+import (
+	&quot;fmt&quot;
+	&quot;go-excel-gorm-test&#x2F;models&quot;
+)
+
+type JsonConfigDao struct&#123;&#125;
+
+func (jcd JsonConfigDao) Insert(jsonConfig models.JsonConfig) (uint, bool) &#123;
+	d :&#x3D; db.Create(&amp;jsonConfig)
+	if d.Error !&#x3D; nil &#123;
+		fmt.Printf(&quot;insert json config failed, err: %v\n&quot;, d.Error)
+		return uint(0), false
+	&#125;
+	return jsonConfig.ID, true
+&#125;</code></pre><p>主函数测试：</p><pre class="line-numbers language-go" data-language="go"><code class="language-go">e :&#x3D; readEquipmentsXlsx(&quot;装备表.xlsx&quot;, &quot;Sheet1&quot;, 1, 17)
+jsonByte, err :&#x3D; json.Marshal(e)
+if err !&#x3D; nil &#123;
+	fmt.Printf(&quot;json marshal failed, err: %v\n&quot;, err)
+	return
+&#125;
+var jsonConfig models.JsonConfig
+&#x2F;&#x2F; ID 等下会自动增加变化
+jsonConfig.ConfigName &#x3D; &quot;equipment_config&quot;
+jsonConfig.ConfigValue &#x3D; string(jsonByte)
+var jsonConfigDao dao.JsonConfigDao
+id, ok :&#x3D; jsonConfigDao.Insert(jsonConfig)
+if !ok &#123;
+	fmt.Println(&quot;插入数据失败&quot;)
+&#125; else &#123;
+	fmt.Printf(&quot;插入数据成功，ID &#x3D; %d\n&quot;, id)
+&#125;</code></pre><p>数据库结果：</p><p><img lazyload src="/images/loading.svg" data-src="/../images/Go%E8%AF%AD%E8%A8%80%E8%81%94%E5%8A%A8Excel%E3%80%81GORM/image-20231202135515902.png" alt="image-20231202135515902"></p><p>成功插入。</p><p>并且其中的JSON的值也正确：</p><pre class="line-numbers language-json" data-language="json"><code class="language-json">[&#123;
+	&quot;ID&quot;: 1,
+	&quot;name&quot;: &quot;烈焰刀&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 17,
+	&quot;name&quot;: &quot;烈焰刀&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 2,
+	&quot;name&quot;: &quot;震雷斧&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 18,
+	&quot;name&quot;: &quot;震雷斧&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 3,
+	&quot;name&quot;: &quot;流星枪&quot;,
+	&quot;attributes&quot;: &quot;水&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 19,
+	&quot;name&quot;: &quot;烈焰弓&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 4,
+	&quot;name&quot;: &quot;风鹰剑&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 20,
+	&quot;name&quot;: &quot;烈焰镖&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 5,
+	&quot;name&quot;: &quot;裂地刀&quot;,
+	&quot;attributes&quot;: &quot;土&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 21,
+	&quot;name&quot;: &quot;打狗棍&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 6,
+	&quot;name&quot;: &quot;风鹰轮&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 22,
+	&quot;name&quot;: &quot;倚天剑&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 7,
+	&quot;name&quot;: &quot;震雷棍&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 23,
+	&quot;name&quot;: &quot;火焰锣&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 8,
+	&quot;name&quot;: &quot;水甲盾&quot;,
+	&quot;attributes&quot;: &quot;水&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 24,
+	&quot;name&quot;: &quot;火焰牢&quot;,
+	&quot;attributes&quot;: &quot;水&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 9,
+	&quot;name&quot;: &quot;风鹰弩&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 25,
+	&quot;name&quot;: &quot;风鹰剑&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 10,
+	&quot;name&quot;: &quot;烈焰弓&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 26,
+	&quot;name&quot;: &quot;裂地刀&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 11,
+	&quot;name&quot;: &quot;烈焰镖&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 27,
+	&quot;name&quot;: &quot;风鹰轮&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 12,
+	&quot;name&quot;: &quot;打狗棍&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 28,
+	&quot;name&quot;: &quot;震雷棍&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 13,
+	&quot;name&quot;: &quot;倚天剑&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 29,
+	&quot;name&quot;: &quot;水甲盾&quot;,
+	&quot;attributes&quot;: &quot;土&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 14,
+	&quot;name&quot;: &quot;火焰锣&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 30,
+	&quot;name&quot;: &quot;流星枪&quot;,
+	&quot;attributes&quot;: &quot;木&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 15,
+	&quot;name&quot;: &quot;火焰牢&quot;,
+	&quot;attributes&quot;: &quot;火&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 31,
+	&quot;name&quot;: &quot;金刚盾&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 16,
+	&quot;name&quot;: &quot;金刚盾&quot;,
+	&quot;attributes&quot;: &quot;金&quot;
+&#125;, &#123;
+	&quot;ID&quot;: 32,
+	&quot;name&quot;: &quot;风鹰弩&quot;,
+	&quot;attributes&quot;: &quot;水&quot;
+&#125;]</code></pre></div><div class="post-copyright-info"><div class="article-copyright-info-container"><ul><li><strong>Title:</strong> Go语言联动Excel、GORM</li><li><strong>Author:</strong> CukorZhong</li><li><strong>Created at :</strong> 2023-12-02 17:18:37</li><li><strong>Updated at :</strong> 2023-12-02 17:23:35</li><li><strong>Link:</strong> https://cukor666.github.io//post/Go语言联动Excel、GORM.html</li><li><strong>License: </strong>This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.</li></ul></div></div><ul class="post-tags-box"><li class="tag-item"><a href="/tags/Go/">#Go</a>&nbsp;</li><li class="tag-item"><a href="/tags/Excel/">#Excel</a>&nbsp;</li><li class="tag-item"><a href="/tags/GORM/">#GORM</a>&nbsp;</li></ul><div class="article-nav"><div class="article-next"><a class="next" rel="next" href="/post/Rust%E7%BB%93%E6%9E%84%E4%BD%93.html"><span class="title flex justify-center items-center"><span class="post-nav-title-item">Rust结构体</span> <span class="post-nav-item">Next posts</span> </span><span class="right arrow-icon flex justify-center items-center"><i class="fa-solid fa-chevron-right"></i></span></a></div></div><div class="comment-container"><div class="comments-container pjax"><div id="comment-anchor"></div><div class="comment-area-title"><i class="fa-solid fa-comments"></i>&nbsp;Comments</div><div id="waline"></div><script type="module" data-swup-reload-script>import{init}from"https://evan.beee.top/js/waline.mjs";function loadWaline(){init({el:"#waline",serverURL:"https://example.example.com",lang:"zh-CN",dark:'body[class~="dark-mode"]',requiredMeta:["nick","mail"]})}{const e=setTimeout(()=>{loadWaline(),clearTimeout(e)},1e3)}</script></div></div></div><div class="toc-content-container"><div class="post-toc-wrap"><div class="post-toc"><div class="toc-title">On this page</div><div class="page-title">Go语言联动Excel、GORM</div><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E4%B8%8B%E5%8D%95%E6%9D%80%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86%E6%81%B6%E5%BF%83%E9%9C%80%E6%B1%82%E4%B9%8BExcel%E8%81%94%E5%8A%A8GORM%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.</span> <span class="nav-text">线下单杀产品经理恶心需求之Excel联动GORM操作数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">背景前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B"><span class="nav-number">1.2.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DAO%E5%B1%82"><span class="nav-number">1.2.2.</span> <span class="nav-text">DAO层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3"><span class="nav-number">1.2.3.</span> <span class="nav-text">程序入口</span></a></li></ol></li></ol></li></ol></div></div></div></div></div></div><div class="main-content-footer"><footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color"><div class="info-container py-3 text-center"><div class="text-center">&copy; <span>2022</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a href="/">CukorZhong</a></div><script data-swup-reload-script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right"><span id="busuanzi_container_site_uv" class="lg:!block"><span class="text-sm">VISITOR COUNT</span> <span id="busuanzi_value_site_uv"></span> </span><span id="busuanzi_container_site_pv" class="lg:!block"><span class="text-sm">TOTAL PAGE VIEWS</span> <span id="busuanzi_value_site_pv"></span></span></div><div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left"><span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span> <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.4.4</a></span></div><div>Blog up for <span class="odometer" id="runtime_days"></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec</div><script data-swup-reload-script>try{function odometer_init(){document.querySelectorAll(".odometer").forEach(e=>{new Odometer({el:e,format:"( ddd).dd",duration:200})})}odometer_init()}catch(e){}</script></div></footer></div></div><div class="post-tools"><div class="post-tools-container"><ul class="article-tools-list"><li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li><li class="go-comment"><i class="fa-regular fa-comments"></i></li></ul></div></div><div class="right-side-tools-container"><div class="side-tools-container"><ul class="hidden-tools-list"><li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-plus"></i></li><li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center"><i class="fa-regular fa-magnifying-glass-minus"></i></li><li class="right-bottom-tools tool-expand-width flex justify-center items-center"><i class="fa-regular fa-expand"></i></li><li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center"><i class="fa-regular fa-moon"></i></li><li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center"><i class="fa-regular fa-arrow-down"></i></li></ul><ul class="visible-tools-list"><li class="right-bottom-tools toggle-tools-list flex justify-center items-center"><i class="fa-regular fa-cog fa-spin"></i></li><li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center"><i class="arrow-up fas fa-arrow-up"></i> <span class="percent"></span></li></ul></div></div><div class="image-viewer-container"><img src=""></div></main><script src="/js/libs/Swup.min.js"></script><script src="/js/libs/SwupSlideTheme.min.js"></script><script src="/js/libs/SwupScriptsPlugin.min.js"></script><script src="/js/libs/SwupProgressPlugin.min.js"></script><script src="/js/libs/SwupScrollPlugin.min.js"></script><script>const swup=new Swup({plugins:[new SwupScriptsPlugin({optin:!0}),new SwupProgressPlugin,new SwupScrollPlugin({offset:80}),new SwupSlideTheme({mainElement:".main-content-body"})],containers:["#swup"]});swup.hooks.on("page:view",()=>{Global.refresh()})</script><script src="/js/utils.js" type="module"></script><script src="/js/main.js" type="module"></script><script src="/js/layouts/navbarShrink.js" type="module"></script><script src="/js/tools/scrollTopBottom.js" type="module"></script><script src="/js/tools/lightDarkSwitch.js" type="module"></script><script src="/js/layouts/categoryList.js" type="module"></script><script src="/js/tools/codeBlock.js"></script><script src="/js/layouts/lazyload.js"></script><script src="/js/tools/runtime.js"></script><script src="/js/libs/odometer.min.js"></script><link rel="stylesheet" href="/assets/odometer-theme-minimal.css"><script src="/js/libs/Typed.min.js"></script><script src="/js/plugins/typed.js"></script><script src="/js/libs/minimasonry.min.js"></script><script src="/js/plugins/masonry.js" type="module"></script><div class="post-scripts" data-swup-reload-script><script src="/js/libs/anime.min.js"></script><script src="/js/tools/tocToggle.js" type="module"></script><script src="/js/layouts/toc.js" type="module"></script><script src="/js/plugins/tabs.js" type="module"></script></div><div id="aplayer"></div><script src="/js/libs/APlayer.min.js"></script><script src="/js/plugins/aplayer.js"></script></body></html>
