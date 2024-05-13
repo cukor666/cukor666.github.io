@@ -1,0 +1,1 @@
+import{_ as e,c as o,o as t,a as c}from"./index-BYQGFvCF.js";const s={},n=c("h1",null,"Welcome to my app",-1),a=[n];function _(r,l){return t(),o("div",null,a)}const d=e(s,[["render",_]]);export{d as default};
