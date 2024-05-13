@@ -1,0 +1,10 @@
+{
+  "name": "cukor666.github.io",
+  "version": "1.0.0",
+  "description": "Cukor的博客",
+  "main": "index.js",
+  "repository": "https://github.com/cukor666/cukor666.github.io.git",
+  "author": "Cukor <2450808861@qq.com>",
+  "license": "MIT",
+  "private": false
+}
