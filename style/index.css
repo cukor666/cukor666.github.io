@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +7,34 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #ffd25f, transparent 40%);
+  background: linear-gradient(to bottom, #ffe4a1 10%, transparent);
+}
+
+/* 去除a标签的默认样式 */
+a {
+  text-decoration: none; /* 去除下划线 */
+  color: inherit; /* 继承父元素的颜色 */
+}
+
+/* 如果需要特定颜色 */
+a.custom-link {
+  color: black; /* 设置为黑色，或其他你需要的颜色 */
+}
+
+/* 去除点击后的默认样式 */
+a:visited {
+  color: inherit; /* 继承父元素的颜色 */
+}
+
+/* 悬停效果 */
+a:hover {
+  color: blue; /* 设置悬停时的颜色 */
+  text-decoration: underline; /* 悬停时显示下划线 */
+}
+
+/* 聚焦效果 */
+a:focus {
+  outline: none; /* 去除焦点边框 */
 }
 
 .container {
@@ -16,31 +44,106 @@ body {
   justify-content: center;
   flex-direction: column;
 }
-
-.info {
-  width: 300px;
-  height: 300px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  position: fixed;
-  top: 250px;
-  left: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(198, 255, 255);
+.container .font-effect-1 {
+  background: linear-gradient(to right, #ff4935, #085dfd, #00bfff, #b700ff, #ff4935);
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 400%;
+}
+.container .title {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  z-index: 3;
+  font-size: 0em;
+  animation: gradient 10s linear infinite, titleScale 1s 1.5s ease-in-out forwards 1;
 }
 
+@keyframes titleScale {
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+  80% {
+    transform: translateX(-50%) scale(1.2);
+  }
+  100% {
+    font-size: 3em;
+    transform: translateX(-50%) scale(1);
+  }
+}
+@keyframes gradient {
+  50% {
+    background-position: 400%;
+  }
+}
+.info {
+  width: 300px;
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  position: absolute;
+  top: 360px;
+  left: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(255, 237, 198);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: infoMoveIn 1s ease-in-out forwards 1;
+}
+.info .about:hover {
+  cursor: pointer;
+}
+.info .info-item {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5px;
+}
+
+@keyframes infoMoveIn {
+  0% {
+    transform: translateX(-300px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+}
 .top-background {
   width: 100%;
-  height: 200px;
+  height: 300px;
   background-color: #fff;
-  background-image: url("../images/gbimg.jpg");
+  background-image: url("https://thumb.photo-ac.com/8e/8e16a99384722ecc33d27830684a2bf5_t.jpeg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.8;
   position: absolute;
   top: 0;
   left: 0;
   border-radius: 0 0 40% 40%;
+  animation: bgMoveIn 1s linear forwards 1;
+}
+
+@keyframes bgMoveIn {
+  0% {
+    transform: translateY(-300px);
+  }
+}
+.article {
+  width: 1167px;
+  height: 368px;
+  background-color: #fff;
+  opacity: 0.7;
+  position: absolute;
+  top: 360px;
+  left: 332px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(255, 237, 198);
+  padding: 10px 20px;
+}
+.article .article-title {
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=index.css.map */

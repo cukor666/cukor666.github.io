@@ -1,0 +1,54 @@
+.heart {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 55%;
+  left: 10%;
+  transform: translate(-50%, -50%);
+  background-color: red;
+  filter: blur(4px);
+  z-index: -3;
+  animation: rotate 2s 2s linear infinite, scale 2s linear 1;
+}
+
+.heart::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes scale {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  80% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/*# sourceMappingURL=heart.css.map */
