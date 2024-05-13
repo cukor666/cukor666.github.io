@@ -1,0 +1,1 @@
+import{d as t,c as s,a as e,o as n,r as a}from"./index-B6CCJyw4.js";const c={class:"about-me"},r=e("h1",null,"About Me",-1),l=e("p",null,"This is a simple Vue.js project to demonstrate my skills and knowledge.",-1),m=t({__name:"AboutMe",setup(_){const o=()=>{a.push("/")};return(u,i)=>(n(),s("div",c,[r,l,e("button",{onClick:o},"返回首页")]))}});export{m as default};

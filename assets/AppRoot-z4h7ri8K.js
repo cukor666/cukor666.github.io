@@ -1,0 +1,1 @@
+import{d as a,c as s,a as o,F as r,o as c,r as t}from"./index-B6CCJyw4.js";const l=o("h1",null,"Hello World",-1),m=a({__name:"AppRoot",setup(u){const e=()=>{t.push("/about")},n=()=>{t.push("/categories")};return(p,_)=>(c(),s(r,null,[l,o("button",{onClick:e},"关于"),o("button",{onClick:n},"分类")],64))}});export{m as default};
