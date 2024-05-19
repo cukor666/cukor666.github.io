@@ -5,11 +5,12 @@
   position: absolute;
   top: 55%;
   left: 10%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(30deg);
+
   background-color: red;
   filter: blur(4px);
   z-index: -3;
-  animation: rotate 2s 2s linear infinite, scale 2s linear 1;
+  animation: scale 2s linear 1;
 }
 
 .heart::before {
@@ -34,23 +35,15 @@
   border-radius: 50%;
 }
 
-@keyframes rotate {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
 
 @keyframes scale {
   0% {
-    transform: translate(-50%, -50%) scale(0);
+    transform: translate(-50%, -50%) scale(0) rotate(30deg);
   }
   80% {
-    transform: translate(-50%, -50%) scale(1.2);
+    transform: translate(-50%, -50%) scale(1.2) rotate(30deg);
   }
   100% {
-    transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1) rotate(30deg);
   }
 }
