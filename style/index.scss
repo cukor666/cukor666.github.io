@@ -90,6 +90,7 @@ body {
   @include flexCenter;
   flex-direction: column;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(255, 237, 198);
+  animation: infoMoveIn 2s ease-in-out forwards 1;
 }
 
 @keyframes infoMoveIn {
@@ -130,6 +131,7 @@ body {
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(255, 237, 198);
   padding: 10px 20px;
+  animation: articleMoveIn 1s ease-in-out forwards 1;
 
   .article-title {
     margin-bottom: 10px;
@@ -141,5 +143,11 @@ body {
   .article-item {
     margin-top: 10px;
     margin-bottom: 10px;
+  }
+}
+
+@keyframes articleMoveIn {
+  0% {
+    transform: translateY(+300px);
   }
 }
