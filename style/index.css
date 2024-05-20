@@ -80,13 +80,9 @@ body {
   }
 }
 .info {
-  width: 300px;
   padding: 10px 0;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
-  position: absolute;
-  top: 360px;
-  left: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(255, 237, 198);
   text-align: center;
   display: flex;
@@ -103,6 +99,19 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 5px;
+}
+
+.tool {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(255, 237, 198);
 }
 
 @keyframes infoMoveIn {
@@ -138,9 +147,6 @@ body {
   min-height: 368px;
   background-color: #fff;
   opacity: 0.7;
-  position: absolute;
-  top: 360px;
-  left: 332px;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 20px 20px 20px rgb(255, 237, 198);
   padding: 10px 20px;

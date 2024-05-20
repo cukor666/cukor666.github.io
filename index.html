@@ -11,80 +11,98 @@
     <div class="container">
       <h1 class="title font-effect-1">Welcome to Cukor's Blog</h1>
       <div class="top-background"></div>
-      <div class="info">
-        <h2 class="about"><a href="/about.html">关于我</a></h2>
-        <div class="info-item">
-          <label>姓名：</label>
-          <span>Cukor</span>
-          <label>年龄：</label>
-          <span>21</span>
-          <label>专业：</label>
-          <span>信息与计算科学</span>
-          <label>擅长：</label>
-          <span>Go、HTML、CSS、JavaScript、Java、C++、Vue等</span>
-        </div>
-      </div>
-      <div class="article">
-        <h2 class="article-title">置顶文章</h2>
-        <!-- 这里是文章列表 -->
-        <!-- 第一章：HelloWord -->
-        <div class="article-item">
-          <a href="/article/helloword.html">
-            <h3 class="article-title">第一章：HelloWord</h3>
-            <p class="article-desc">
-              这是第一篇文章，欢迎来到我的博客，这里将分享一些关于我的学习经历和生活感悟。
-            </p>
-          </a>
-        </div>
-
-        <!-- 第二章：Svelte引入sass -->
-        <div class="article-item">
-          <a href="/article/svelte项目引入sass.html">
-            <h3 class="article-title">第二章：Svelte引入sass</h3>
-            <p class="article-desc">
-              Svelte是一款很棒的前端框架，它可以帮助我们快速开发Web应用。本文将介绍如何在Svelte中引入sass。
-            </p>
-          </a>
+      <div style="width: 100%; display: flex; padding: 10px; margin-top: 340px">
+        <div
+          style="
+            width: 33%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 5px;
+          "
+        >
+          <div class="info">
+            <h2 class="about"><a href="/about.html">关于我</a></h2>
+            <div class="info-item">
+              <label>姓名：</label>
+              <span>Cukor</span>
+              <label>年龄：</label>
+              <span>21</span>
+              <label>专业：</label>
+              <span>信息与计算科学</span>
+              <label>擅长：</label>
+              <span>Go、HTML、CSS、JavaScript、Java、C++、Vue等</span>
+            </div>
+          </div>
+          <div class="tool">
+            <a href="#">分类</a>
+            <a href="#">标签</a>
+            <a href="#">归档</a>
+          </div>
         </div>
 
-        <!-- 第三章：Svelte引入svelte-spa-router -->
-        <div class="article-item">
-          <a href="/article/svelte项目引入svelte-spa-router.html">
-            <h3 class="article-title">第三章：Svelte引入svelte-spa-router</h3>
-            <p class="article-desc">
-              Svelte-spa-router是一款帮助我们快速开发单页面应用的路由器。本文将介绍如何在Svelte中引入svelte-spa-router。
-            </p>
-          </a>
-        </div>
+        <div class="article" style="margin-left: 5px">
+          <h2 class="article-title">置顶文章</h2>
+          <!-- 这里是文章列表 -->
+          <!-- 第一章：HelloWord -->
+          <div class="article-item">
+            <a href="/article/helloword.html">
+              <h3 class="article-title">第一章：HelloWord</h3>
+              <p class="article-desc">
+                这是第一篇文章，欢迎来到我的博客，这里将分享一些关于我的学习经历和生活感悟。
+              </p>
+            </a>
+          </div>
 
-        <!-- 第四章：Svelte引入tailwindcss -->
-        <div class="article-item">
-          <a href="/article/svelte项目引入tailwindcss.html">
-            <h3 class="article-title">第四章：Svelte引入tailwindcss</h3>
-            <p class="article-desc">
-              Tailwindcss是一款CSS框架，它可以帮助我们快速开发Web应用。本文将介绍如何在Svelte中引入tailwindcss。
-            </p>
-          </a>
-        </div>
+          <!-- 第二章：Svelte引入sass -->
+          <div class="article-item">
+            <a href="/article/svelte项目引入sass.html">
+              <h3 class="article-title">第二章：Svelte引入sass</h3>
+              <p class="article-desc">
+                Svelte是一款很棒的前端框架，它可以帮助我们快速开发Web应用。本文将介绍如何在Svelte中引入sass。
+              </p>
+            </a>
+          </div>
 
-        <!-- 第五章：Svelte引入TypeScript -->
-        <div class="article-item">
-          <a href="#">
-            <h3 class="article-title">第五章：Svelte引入TypeScript</h3>
-            <p class="article-desc">
-              TypeScript是JavaScript的超集，它可以帮助我们更好地编写代码。本文将介绍如何在Svelte中引入TypeScript。
-            </p>
-          </a>
-        </div>
+          <!-- 第三章：Svelte引入svelte-spa-router -->
+          <div class="article-item">
+            <a href="/article/svelte项目引入svelte-spa-router.html">
+              <h3 class="article-title">第三章：Svelte引入svelte-spa-router</h3>
+              <p class="article-desc">
+                Svelte-spa-router是一款帮助我们快速开发单页面应用的路由器。本文将介绍如何在Svelte中引入svelte-spa-router。
+              </p>
+            </a>
+          </div>
 
-        <!-- 第六章：Svelte引入TypeScript -->
-        <div class="article-item">
-          <a href="#">
-            <h3 class="article-title">第五章：Svelte引入TypeScript</h3>
-            <p class="article-desc">
-              TypeScript是JavaScript的超集，它可以帮助我们更好地编写代码。本文将介绍如何在Svelte中引入TypeScript。
-            </p>
-          </a>
+          <!-- 第四章：Svelte引入tailwindcss -->
+          <div class="article-item">
+            <a href="/article/svelte项目引入tailwindcss.html">
+              <h3 class="article-title">第四章：Svelte引入tailwindcss</h3>
+              <p class="article-desc">
+                Tailwindcss是一款CSS框架，它可以帮助我们快速开发Web应用。本文将介绍如何在Svelte中引入tailwindcss。
+              </p>
+            </a>
+          </div>
+
+          <!-- 第五章：Svelte引入TypeScript -->
+          <div class="article-item">
+            <a href="#">
+              <h3 class="article-title">第五章：Svelte引入TypeScript</h3>
+              <p class="article-desc">
+                TypeScript是JavaScript的超集，它可以帮助我们更好地编写代码。本文将介绍如何在Svelte中引入TypeScript。
+              </p>
+            </a>
+          </div>
+
+          <!-- 第六章：Svelte引入TypeScript -->
+          <div class="article-item">
+            <a href="#">
+              <h3 class="article-title">第五章：Svelte引入TypeScript</h3>
+              <p class="article-desc">
+                TypeScript是JavaScript的超集，它可以帮助我们更好地编写代码。本文将介绍如何在Svelte中引入TypeScript。
+              </p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
