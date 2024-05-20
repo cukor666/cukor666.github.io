@@ -37,8 +37,11 @@ a:focus {
   outline: none; /* 去除焦点边框 */
 }
 
+body {
+  background: #ffe6c8;
+}
+
 .container {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,8 +134,8 @@ a:focus {
   }
 }
 .article {
-  width: 1167px;
-  height: 368px;
+  width: 77%;
+  min-height: 368px;
   background-color: #fff;
   opacity: 0.7;
   position: absolute;
@@ -143,6 +146,13 @@ a:focus {
   padding: 10px 20px;
 }
 .article .article-title {
+  margin-bottom: 10px;
+}
+.article .article-title:hover {
+  cursor: pointer;
+}
+.article .article-item {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
