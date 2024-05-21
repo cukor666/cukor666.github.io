@@ -4,13 +4,212 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>关于Cukor</title>
+    <link rel="stylesheet" href="style/about.css" />
   </head>
   <body>
-    <h1>关于Cukor</h1>
-    <p>
-      Cukor是一个大帅哥，他的博客是
-      <a href="https://cukor666.github.io/">https://cukor666.github.io/ </a
-      >，欢迎来逛逛。
-    </p>
+    <div class="base-info">
+      <div class="avatar">
+        <img
+          src="./imgs/me.jpg"
+          style="width: 100%; height: 100%; object-fit: cover"
+          alt=""
+        />
+      </div>
+      <h2 class="base-info-title">基础信息</h2>
+      <p class="list">
+        <span><label>姓名：</label>钟召昆</span>
+        <span><label>年龄：</label>22</span>
+        <span><label>职业：</label>24届本科毕业生</span>
+        <span><label>邮箱：</label>cukorzhong@gmail.com</span>
+        <span
+          ><label>Github：</label
+          ><a href="https://github.com/cukor666" target="_blank"
+            >https://github.com/cukor666</a
+          ></span
+        >
+        <span
+          ><label>博客：</label
+          ><a href="https://cukor666.github.io"
+            >https://cukor666.github.io</a
+          ></span
+        >
+        <span>
+          <label>B站：</label>
+          <a href="https://space.bilibili.com/1117276308" target="_blank">Cukor丘克</a>
+        </span>
+      </p>
+
+      <h2 class="base-info-title">技术栈</h2>
+      <p class="list">
+        <span
+          ><label>前端：</label
+          >HTML、CSS、JavaScript、TypeScript、React、Vue、Sass、TailwindCSS等</span
+        >
+        <span><label>后端：</label>GoLang、Java、Rust、Python等</span>
+        <span><label>数据库：</label>MySQL、Redis等</span>
+        <span><label>其他：</label>Shell、Git、Docker、Nginx等</span>
+      </p>
+    </div>
+    <div class="long-info">
+      <!-- 求职意向 -->
+      <div class="intention">
+        <h1>钟召昆</h1>
+        <div class="info">
+          <span><label>求职意向：</label>Web前端工程师</span>
+          <span><label>期望薪资：</label>6k-10k/月</span>
+          <span><label>期望城市：</label>深圳、广州</span>
+          <span><label>入职时间：</label>月内到岗</span>
+        </div>
+      </div>
+
+      <!-- 教育背景 -->
+      <div class="education">
+        <div class="title">
+          <div class="icon"></div>
+          <div class="text"><h2>教育背景</h2></div>
+        </div>
+        <div class="item">
+          <div class="title">
+            <div class="time">2020.09~2024.06</div>
+            <div class="school">广西科技大学</div>
+            <div class="major">信息与计算科学</div>
+          </div>
+          <!-- 课程 -->
+          <ul>
+            <li>
+              <label>主修课程：</label
+              >C语言程序设计、Java语言程序设计、数据结构与算法、Web前端开发技术、数据库系统原理等
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 项目经验 -->
+      <div class="project">
+        <div class="title">
+          <div class="icon"></div>
+          <div class="text"><h2>项目经验</h2></div>
+        </div>
+        <!-- 项目1 -->
+        <div class="item">
+          <div class="title">
+            <div class="time">2023.10-2024.05</div>
+            <div class="school">滋养果园</div>
+            <div class="major">主要负责人</div>
+          </div>
+          <ul>
+            <li>
+              <label>项目介绍：</label
+              >滋养果园是一个基于区块链的农业信息共享平台，主要面向农业领域的用户，通过区块链技术实现农业数据共享、农业数据交易、农业数据分析等功能。
+            </li>
+            <li>
+              <label>职责：</label>
+              负责系统设计与开发，包括前端、后端、数据库设计、区块链开发等。
+            </li>
+          </ul>
+        </div>
+
+        <!-- 项目2 -->
+        <div class="item">
+          <div class="title">
+            <div class="time">2023-12~2024-04</div>
+            <div class="school">智音园小程序</div>
+            <div class="major">开发工程师</div>
+          </div>
+          <ul>
+            <li>
+              <label>项目介绍：</label
+              >深圳、香港在如今的社会中有一些不同程度自闭症等心理问题的孩子，
+              该项目是为了帮助这些孩子，该项目致力于开发一个可以陪伴孩子让孩子说话，
+              提供有益与孩子身心健康的功能，并且带有康复计划与筛查功能，同时结合AI进行功能的体验提升。
+            </li>
+            <li>
+              <label>职责：</label
+              >根据产品的开发需求进行项目开发，对数据库进行合理设计与对应功能实现，
+              同时配合UI设计师完成小程序前端界面的展示。最后部署到线上。
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 实习经历 -->
+      <div class="internship">
+        <div class="title">
+          <div class="icon"></div>
+          <div class="text"><h2>实习经历</h2></div>
+        </div>
+
+        <!-- 实习经历1 -->
+        <div class="item">
+          <div class="title">
+            <div class="time">2023-11~2023-12</div>
+            <div class="school">百智讯联</div>
+            <div class="major">服务端开发</div>
+          </div>
+          <ul>
+            <li>
+              <label>项目背景：</label
+              >深圳、香港在如今的社会中有一些不同程度自闭症等心理问题的孩子，
+              该项目是为了帮助这些孩子，该项目致力于开发一个可以陪伴孩子让孩子说话，
+              提供有益与孩子身心健康的功能，并且带有康复计划与筛查功能，同时结合AI进行功能的体验提升。
+            </li>
+            <li>
+              <label>职责：</label
+              >根据产品的开发需求进行项目开发，对数据库进行合理设计与对应功能实现，
+              同时配合ui设计师完成小程序前端界面的展示。最后部署到线上。
+            </li>
+          </ul>
+        </div>
+
+        <!-- 实习经历2 -->
+        <div class="item">
+          <div class="title">
+            <div class="time">2023-12~2024-05</div>
+            <div class="school">柏丝科技（深圳）有限公司</div>
+            <div class="major">开发工程师</div>
+          </div>
+          <ul>
+            <li>
+              <label>项目背景：</label
+              >深圳、香港在如今的社会中有一些不同程度自闭症等心理问题的孩子，
+              该项目是为了帮助这些孩子，该项目致力于开发一个可以陪伴孩子让孩子说话，
+              提供有益与孩子身心健康的功能，并且带有康复计划与筛查功能，同时结合AI进行功能的体验提升。
+            </li>
+            <li>
+              <label>职责：</label
+              >根据产品的开发需求进行项目开发，对数据库进行合理设计与对应功能实现，
+              同时配合ui设计师完成小程序前端界面的展示。最后部署到线上。
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 自我评价 -->
+      <div class="education">
+        <div class="title">
+          <div class="icon"></div>
+          <div class="text"><h2>自我评价</h2></div>
+        </div>
+        <div class="item">
+          <h3 style="font-size: 17px; font-weight: bold; margin: 10px">
+            个人优势：
+          </h3>
+          <ul>
+            <li>
+              <label>扎实的计算机基础知识：</label
+              >掌握C、C++、Java、Python、Go等语言的基础语法，能够熟练使用常用数据结构和算法。
+            </li>
+            <li>
+              <label>优秀的编程能力：</label
+              >能够编写高效、可维护的代码，能够快速学习新技术，能够快速解决问题。
+            </li>
+            <li>
+              <label>良好的沟通能力：</label
+              >能够有效沟通，能够与团队成员合作，能够承受压力。
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

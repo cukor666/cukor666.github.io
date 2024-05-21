@@ -1,0 +1,39 @@
+@keyframes articleMoveIn {
+  0% {
+    transform: translateY(+300px);
+  }
+}
+
+@keyframes titleScale {
+  0% {
+    transform: translateX(-50%) scale(0);
+  }
+  80% {
+    transform: translateX(-50%) scale(1.2);
+  }
+  100% {
+    font-size: 3em;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes gradient {
+  50% {
+    background-position: 400%;
+  }
+}
+
+@keyframes infoMoveIn {
+  0% {
+    transform: translateX(-300px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes bgMoveIn {
+  0% {
+    transform: translateY(-300px);
+  }
+}

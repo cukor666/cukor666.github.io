@@ -1,3 +1,5 @@
+@import "astyle";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,31 +10,3 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #ffe4a1 10%, transparent);
 }
-
-
-/* 去除a标签的默认样式 */
-a {
-    text-decoration: none; /* 去除下划线 */
-    color: inherit; /* 继承父元素的颜色 */
-  }
-  
-  /* 如果需要特定颜色 */
-  a.custom-link {
-    color: black; /* 设置为黑色，或其他你需要的颜色 */
-  }
-  
-  /* 去除点击后的默认样式 */
-  a:visited {
-    color: inherit; /* 继承父元素的颜色 */
-  }
-  
-  /* 悬停效果 */
-  a:hover {
-    color: blue; /* 设置悬停时的颜色 */
-    text-decoration: underline; /* 悬停时显示下划线 */
-  }
-  
-  /* 聚焦效果 */
-  a:focus {
-    outline: none; /* 去除焦点边框 */
-  }

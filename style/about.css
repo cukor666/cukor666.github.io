@@ -1,0 +1,164 @@
+@charset "UTF-8";
+/* 去除a标签的默认样式 */
+a {
+  text-decoration: none; /* 去除下划线 */
+  color: inherit; /* 继承父元素的颜色 */
+}
+
+/* 如果需要特定颜色 */
+a.custom-link {
+  color: black; /* 设置为黑色，或其他你需要的颜色 */
+}
+
+/* 去除点击后的默认样式 */
+a:visited {
+  color: inherit; /* 继承父元素的颜色 */
+}
+
+/* 悬停效果 */
+a:hover {
+  color: blue; /* 设置悬停时的颜色 */
+  text-decoration: underline; /* 悬停时显示下划线 */
+}
+
+/* 聚焦效果 */
+a:focus {
+  outline: none; /* 去除焦点边框 */
+}
+
+body {
+  display: flex;
+  width: 60%;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #ffeecc, #e7feff);
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.base-info {
+  width: 25%;
+  min-height: 100vh;
+  background-color: #59dbff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.3);
+}
+.base-info .base-info-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.long-info {
+  width: 75%;
+  min-height: 100vh;
+  background-color: #e7feff;
+  box-shadow: 10px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.list {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.list span {
+  margin-bottom: 5px;
+}
+
+.intention {
+  padding: 20px;
+}
+.intention h1 {
+  margin-top: 0;
+  color: #258fc9;
+}
+.intention .info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.education,
+.project,
+.internship {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.title .icon {
+  flex: 1;
+  width: 30px;
+  height: 30px;
+  background-color: #2690c9;
+  border-radius: 50%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.title .text {
+  flex: 20;
+  color: #258fc9;
+  border-bottom: 3px solid #258fc9;
+}
+.title .text h2 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 5px;
+}
+
+.item {
+  position: relative;
+  margin-bottom: 10px;
+}
+.item .title {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  font-weight: bold;
+  color: #2690c9;
+}
+.item ul {
+  margin: 0;
+}
+.item ul label {
+  font-weight: bold;
+}
+.item ul li {
+  margin-bottom: 5px;
+}
+
+/*# sourceMappingURL=about.css.map */

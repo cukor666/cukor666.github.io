@@ -1,4 +1,5 @@
 @import "base";
+@import "index-animation";
 
 @mixin flexCenter {
   display: flex;
@@ -11,7 +12,6 @@ body {
 }
 
 .container {
-  // min-height: 100vh;
   @include flexCenter;
   flex-direction: column;
   .font-effect-1 {
@@ -35,25 +35,6 @@ body {
     font-size: 0em;
     animation: gradient 10s linear infinite,
       titleScale 1s 1.5s ease-in-out forwards 1;
-  }
-}
-
-@keyframes titleScale {
-  0% {
-    transform: translateX(-50%) scale(0);
-  }
-  80% {
-    transform: translateX(-50%) scale(1.2);
-  }
-  100% {
-    font-size: 3em;
-    transform: translateX(-50%) scale(1);
-  }
-}
-
-@keyframes gradient {
-  50% {
-    background-position: 400%;
   }
 }
 
@@ -93,14 +74,7 @@ body {
   animation: infoMoveIn 2s ease-in-out forwards 1;
 }
 
-@keyframes infoMoveIn {
-  0% {
-    transform: translateX(-300px);
-  }
-  80% {
-    transform: translateX(10px);
-  }
-}
+
 
 .top-background {
   width: 100%;
@@ -115,12 +89,6 @@ body {
   left: 0;
   border-radius: 0 0 40% 40%;
   animation: bgMoveIn 1s linear forwards 1;
-}
-
-@keyframes bgMoveIn {
-  0% {
-    transform: translateY(-300px);
-  }
 }
 
 .article {
@@ -143,11 +111,5 @@ body {
   .article-item {
     margin-top: 10px;
     margin-bottom: 10px;
-  }
-}
-
-@keyframes articleMoveIn {
-  0% {
-    transform: translateY(+300px);
   }
 }
