@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>文章类别</title>
+    <link rel="icon" type="image/ico" href="../imgs/favicon.ico" />
+    <style>
+      body {
+        background-color: #ffe7c8;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .category {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+        padding: 20px;
+        transition: background-color 0.3s;
+      }
+      .category:hover {
+        background-color: #f0d8b8;
+      }
+      .category h2 {
+        margin: 0 0 10px;
+        color: #555;
+      }
+      .category p {
+        margin: 0;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>文章类别</h1>
+      <div id="front-end" class="category">
+        <h2>前端</h2>
+        <p>前端技术分享，包括HTML、CSS、JavaScript、TypeScript、Vue等。</p>
+      </div>
+      <div id="back-end" class="category">
+        <h2>后端</h2>
+        <p>后端技术分享，包括Java、Python、Go、Node.js等。</p>
+      </div>
+      <div id="database" class="category">
+        <h2>数据库</h2>
+        <p>数据库技术分享，包括MySQL、MongoDB、Redis等。</p>
+      </div>
+      <div id="live" class="category">
+        <h2>生活方式</h2>
+        <p>生活方式的提示和建议。</p>
+      </div>
+      <div id="tech" class="category">
+        <h2>娱乐</h2>
+        <p>娱乐新闻和评论。</p>
+      </div>
+      <div id="other" class="category">
+        <h2>其他</h2>
+        <p>其他技术分享，包括计算机基础、操作系统、网络、安全等。</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    const categories = document.querySelectorAll('.category');
+    categories.forEach(category => {
+      const id = category.id;
+      category.addEventListener('click', () => {
+        location.href = `./${id}/index.html`;
+      });
+    });
+  </script>
+</html>
