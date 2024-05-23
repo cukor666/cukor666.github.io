@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>其他</title>
     <link rel="icon" type="image/ico" href="../../imgs/favicon.ico" />
-</head>
-<body>
-    <h1>其他</h1>
-</body>
+    <link rel="stylesheet" href="../styles/base.css">
+    <script>
+      // 文章基路径
+      const articleBasePath = "../../article";
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>其他</h1>
+      <a href="../index.html" class="back-link">返回文章类别</a>
+      <div id="articles">
+        <div
+          class="article"
+          onclick="location.href=articleBasePath+'/helloword.html'"
+        >
+          <h2>HelloWorld</h2>
+          <p>
+            欢迎来到我的博客，这里是关于前端技术的分享，欢迎大家前来交流。
+          </p>
+        </div>
+        <div class="article">
+          <h2>更多文章...</h2>
+          <p>更多精彩内容，敬请期待。</p>
+        </div>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script src="../js/base.js"></script>
+  </body>
 </html>
