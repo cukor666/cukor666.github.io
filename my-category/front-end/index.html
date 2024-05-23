@@ -1,12 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>前端</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>前端技术分享</title>
     <link rel="icon" type="image/ico" href="../../imgs/favicon.ico" />
-</head>
-<body>
-    <h1>前端</h1>
-</body>
+    <style>
+      body {
+        background-color: #ffe7c8;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .article {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px 0;
+        padding: 20px;
+        transition: background-color 0.3s;
+        display: none;
+      }
+      .article:hover {
+        background-color: #f0d8b8;
+      }
+      .article h2 {
+        margin: 0 0 10px;
+        color: #555;
+      }
+      .article p {
+        margin: 0;
+        color: #777;
+      }
+      .back-link {
+        display: block;
+        margin: 20px 0;
+        text-align: center;
+        color: #333;
+        text-decoration: none;
+      }
+      .back-link:hover {
+        text-decoration: underline;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .pagination button {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .pagination button:hover {
+        background-color: #f0d8b8;
+      }
+      .pagination .active {
+        background-color: #f0d8b8;
+        border-color: #f0d8b8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>前端技术分享</h1>
+      <a href="../index.html" class="back-link">返回文章类别</a>
+      <div id="articles">
+        <div class="article">
+          <h2>HTML 基础</h2>
+          <p>学习HTML的基础知识，包括标签、属性、语义化等。</p>
+        </div>
+        <div class="article">
+          <h2>CSS 技巧</h2>
+          <p>探索CSS的高级技巧，包括布局、动画、响应式设计等。</p>
+        </div>
+        <div class="article">
+          <h2>JavaScript 基础</h2>
+          <p>掌握JavaScript的基本语法和功能，包括ES6新特性。</p>
+        </div>
+        <div class="article">
+          <h2>Vue 入门</h2>
+          <p>快速入门Vue框架，了解其核心概念和用法。</p>
+        </div>
+        <div class="article">
+          <h2>TypeScript 实践</h2>
+          <p>学习TypeScript的基本使用方法和在项目中的应用。</p>
+        </div>
+        <div class="article">
+            <h2>React 实践</h2>
+            <p>学习React的基本使用方法和在项目中的应用。</p>
+        </div>
+        <div class="article">
+            <h2>Svelte 入门</h2>
+            <p>学习Svelte的基本使用方法和在项目中的应用。</p>
+        </div>
+        <div class="article">
+          <h2>更多文章...</h2>
+          <p>更多精彩内容，敬请期待。</p>
+        </div>
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script>
+      const articlesPerPage = 3;
+      const articles = document.querySelectorAll(".article");
+      const totalPages = Math.ceil(articles.length / articlesPerPage);
+      const pagination = document.getElementById("pagination");
+
+      function showPage(page) {
+        articles.forEach((article, index) => {
+          article.style.display = "none";
+          if (
+            index >= (page - 1) * articlesPerPage &&
+            index < page * articlesPerPage
+          ) {
+            article.style.display = "block";
+          }
+        });
+        updatePagination(page);
+      }
+
+      function updatePagination(page) {
+        pagination.innerHTML = "";
+        for (let i = 1; i <= totalPages; i++) {
+          const button = document.createElement("button");
+          button.textContent = i;
+          button.classList.add("page-button");
+          if (i === page) {
+            button.classList.add("active");
+          }
+          button.addEventListener("click", () => {
+            showPage(i);
+          });
+          pagination.appendChild(button);
+        }
+      }
+
+      showPage(1);
+    </script>
+  </body>
 </html>
