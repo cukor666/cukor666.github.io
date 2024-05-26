@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>关于Cukor</title>
     <link rel="stylesheet" href="style/about.css" />
-    <link rel="icon" type="image/ico" href="./imgs/favicon.ico">
+    <link rel="icon" type="image/ico" href="./imgs/favicon.ico" />
   </head>
   <body>
     <div class="base-info">
@@ -36,7 +36,9 @@
         >
         <span>
           <label>B站：</label>
-          <a href="https://space.bilibili.com/1117276308" target="_blank">Cukor丘克</a>
+          <a href="https://space.bilibili.com/1117276308" target="_blank"
+            >Cukor丘克</a
+          >
         </span>
       </p>
 
@@ -56,15 +58,15 @@
       <div class="intention">
         <h1 class="my-name">钟召昆</h1>
         <div class="info">
-          <span><label>求职意向：</label>Web前端工程师</span>
-          <span><label>期望薪资：</label>6k-10k/月</span>
+          <span><label>求职意向：</label>开发工程师</span>
+          <span><label>期望薪资：</label>8k/月</span>
           <span><label>期望城市：</label>深圳、广州</span>
-          <span><label>入职时间：</label>月内到岗</span>
+          <span><label>入职时间：</label>面后商议</span>
         </div>
       </div>
 
       <!-- 教育背景 -->
-      <div class="long-info-title" style="--d:4s">
+      <div class="long-info-title" style="--d: 4s">
         <div class="title">
           <div class="icon iconfont icon-jiaoyubeijing"></div>
           <div class="text"><h2>教育背景</h2></div>
@@ -86,7 +88,7 @@
       </div>
 
       <!-- 项目经验 -->
-      <div class="long-info-title" style="--d:5s">
+      <div class="long-info-title" style="--d: 5s">
         <div class="title">
           <div class="icon iconfont icon-xiangmujingyan"></div>
           <div class="text"><h2>项目经验</h2></div>
@@ -100,12 +102,33 @@
           </div>
           <ul>
             <li>
-              <label>项目介绍：</label
-              >滋养果园是一个基于区块链的农业信息共享平台，主要面向农业领域的用户，通过区块链技术实现农业数据共享、农业数据交易、农业数据分析等功能。
+              <label>介绍：</label
+              >滋养果园是一个基于Gin+Vue3开发的前后端分离Web应用，该项目是为果农们提供一个方便、快捷的管理果蔬的平台。
+              并且该项目还提供CRM功能，可以管理果农的销售数据和留住客户。
             </li>
             <li>
               <label>职责：</label>
-              负责系统设计与开发，包括前端、后端、数据库设计、区块链开发等。
+              负责系统设计与开发，包括前端、后端、数据库设计等。
+            </li>
+            <li>
+              <label>架构：</label>
+              客户端分为两个Web应用，分别是用户端和管理员端，用户端主要用于水果信息的展示、购买、收藏等，管理员端主要用于管理用户信息、商品信息、订单信息等。
+              后端使用Gin+Gorm+MySQL+Redis等技术，前端使用Vue3+ElementPlus+Sass等技术。
+            </li>
+            <li>
+              <label>项目地址:</label>
+              <a
+                href="http://cukor.cn"
+                target="_blank"
+                rel="noopener noreferrer"
+                >cukor.cn</a
+              >、
+              <a
+                href="http://cukor.cn:5173"
+                target="_blank"
+                rel="noopener noreferrer"
+                >cukor.cn:5173</a
+              >
             </li>
           </ul>
         </div>
@@ -119,7 +142,7 @@
           </div>
           <ul>
             <li>
-              <label>项目介绍：</label
+              <label>介绍：</label
               >深圳、香港在如今的社会中有一些不同程度自闭症等心理问题的孩子，
               该项目是为了帮助这些孩子，该项目致力于开发一个可以陪伴孩子让孩子说话，
               提供有益与孩子身心健康的功能，并且带有康复计划与筛查功能，同时结合AI进行功能的体验提升。
@@ -129,12 +152,16 @@
               >根据产品的开发需求进行项目开发，对数据库进行合理设计与对应功能实现，
               同时配合UI设计师完成小程序前端界面的展示。最后部署到线上。
             </li>
+            <li>
+              <label>架构：</label>
+              客户端使用微信小程序开发，后端使用Gin开发，数据库使用MySQL+Redis。并使用Sass美化前端界面。
+            </li>
           </ul>
         </div>
       </div>
 
       <!-- 实习经历 -->
-      <div class="long-info-title" style="--d:6s">
+      <div class="long-info-title" style="--d: 6s">
         <div class="title">
           <div class="icon iconfont icon-gongzuojingli"></div>
           <div class="text"><h2>实习经历</h2></div>
@@ -186,7 +213,7 @@
       </div>
 
       <!-- 自我评价 -->
-      <div class="long-info-title" style="--d:7s">
+      <div class="long-info-title" style="--d: 7s">
         <div class="title">
           <div class="icon iconfont icon-ziwopingjia"></div>
           <div class="text"><h2>自我评价</h2></div>
@@ -198,7 +225,11 @@
           <ul>
             <li>
               <label>扎实的计算机基础知识：</label
-              >掌握C、C++、Java、Python、Go等语言的基础语法，能够熟练使用常用数据结构和算法。
+              >掌握前后端开发分离技术，能够熟练使用常用数据结构和算法，熟练操作数据库如MySQL、Redis等，熟练使用Docker、Nginx等。
+            </li>
+            <li>
+              <label>Web开发经验：</label
+              >有过Web全栈开发经历，熟练本地开发和线上部署工作。
             </li>
             <li>
               <label>优秀的编程能力：</label
