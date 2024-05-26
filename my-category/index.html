@@ -5,50 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>文章类别</title>
     <link rel="icon" type="image/ico" href="../imgs/favicon.ico" />
-    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="./js/data.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>文章类别</h1>
-      <div id="front-end" class="category">
-        <h2>前端</h2>
-        <p>前端技术分享，包括HTML、CSS、JavaScript、TypeScript、Vue等。</p>
-      </div>
-      <div id="back-end" class="category">
-        <h2>后端</h2>
-        <p>后端技术分享，包括Java、Python、Go、Node.js等。</p>
-      </div>
-      <div id="database" class="category">
-        <h2>数据库</h2>
-        <p>数据库技术分享，包括MySQL、MongoDB、Redis等。</p>
-      </div>
-      <div id="datastruct" class="category">
-        <h2>数据结构与算法</h2>
-        <p>数据结构与算法相关技术分享，包括算法、数据结构、设计模式等。</p>
-      </div>
-      <div id="ops" class="category">
-        <h2>运维</h2>
-        <p>运维技术分享，包括Linux、Docker、Kubernetes等。</p>
-      </div>
-      <div id="live" class="category">
-        <h2>生活方式</h2>
-        <p>生活方式的提示和建议。</p>
-      </div>
-      <div id="tech" class="category">
-        <h2>娱乐</h2>
-        <p>娱乐新闻和评论。</p>
-      </div>
-      <div id="other" class="category">
-        <h2>其他</h2>
-        <p>其他技术分享，包括计算机基础、操作系统、网络、安全等。</p>
-      </div>
-    </div>
+    <div class="container"></div>
   </body>
   <script>
-    const categories = document.querySelectorAll('.category');
-    categories.forEach(category => {
+    var container = document.querySelector(".container");
+    var h1 = document.createElement("h1");
+    h1.textContent = "文章类别";
+    container.appendChild(h1);
+    
+    categoriesInfo.forEach((e) => {
+      const div = document.createElement("div");
+      div.id = e.id;
+      div.classList.add("category");
+      const h2 = document.createElement("h2");
+      h2.textContent = e.name;
+      const p = document.createElement("p");
+      p.textContent = e.desc;
+      div.appendChild(h2);
+      div.appendChild(p);
+      container.appendChild(div);
+    });
+
+    // ----------------------------------------------------------------------
+    const categories = document.querySelectorAll(".category");
+    categories.forEach((category) => {
       const id = category.id;
-      category.addEventListener('click', () => {
+      category.addEventListener("click", () => {
         location.href = `./${id}/index.html`;
       });
     });
