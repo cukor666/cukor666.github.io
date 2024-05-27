@@ -16,6 +16,11 @@ var articlesInfo = [
     fileName: "Go标准库sort简单使用.html",
   },
   {
+    title: "Go正则表达式",
+    description: "Go语言的正则表达式简单介绍。",
+    fileName: "Go正则表达式.html",
+  },
+  {
     title: "更多文章...",
     description: "更多精彩内容，敬请期待。",
     fileName: "",
