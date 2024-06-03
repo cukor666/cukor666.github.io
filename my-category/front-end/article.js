@@ -37,6 +37,11 @@ var articlesInfo = [
     fileName: "Typescript简单学习.html",
   },
   {
+    title: "NodeJS快速入门",
+    description: "学习NodeJS的基本语法，并在项目中应用。",
+    fileName: "NodeJS快速入门.html",
+  },
+  {
     title: "更多文章...",
     description: "更多精彩内容，敬请期待。",
     fileName: "",

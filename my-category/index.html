@@ -16,6 +16,10 @@
     var h1 = document.createElement("h1");
     h1.textContent = "文章类别";
     container.appendChild(h1);
+    var backHome = document.createElement("a");
+    backHome.href = "../index.html";
+    backHome.textContent = "返回首页";
+    container.appendChild(backHome);
     
     categoriesInfo.forEach((e) => {
       const div = document.createElement("div");
