@@ -16,14 +16,14 @@ const hotArticles = [
     fileName: "/article/helloword.html",
   },
   {
-    title: "第二章：Svelte引入sass",
-    desc: "Svelte是一款很棒的前端框架，它可以帮助我们快速开发应用，但是它有一个缺点就是它不支持sass，这就需要我们自己手动引入。",
-    fileName: "/article/svelte项目引入sass.html",
+    title: "第二章：Go引入Gin框架",
+    desc: "Go是一门开源的编程语言，它可以帮助我们快速开发Web应用。本文将介绍如何在Go中引入Gin框架。",
+    fileName: "/article/Go引入Gin框架.html",
   },
   {
-    title: "第三章：Svelte引入svelte-spa-router",
-    desc: "Svelte-spa-router是一款帮助我们快速开发单页面应用的路由器。本文将介绍如何在Svelte中引入svelte-spa-router。",
-    fileName: "/article/svelte项目引入svelte-spa-router.html",
+    title: "第三章：Nginx解决跨域问题",
+    desc: "Nginx是一款开源的Web服务器，它可以帮助我们解决跨域问题。本文将介绍如何在Nginx中配置跨域。",
+    fileName: "/article/Nginx解决跨域问题.html",
   },
   {
     title: "第四章：Svelte引入tailwindcss",
@@ -31,9 +31,9 @@ const hotArticles = [
     fileName: "/article/svelte项目引入tailwindcss.html",
   },
   {
-    title: "第五章：Go引入Gin框架",
-    desc: "Gin是一款Go语言的Web框架，它可以帮助我们快速开发Web应用。本文将介绍如何在Go中引入Gin框架。",
-    fileName: "/article/Go引入Gin框架.html",
+    title: "第五章：希尔排序（Go语言实现）",
+    desc: "希尔排序是一种排序算法，它的时间复杂度为O(n^1.5)。本文将介绍如何在Go语言中实现希尔排序。",
+    fileName: "/article/希尔排序（Go语言实现）.html",
   },
   {
     title: "第六章：fetchAPI的基本使用",
