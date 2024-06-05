@@ -21,6 +21,11 @@ var articlesInfo = [
     fileName: "Go正则表达式.html",
   },
   {
+    title: "Go语言使用GORM连接SQLite数据库",
+    description: "Go语言使用GORM连接SQLite数据库，实现增删改查操作。",
+    fileName: "Go语言使用GORM连接SQLite.html",
+  },
+  {
     title: "更多文章...",
     description: "更多精彩内容，敬请期待。",
     fileName: "",
