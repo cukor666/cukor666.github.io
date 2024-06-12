@@ -31,6 +31,16 @@ var articlesInfo = [
     fileName: "fiber基本使用.html",
   },
   {
+    title: "Go引入Viper配置管理",
+    description: "Go语言引入Viper配置管理，实现配置文件的读取。",
+    fileName: "Go引入Viper.html",
+  },
+  {
+    title: "Go语言与C语言交互",
+    description: "使用动态库实现Go语言与C语言的交互。",
+    fileName: "Go语言与C语言交互.html",
+  },
+  {
     title: "更多文章...",
     description: "更多精彩内容，敬请期待。",
     fileName: "",

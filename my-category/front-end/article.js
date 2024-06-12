@@ -42,6 +42,11 @@ var articlesInfo = [
     fileName: "NodeJS快速入门.html",
   },
   {
+    title: "Vite解决跨域问题",
+    description: "学习Vite的基本配置，并解决跨域问题。",
+    fileName: "Vite解决跨域问题.html",
+  },
+  {
     title: "更多文章...",
     description: "更多精彩内容，敬请期待。",
     fileName: "",
