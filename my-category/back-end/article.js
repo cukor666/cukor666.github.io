@@ -26,6 +26,11 @@ var articlesInfo = [
     fileName: "Go语言使用GORM连接SQLite.html",
   },
   {
+    title: "Fiber框架基本使用",
+    description: "Fiber框架基本使用，包括路由、中间件、静态资源等。",
+    fileName: "fiber基本使用.html",
+  },
+  {
     title: "更多文章...",
     description: "更多精彩内容，敬请期待。",
     fileName: "",
